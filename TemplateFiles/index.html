@@ -1,0 +1,101 @@
+<!--
+    Pawsandpalmsbakery.com
+    Home Page
+
+    Design: Made to look like an oven.
+    Navigation: 
+        - Home
+        - About
+            - Mission
+        - Paws
+            - Treats
+            - Sweets
+        - Palms
+            - Bread
+            - Sweets
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Andrew Roney">
+    <meta name="description" content="Paws and Palms Bakery">
+    <meta name="keywords" content="Paws and Palms Bakery, Paws and Palms, Paws, Palms, Bakery, Paws Bakery, Palms Bakery, Paws and Palms Bakery, Paws and Palms, Paws, Palms, Bakery, Paws Bakery, Palms Bakery, Paws and Palms Bakery, Paws and Palms, Paws, Palms, Bakery, Paws Bakery, Palms Bakery, Paws and Palms Bakery, Paws and Palms, Paws, Palms, Bakery, Paws Bakery, Palms Bakery, Paws and Palms Bakery, Paws and Palms, Paws, Palms, Bakery, Paws Bakery, Palms Bakery, Paws and Palms Bakery, Paws and Palms, Paws, Palms, Bakery, Paws Bakery, Palms Bakery">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../StaticFiles/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b0af4bcb3.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <!-- JavaScript -->
+    <script src="../StaticFiles/script.js"></script>
+</head>
+<body>
+    
+    <header>
+        <!--MOBILE NAVIGATION MENU-->
+            <!-- Top Navigation Menu -->
+            <div class="topnav">
+                <img src="#" href="#" ></img>
+                <!-- Navigation links (hidden by default) -->
+                <div id="mobile-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Paws</a>
+                <a href="#">Palms</a>
+                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onclick="mobileNavToggle()">
+                <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        <!--END MOBILE NAVIGATION MENU-->
+
+        <nav class="stoveControlPanel">
+            <div class="navItem" id="scpLeftKnob1">
+                <a href="#">Home</a>
+            </div>
+
+            <div class="navItem" id="scpLeftKnob2">
+                <a href="#">About</a>
+            </div>
+
+            <div id="scpDisplay">
+            </div>
+
+            <div class="navItem" id="scpRightKnob1">
+                <a href="#">Paws</a>
+            </div>
+
+            <div class="navItem" id="scpRightKnob2">
+                <a href="#">Palms</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="oven">
+            <div id="ovenDoor">
+                <div id="title">
+                    <h1>Paws and Palms Bakery</h1>
+                </div>
+                <div id="ovenDoorHandle"></div>
+                <div id="ovenWindow">
+                    <div class="owGrid">
+                        <div></div><div></div><div></div>
+                        <div></div><div></div><div></div>
+                        <div></div><div></div><div></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer id="broiler"></footer>
+</body>
+
+</html>
