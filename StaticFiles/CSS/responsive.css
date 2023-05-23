@@ -19,13 +19,18 @@
  
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
-
+    .owl-next {
+        width: 0;
+    }
+    .owl-prev {
+        width: 0;
+    }
 }
 
  
 /* small mobile :320px. */
 @media (max-width: 767px) {
-    /*.slider-content-area {
+    .slider-content-area {
         position: absolute;
         top: 5%;
         color: #fff;
@@ -120,8 +125,8 @@
         position: absolute;
         bottom: -20px;
         display: flex;
-        /* margin-left: 10px; */
-        /* margin-top: 20px; */
+        margin-left: 10px; 
+        margin-top: 20px; 
         left: 26%;
     }
 

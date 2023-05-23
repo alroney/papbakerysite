@@ -1,9 +1,11 @@
 /*
-Theme Name: Cemre Bakery Theme
-Theme URI: https://bakery.cemreworks.com
-Author: Cemre Tellioğlu Tunçay
-Author URI: https://cemreworks.com
+Theme Name: Paws and Palms Bakery
+Theme URI: https://papbakery.com
+Author: Andrew Roney
+Author URI: https://papbakery.com
 */
+
+
 /*
 * ==========================================
 * GENERAL AND HEADER START
@@ -132,12 +134,14 @@ iframe {
   border: none !important;
 }
 
-
 /*
 * ==========================================
 * GENERAL AND HEADER END
 * ==========================================
 */
+
+
+
 
 /*
 * ==========================================
@@ -1455,6 +1459,9 @@ div#news-slider .owl-next {
 * CONTACT FORM ENDS
 * ==========================================
 */
+
+
+
 /*
 * ==========================================
 * ADRESS SECTION STARTS
@@ -1564,7 +1571,7 @@ li.address-section .fa{
 
 /*
 * ==========================================
-* ADRESS SECTION ENDS
+* ADDRESS SECTION ENDS
 * ==========================================
 */
 
