@@ -335,6 +335,10 @@ img.imgback:hover {
 * ==========================================
 */
 
+#section3 {
+  min-height: 400px;
+}
+
 .post-slide .post-title {
   font-size: 17px;
   font-family: "Roboto";
@@ -363,9 +367,7 @@ div#news-slider .owl-dots {
   position: absolute;
   bottom: -20px;
   display: flex;
-  /* margin-left: 10px; */
-  /* margin-top: 20px; */
-  left: 46%;
+  left: 36%;
 }
   
 div#news-slider .owl-dot.active {
@@ -393,7 +395,7 @@ div#news-slider .owl-dot{
 div#news-slider .owl-prev {
   position: absolute;
   bottom: -20px;
-  left: 40%;
+  left: 20%;
   text-transform: uppercase;
   font-size: 12px;
   font-family: "Roboto";
@@ -411,7 +413,7 @@ div#news-slider .owl-prev {
 div#news-slider .owl-next {
   position: absolute;
   bottom: -20px;
-  right: 40%;
+  right: 20%;
   text-transform: uppercase;
   font-size: 12px;
   font-family: "Roboto";
@@ -473,14 +475,15 @@ div#news-slider .owl-next {
 * ==========================================
 */
 
-#section4{
-  padding-top: 30px;
+#section4 {
+  padding-top: 20px;
   min-height: 400px;
+  margin-bottom: 100px;
   background: transparent;
 }
 
 
-#section4 h3{
+#section4 h3 {
 
   margin-top: 20px;
   font-weight: 800;

@@ -5,6 +5,17 @@ Author: Andrew Roney
 Author URI: https://papbakery.com
 */
 
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
 /*
 * ==========================================
 * BANNER SECTION START
@@ -86,5 +97,70 @@ Author URI: https://papbakery.com
 /*
 * ==========================================
 * OVERVIEW SECTION END
+* ==========================================
+*/
+
+
+/*
+* ==========================================
+* MISSION SECTION START
+* ==========================================
+*/
+
+.mission-section {
+    margin-top: 20%;
+}
+
+.mission-section-paragraph {
+    font-size: 14px;    
+}
+
+/*
+* ==========================================
+* MISSION SECTION END
+* ==========================================
+*/
+
+
+
+/*
+* ==========================================
+* THE TEAM SECTION START
+* ==========================================
+*/
+
+.team-section {
+    margin-top: 20%;
+}
+
+.team-section-paragraph {
+    font-size: 14px;    
+}
+
+
+.employee-header {
+    position: relative;
+    justify-content: space-around;
+    margin: 10px;
+    width: 6rem;
+    
+}
+
+.employee-title {
+    text-align: center;
+}
+
+.employee-image {
+    width: 6rem;
+    height: 6rem;
+}
+
+.employee-description {
+    right: 0;
+}
+
+/*
+* ==========================================
+* THE TEAM SECTION END
 * ==========================================
 */
