@@ -5,6 +5,28 @@ Author: Andrew Roney
 Author URI: https://papbakery.com
 */
 
+/*
+* ==========================================
+* BANNER SECTION START
+* ==========================================
+*/
+
+.banner-area {
+    background: url(../img/testimonial/1900x1000.png) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    border: black 1px solid;
+    color: white;
+    height: 100px;
+    z-index: 1;
+    padding: 70px 0px;
+}
+
+.banner-area a {
+    color: white;
+}
+
+
 
 /*
 * ==========================================
@@ -35,6 +57,12 @@ Author URI: https://papbakery.com
     text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.5px;
 }
 
+/*
+* ==========================================
+* SECTION GENERAL END
+* ==========================================
+*/
+
 
 
 /*
@@ -54,3 +82,9 @@ Author URI: https://papbakery.com
 .overview-section-paragraph {
     font-size: 14px;    
 }
+
+/*
+* ==========================================
+* OVERVIEW SECTION END
+* ==========================================
+*/
