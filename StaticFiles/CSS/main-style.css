@@ -47,6 +47,7 @@ p.colorfullText {
 body, html {
   height: 100%;
   font-family: 'Poppins';
+  background-color: rgba(0,0,0, 0.005);
 }
 
 /*---------------------------------------------*/
@@ -139,6 +140,7 @@ iframe {
 * GENERAL AND HEADER END
 * ==========================================
 */
+
 
 
 /*
@@ -245,6 +247,9 @@ iframe {
   * NAVBAR END
   * ==========================================
   */
+
+
+
 
 
 /*

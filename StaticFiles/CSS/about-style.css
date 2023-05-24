@@ -1,0 +1,56 @@
+/*
+Theme Name: Paws and Palms Bakery
+Theme URI: https://papbakery.com
+Author: Andrew Roney
+Author URI: https://papbakery.com
+*/
+
+
+/*
+* ==========================================
+* SECTION GENERAL START
+* ==========================================
+*/
+
+.section-titles h3 {
+    font-size: 16px;
+    font-family: "amiri";
+    font-weight: bold;
+    line-height: 1.7;
+    text-align: center;
+    margin-top: 80px;
+    text-transform: uppercase;
+    color: rgb(248, 176, 0);
+    margin-bottom: 20px;
+    text-shadow: rgba(248, 176, 0, 0.5) 0px 1px 1.5px;
+}
+
+.section-titles h2 {
+    font-size: 70px;
+    font-family: "amiri";
+    color: rgb(68, 68, 68);
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 85px;
+    text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.5px;
+}
+
+
+
+/*
+* ==========================================
+* OVERVIEW SECTION START
+* ==========================================
+*/
+
+.overview-section {
+    margin-top: 20%;
+}
+
+
+
+
+
+.overview-section-paragraph {
+    font-size: 14px;    
+}
