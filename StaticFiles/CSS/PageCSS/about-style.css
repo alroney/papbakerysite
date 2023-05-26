@@ -23,13 +23,14 @@ Author URI: https://papbakery.com
 */
 
 .banner-area {
-    background: url(../img/testimonial/1900x1000.png) no-repeat center center;
-    background-size: cover;
+    /*background: url(../img/testimonial/1900x1000.png) no-repeat center center;
+    background-size: cover;*/
+    background: linear-gradient(black, rgb(68, 68, 68), white);
     position: relative;
     border: black 1px solid;
     color: white;
     height: 100px;
-    z-index: 1;
+    z-index: 0;
     padding: 70px 0px;
 }
 
@@ -137,6 +138,7 @@ Author URI: https://papbakery.com
     font-size: 14px;    
 }
 
+.employee-info-card
 
 .employee-header {
     position: relative;
@@ -151,8 +153,12 @@ Author URI: https://papbakery.com
 }
 
 .employee-image {
-    width: 6rem;
-    height: 6rem;
+    width: 100px;
+    height: 150px;
+    border: black 1px solid;
+}
+#zoeyroneyImg {
+    background-image: url("../img/employee/zoeyroney.png");
 }
 
 .employee-description {

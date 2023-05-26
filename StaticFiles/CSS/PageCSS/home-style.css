@@ -367,7 +367,9 @@ div#news-slider .owl-dots {
   position: absolute;
   bottom: -20px;
   display: flex;
-  left: 36%;
+  /* margin-left: 10px; */
+  /* margin-top: 20px; */
+  left: 46%;
 }
   
 div#news-slider .owl-dot.active {
@@ -395,7 +397,7 @@ div#news-slider .owl-dot{
 div#news-slider .owl-prev {
   position: absolute;
   bottom: -20px;
-  left: 20%;
+  left: 40%;
   text-transform: uppercase;
   font-size: 12px;
   font-family: "Roboto";
@@ -413,7 +415,7 @@ div#news-slider .owl-prev {
 div#news-slider .owl-next {
   position: absolute;
   bottom: -20px;
-  right: 20%;
+  right: 40%;
   text-transform: uppercase;
   font-size: 12px;
   font-family: "Roboto";

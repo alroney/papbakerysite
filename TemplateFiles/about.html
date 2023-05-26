@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="../StaticFiles/CSS/font-awesome.min.css">
         <link rel="stylesheet" href="../StaticFiles/CSS/reset.css">
         <link rel="stylesheet" href="../StaticFiles/CSS/main-style.css">
-        <link rel="stylesheet" href="../StaticFiles/CSS/about-style.css">
+        <link rel="stylesheet" href="../StaticFiles/CSS/PageCSS/about-style.css">
         <link rel="stylesheet" href="../StaticFiles/CSS/animate.css">
         <link rel="stylesheet" href="../StaticFiles/CSS/responsive.css">
         <script src="../StaticFiles/JS/vendor/modernizr-2.8.3.min.js"></script>
@@ -119,7 +119,59 @@
                     </div>
                     <div class="container overview-section-paragraph">
                         <p>
-
+                            Welcome to Andrew's Paws and Palms Bakery! We are a small business that
+                            bake and sell dog treats and baked goods for people. We are located in
+                            Hanover, PA USA in a residential home. The business started out with
+                            doing some personal baking for myself and then I decided to try making
+                            dog treats for my dog, Zoey. I started making dog treats for Zoey because
+                            I wanted to make sure that she was eating healthy and safe treats.
+                            <br><span id="fullStory">
+                            I informed myself and to others that I would start taking on baking when
+                            I moved out of my parents house in March 2023. I had a lot of people
+                            support my decision this is especially true for my parents. In fact, my
+                            step-mother, Tiffany, was the one who kick started the whole process by 
+                            surprising me with a book ,via delivery, about bread making and now I
+                            was not the only one invested into my baking decision. Mrs. Tiff has 
+                            elminated the hardest part for me, knowing where to start.
+                            I am very grateful for her and my parents for supporting me in my
+                            decision.
+                            <br>
+                            The first thing I started baking was bread, and more specifically the
+                            first bread being 'Peanut Butter Chocolate Chip Loaves'. It was simple
+                            to make and contained some of my favorite ingredients. The bread was
+                            delicious and I was very proud of myself for making it. I was so proud
+                            of myself that I decided to share it with my friends and family. I
+                            received a lot of positive feedback from them and they encouraged me
+                            to continue baking and so I did. My next bread was 'Irish Soda Bread',
+                            this is where I had my first failure. I misread the recipe and swapped
+                            the amounts of sugar and salt. The bread was so salty that it was
+                            inedible. I was very shocked at first but I was not discouraged. I
+                            laughed it off and tried again. I was determined to make the bread
+                            and I did. I was very proud of myself for not giving up and I was
+                            very happy with the results. I shared the bread with my family and
+                            they loved it.
+                            <br>
+                            After several successful breads, Mrs. Tiff surprised me again with
+                            a book on cakes. I was very excited to start baking cakes and I
+                            started with a simple vanilla cake. This is where I had my second
+                            failure. The cake pan that I had was a detachable pan and I never
+                            thought to put it on a baking sheet. The cake batter leaked out
+                            of the pan and onto the bottom of the oven. I was very upset with
+                            myself but I was not discouraged. I cleaned up the mess and tried
+                            again. I was determined to make the cake and I did. My second attempt
+                            I put a rectangular baking sheet in the round pan and it did work,
+                            there was no leakage; however, the cake was not smoothly round due
+                            to the baking sheet. I was very proud of myself for not giving up
+                            and I was very happy with the results. On my third attempt, I
+                            had finally put the cake pan on a baking sheet and the cake was
+                            perfectly round. I made homemade whipped vanilla frosting to
+                            cover the cake with. I shared the cake with my family and they loved.
+                            For Mother's Day I made a 'Cinnimon Spice' cake for my mother and
+                            decorated it using my new decorating kit that I had gotten after my
+                            third cake. Despite my beginner skills in cake decorating, it actually
+                            turned out pretty good. My mother loved the cake and she was very
+                            proud of me.
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -211,17 +263,24 @@
                                 <h3 class="employee-position">Chief Taste Tester</h3>
                                 <h4 class="employee-name">Zoey</h4>
                             </div>
-                            <div class="employee-image">
-                                <img src="../StaticFiles/img/employee/zoey.jpg" alt="Image of Zoey" >
+                            <div class="employee-image" id="zoeyroneyImg">
                             </div>
                         </div>
                         <div class="employee-description">
                             <p style="text-indent: 25px">
-                                Zoey the Husky is the pet of Andrew Roney, the owner and founder of Paws and Palms Bakery.
-                                Zoey is a Siberian Husky who was born on July 1, 2016. She is a very energetic dog who loves to play and run around.
-                                She is very friendly and loves to meet new people and dogs.
+                                Zoey the Husky, a Siberian Husky born on July 1, 2016, is the cherished pet of Andrew Roney, the owner and founder of Paws and Palms Bakery.
+                                With her boundless energy, Zoey is always ready for playtime and enjoys frolicking and running around.
+                                Her vivacious nature is matched by her friendly demeanor, as she eagerly greets new people and dogs she encounters.
+                                <span id="dots">...</span>
+                                <span id="more" style="display: none;">
+                                    As the esteemed chief taste tester, Zoey fulfills a crucial role in maintaining the impeccable quality of Paws and Palms Bakery's creations.
+                                    With her discerning palate and keen sense of taste, she ensures the utmost in quality assurance.
+                                    Zoey's enthusiastic participation guarantees that every treat leaving the bakery is nothing short of delicious and satisfying to both canines and their human companions.
+                                </span>
+                                <button onclick="readMoreZoey()" id="read-more-zoey-btn">Read More</button>
                             </p>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -229,6 +288,7 @@
 
     <br><br><br>
 
+    <!--SECTION 5: VALUES-->
     <section id="section5">
         <div class="container">
             <div class="row">
@@ -451,6 +511,22 @@
 <script src="../StaticFiles/JS/owl.carousel.min.js"></script>
 <script src="../StaticFiles/JS/jquery.nicescroll.min.js"></script>
 <script src="../StaticFiles/JS/main.js"></script>
-
+<script>
+    function readMoreZoey() {
+    var dots = $("#dots");
+    var moreText = $("#more");
+    var btnText = $("#read-more-zoey-btn");
+    if(dots.css("display") === "none"){
+        dots.css("display", "inline");
+        btnText.html("Read more");
+        moreText.css("display", "none");
+    }
+    else{
+        dots.css("display", "none");
+        btnText.html("Read less");
+        moreText.css("display", "inline");
+    }
+}
+</script>
     </body>
 </html>
