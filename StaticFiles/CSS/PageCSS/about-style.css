@@ -5,7 +5,12 @@ Author: Andrew Roney
 Author URI: https://papbakery.com
 */
 
+p {
+    font-size: calc(16px + 1.5 * ((100vw - 100px) / (250)));
+    font-family: 'amiri';
+    line-height: 2;
 
+}
 
 .left {
     float: left;
@@ -47,26 +52,24 @@ Author URI: https://papbakery.com
 */
 
 .section-titles h3 {
-    font-size: 16px;
+    font-size: calc(18px - 0.5 * ((100vw - 1000px) / (300)));
     font-family: "amiri";
     font-weight: bold;
-    line-height: 1.7;
     text-align: center;
-    margin-top: 80px;
     text-transform: uppercase;
+    margin-bottom: 15px;
     color: rgb(248, 176, 0);
-    margin-bottom: 20px;
     text-shadow: rgba(248, 176, 0, 0.5) 0px 1px 1.5px;
 }
 
 .section-titles h2 {
-    font-size: 70px;
+    font-size: calc(25px + 2 * ((100vw - 50px) / (100)));
     font-family: "amiri";
     color: rgb(68, 68, 68);
     line-height: 1;
     text-align: center;
-    margin-bottom: 85px;
-    text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.5px;
+    margin-bottom: 15px;
+    text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.9px;
 }
 
 /*
@@ -85,14 +88,6 @@ Author URI: https://papbakery.com
 
 .overview-section {
     margin-top: 20%;
-}
-
-
-
-
-
-.overview-section-paragraph {
-    font-size: 14px;    
 }
 
 /*
@@ -134,9 +129,6 @@ Author URI: https://papbakery.com
     margin-top: 20%;
 }
 
-.team-section-paragraph {
-    font-size: 14px;    
-}
 
 .employee-info-card
 
@@ -150,6 +142,7 @@ Author URI: https://papbakery.com
 
 .employee-title {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .employee-image {
@@ -157,8 +150,21 @@ Author URI: https://papbakery.com
     height: 150px;
     border: black 1px solid;
 }
+
+.employee-name {
+    text-align: center;
+    margin-top: 10px;
+
+}
+
 #zoeyroneyImg {
-    background-image: url("../img/employee/zoeyroney.png");
+    background-image: url("../../img/employee/zoeyroney.png");
+    background-size:cover;
+}
+
+#andrewroneyImg {
+    background-image: url("../../img/employee/andrewroney.png");
+    background-size:cover;
 }
 
 .employee-description {
@@ -170,3 +176,34 @@ Author URI: https://papbakery.com
 * THE TEAM SECTION END
 * ==========================================
 */
+
+
+
+/*
+* ==========================================
+* VALUES SECTION START
+* ==========================================
+*/
+
+#list-of-values {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    max-width: 50rem;
+
+}
+
+.value-item {
+    font-size: 20.3px;
+    font-weight: bolder;
+
+}
+
+
+#list-of-values li {
+    font-size: 20px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    list-style: decimal;
+    line-height: 1.7;
+    font-family: "times new roman";
+}

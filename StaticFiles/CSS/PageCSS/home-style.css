@@ -8,9 +8,6 @@ Author URI: https://papbakery.com
 
 
 
-
-
-
 /*
 * ==========================================
 * MAIN SLIDER START
@@ -222,7 +219,7 @@ section#section2 .maintext span{
 
 
 section#section2 .maintext h2 {
-  font-size: 70px;
+  font-size: calc(20px + (100 - 70) * ((100vw - 100px) / (1200)));/*Start at 20px */
   font-family: 'Righteous';
   color: rgb(68, 68, 68);
   line-height: 1;

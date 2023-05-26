@@ -1,0 +1,72 @@
+
+p {
+    font-size: calc(16px + 1 * ((100vw - 300px) / (250)));
+    font-family: 'amiri';
+
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+/*
+* ==========================================
+* BANNER SECTION START
+* ==========================================
+*/
+
+.banner-area {
+    /*background: url(../img/testimonial/1900x1000.png) no-repeat center center;
+    background-size: cover;*/
+    background: linear-gradient(black, rgb(68, 68, 68), white);
+    position: relative;
+    border: black 1px solid;
+    color: white;
+    height: 100px;
+    z-index: 0;
+    padding: 70px 0px;
+}
+
+.banner-area a {
+    color: white;
+}
+
+
+
+/*
+* ==========================================
+* SECTION GENERAL START
+* ==========================================
+*/
+
+.section-titles h2 {
+    font-size: calc(25px + 2 * ((100vw - 100px) / (100)));
+    font-family: "amiri";
+    color: rgb(68, 68, 68);
+    line-height: 1;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 15px;
+    text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.9px;
+}
+
+.section-titles h3 {
+    font-size: calc(20px + 1 * ((100vw - 1000px) / (200)));
+    font-family: "amiri";
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(248, 176, 0);
+    margin-bottom: 20px;
+    text-shadow: rgba(248, 176, 0, 0.8) 0px 1px 1px;
+}
+/*
+* ==========================================
+* SECTION GENERAL END
+* ==========================================
+*/
