@@ -23,7 +23,7 @@ Author URI: https://papbakery.com
 }
 
 .slide-content h3{
-    font-family: 'Roboto';
+    font-family: 'Amiri';
     margin-bottom: 20px;
     font-size: 22px;
 }
@@ -54,7 +54,7 @@ Author URI: https://papbakery.com
     margin-bottom: 20px;
     margin-top: 20px;
     color: #ffffff70;
-    font-family: 'Roboto';
+    font-family: 'Amiri';
     font-size: 18px;
     visibility: hidden;
 
@@ -77,7 +77,7 @@ Author URI: https://papbakery.com
 
 
 .slide-content .default-btn{
-  font-family: 'Roboto';
+  font-family: 'Amiri';
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -229,7 +229,7 @@ section#section2 .maintext h2 {
 }
 section#section2 .maintext p {
 
-  font-family: "Roboto";
+  font-family: "Amiri";
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
@@ -242,7 +242,7 @@ section#section2 .maintext p {
 
 section#section2 .shapes span{
   font-size: 18px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(51, 51, 51);
   line-height: 1.7;
   font-weight: bold;
@@ -251,7 +251,7 @@ section#section2 .shapes span{
 
 section#section2 .shapes p{
     font-size: 15px;
-    font-family: "Roboto";
+    font-family: "Amiri";
     color: rgb(119, 119, 119);
     line-height: 1.4;
     text-align: center;
@@ -338,7 +338,7 @@ img.imgback:hover {
 
 .post-slide .post-title {
   font-size: 17px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(51, 51, 51);
   line-height: 1.7;
   text-align: center;
@@ -397,7 +397,7 @@ div#news-slider .owl-prev {
   left: 40%;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(204, 204, 204);
   line-height: 1.7;
   text-align: center;
@@ -415,7 +415,7 @@ div#news-slider .owl-next {
   right: 40%;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(204, 204, 204);
   line-height: 1.7;
   text-align: center;
@@ -612,7 +612,7 @@ div#news-slider .owl-next {
 
 .content span {
   font-size: 15px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(119, 119, 119);
   line-height: 2.4;
   text-align: center;
@@ -630,7 +630,7 @@ div#news-slider .owl-next {
 
 .content h3 {
     font-size: 16px;
-    font-family: "Roboto";
+    font-family: "Amiri";
     color: rgb(132, 171, 0);
     line-height: 1.7;
     text-align: center;  
@@ -659,7 +659,7 @@ div#news-slider .owl-next {
 
 .blog-section-title h3{
     font-size: 15px;
-    font-family: "Roboto";
+    font-family: "Amiri";
     color: rgb(248, 176, 0);
     font-weight: bold;
     line-height: 1.7;
@@ -691,7 +691,7 @@ div#news-slider .owl-next {
 
 .blog-section-date .date{
     font-size: 16px;
-    font-family: "Roboto";
+    font-family: "Amiri";
     color: rgb(221, 221, 221);
     line-height: 1.1;
     margin-left: 5px;
@@ -700,7 +700,7 @@ div#news-slider .owl-next {
 
 .blog-section-description h2{
     font-size: 22px;
-    font-family: "Roboto";
+    font-family: "Amiri";
     color: rgb(51, 51, 51);
     line-height: 1.4;
     text-align: left;
@@ -710,7 +710,7 @@ div#news-slider .owl-next {
 
 .blog-section-description p{
   font-size: 16px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(76, 76, 76);
   line-height: 1.4;
   text-align: left;
@@ -839,7 +839,7 @@ div#news-slider .owl-next {
   
   .contact100-form-title h3{
       font-size: 15px;
-      font-family: "Roboto";
+      font-family: "Amiri";
       color: rgb(248, 176, 0);
       font-weight: bold;
       line-height: 1.7;
@@ -873,7 +873,7 @@ div#news-slider .owl-next {
   }
   
   .label-input100 {
-    font-family: "Roboto";
+    font-family: "Amiri";
     font-size: 15px;
     color: #999999;
     line-height: 1.5;
@@ -884,7 +884,7 @@ div#news-slider .owl-next {
     display: block;
     width: 100%;
     background: transparent;
-    font-family: "Roboto";
+    font-family: "Amiri";
     font-size: 18px;
     color: #555555;
     line-height: 1.2;
@@ -1247,7 +1247,7 @@ div#news-slider .owl-next {
 
 .addess-description span{
   font-size: 15px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(248, 176, 0);
   font-weight: bold;
   line-height: 1.7;
@@ -1270,7 +1270,7 @@ div#news-slider .owl-next {
 
 .addess-description p{
   font-size: 15px;
-  font-family: "Roboto";
+  font-family: "Amiri";
   color: rgb(255, 255, 255);
 }
 
