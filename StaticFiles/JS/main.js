@@ -2,10 +2,10 @@
     "use strict"; // Start of use strict
 
     $('.news-slider').owlCarousel({
-        loop:true,
+        loop:false,
         margin:10,
         nav:true,
-        autoHeight:true,
+        autoHeight:false,
         autoHeightClass: 'owl-height',
         pagination: true,
         responsive:{
