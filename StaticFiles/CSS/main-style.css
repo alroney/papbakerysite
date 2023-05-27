@@ -168,6 +168,7 @@ iframe {
   
   .navbar {
     transition: all 0.5s;
+
   }
   
   .navbar .nav-link {
@@ -239,6 +240,38 @@ iframe {
     background: #f9b000;
   
   }
+
+.navbar li ul{
+    background-color: #333333;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 999;
+    
+    border-bottom:rgb(248, 176, 0) 2px solid;
+    border-left:rgb(248, 176, 0) 2px solid;
+    border-right:rgb(248, 176, 0) 2px solid;
+}
+
+.navbar li:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar li ul li {
+    display: block;
+    color: #fff;
+    padding: 10px;
+}
+
+
   
   
   /*
