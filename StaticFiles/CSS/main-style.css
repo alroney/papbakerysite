@@ -242,7 +242,7 @@ iframe {
   }
 
 .navbar li ul{
-    background-color: rgba(0,0,0, 0.005);
+    background-color: rgba(60,60,60, 1);
     border-radius: 0px;
     padding: 0px;
     margin: 0px;
@@ -291,6 +291,8 @@ iframe {
 */
 .main-footer {
     padding: 50px;
+    margin-top: 10%;
+    border-top: rgba(100, 100, 100, 0.5) 1px solid;
   }
   
   .footer-social li:first-child {
