@@ -137,27 +137,14 @@
             </div>
         </section>
 
-        <script>
-            $(document).ready(function(){
-                $(".nav-tabs a").click(function(){
-                    $(this).tab('show');
-                });
-                
-                $(".nav-tabs a").on('shown.bs.tab', function(event){
-                    var x = $(event.target).text();// active tab
-                    var y = $(event.relatedTarget).text();// previous active tab
-                    $(".act span").text(x);
-                    $(".prev span").text(y);
-                });
-            });
-        </script>
+        
 
 
 
 
 
         <!-- FOOTER START -->
-  <footer class="footer-area">
+    <footer class="footer-area">
     <div class="container main-footer">
         
         <div class="row">
@@ -315,7 +302,7 @@
                                         <i class="fa fa-address-card"></i>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10 single-widget-description noPadding">
-                                        <span>Primary: Residental</span>
+                                        <span>Address: Residental</span>
                                     </div>
                                 </div>
                             </li>
@@ -325,7 +312,7 @@
                                         <i class="fa fa-phone"></i>                                       
                                      </div>
                                      <div class="col-md-10 col-sm-10 col-xs-10 single-widget-description noPadding">
-                                        <span>Primary: 443-929-5528</span>
+                                        <span>Phone: 443-929-5528</span>
                                     </div>
                                 </div>
                                 </li>
@@ -335,7 +322,7 @@
                                         <i class="fa fa-envelope"></i>                                       
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10 single-widget-description noPadding">
-                                        <span>Primary: andrew.roney@papbakery.com</span>
+                                        <span>Email: andrew.roney@papbakery.com</span>
                                     </div>
                                 </div>
                             </li>
@@ -353,16 +340,31 @@
             </div>
         </div>    
     </div>
-</footer>
-<!-- Footer End -->
-<script src="StaticFiles/JS/vendor/jquery-1.12.0.min.js"></script>
-<script src="StaticFiles/JS/jquery-easing/jquery.easing.min.js"></script>
-<script src="StaticFiles/JS/bootstrap.min.js"></script>
-<script src="StaticFiles/JS/parallax.min.js"></script>
-<script src="StaticFiles/JS/ajax-mail.js"></script>
-<script src="StaticFiles/JS/owl.carousel.min.js"></script>
-<script src="StaticFiles/JS/jquery.nicescroll.min.js"></script>
-<script src="StaticFiles/JS/main.js"></script>
+    </footer>
+    <!-- Footer End -->
+    <script src="StaticFiles/JS/vendor/jquery-1.12.0.min.js"></script>
+    <script src="StaticFiles/JS/jquery-easing/jquery.easing.min.js"></script>
+    <script src="StaticFiles/JS/bootstrap.min.js"></script>
+    <script src="StaticFiles/JS/parallax.min.js"></script>
+    <script src="StaticFiles/JS/ajax-mail.js"></script>
+    <script src="StaticFiles/JS/owl.carousel.min.js"></script>
+    <script src="StaticFiles/JS/jquery.nicescroll.min.js"></script>
+    <script src="StaticFiles/JS/main.js"></script>
 
+    <!-- Tab Script -->
+    <script>
+        $(document).ready(function(){
+            $(".nav-tabs a").click(function(){
+                $(this).tab('show');
+            });
+            
+            $(".nav-tabs a").on('shown.bs.tab', function(event){
+                var x = $(event.target).text();// active tab
+                var y = $(event.relatedTarget).text();// previous active tab
+                $(".act span").text(x);
+                $(".prev span").text(y);
+            });
+        });
+    </script>
     </body>
 </html>
