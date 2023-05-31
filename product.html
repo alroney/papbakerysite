@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Story of P&PBakery</title>
-        <meta name="description" content="This page is a short story about the birth of PAPBakery">
+        <title>Products</title>
+        <meta name="description" content="This page displays the available product">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Andrew Lawrence Roney">
 
@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap&subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Place favicon.ico in the root directory -->
         <link rel="icon" type="image/png" href="StaticFiles/favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="StaticFiles/favicon-16x16.png" sizes="16x16" />
@@ -21,10 +22,13 @@
         <link rel="stylesheet" href="StaticFiles/CSS/font-awesome.min.css">
         <link rel="stylesheet" href="StaticFiles/CSS/reset.css">
         <link rel="stylesheet" href="StaticFiles/CSS/main-style.css">
-        <link rel="stylesheet" href="StaticFiles/CSS/PageCSS/fullstory-style.css">
         <link rel="stylesheet" href="StaticFiles/CSS/animate.css">
         <link rel="stylesheet" href="StaticFiles/CSS/responsive.css">
+        <link rel="stylesheet" href="StaticFiles/CSS/product-style.css">
+
         <script src="StaticFiles/JS/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -110,26 +114,43 @@
             </section>
         <!-- Banner Area End -->
 
+        <section class="product-display-area">
+            <div class="container">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#menu1">Menu 1</a></li>
+                </ul>
 
-        <!--Button for tabs-->
-
-
-        <!-- PET CATEGORY TAB START -->
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Product</h5>
-                    <p class="card-text">Product Description</p>
-                    <a href="#" class="btn btn-primary">View More Info</a>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>HOME</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>Menu 1</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
                 </div>
+                <hr>
+                <p class="act"><b>Active Tab</b>: <span></span></p>
+                <p class="prev"><b>Previous Tab</b>: <span></span></p>
             </div>
-        <!-- PET CATEGORY TAB END -->
+        </section>
 
-
-
-        <!-- HUMAN CATEGORY TAB START -->
-
-        <!-- HUMAN CATEGORY TAB END -->
+        <script>
+            $(document).ready(function(){
+                $(".nav-tabs a").click(function(){
+                    $(this).tab('show');
+                });
+                
+                $(".nav-tabs a").on('shown.bs.tab', function(event){
+                    var x = $(event.target).text();// active tab
+                    var y = $(event.relatedTarget).text();// previous active tab
+                    $(".act span").text(x);
+                    $(".prev span").text(y);
+                });
+            });
+        </script>
 
 
 
@@ -342,5 +363,6 @@
 <script src="StaticFiles/JS/owl.carousel.min.js"></script>
 <script src="StaticFiles/JS/jquery.nicescroll.min.js"></script>
 <script src="StaticFiles/JS/main.js"></script>
+
     </body>
 </html>

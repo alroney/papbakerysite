@@ -14,26 +14,7 @@ p {
 }
 
 
-/*
-* ==========================================
-* BANNER SECTION START
-* ==========================================
-*/
 
-.banner-area {
-    /*background: url(../img/testimonial/1900x1000.png) no-repeat center center;
-    background-size: cover;*/
-    background: linear-gradient(black, rgb(68, 68, 68), white);
-    position: relative;
-    color: white;
-    height: 100px;
-    z-index: 0;
-    padding: 70px 0px;
-}
-
-.banner-area a {
-    color: white;
-}
 
 
 
