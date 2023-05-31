@@ -114,26 +114,99 @@
             </section>
         <!-- Banner Area End -->
 
+        <!-- DISCLAIMER SECTION -->
+        <section class="disclaimer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Disclaimer: All of our products are made in a kitchen that uses nuts, wheat, dairy, and other allergens. Our products are not suitable for people with allergies. Please contact us for more information.</p>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Product Display Area Start -->
         <section class="product-display-area">
             <div class="container">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li><a href="#menu1">Menu 1</a></li>
+                    <li class="active"><a href="#pets">Pets Menu</a></li>
+                    <li><a href="#people">People Menu</a></li>
                 </ul>
 
-                <div class="tab-content">
-                    <div id="home" class="tab-pane fade in active">
-                        <h3>HOME</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="tab-content" style="margin-top: 15px;">
+                    <!-- PETS MENU -->
+                    <div id="pets" class="tab-pane fade in active">
+                        <h3>Available Options for your Pets.</h3>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="menu1" class="tab-pane fade">
-                        <h3>Menu 1</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                    <!-- PEOPLE MENU -->
+                    <div id="people" class="tab-pane fade">
+                        <h3>Available Options for You.</h3>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <hr>
-                <p class="act"><b>Active Tab</b>: <span></span></p>
-                <p class="prev"><b>Previous Tab</b>: <span></span></p>
             </div>
         </section>
 
@@ -358,12 +431,7 @@
                 $(this).tab('show');
             });
             
-            $(".nav-tabs a").on('shown.bs.tab', function(event){
-                var x = $(event.target).text();// active tab
-                var y = $(event.relatedTarget).text();// previous active tab
-                $(".act span").text(x);
-                $(".prev span").text(y);
-            });
+            
         });
     </script>
     </body>
