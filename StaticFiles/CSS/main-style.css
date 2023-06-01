@@ -149,6 +149,10 @@ iframe {
 */
 
 
+.navbar-nav {
+    display: block;
+}
+
 
 .navbar.active {
     background: #333333;
