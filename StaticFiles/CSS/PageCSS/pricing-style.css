@@ -1,0 +1,18 @@
+.table-legend {
+    position: sticky;
+    top: 4rem;
+}
+
+.table-legend th {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.table {
+    position: relative;
+}
+
+.mid-table-header {
+    text-align: center;
+    color: white;
+    background-color: black;
+}
