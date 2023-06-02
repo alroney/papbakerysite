@@ -99,7 +99,7 @@
     // Activate scrollspy to add active class to navbar items on scroll
     $('body').scrollspy({
         target: '.navbar',
-        offset: 100,
+        offset: 1000,
 
     });
       
