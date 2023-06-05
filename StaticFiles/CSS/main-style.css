@@ -148,133 +148,133 @@ iframe {
 * ==========================================
 */
 
-
 .navbar-nav {
-    display: block;
+  display: block;
 }
 
 
 .navbar.active {
-    background: #333333;
-    border-radius: 0px;
-    padding-bottom: 10px;
-    box-shadow: 0 10px 15px rgba(25,25,25,0.1);
-  }
-  
-  #navbarResponsive{
-    width: 100%;
-  }
-  
-  .myNavBar {
-    background-color: #00000000;
-    border-color: #e7e7e700;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-  
-  .navbar {
-    transition: all 0.5s;
-
-  }
-  
-  .navbar .nav-link {
-    color: #fff !important;
-  }
-  
-  .navbar .nav-link:hover,
-  .navbar .nav-link:focus {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .navbar .navbar-brand {
-    color: #fff;
-  }
-  
-  .nav>li>a:hover, .nav>li>a:focus {
-    text-decoration: none;
-  }
-  
-  /* Change navbar styling on scroll */
-  
-  .navbar.active .nav-link {
-    color: #ffffff;
-  }
-  
-  .navbar.active .nav-link:hover,
-  .navbar.active .nav-link:focus {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .navbar.active .navbar-brand {
-    color: #555;
-  }
-  
-  .navbar-default .navbar-nav>.active>a, 
-  .navbar-default .navbar-nav>.active>a:hover, 
-  .navbar-default .navbar-nav>.active>a:focus {
-    color: #555;
-    background: none;
-  }
-  
-  .navBrandText{
-    padding: 0px !important;
-    margin-left: 15px;
-    width: 100%;
-  }
-  
-  .navBrand img{
-    margin-left:5px;
-  
-  }
-  
-  .navBar li>.nav-link::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0px;
-    background: #f9b000;
-    height: 1px;
-    width: 0;
-    transition: 0.3s;
-  }
-  .navBar li.active>.nav-link::before,
-  .navBar li>.nav-link:hover::before,
-  .navBar li>.nav-link.active::before {
-    width: 100%;
-    background: #f9b000;
-  
-  }
-
-.navbar li ul{
-    background-color: rgba(60,60,60, 1);
-    border-radius: 0px;
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    z-index: 999;
-    
-    border-bottom:rgb(248, 176, 0) 2px solid;
-    border-left:rgb(248, 176, 0) 2px solid;
-    border-right:rgb(248, 176, 0) 2px solid;
+  background: #333333;
+  border-radius: 0px;
+  padding-bottom: 10px;
+  box-shadow: 0 10px 15px rgba(25,25,25,0.1);
 }
 
+#navbarResponsive{
+  width: 100%;
+}
+
+.myNavBar {
+  background-color: #00000000;
+  border-color: #e7e7e700;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.navbar {
+  transition: all 0.5s;
+
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+  text-decoration: none;
+}
+
+/* Change navbar styling on scroll */
+
+.navbar.active .nav-link {
+  color: #ffffff;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+  color: #555;
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus {
+  color: #555;
+  background: none;
+}
+
+.navBrandText{
+  padding: 0px !important;
+  margin-left: 15px;
+  width: 100%;
+}
+
+.navBrand img{
+  margin-left:5px;
+
+}
+
+.navBar li>.nav-link::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0px;
+  background: #f9b000;
+  height: 1px;
+  width: 0;
+  transition: 0.3s;
+}
+.navBar li.active>.nav-link::before,
+.navBar li>.nav-link:hover::before,
+.navBar li>.nav-link.active::before {
+  width: 100%;
+  background: #f9b000;
+
+}
+
+.navbar li ul{
+  background-color: rgba(60,60,60, 1);
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 999;
+  
+  border-bottom:rgb(248, 176, 0) 2px solid;
+  border-left:rgb(248, 176, 0) 2px solid;
+  border-right:rgb(248, 176, 0) 2px solid;
+}
+
+
 .navbar li:hover ul {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .navbar li ul li {
-    display: block;
-    color: #fff;
-    padding: 10px;
+  display: block;
+  color: #fff;
+  padding: 10px;
 }
 
 

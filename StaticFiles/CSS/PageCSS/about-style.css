@@ -32,7 +32,6 @@ p {
     background-size: cover;*/
     background: linear-gradient(black, rgb(68, 68, 68), white);
     position: relative;
-    border: black 1px solid;
     color: white;
     height: 100px;
     z-index: 0;
