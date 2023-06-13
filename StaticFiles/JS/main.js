@@ -1,123 +1,93 @@
-(function($) {
-    "use strict"; // Start of use strict
+(function ($) {
+    "use strict";
 
-    $('.news-slider').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:true,
-        autoHeight:false,
-        autoHeightClass: 'owl-height',
-        pagination: true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:3
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
             }
-        }
-    })
-
-    $('.testimonial-area').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        dots: false,
-        autoHeight:true,
-        pagination: true,
-        navText : ["<img src='../StaticFiles/img/slider/rightarrow.png' />","<img src='../StaticFiles/img/slider/leftarrow.png' />"],
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:3
-            }
-        }
-    })
-
+        }, 1);
+    };
+    spinner();
     
-    $('.main-slider').owlCarousel({
-        loop:true,
-        margin:0,
-        nav:true,
-        dots: false,
-        pagination: true,
-        autoHeight: false,
-//        autoHeightClass: 'owl-height',
-        navText : ["<img src='../StaticFiles/img/slider/rightarrow.png' />","<img src='../StaticFiles/img/slider/leftarrow.png' />"],
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-    })
+    
 
-    //Keeps the navbar fixed on top when scrolling
-    $(window).on('scroll', function () {
-        if ( $(window).scrollTop() > 10 ) {
-             $('.navbar').addClass('active');
+
+    // Fixed Navbar
+    $('.fixed-top').css('top', $('.top-bar').height());
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('.fixed-top').addClass('bg-dark').css('top', 0);
         } else {
-             $('.navbar').removeClass('active');
+            $('.fixed-top').removeClass('bg-dark').css('top', $('.top-bar').height());
+        }
+    });
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
         }
     });
 
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
 
 
-      
-        // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-              $('html, body').animate({
-                scrollTop: (target.offset().top - 56)
-              }, 1000, "easeInOutExpo");
-              return false;
+    // Header carousel
+    $(".header-carousel").owlCarousel({
+        autoplay: false,
+        smartSpeed: 1500,
+        loop: true,
+        nav: true,
+        dots: false,
+        items: 1,
+        navText : [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ]
+    });
+
+
+    // Facts counter
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 2000
+    });
+
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 25,
+        loop: true,
+        center: true,
+        dots: false,
+        nav: true,
+        navText : [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ],
+        responsive: {
+            0:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
             }
-          }
-        });
-      
-    // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
-        $('.navbar-collapse').collapse('hide');
+        }
     });
+
     
-    // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({
-        target: '.navbar',
-        offset: 1000,
-
-    });
-      
-
-    // Initialize and add the map
-
-     // End of use strict
-
 })(jQuery);
 
-
-//Function: To show and hide the dropdown menu
-$(function() {
-    $('.dropdown').on('show.bs.dropdown', function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideDown()
-    });
-
-    $('.dropdown').on('hide.bs.dropdown', function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
-    });
-})

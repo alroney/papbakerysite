@@ -5,8 +5,8 @@ Author: Andrew Roney
 Author URI: https://papbakery.com
 */
 
-p {
-    font-size: calc(16px + 1.5 * ((100vw - 100px) / (250)));
+section p {
+    font-size: calc(16px + 1.0 * ((100vw - 100px) / (250)));
     font-family: 'amiri';
     line-height: 2;
 

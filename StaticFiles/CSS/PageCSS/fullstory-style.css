@@ -1,5 +1,5 @@
 
-p {
+section p {
     font-size: calc(16px + 1 * ((100vw - 300px) / (250)));
     font-family: 'amiri';
 

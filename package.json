@@ -1,0 +1,15 @@
+{
+  "name": "website_files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass StaticFiles/scss/bootstrap.scss -o StaticFiles/CSS"
+  },
+  "keywords": ["paws", "pets", "palms", "bakery", "paws and palms", "paws and palms bakery", "paws and palms bakery ", "paws and palms bakery  website", "paws and palms bakery  website files", "paws and palms bakery  website files repository", "paws and palms bakery  website files repository on github", "paws and palms bakery  website files repository on github.com", "paws and palms bakery  website files repository on github.com/alroney", "dogs", "canine", "k9", "furry friend", "dog treats", "treats", "cake", "bread", "sandwhich bread", "sweets", "delicious", "yummy", "tastey"],
+  "author": "Andrew Lawrence Roney",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
