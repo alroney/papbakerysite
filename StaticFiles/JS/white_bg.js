@@ -1,4 +1,7 @@
+function ($)
+
 const mediaQuery = window.matchMedia('(max-width: 991px)');
+const mediaQuery2 = window.matchMedia('(max-width: 382px)');
 
 // // Navbar collapse this will prevent the mobile version changes from happening if the viewport is greater than 768px
 if (mediaQuery.matches) {
