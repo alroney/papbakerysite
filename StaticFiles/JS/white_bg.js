@@ -7,12 +7,12 @@
 // // Fixed Navbar
 // $('.fixed-top').css('top', $('.top-bar').height());
 
-// $('.navbar-toggler').addClass('border-1 border-dark bg-white');
-// $('.fixed-top a').css('color', 'black');
-// $('.navbar').addClass('border-bottom');
-// $('.rounded-circle').removeClass('border-light').addClass('border-dark');
-// $('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
-// $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
+$('.navbar-toggler').addClass('border-1 border-dark bg-white');
+$('.fixed-top a').css('color', 'black');
+$('.navbar').addClass('border-bottom');
+$('.rounded-circle').removeClass('border-light').addClass('border-dark');
+$('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
+$('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
 
 // $(window).scroll(function () {
 //     if ($(this).scrollTop()) {
