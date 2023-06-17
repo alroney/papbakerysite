@@ -1,9 +1,9 @@
 const mediaQuery = window.matchMedia('(max-width: 991px)');
 
 // // Navbar collapse this will prevent the mobile version changes from happening if the viewport is greater than 768px
-// if (mediaQuery.matches) {
-//     $('.collapse .navbar-nav').addClass('border-dark border-bottom bg-white');
-// }
+if (mediaQuery.matches) {
+    $('.collapse .navbar-nav').addClass('border-dark border-bottom bg-white');
+}
 // // Fixed Navbar
 // $('.fixed-top').css('top', $('.top-bar').height());
 
