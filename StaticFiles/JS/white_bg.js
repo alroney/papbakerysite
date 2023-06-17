@@ -14,7 +14,7 @@ $('.rounded-circle').removeClass('border-light').addClass('border-dark');
 $('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
 $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
 
-// $(window).scroll(function () {
+$(window).scroll(function () {
 //     if ($(this).scrollTop()) {
 //         $('.fixed-top').addClass('bg-dark').css('top', 0);
 //         $('.fixed-top a').css('color', 'white');
@@ -34,14 +34,14 @@ $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
 //         $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
 //     }
 
-//     if (mediaQuery.matches) {
-//         if ($(this).scrollTop()) {
-//             $('.collapse .navbar-nav').addClass(' bg-dark').removeClass('border-dark border-bottom bg-white');
-//         }
-//         else {
-//             $('.collapse .navbar-nav').removeClass('bg-white').addClass('border-dark border-bottom bg-white');
-//         }
-//     }
-// });
+    if (mediaQuery.matches) {
+        if ($(this).scrollTop()) {
+            $('.collapse .navbar-nav').addClass(' bg-dark').removeClass('border-dark border-bottom bg-white');
+        }
+        else {
+            $('.collapse .navbar-nav').removeClass('bg-white').addClass('border-dark border-bottom bg-white');
+        }
+    }
+});
 
 
