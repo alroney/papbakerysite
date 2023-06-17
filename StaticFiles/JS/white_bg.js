@@ -5,7 +5,7 @@ if (mediaQuery.matches) {
     $('.collapse .navbar-nav').addClass('border-dark border-bottom bg-white');
 }
 // // Fixed Navbar
-// $('.fixed-top').css('top', $('.top-bar').height());
+$('.fixed-top').css('top', $('.top-bar').height());
 
 $('.navbar-toggler').addClass('border-1 border-dark bg-white');
 $('.fixed-top a').css('color', 'black');
