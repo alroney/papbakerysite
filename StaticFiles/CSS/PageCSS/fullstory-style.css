@@ -1,6 +1,7 @@
 
 section p {
-    font-size: calc(16px + 1 * ((100vw - 300px) / (250)));
+    font-size: calc(18px + 1 * ((100vw - 300px) / (250)));
+    line-height: 2;
     font-family: 'amiri';
 
 }
@@ -50,3 +51,14 @@ section p {
 * SECTION GENERAL END
 * ==========================================
 */
+
+
+/*
+* ==========================================
+* SECTION SPECIFIC START
+* ==========================================
+*/
+
+#section1 {
+    margin-top: 5em;
+}

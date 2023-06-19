@@ -6,7 +6,7 @@ Author URI: https://papbakery.com
 */
 
 section p {
-    font-size: calc(16px + 1.0 * ((100vw - 100px) / (250)));
+    font-size: calc(18px + 1.0 * ((100vw - 100px) / (250)));
     font-family: 'amiri';
     line-height: 2;
 
@@ -74,6 +74,22 @@ section p {
 /*
 * ==========================================
 * SECTION GENERAL END
+* ==========================================
+*/
+
+/*
+* ==========================================
+* SECTION SPECIFIC START
+* ==========================================
+*/
+
+#section1 {
+    margin-top: 20%;
+}
+
+/*
+* ==========================================
+* SECTION SPECIFIC END
 * ==========================================
 */
 

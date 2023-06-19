@@ -110,6 +110,25 @@ h6,
   transition: .5s;
 }
 
+.navbar-brand img {
+  width: 3.5em;
+  height: auto;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.icon {
+  position: absoulte;
+  border: 1px solid var(--primary);
+  transform:  translateY(25%);
+}
+
+.nav-link:hover > .icon {
+  transform: rotate(45deg) translateY(50%);
+  transition: .5s;
+  color: var(--primary);
+}
+
 @media (max-width: 991.98px) {
   .navbar .navbar-nav {
       margin-top: 10px;
@@ -415,3 +434,6 @@ h6,
 .copyright a:hover {
   color: var(--light);
 }
+
+
+
