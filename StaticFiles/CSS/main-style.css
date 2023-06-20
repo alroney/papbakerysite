@@ -1,4 +1,5 @@
-/********** Template CSS **********/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
 :root {
   --primary: #EAA636;
   --secondary: #545454;
@@ -86,14 +87,6 @@ h6,
 
 
 /*** Navbar ***/
-.navbar .dropdown-toggle::after {
-  border: none;
-  content: "\f107";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  vertical-align: middle;
-  margin-left: 8px;
-}
 
 .navbar .navbar-nav .nav-link {
   padding: 35px 15px;
