@@ -7,7 +7,7 @@ Author URI: https://papbakery.com
 
 section p {
     font-size: calc(18px + 1.0 * ((100vw - 100px) / (250)));
-    font-family: 'amiri';
+    font-family: 'amiri', serif, sans-serif;
     line-height: 2;
 
 }
@@ -52,7 +52,7 @@ section p {
 
 .section-titles h3 {
     font-size: calc(18px - 0.5 * ((100vw - 1000px) / (300)));
-    font-family: "amiri";
+    font-family: 'amiri', serif, sans-serif;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -63,7 +63,7 @@ section p {
 
 .section-titles h2 {
     font-size: calc(25px + 2 * ((100vw - 50px) / (100)));
-    font-family: "amiri";
+    font-family: 'amiri', serif, sans-serif;
     color: rgb(68, 68, 68);
     line-height: 1;
     text-align: center;
@@ -84,7 +84,7 @@ section p {
 */
 
 #section1 {
-    margin-top: 20%;
+    margin-top: 10rem;
 }
 
 /*
@@ -101,9 +101,6 @@ section p {
 * ==========================================
 */
 
-.overview-section {
-    margin-top: 20%;
-}
 
 /*
 * ==========================================
