@@ -1,23 +1,4 @@
 
-
-.tab-content {
-    margin-top: 1.4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.card-img-top {
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 150px;
-    max-height: 150px;
-    background: radial-gradient(rgba(0, 0, 0, 0.5), white);
-}
-
-
-
 .disclaimer> p {
     font-size: 20px;
 }
@@ -31,3 +12,64 @@
     font-weight: bold;
     color: red;
 }
+
+.product-display .nav {
+    margin-top: 1.5rem;
+}
+
+.product-display ul li {
+    padding: 1em;
+}
+
+.tab-content {
+    margin-top: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/*
+* ==========================================
+* CARD GENERAL
+* ==========================================
+*/
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-img-top {
+    border-radius: 0;
+    border: #000000 1px solid;
+    width: 15.5em;
+    height: 15.5em;
+    margin: 1rem auto auto auto;
+    object-fit: contain;
+}
+
+.card-footer {
+    position: relative;
+}
+
+.card-button {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/*
+* ==========================================
+* OFFCANVAS GENERAL
+* ==========================================
+*/
+.offcanvas-body .ingredient-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+.offcanvas-body .ingredient-list{
+    list-style: circle inside;
+}
+
+

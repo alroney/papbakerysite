@@ -115,57 +115,80 @@
 
         <!-- Product Display Area Start -->
         <div class="container-xxl my-6 py-6 pt-0">
-            <div class="container">
+            <div class="container product-display">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#pets">Pets Menu</a></li>
-                    <li><a href="#people">People Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#people">People Menu</a></li>
                 </ul>
 
                 <div class="tab-content">
-                    <!-- PETS MENU -->
+                    <!-- PETS MENU CARDS-->
                     <div id="pets" class="tab-pane active fadeIn">
                         <h3>Available Options for your Pets.</h3>
-                        <div class="row g-5">
-                                <div class="card d-flex bg-white flex-column overflow-hidden h-100" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="Coming Soon">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <!-- Applesauce Treat Card -->
+                            <div class="col">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Applesauce Treats</h4></div>
+                                    <img class="card-img-top" src="..." alt="Coming Soon">
                                     <div class="card-body">
-                                        <h5 class="card-title">Applesauce Treats</h5>
                                         <p>Wholesome whole wheat dog treat with the irresistible twist of unsweetened applesauce.</p>
-                                        <p class="card-price">Price</p>
-                                        <a href="#" class="btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_treat"  aria-controls="offcanvas_applesauce_treat">More Info</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_treat"  aria-controls="offcanvas_applesauce_treat">More Info</a>
                                     </div>
                                 </div>
-                                <div class="card product-item" style="width: 18rem;">
-                                    <img src="StaticFiles/img/product/dog/treats/peanut_butter_treat.png" class="card-img-top" alt="Img of Treat">
+                            </div>
+                            <!-- Peanut-butter Treat Card -->
+                            <div class="col">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Peanut-Butter Treats</h4></div>
+                                    <img class="card-img-top" src="StaticFiles/img/product/dog/treats/peanut_butter_treat.png"  alt="Img of Treat">
                                     <div class="card-body">
-                                        <h5 class="card-title">Peanut Butter Treats</h5>
                                         <p class="card-text">Introducing our mouthwatering whole wheat dog treat infused with natural peanut butter. A canine delight!</p>
-                                        <p class="card-price">Price</p>
-                                        <a href="#" class="btn btn-primary"  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_treat"  aria-controls="offcanvas_applesauce_treat">More Info</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_treat"  aria-controls="offcanvas_peanut_butter_treat">More Info</a>
                                     </div>
                                 </div>
-                                <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="Coming Soon">
+                            </div>
+                            <!-- Pumpkin Treat Card -->
+                            <div class="col">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Pumpkin Treats</h4></div>
+                                    <img class="card-img-top" src="..." alt="Coming Soon">
                                     <div class="card-body">
-                                        <h5 class="card-title">Pumpkin Treats</h5>
                                         <p class="card-text">Introducing our delectable whole wheat dog treat infused with pure pumpkin. A nutritious canine delight!</p>
-                                        <p class="card-price">Price</p>
-                                        <a href="#" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_treat"  aria-controls="offcanvas_pumpkin_treat">More Info</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_treat"  aria-controls="offcanvas_pumpkin_treat">More Info</a>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
 
                         <!-- PETS OFFCANVASES -->
+                            <!-- Applesauce Treats Offcanvas -->
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_treat" aria-labelledby="offcanvas_applesauce_treat_label">
                                     <div class="offcanvas-header">
                                         <h5 class="offcanvas-title" id="offcanvas_applesauce_treat_label">Applesauce Treats</h5>
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <p></p>
+                                        <div class="container-fluid">
+                                            <p class="ingredient-title">Ingredients</p>
+                                            <ul class="ingredient-list">
+                                                <li>Whole Wheat Flour</li>
+                                                <li>Unsweetened Applesauce</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
+                            <!-- Peanut Butter Treats Offcanvas -->
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_treat" aria-labelledby="offcanvas_peanut_butter_treat_label">
                                     <div class="offcanvas-header">
                                         <h5 class="offcanvas-title" id="offcanvas_peanut_butter_treat_label">Peanut Butter Treats</h5>
@@ -175,6 +198,7 @@
                                         <p></p>
                                     </div>
                                 </div>
+                            <!-- Pumpkin Treats Offcanvas -->
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_treat" aria-labelledby="offcanvas_pumpkin_treat_label">
                                     <div class="offcanvas-header">
                                         <h5 class="offcanvas-title" id="offcanvas_pumpkin_treat_label">Pumpkin Treats</h5>
@@ -188,38 +212,47 @@
 
                     <!-- PEOPLE MENU -->
                     <div id="people" class="tab-pane fade">
-                        <h3>Available Options for You.</h3>
+                        <h3 class="mb-2">Available Options for You.</h3>
                         <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="StaticFiles/img/product/human/breads/peanut_butter_cc_bread.png" class="card-img-top" alt="Img of Product">
+                            <!-- Peanut-butter Chocolate Chip Card -->
+                            <div class="col">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Peanut-Butter Chocolate Chip Bread</h4></div>
+                                    <img class="card-img-top" src="StaticFiles/img/product/human/breads/peanut_butter_cc_bread.png" alt="Img of Product">
                                     <div class="card-body">
-                                        <h5 class="card-title">Peanut Butter Chocolate Chip Loaf</h5>
                                         <p class="card-text">Introducing our delectable 8" loaf of peanut butter bread, generously studded with chocolate chips. A blissful indulgence!</p>
-                                        <p class="card-price">Price</p>
-                                        <a href="#" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target=""  aria-controls="">More Info</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_cc_bread"  aria-controls="offcanvas_peanut_butter_cc_bread">More Info</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="StaticFiles/img/product/human/breads/sandwhich_bread.png" class="card-img-top" alt="Img of Product">
+                            <!-- Sandwhich Bread Card -->
+                            <div class="col">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Sandwhich Bread</h4></div>
+                                    <img class="card-img-top" src="StaticFiles/img/product/human/breads/sandwhich_bread.png" alt="Img of Product">
                                     <div class="card-body">
-                                        <h5 class="card-title">Sandwhich Bread</h5>
                                         <p class="card-text">Introducing our sensational 13" Pelman sandwich-style bread. Elevate your sandwich game!</p>
-                                        <p class="card-price">Price</p>
-                                        <a href="#" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target=""  aria-controls="">More Info</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_sandwhich_bread"  aria-controls="offcanvas_sandwhich_bread">More Info</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="StaticFiles/img/product/human/sweets/pumpkin_cc_muffin.png" class="card-img-top" alt="Img of Product">
+                            <!-- Pumpkin Chocolate Chip Muffin Card -->
+                            <div class="col">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Pumpkin Chocolate Chip Muffin</h4></div>
+                                    <img class="card-img-top" src="StaticFiles/img/product/human/sweets/pumpkin_cc_muffin.png" alt="Img of Product">
                                     <div class="card-body">
-                                        <h5 class="card-title">Pumpkin Chocolate Chip Muffin</h5>
                                         <p class="card-text">Indulge in the perfect harmony of pumpkin flavor and chocolate chips with our medium-sized muffin. Pure delight!</p>
-                                        <p class="card-price">Price</p>
-                                        <a href="#" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target=""  aria-controls="">More Info</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_cc_muffin"  aria-controls="offcanvas_pumpkin_cc_muffin">More Info</a>
                                     </div>
                                 </div>
                             </div>
