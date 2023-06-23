@@ -13,19 +13,13 @@
     color: red;
 }
 
-.product-display .nav {
-    margin-top: 1.5rem;
-}
 
-.product-display ul li {
-    padding: 1em;
-}
 
 .tab-content {
     margin-top: 1.4rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
