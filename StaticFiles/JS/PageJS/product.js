@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         //Get the container element
-        var container = document.getElementById("containerId");
+        var container = document.getElementById('containerId');
 
         //Clear the container before appending the table
-        container.innerHTML = "";
+        container.innerHTML = '';
 
         //Append the table to the container
         container.appendChild(table);

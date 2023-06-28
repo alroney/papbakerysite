@@ -15,8 +15,8 @@
     $('.navbar').addClass('border-bottom');
     $('.rounded-circle').removeClass('border-light').addClass('border-dark');
     $('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
-    if (window.location.pathname == '/papstory.html') {
-        $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
+    if (window.location.pathname == 'papstory.html') {
+        $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakerylogo.png')
     } else {
         $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakerylogo.png')
     }
@@ -30,7 +30,7 @@
             $('.rounded-circle').removeClass('border-dark').addClass('border-primary');
             $('.fixed-top .text-dark').removeClass('text-dark').addClass('text-light');
             if (window.location.pathname == '/papstory.html') {
-                $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogolight.png')
+                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakerylogolight.png')
             } else {
                 $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakerylogolight.png')
             }
@@ -43,7 +43,7 @@
             $('.rounded-circle').removeClass('border-primary').addClass('border-dark');
             $('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
             if (window.location.pathname == '/papstory.html') {
-                $('.navbar-brand img').attr('src', '../StaticFiles/img/logo/papbakerylogo.png')
+                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakerylogo.png')
             } else {
                 $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakerylogo.png')
             }

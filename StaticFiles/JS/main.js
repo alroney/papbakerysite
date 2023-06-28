@@ -28,7 +28,14 @@
             $('.fixed-top').removeClass('bg-dark').css('top', $('.top-bar').height());
         }
     });
-    
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('.navbar').css('border-bottom', '0.30em #00ffff solid');
+        } else {
+            $('.navbar').css('border-bottom', 'none');
+        }
+    });
     
     // Back to top button
     $(window).scroll(function () {

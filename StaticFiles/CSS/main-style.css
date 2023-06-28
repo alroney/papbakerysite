@@ -107,12 +107,16 @@ h6,
   transition: .5s;
 }
 
-.navbar-brand img {
+.navbar-brand-img {
   width: 3.5em;
   height: auto;
   position: absolute;
-  transform: translateY(-50%);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(120%);
 }
+
+
 
 .icon {
   position: absoulte;
