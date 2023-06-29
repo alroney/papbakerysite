@@ -31,7 +31,7 @@
 
     $(window).scroll(function () {
         if ($(this).scrollTop()) {
-            $('.navbar').css('border-bottom', '0.30em #00ffff solid');
+            $('.navbar').css('border-bottom', '0.30em var(--primary) solid');
         } else {
             $('.navbar').css('border-bottom', 'none');
         }

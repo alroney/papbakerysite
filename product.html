@@ -42,7 +42,7 @@
             <div class="row gx-0 align-items-center d-none d-lg-flex">
                 <div class="col-lg-6 px-5 text-start">
                     <ol class="breadcrumb mb-2 mt-2">
-                        <li class="breadcrumb-item"><a class="small text-light" href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a class="small text-light" href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a class="small text-light" href="#">Cookie Policy</a></li>
                         <li class="breadcrumb-item"><a class="small text-light" href="#">Terms</a></li>
                         <li class="breadcrumb-item"><a class="small text-light" href="#">Privacy</a></li>
@@ -105,11 +105,25 @@
 
 
         <!-- DISCLAIMER SECTION -->
-        <div class="container-fluid py-6 mt-5">
+        <div class="container-fluid py-6 mt-2 ">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-12">
-                        <p><span id="disclaimer-word">Disclaimer</span>: All of our products are made in a kitchen that uses <b>NUTS</b>, <b>WHEAT</b>, <b>DAIRY</b> and other allergens. Our products are not suitable for people with allergies. Please contact us for more information or special requests.</p>
+                        <p>
+                            <span class="disclaimer-word">Allergy Disclaimer:</span>
+                            <br>
+                            All of our products are made in a kitchen that uses <b>NUTS</b>, <b>WHEAT</b>, <b>DAIRY</b> and other allergens. Our products are not suitable for people/pets with allergies.
+                            <br>
+                            <br>
+                            I will be happy to work with you to create a custom order for your pet. Please contact me for more information.
+                            <hr>
+                            <span class="disclaimer-word">Ordering Disclaimer:</span>
+                            <br>
+                            All orders are made to order upon call. Please allow 3-5 business days for your order to be processed. If you need your order sooner, please contact me and I will do my best to accommodate you.
+                            <br>
+                            Online ordering is not available at this stage of my business. Please call or email to place your order.
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -126,14 +140,23 @@
                 <div class="tab-content ">
                     <!-- PETS MENU CARDS-->
                     <div id="pets" class="tab-pane active fadeIn">
-                        <h3 class="mb-4">Available Options for your Pets.</h3>
-                        <div class="mb-4">
-                            <h3 class="mb-2">Dog Treats</h3>
-                            <img class="img-fluid mb-4" src="StaticFiles/img/product/dog/treats/peanut_butter_treat.png" style="transform: rotate(-90deg);" alt="Dog Treat">
+                        <div class="container dog-treat-disclaimer mb-5">
+                            <h2 class="disclaimer-word">Dog Treats Disclaimer:</h2>
+                            <ul class="dog-treat-disclaimer-list">
+                                <li>Due to the ratio between the whole wheat flour and other ingredients in the treats, they all look very similar coming out of the oven.</li>
+                                <li>We can not guarantee that the treats will look exactly like the pictures.</li>
+                                <li>All of our treats are made with human grade ingredients, but they are not meant for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
+                                <li>Upon ordering please specify the level of softness you would like your treats to be. If you do not specify, they will be made to the standard level of softness.</li>
+                            </ul>
+                        </div>
+                        <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
+                        <div class="pet-menu mb-4">
+                            <h3 class="pet-menu-img-caption">Dog Treats</h3>
+                            <img class="pet-menu-img" src="StaticFiles/img/product/dog/treats/peanut_butter_treat.png" style="transform: rotate(-90deg);" alt="Dog Treat">
                         </div>
                         <div class="row">
                             <!-- Applesauce Treat Card -->
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card h-100" style="width: 18rem;">
                                     <div class="card-header"><h4>Applesauce Treats</h4></div>
                                     <div class="card-body">
@@ -146,7 +169,7 @@
                                 </div>
                             </div>
                             <!-- Peanut-butter Treat Card -->
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card h-100" style="width: 18rem;">
                                     <div class="card-header"><h4>Peanut-Butter Treats</h4></div>
                                     <div class="card-body">
@@ -159,7 +182,7 @@
                                 </div>
                             </div>
                             <!-- Pumpkin Treat Card -->
-                            <div class="col">
+                            <div class="col mb-3">
                                 <div class="card h-100" style="width: 18rem;">
                                     <div class="card-header"><h4>Pumpkin Treats</h4></div>
                                     <div class="card-body">
@@ -183,12 +206,220 @@
                                     </div>
                                     <div class="offcanvas-body">
                                         <div class="container-fluid">
-                                            <div id="dtp1_container"></div>
-                                            <p class="ingredient-title">Ingredients</p>
-                                            <ul class="ingredient-list">
-                                                <li>Whole Wheat Flour</li>
-                                                <li>Unsweetened Applesauce</li>
-                                            </ul>
+                                            <!-- Nutritional Facts -->
+<!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                                <header class="performance-facts__header">
+                                                  <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                                  <p>Serving Size 1 treat (#g)</p>
+                                                    <p>Serving Per Container #</p>
+                                                </header>
+                                                <table class="performance-facts__table">
+                                                    <thead>
+                                                        <tr>
+                                                        <th colspan="3" class="small-info">
+                                                            Amount Per Serving
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Calories</b>
+                                                                #
+                                                            </th>
+                                                            <td>
+                                                                Calories from Fat
+                                                                #
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-row">
+                                                            <td colspan="3" class="small-info">
+                                                                <b>% Daily Value*</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Fat</b>
+                                                                #g
+                                                            </th>
+                                                            <td>
+                                                                <b>#%</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Saturated Fat
+                                                                #g
+                                                            </th>
+                                                            <td>
+                                                                <b>#%</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Trans Fat
+                                                                0g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Cholesterol</b>
+                                                                #mg
+                                                            </th>
+                                                            <td>
+                                                                <b>#%</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Sodium</b>
+                                                                #mg
+                                                            </th>
+                                                            <td>
+                                                                <b>#%</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Carbohydrate</b>
+                                                                #g
+                                                            </th>
+                                                            <td>
+                                                                <b>#%</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Dietary Fiber
+                                                                #g
+                                                            </th>
+                                                            <td>
+                                                                <b>#%</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Sugars
+                                                                #g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-end">
+                                                            <th colspan="2">
+                                                                <b>Protein</b>
+                                                                #g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              
+                                                <table class="performance-facts__table--grid">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                Vitamin A
+                                                                #%
+                                                            </td>
+                                                            <td>
+                                                                Vitamin C
+                                                                #%
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thin-end">
+                                                        <td colspan="2">
+                                                            Calcium
+                                                            #%
+                                                        </td>
+                                                        <td>
+                                                            Iron
+                                                            #%
+                                                        </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              
+                                                <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+                                              
+                                                <table class="performance-facts__table--small small-info">
+                                                    <thead>
+                                                        <tr>
+                                                            <td colspan="2"></td>
+                                                            <th>Calories:</th>
+                                                            <th>2,000</th>
+                                                            <th>2,500</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">Total Fat</th>
+                                                            <td>Less than</td>
+                                                            <td>65g</td>
+                                                            <td>80g</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell"></td>
+                                                            <th>Saturated Fat</th>
+                                                            <td>Less than</td>
+                                                            <td>20g</td>
+                                                            <td>25g</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">Cholesterol</th>
+                                                            <td>Less than</td>
+                                                            <td>300mg</td>
+                                                            <td>300 mg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">Sodium</th>
+                                                            <td>Less than</td>
+                                                            <td>2,400mg</td>
+                                                            <td>2,400mg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="3">Total Carbohydrate</th>
+                                                            <td>300g</td>
+                                                            <td>375g</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell"></td>
+                                                            <th colspan="2">Dietary Fiber</th>
+                                                            <td>25g</td>
+                                                            <td>30g</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              
+                                                <p class="small-info">
+                                                    Calories per gram:
+                                                </p>
+                                                <p class="small-info text-center">
+                                                    Fat 9
+                                                    &bull;
+                                                    Carbohydrate 4
+                                                    &bull;
+                                                    Protein 4
+                                                </p>
+                                              </section>
+                                            <!-- End Nutritional Facts-->
+                                            <section class="ingredients">
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>Whole Wheat Flour</li>
+                                                </ul>
+                                            </section>
                                         </div>
                                     </div>
                                 </div>
@@ -199,8 +430,220 @@
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <div id="dtp2_container"></div>
-                                        <p></p>
+                                        <!-- Nutritional Facts -->
+<!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                            <header class="performance-facts__header">
+                                              <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                              <p>Serving Size 1 treat (#g)</p>
+                                                <p>Serving Per Container #</p>
+                                            </header>
+                                            <table class="performance-facts__table">
+                                                <thead>
+                                                    <tr>
+                                                    <th colspan="3" class="small-info">
+                                                        Amount Per Serving
+                                                    </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Calories</b>
+                                                            #
+                                                        </th>
+                                                        <td>
+                                                            Calories from Fat
+                                                            #
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thick-row">
+                                                        <td colspan="3" class="small-info">
+                                                            <b>% Daily Value*</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Total Fat</b>
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Saturated Fat
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Trans Fat
+                                                            0g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Cholesterol</b>
+                                                            #mg
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Sodium</b>
+                                                            #mg
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Total Carbohydrate</b>
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Dietary Fiber
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Sugars
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thick-end">
+                                                        <th colspan="2">
+                                                            <b>Protein</b>
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                            <table class="performance-facts__table--grid">
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            Vitamin A
+                                                            #%
+                                                        </td>
+                                                        <td>
+                                                            Vitamin C
+                                                            #%
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thin-end">
+                                                    <td colspan="2">
+                                                        Calcium
+                                                        #%
+                                                    </td>
+                                                    <td>
+                                                        Iron
+                                                        #%
+                                                    </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                            <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+                                          
+                                            <table class="performance-facts__table--small small-info">
+                                                <thead>
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                        <th>Calories:</th>
+                                                        <th>2,000</th>
+                                                        <th>2,500</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">Total Fat</th>
+                                                        <td>Less than</td>
+                                                        <td>65g</td>
+                                                        <td>80g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell"></td>
+                                                        <th>Saturated Fat</th>
+                                                        <td>Less than</td>
+                                                        <td>20g</td>
+                                                        <td>25g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">Cholesterol</th>
+                                                        <td>Less than</td>
+                                                        <td>300mg</td>
+                                                        <td>300 mg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">Sodium</th>
+                                                        <td>Less than</td>
+                                                        <td>2,400mg</td>
+                                                        <td>2,400mg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="3">Total Carbohydrate</th>
+                                                        <td>300g</td>
+                                                        <td>375g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell"></td>
+                                                        <th colspan="2">Dietary Fiber</th>
+                                                        <td>25g</td>
+                                                        <td>30g</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                            <p class="small-info">
+                                                Calories per gram:
+                                            </p>
+                                            <p class="small-info text-center">
+                                                Fat 9
+                                                &bull;
+                                                Carbohydrate 4
+                                                &bull;
+                                                Protein 4
+                                            </p>
+                                          </section>
+                                        <!-- End Nutritional Facts-->
+                                        <section class="ingredients">
+                                            <h2>Ingredients</h2>
+                                            <ul>
+                                                <li>Whole Wheat Flour</li>
+                                            </ul>
+                                        </section>
                                     </div>
                                 </div>
                             <!-- Pumpkin Treats Offcanvas -->
@@ -210,7 +653,220 @@
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <p></p>
+                                        <!-- Nutritional Facts -->
+<!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                            <header class="performance-facts__header">
+                                              <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                              <p>Serving Size 1 treat (#g)</p>
+                                                <p>Serving Per Container #</p>
+                                            </header>
+                                            <table class="performance-facts__table">
+                                                <thead>
+                                                    <tr>
+                                                    <th colspan="3" class="small-info">
+                                                        Amount Per Serving
+                                                    </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Calories</b>
+                                                            #
+                                                        </th>
+                                                        <td>
+                                                            Calories from Fat
+                                                            #
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thick-row">
+                                                        <td colspan="3" class="small-info">
+                                                            <b>% Daily Value*</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Total Fat</b>
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Saturated Fat
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Trans Fat
+                                                            0g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Cholesterol</b>
+                                                            #mg
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Sodium</b>
+                                                            #mg
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Total Carbohydrate</b>
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Dietary Fiber
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                            <b>#%</b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Sugars
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thick-end">
+                                                        <th colspan="2">
+                                                            <b>Protein</b>
+                                                            #g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                            <table class="performance-facts__table--grid">
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            Vitamin A
+                                                            #%
+                                                        </td>
+                                                        <td>
+                                                            Vitamin C
+                                                            #%
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thin-end">
+                                                    <td colspan="2">
+                                                        Calcium
+                                                        #%
+                                                    </td>
+                                                    <td>
+                                                        Iron
+                                                        #%
+                                                    </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                            <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+                                          
+                                            <table class="performance-facts__table--small small-info">
+                                                <thead>
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                        <th>Calories:</th>
+                                                        <th>2,000</th>
+                                                        <th>2,500</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">Total Fat</th>
+                                                        <td>Less than</td>
+                                                        <td>65g</td>
+                                                        <td>80g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell"></td>
+                                                        <th>Saturated Fat</th>
+                                                        <td>Less than</td>
+                                                        <td>20g</td>
+                                                        <td>25g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">Cholesterol</th>
+                                                        <td>Less than</td>
+                                                        <td>300mg</td>
+                                                        <td>300 mg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">Sodium</th>
+                                                        <td>Less than</td>
+                                                        <td>2,400mg</td>
+                                                        <td>2,400mg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="3">Total Carbohydrate</th>
+                                                        <td>300g</td>
+                                                        <td>375g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell"></td>
+                                                        <th colspan="2">Dietary Fiber</th>
+                                                        <td>25g</td>
+                                                        <td>30g</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                          
+                                            <p class="small-info">
+                                                Calories per gram:
+                                            </p>
+                                            <p class="small-info text-center">
+                                                Fat 9
+                                                &bull;
+                                                Carbohydrate 4
+                                                &bull;
+                                                Protein 4
+                                            </p>
+                                          </section>
+                                        <!-- End Nutritional Facts-->
+                                        <section class="ingredients">
+                                            <h2>Ingredients</h2>
+                                            <ul>
+                                                <li>Whole Wheat Flour</li>
+                                            </ul>
+                                        </section>
                                     </div>
                                 </div>
                         <!-- END PETS OFFCANVASES -->
@@ -218,7 +874,7 @@
                     
                     <!-- PEOPLE MENU -->
                     <div id="people" class="tab-pane fade">
-                        <h3 class="mb-4">Available Options for You.</h3>
+                        <h3 class="mb-4"></h3>
                         <div class="row">
                             <!-- Peanut-butter Chocolate Chip Card -->
                             <div class="col">
