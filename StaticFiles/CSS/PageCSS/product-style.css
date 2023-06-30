@@ -94,15 +94,13 @@
 * OFFCANVAS GENERAL
 * ==========================================
 */
-.offcanvas-body .ingredient-title {
+.offcanvas-title {
     font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: underline;
-    margin-bottom: 1rem;
-}
-
-.offcanvas-body .ingredient-list{
-    list-style:disc inside;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    border-bottom: 1px solid #000000;
 }
 
 
@@ -113,9 +111,8 @@
 */
 .performance-facts {
 	border: 1px solid black;
-	margin: 20px;
-	float: left;
-	width: 280px;
+	width: 18em;
+    margin: auto;
 	padding: 0.5rem;
 }
 .performance-facts table {
@@ -201,6 +198,22 @@
 * ==========================================
 */
 
+.ingredients {
+    display: block;
+    color: #000000;
+    width: fit-content;
+    margin: 1em auto auto auto;
+}
+
+.ingredients h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .ingredients ul {
     list-style: disc inside;
+    line-height: 1.5rem;
 }
