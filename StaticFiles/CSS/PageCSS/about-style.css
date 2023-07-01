@@ -166,7 +166,10 @@ section p {
 
 #andrewroneyImg {
     background-image: url("../../img/employee/andrewroney.png");
-    background-size:cover;
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
 }
 
 .employee-description {
