@@ -25,6 +25,10 @@ section p {
 * ==========================================
 */
 
+section {
+    padding-top: 7em;
+}
+
 .section-titles h2 {
     font-size: calc(25px + 2 * ((100vw - 100px) / (100)));
     font-family: 'amiri', serif, sans-serif;
