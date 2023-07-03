@@ -43,6 +43,7 @@
     height: 250px;
     width: auto;
     border: 1px solid #000000;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 

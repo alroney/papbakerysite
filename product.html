@@ -141,16 +141,19 @@
                     <!-- PETS MENU CARDS-->
                     <div id="pets" class="tab-pane active fadeIn">
                         <div class="container dog-treat-disclaimer mb-5">
-                            <h2 class="disclaimer-word">Dog Treats Disclaimer:</h2>
-                            <ul class="dog-treat-disclaimer-list">
-                                <li>Due to the ratio between the whole wheat flour and other ingredients in the treats, they all look very similar coming out of the oven.</li>
-                                <br>
-                                <li>We can not guarantee that the treats will look exactly like the pictures.</li>
-                                <br>
-                                <li>All of our treats are made with human grade ingredients, but they are not meant for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
-                                <br>
-                                <li>Upon ordering please specify the level of softness you would like your treats to be. If you do not specify, they will be made to the standard level of softness.</li>
-                            </ul>
+                            <span id="treat-disclaimer" style="display: none">
+                                <h2 class="disclaimer-word ">Dog Treats Disclaimer</h2>
+                                <ul class="dog-treat-disclaimer-list">
+                                    <li>Due to the ratio between the whole wheat flour and other ingredients in the treats, they all look very similar coming out of the oven.</li>
+                                    <br>
+                                    <li>We can not guarantee that the treats will look exactly like the pictures.</li>
+                                    <br>
+                                    <li>All of our treats are made with human grade ingredients, but they are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
+                                    <br>
+                                    <li>Upon ordering please specify the level of softness you would like your treats to be. If you do not specify, they will be made to the standard level of softness.</li>
+                                </ul>
+                            </span>
+                            <button class="btn btn-primary btn-sm" id="treats-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
                         </div>
                         <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
                         <div class="pet-menu mb-4">
@@ -959,6 +962,7 @@
             </div>
         </div>
         <!-- Footer End -->
+
         <!-- Copyright Start -->
         <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
             <div class="container">
@@ -987,11 +991,25 @@
 
     <!-- Tab Script -->
     <script>
-        $(document).ready(function(){
+        /* $(document).ready(function(){
             $(".nav-tabs a").click(function(){
                 $(this).tab('show');
             });
-        });
+        }); */
+
+        function showDisclaimer() {
+            var contents = $("#treat-disclaimer");
+            var btnText = $("#treats-disclaimer-btn");
+            if(contents.css("display") == "none") {
+                contents.css("display", "block");
+                btnText.html("Hide Disclaimer");
+            } else {
+                contents.css("display", "none");
+                btnText.html("Read Disclaimer");
+            }
+        }
+
+        
     </script>
     </body>
 </html>
