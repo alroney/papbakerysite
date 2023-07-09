@@ -29,6 +29,20 @@
         }
     });
 
+    // Navbar disappear on scroll down and appear on scroll up
+    var prevScrollPos = $(window).scrollTop();
+    var navbar = $('.navbar');
+
+    $(window).scroll(function () {
+        var currentScrollPos = $(window).scrollTop();
+        if (prevScrollPos > currentScrollPos) {
+            navbar.removeClass('navbar-hide').css('top', '0');
+        } else {
+            navbar.addClass('navbar-hide').css('top', '-100px');
+        }
+        prevScrollPos = currentScrollPos;
+    });
+
     $(window).scroll(function () {
         if ($(this).scrollTop()) {
             $('.navbar').css('border-bottom', '0.30em var(--primary) solid');
@@ -72,6 +86,9 @@
         delay: 10,
         time: 2000
     });
+
+
+    
 
 
     
