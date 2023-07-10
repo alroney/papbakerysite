@@ -13,8 +13,7 @@
     };
     spinner();
     
-    
-
+/** NAVBAR SCRIPTS **/
 
     // Fixed Navbar
     if (mediaQuery2.matches) {
@@ -36,7 +35,7 @@
     $(window).scroll(function () {
         var currentScrollPos = $(window).scrollTop();
         if (prevScrollPos > currentScrollPos) {
-            navbar.removeClass('navbar-hide').css('top', '0');
+            navbar.removeClass('navbar-hide');
         } else {
             navbar.addClass('navbar-hide').css('top', '-100px');
         }
@@ -50,6 +49,26 @@
             $('.navbar').css('border-bottom', 'none');
         }
     });
+
+    // Toggle navbar off when scrolling only on mobile
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('.navbar-collapse').collapse('hide');
+        }
+    });
+
+    // Unselect on moblie navbar collapse when scrolling or clicking
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('.navbar-collapse').removeClass('show');
+        }
+    });
+
+
+
+    
+    
+/** END OF NAVBAR SCRIPTS **/
     
     // Back to top button
     $(window).scroll(function () {
