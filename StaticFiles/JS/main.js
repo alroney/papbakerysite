@@ -50,16 +50,10 @@
         }
     });
 
-    // Toggle navbar off when scrolling only on mobile
+    // Toggle navbar off when scrolling
     $(window).scroll(function () {
         if ($(this).scrollTop()) {
             $('.navbar-collapse').collapse('hide');
-        }
-    });
-
-    // Unselect on moblie navbar collapse when scrolling or clicking
-    $(window).scroll(function () {
-        if ($(this).scrollTop()) {
             $('.navbar-collapse').removeClass('show');
         }
     });
