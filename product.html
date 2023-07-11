@@ -134,80 +134,97 @@
             <div class="container product-display">
                 <ul class="nav nav-tabs">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
-                    <li class="nav-item"><a class="nav-link disabled" href="#people">Disabled</a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="#people"></a></li>
                 </ul>
 
                 <div class="tab-content ">
                     <!-- PETS MENU CARDS-->
                     <div id="pets" class="tab-pane active fadeIn">
-                        <div class="container dog-treat-disclaimer mb-5">
-                            <span id="treat-disclaimer" style="display: none">
-                                <h2 class="disclaimer-word ">Dog Treats Disclaimer</h2>
-                                <ul class="dog-treat-disclaimer-list">
-                                    <li>Due to the ratio between the whole wheat flour and other ingredients in the treats, they all look very similar coming out of the oven.</li>
+                        <div class="container dog-biscuit-disclaimer mb-5">
+                            <span id="biscuit-disclaimer" style="display: none">
+                                <h2 class="disclaimer-word">Dog Biscuits Disclaimer</h2>
+                                <ul class="dog-biscuit-disclaimer-list mb-5">
+                                    <li>Due to the ratio between the whole wheat flour and other ingredients in the biscuits, they all look very similar coming out of the oven.</li>
                                     <br>
-                                    <li>We can not guarantee that the treats will look exactly like the pictures.</li>
+                                    <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
                                     <br>
-                                    <li>All of our treats are made with human grade ingredients, but they are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
+                                    <li>All of our biscuits are made with human grade ingredients, but they are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
                                     <br>
-                                    <li>Upon ordering please specify the level of softness you would like your treats to be. If you do not specify, they will be made to the standard level of softness.</li>
+                                    <li>Upon ordering please specify the level of softness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness.</li>
                                 </ul>
                             </span>
-                            <button class="btn btn-primary btn-sm" id="treats-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
+                            <button class="btn btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
                         </div>
                         <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
                         <div class="pet-menu mb-4">
-                            <h3 class="pet-menu-img-caption">Dog Treats</h3>
-                            <img class="pet-menu-img" src="StaticFiles/img/product/dog/treats/peanut_butter_treat.png" style="transform: rotate(-90deg);" alt="Dog Treat">
+                            <h3 class="pet-menu-img-caption">Dog Biscuits</h3>
+                            <img class="pet-menu-img" src="StaticFiles/img/product/dog/biscuits/peanut_butter_biscuit.png" style="transform: rotate(-90deg);" alt="Dog Biscuit">
                         </div>
-                        <div class="row">
-                            <!-- Applesauce Treat Card -->
+                        <div class="row"> <!-- Apple, Peanut, Pumpkin-->
+                            <!-- Applesauce Biscuit Card -->
                             <div class="col mb-3">
                                 <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h4>Applesauce Treats</h4></div>
+                                    <div class="card-header"><h4>Applesauce Biscuits</h4></div>
                                     <div class="card-body">
-                                        <p>Wholesome whole wheat dog treat with the irresistible twist of unsweetened applesauce.</p>
+                                        <p>Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.</p>
                                     </div>
                                     <div class="card-footer">
                                         <p class="card-price position-absolute top-50 end-0 translate-middle">$5 for 20</p>
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_treat"  aria-controls="offcanvas_applesauce_treat">More Info</a>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_biscuit"  aria-controls="offcanvas_applesauce_biscuit">More Info</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Peanut-butter Treat Card -->
+                            <!-- Peanut-butter Biscuit Card -->
                             <div class="col mb-3">
                                 <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h4>Peanut-Butter Treats</h4></div>
+                                    <div class="card-header"><h4>Peanut-Butter Biscuits</h4></div>
                                     <div class="card-body">
-                                        <p class="card-text">Introducing our mouthwatering whole wheat dog treat infused with natural peanut butter. A canine delight!</p>
+                                        <p class="card-text">Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. A canine delight!</p>
                                     </div>
                                     <div class="card-footer">
                                         <p class="card-price position-absolute top-50 end-0 translate-middle">$5 for 20</p>
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_treat"  aria-controls="offcanvas_peanut_butter_treat">More Info</a>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_biscuit"  aria-controls="offcanvas_peanut_butter_biscuit">More Info</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Pumpkin Treat Card -->
+                            <!-- Pumpkin Biscuit Card -->
                             <div class="col mb-3">
                                 <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h4>Pumpkin Treats</h4></div>
+                                    <div class="card-header"><h4>Pumpkin Biscuits</h4></div>
                                     <div class="card-body">
-                                        <p class="card-text">Introducing our delectable whole wheat dog treat infused with pure pumpkin. A nutritious canine delight!</p>
+                                        <p class="card-text">Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!</p>
                                     </div>
                                     <div class="card-footer">
                                         <p class="card-price position-absolute top-50 end-0 translate-middle">$5 for 20</p>
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_treat"  aria-controls="offcanvas_pumpkin_treat">More Info</a>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_biscuit"  aria-controls="offcanvas_pumpkin_biscuit">More Info</a>
                                     </div>
                                 </div>
                             </div>
                         </div> <!-- End of Row -->
+                        <div class="row"> <!--Bannana, Sweet Potato, Mango-->
+                            <!-- Bannana Biscuit Card -->
+                            <div class="col mb-3">
+                                <div class="card h-100" style="width: 18rem;">
+                                    <div class="card-header"><h4>Bannana Biscuits</h4></div>
+                                    <div class="card-body">
+                                        <p>
+                                            Introducing our delicious whole wheat dog biscuit infused with pure bannana. A nutritious canine delight!
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-price position-absolute top-50 end-0 translate-middle">$5 for 20</p>
+                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_biscuit"  aria-controls="offcanvas_applesauce_biscuit">More Info</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                         <!-- PETS OFFCANVASES -->
-                            <!-- Applesauce Treats Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_treat" aria-labelledby="offcanvas_applesauce_treat_label">
+                            <!-- Applesauce Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_biscuit" aria-labelledby="offcanvas_applesauce_biscuit_label">
                                     <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_applesauce_treat_label">Applesauce Treats</h5>
+                                        <h5 class="offcanvas-title" id="offcanvas_applesauce_biscuit_label">Applesauce Biscuits</h5>
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
@@ -216,7 +233,7 @@
 <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
                                                 <header class="performance-facts__header">
                                                   <h1 class="performance-facts__title">Nutrition Facts</h1>
-                                                  <p>Serving Size 1 treat (#g)</p>
+                                                  <p>Serving Size 1 biscuit (#g)</p>
                                                     <p>Serving Per Container #</p>
                                                 </header>
                                                 <table class="performance-facts__table">
@@ -430,10 +447,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            <!-- Peanut Butter Treats Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_treat" aria-labelledby="offcanvas_peanut_butter_treat_label">
+                            <!-- Peanut Butter Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_biscuit" aria-labelledby="offcanvas_peanut_butter_biscuit_label">
                                     <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_peanut_butter_treat_label">Peanut Butter Treats</h5>
+                                        <h5 class="offcanvas-title" id="offcanvas_peanut_butter_biscuit_label">Peanut Butter Biscuits</h5>
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
@@ -441,7 +458,7 @@
 <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
                                             <header class="performance-facts__header">
                                               <h1 class="performance-facts__title">Nutrition Facts</h1>
-                                              <p>Serving Size 1 treat (6g)</p>
+                                              <p>Serving Size 1 biscuit (6g)</p>
                                                 <p>Serving Per Container: Varies</p>
                                             </header>
                                             <table class="performance-facts__table">
@@ -649,10 +666,10 @@
                                         </section>
                                     </div>
                                 </div>
-                            <!-- Pumpkin Treats Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_treat" aria-labelledby="offcanvas_pumpkin_treat_label">
+                            <!-- Pumpkin Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_biscuit" aria-labelledby="offcanvas_pumpkin_biscuit_label">
                                     <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_pumpkin_treat_label">Pumpkin Treats</h5>
+                                        <h5 class="offcanvas-title" id="offcanvas_pumpkin_biscuit_label">Pumpkin Biscuits</h5>
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
@@ -660,7 +677,7 @@
 <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
                                             <header class="performance-facts__header">
                                               <h1 class="performance-facts__title">Nutrition Facts</h1>
-                                              <p>Serving Size 1 treat (#g)</p>
+                                              <p>Serving Size 1 biscuit (#g)</p>
                                                 <p>Serving Per Container #</p>
                                             </header>
                                             <table class="performance-facts__table">
@@ -985,15 +1002,10 @@
 
     <!-- Tab Script -->
     <script>
-        /* $(document).ready(function(){
-            $(".nav-tabs a").click(function(){
-                $(this).tab('show');
-            });
-        }); */
 
         function showDisclaimer() {
-            var contents = $("#treat-disclaimer");
-            var btnText = $("#treats-disclaimer-btn");
+            var contents = $("#biscuit-disclaimer");
+            var btnText = $("#biscuits-disclaimer-btn");
             if(contents.css("display") == "none") {
                 contents.css("display", "block");
                 btnText.html("Hide Disclaimer");
