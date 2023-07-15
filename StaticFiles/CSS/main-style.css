@@ -38,6 +38,10 @@ h6,
   z-index: 99;
 }
 
+.bi-caret-down-fill {
+  color: var(--primary);
+}
+
 
 /*** Spinner ***/
 #spinner {
