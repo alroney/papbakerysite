@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    const mediaQuery2 = window.matchMedia('(max-width: 382px)');
+    const mediaQuery2 = window.matchMedia('(max-width: 400px)');
 
 
     // Spinner
