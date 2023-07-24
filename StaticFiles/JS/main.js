@@ -1,6 +1,5 @@
 (function ($) {
     "use strict";
-    const mediaQuery2 = window.matchMedia('(max-width: 0px)');
 
 
     // Spinner
@@ -16,9 +15,6 @@
 /** NAVBAR SCRIPTS **/
 
     // Fixed Navbar
-    if (mediaQuery2.matches) {
-        $('.navbar-brand img').css('display', 'none');
-    }
     $('.fixed-top').css('top', $('.top-bar').height());
     $(window).scroll(function () {
         if ($(this).scrollTop()) {

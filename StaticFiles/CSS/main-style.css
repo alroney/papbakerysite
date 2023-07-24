@@ -111,13 +111,15 @@ h6,
   transition: .5s;
 }
 
-.navbar-brand-img {
-  width: 3.5em;
-  height: auto;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%) translateX(120%);
+@media (min-width: 501.00px) {
+  .navbar-brand-img {
+    width: 3.5em;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(120%);
+  }
 }
 
 
@@ -134,7 +136,7 @@ h6,
   color: var(--primary);
 }
 
-@media (max-width: 400.00px) {
+@media (max-width: 500.00px) {
   .navbar-brand-img {
       display: none;
   }
