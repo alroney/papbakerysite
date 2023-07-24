@@ -946,7 +946,36 @@
             </div>
         </div>
 
-        
+
+<!--====================================================================================================================-->
+
+
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1>Place an Order</h1>
+                    <form id="orderForm" action="https://formspree.io/f/xleydaey" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="Name" placeholder="Your name.."/>
+
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="Email" placeholder="email@mail.com"/>
+
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="Phone" placeholder="(###)-###-####"/>
+
+                        <label for="dogCategory">Dog Treat Category</label>
+                        <select id="dogCategory" name="Dog-Treat-Category">
+                            <option value="Biscuits">Dog Biscuit</option>
+                        </select>
+
+                        <input type="submit" value="Submit">
+                        <p id="status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 
 <!--====================================================================================================================-->
 
@@ -967,7 +996,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h5 class="border-bottom">Contact Us</h5>
-                        <p class="mb-2">Phone: (717-850-0109)</p>
+                        <p class="mb-2">Phone: (717) 850 - 0109</p>
                         <p class="mb-2">Email: andrew.roney@papbakery.com</p>
                     </div>
                 </div>
@@ -990,6 +1019,10 @@
             </div>
         </div>
         <!-- Copyright End -->
+
+<!--====================================================================================================================-->
+
+
     <script src="StaticFiles/JS/vendor/jquery-1.12.0.min.js"></script>
     <script src="StaticFiles/JS/jquery-easing/jquery.easing.min.js"></script>
     <script src="StaticFiles/JS/bootstrap.min.js"></script>
@@ -1015,6 +1048,8 @@
                 btnText.html("Read Disclaimer");
             }
         }
+
+        
 
         
     </script>
