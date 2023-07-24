@@ -122,6 +122,11 @@ h6,
   }
 }
 
+@media (max-width: 500.00px) {
+  .navbar-brand-img {
+      display: none;
+  }
+}
 
 
 .icon {
@@ -136,11 +141,7 @@ h6,
   color: var(--primary);
 }
 
-@media (max-width: 500.00px) {
-  .navbar-brand-img {
-      display: none;
-  }
-}
+
 
 @media (max-width: 991.98px) {
   .navbar .navbar-nav {
