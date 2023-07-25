@@ -42,6 +42,10 @@ h6,
   color: var(--primary);
 }
 
+img {
+  pointer-events: none;
+}
+
 
 /*** Spinner ***/
 #spinner {

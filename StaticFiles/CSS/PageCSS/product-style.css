@@ -226,6 +226,8 @@
 * ==========================================
 */
 
+
+
 .carousel-item {
     height: 25em;
     width: 100%;
@@ -243,4 +245,10 @@
     height: 3em;
     width: 3em;
     border-radius: 100%;
+}
+
+.carousel-indicators {
+    background-color: rgba(0, 0, 0, 0.05);
+    width: fit-content;
+    margin: 0 auto;
 }
