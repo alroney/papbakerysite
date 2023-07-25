@@ -222,10 +222,25 @@
 
 /*
 * ==========================================
-* ORDER FORM
+* Biscuit Size Carousel
 * ==========================================
 */
 
-.order-form {
-    display: default;
+.carousel-item {
+    height: 25em;
+    width: 100%;
+    object-fit:fill;
+}
+
+.carousel-item img {
+}
+
+.carousel-caption {
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--primary);
+    height: 3em;
+    width: 3em;
+    border-radius: 100%;
 }
