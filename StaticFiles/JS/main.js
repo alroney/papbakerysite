@@ -73,32 +73,6 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-
-
-    // Header carousel
-    $(".header-carousel").owlCarousel({
-        autoplay: false,
-        smartSpeed: 1500,
-        loop: true,
-        nav: true,
-        dots: false,
-        items: 1,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
-    });
-
-
-    
-
-
-    
-
-
-    
-    
-
     
 })(jQuery);
 

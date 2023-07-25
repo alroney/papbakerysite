@@ -18,7 +18,80 @@ Author URI: https://papbakery.com
 * SECTION1 START
 * ==========================================
 */
+/*** Header ***/
+.header-carousel .owl-carousel-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: rgba(10, 252, 252, 0.2);
+}
 
+@media (max-width: 768px) {
+  .header-carousel .owl-carousel-item {
+      position: relative;
+      min-height: 600px;
+  }
+
+  .header-carousel .owl-carousel-item img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .header-carousel .owl-carousel-item p {
+      font-size: 16px !important;
+  }
+}
+
+.header-carousel .owl-nav {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: -40px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-carousel .owl-nav::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #FFFFFF;
+  transform: rotate(45deg);
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+  position: relative;
+  font-size: 40px;
+  color: var(--primary);
+  transition: .5s;
+  z-index: 1;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+  color: var(--dark);
+}
+
+.page-header {
+  margin-bottom: 6rem;
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  color: var(--light);
+}
 
 /*
 * ==========================================
