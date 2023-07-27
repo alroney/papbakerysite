@@ -252,3 +252,14 @@
     width: fit-content;
     margin: 0 auto;
 }
+
+
+/*
+* ==========================================
+* ORDER FORM
+* ==========================================
+*/
+
+.is-invalid {
+    border: 1px solid red;
+}
