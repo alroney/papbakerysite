@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Products</title>
+        <title>Products of P&PBakery</title>
         <meta name="description" content="This page displays the available product created by PaPBakery">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Andrew Lawrence Roney">
@@ -880,6 +880,7 @@
                 <div class="row order-form">
                     <h1>Place an Order</h1>
                     <form id="orderForm" action="https://formspree.io/f/xleydaey" method="POST">
+                        
                         <label for="name">Name:</label>
                         <input type="text" id="nameInput" name="Name" placeholder="Your name.." required/>
                         <br>
@@ -908,7 +909,6 @@
                             </select>
                         </div>
 
-                        <input name="subject" type="hidden" value="New submission from {{Name}}">
                         <input type="submit" value="Submit">
                         <p id="status"></p>
                     </form>
