@@ -83,6 +83,7 @@
                         <div class="dropdown-menu m-0">
                             <a href="about.html" class="dropdown-item">About Us</a>
                             <a href="papstory.html" class="dropdown-item">Our Story</a>
+                            <a href="contact-us.html" class="dropdown-item">Contact Us</a>
                         </div>
                     </div>
                     <a href="product.html" class="nav-item nav-link">Products</a>
@@ -874,48 +875,7 @@
 
 <!--====================================================================================================================-->
 
-    <!-- ORDER FORM START -->
-        <div class="container d-none">
-            <div class="container-fluid">
-                <div class="row order-form">
-                    <h1>Place an Order</h1>
-                    <form id="orderForm" action="https://formspree.io/f/xleydaey" method="POST">
-                        
-                        <label for="name">Name:</label>
-                        <input type="text" id="nameInput" name="Name" placeholder="Your name.." required/>
-                        <br>
-                        <label for="email">Email:</label>
-                        <input type="email" id="emailInput" name="Email" placeholder="email@mail.com" required/>
-                        <br>
-                        <label for="phone">Phone:</label>
-                        <input type="text" id="phoneInput" name="Phone" placeholder="###-###-####" required/>
-                        <br>
-                        <br>
-                        <label for="dogCategorySelect">Dog Treat Category</label>
-                        <select id="dogCategorySelect" name="Dog-Treat-Category" required>
-                            <option value="" selected>Select an Option</option>
-                            <option value="Biscuits">Dog Biscuit</option>
-                        </select>
-                        <br>
-                        <!-- Field when Dog Biscuit is selceted -->
-                        <div id="dogBiscuitSelect" class="d-none">
-                            <label for="biscuitSize">Biscuit Size</label>
-                            <select class="conditional-select" id="biscuitSize" name="Biscuit-Size" required>
-                                <option value="" selected>Select an Option</option>
-                                <option value="Small">Small</option>
-                                <option value="Small Long">Small Long</option>
-                                <option value="Large">Large</option>
-                                <option value="Large Long">Large Long</option>
-                            </select>
-                        </div>
-
-                        <input type="submit" value="Submit">
-                        <p id="status"></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    <!-- ORDER FORM END -->
+    
 
 
 <!--====================================================================================================================-->
