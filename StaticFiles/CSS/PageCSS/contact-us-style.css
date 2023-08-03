@@ -37,6 +37,26 @@
     display: inline-block;
 }
 
+/*Checkbox*/
+#contactForm .checkboxes input {
+    margin-right: 10px;
+    margin-left: 0px;
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+    position: relative;
+}
+
+#contactForm .checkboxes label {
+    font-weight: normal;
+    font-size: 1.2rem;
+    vertical-align: baseline;
+    position: relative;
+}
+
+/*End Checkbox*/
+
+
 #contactForm input, #contactForm textarea {
     width: 100%;
     padding: 10px;
@@ -68,4 +88,9 @@
 
 #contactForm #submitBtn:active {
     background-color: #3e8e41;
+}
+
+#contactForm #formCredit {
+    text-align: end;
+    font-size: 0.8rem;
 }

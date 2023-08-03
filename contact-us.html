@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Contact Us</title>
-        <meta name="description" content="This page contains the contact form to send a quick email">
+        <meta name="description" content="Quick and convienient contact form for Andrew's Paws and Palms Bakery.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Andrew Lawrence Roney">
 
@@ -121,14 +121,33 @@
             <label for="email">Email:</label>
             <input type="email" id="emailInput" name="Email" placeholder="email@mail.com" required/>
             <br>
-            <label for="phone">Phone:</label>
-            <input type="text" id="phoneInput" name="Phone" placeholder="###-###-####"/>
+            <label for="phone" id="phoneInputLabel" style="display: none">Phone:</label>
+            <input type="text" id="phoneInput" name="Phone" style="display: none" placeholder="###-###-####"/>
+            <br>
+            <label for="subject">Subject:</label>
+            <select id="subjectInput" name="Subject" required>
+                <option value="" selected>Select a subject</option>
+                <option value="Compliment">Compliment</option>
+                <option value="Support">Support</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Other">Other</option>
+            </select>
+            <br>
+            <div class="checkboxes">
+                <input type="checkbox" id="postComplimentPermission" name="Allow to Post Compliment" value="Yes" style="display: none;">
+                <label for="postComplimentPermission" id="postComplimentPermissionLabel" style="display: none;">Allow us to post your compliment on our website?</label>
+                <br>
+                <input type="checkbox" id="txtMsgPermission" name="Allow to Text Message" value="Yes" style="display: none;">
+                <label for="txtMsgPermission" id="txtMsgPermissionLabel" style="display: none;">Allow us to text message you?</label>
+            </div>
             <br>
             <label for="message">Message:</label>
-            <textarea type="text" id="messageInput" name="Message" placeholder="Write something.." style="" required></textarea>
+            <textarea type="text" id="messageInput" name="Message" placeholder="Write something.." required></textarea>
 
             <input id="submitBtn" type="submit" value="Submit">
             <p id="status"></p>
+
+            <p id="formCredit">processed by <span><a href="https://formspree.com">FormSpree</a>.</span></p>
         </form>
     </div>
 </div>
