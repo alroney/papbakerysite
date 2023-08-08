@@ -1,9 +1,3 @@
-/*
-Theme Name: Paws and Palms Bakery
-Theme URI: https://papbakery.com
-Author: Andrew Roney
-Author URI: https://papbakery.com
-*/
 
 
 
@@ -18,6 +12,10 @@ Author URI: https://papbakery.com
 
 p {
   line-height: 2;
+}
+
+#homeCarousel {
+  border-bottom: 5px solid var(--primary);
 }
 
 
