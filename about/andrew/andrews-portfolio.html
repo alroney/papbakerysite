@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Contact Us</title>
+        <title>Andrews Portfolio</title>
         <meta name="description" content="This is the portfolio of Andrew Roney">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Andrew Lawrence Roney">
@@ -115,10 +115,13 @@
     </div>
 </div>
 
-<section id="section2">
+
+
+<!-- TITLE SECTION -->
+<section id="section1">
     <div class="container">
         <div class="row">
-            <div class="mission-section">
+            <div class="title-section">
                 <div class="section-titles text-center">
                     <h3>The Portfolio</h3>
                     <h3>of</h3>
@@ -128,6 +131,83 @@
         </div>
     </div>
 </section>
+<!-- TITLE SECTION END -->
+
+
+
+<!-- FAST FACTS SECTION -->
+<section id="section2">
+    <div class="container">
+        <ul>
+            <li>Quick Learner</li>
+            <li>Hard Worker</li>
+            <li>Team Player</li>
+        </ul>
+    </div>
+</section>
+<!-- FAST FACTS SECTION END -->
+
+
+<!-- PORTFOLIO PREVIEW SECTION-->
+<section id="section3">
+    <div class="container">
+        <div class="row">
+            <div class="card h-100 mb-2" id="highSchoolProject">
+                <div class="card-header">
+                    <h3>High School Project</h3>
+                </div>
+                <div class="card-body">
+                    <div class="img-slide">
+                        <img class="img-fluid" id="highSchoolProjectImg" src="" alt="High School Project Slideshow">
+                        <button onclick="hsp_prevSlide()" class="btn btn-primary" id="hsp_prevSlideBtn">Previous</button>
+                        <button onclick="hsp_nextSlide()" class="btn btn-primary" id="hsp_nextSlideBtn">Next</button>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    
+                </div>
+            </div>
+
+            <div class="card h-100 mb-2" id="snowdogEmporium">
+                <div class="card-header">
+                    <h3>Snowdog Emporium</h3>
+                </div>
+                <div class="card-body">
+                    <div class="img-slide">
+                        <img class="img-fluid" id="snowdogEmporiumImg" src="" alt="Snowdog Emporium Slideshow">
+                        <button onclick="sde_prevSlide()" class="btn btn-primary" id="sde_prevSlideBtn">Previous</button>
+                        <button onclick="sde_nextSlide()" class="btn btn-primary" id="sde_nextSlideBtn">Next</button>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    
+                </div>
+
+            </div>
+
+            <div class="card h-100 mb-2" id="flaskProject">
+                <div class="card-header">
+                    <h3>Flask Project</h3>
+                </div>
+                <div class="card-body">
+                    <div class="img-slide">
+                        <img class="img-fluid" id="flaskProjectImg" src="" alt="Flask Project Slideshow">
+                        <button onclick="fp_prevSlide()" class="btn btn-primary" id="fp_prevSlideBtn">Previous</button>
+                        <button onclick="fp_nextSlide()" class="btn btn-primary" id="fp_nextSlideBtn">Next</button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PORTFOLIO PREVIEW SECTION END -->
+
 
 <!--====================================================================================================================-->
 
@@ -180,5 +260,94 @@
 <script src="../../../StaticFiles/JS/white_bg.js"></script>
 <script src="../../../StaticFiles/JS/PageJS/contact-us.js"></script>
 <script src="../../../StaticFiles/JS/main.js"></script>
+
+<!-- SLIDE SHOW SCRIPTS-->
+<script>
+    /* HIGH SCHOOL PROJECT SLIDE SHOW */
+        let hsp_slideIndex = 0;
+        const hsp_imgCount = 3;
+        const hsp_imgPrefix = "hspImg_";
+
+        function hsp_showSlides() {
+            const hsp_imgElement = document.getElementById("highSchoolProjectImg");
+            const hsp_imgName = hsp_imgPrefix + pad(hsp_slideIndex, 3) + ".jpg";
+            hsp_imgElement.src = "../../../StaticFiles/img/portfolio/hsProject/" + hsp_imgName;
+        }
+
+        function hsp_nextSlide() {
+            hsp_slideIndex = (hsp_slideIndex + 1) % hsp_imgCount;
+            hsp_showSlides();
+        }
+
+        function hsp_prevSlide() {
+            hsp_slideIndex = (hsp_slideIndex - 1 + hsp_imgCount) % hsp_imgCount;
+            hsp_showSlides();
+        }
+
+        function pad(num, size) {
+            return ('000' + num).slice(-size);
+        }
+
+    /* HIGH SCHOOL PROJECT SLIDE SHOW END */
+
+
+
+    /* SNOWDOG EMPORIUM SLIDE SHOW */
+        let sde_slideIndex = 0;
+        const sde_imgCount = 3;
+        const sde_imgPrefix = "sdeImg_";
+
+        function sde_showSlides() {
+            const sde_imgElement = document.getElementById("snowdogEmporiumImg");
+            const sde_imgName = sde_imgPrefix + pad(sde_slideIndex, 3) + ".jpg";
+            sde_imgElement.src = "../../../StaticFiles/img/portfolio/snowdogEmporium/" + sde_imgName;
+        }
+
+        function sde_nextSlide() {
+            sde_slideIndex = (sde_slideIndex + 1) % sde_imgCount;
+            sde_showSlides();
+        }
+
+        function sde_prevSlide() {
+            sde_slideIndex = (sde_slideIndex - 1 + sde_imgCount) % sde_imgCount;
+            sde_showSlides();
+        }
+
+        function pad(num, size) {
+            return ('000' + num).slice(-size);
+        }
+
+    /* SNOWDOG EMPORIUM SLIDE SHOW END */
+
+
+
+    /* FLASK PROJECT SLIDE SHOW */
+        let fp_slideIndex = 0;
+        const fp_imgCount = 3;
+        const fp_imgPrefix = "fpImg_";
+
+        function fp_showSlides() {
+            const fp_imgElement = document.getElementById("flaskProjectImg");
+            const fp_imgName = fp_imgPrefix + pad(fp_slideIndex, 3) + ".jpg";
+            fp_imgElement.src = "../../../StaticFiles/img/portfolio/flaskProject/" + fp_imgName;
+        }
+
+        function fp_nextSlide() {
+            fp_slideIndex = (fp_slideIndex + 1) % fp_imgCount;
+            fp_showSlides();
+        }
+
+        function fp_prevSlide() {
+            fp_slideIndex = (fp_slideIndex - 1 + fp_imgCount) % fp_imgCount;
+            fp_showSlides();
+        }
+
+        function pad(num, size) {
+            return ('000' + num).slice(-size);
+        }
+
+    /* FLASK PROJECT SLIDE SHOW END */
+</script>
+<!-- SLIDE SHOW SCRIPTS END-->
     </body>
 </html>
