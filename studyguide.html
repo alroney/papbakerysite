@@ -129,6 +129,21 @@
        
         <div class="container-fluid my-6 mb-0 py-5 wow fadeIn">
             <div class="container py-5">
+                <div class="row">
+                    <div class="section" id="elevator-pitch-section">
+                        <h2 onclick="toggleSection('epitch-content')">Elevator Pitch</h2>
+                        <div class="content" id="epitch-content" style="display:none;">
+                            <p>Hi, I'm Andrew Roney, a Computer Science and Web Development graduate from the University of Maryland Global Campus and Capital Technology University, where I excelled in full-stack development projects. My hands-on experience includes leading group projects and contributing to a gaming community website, sharpening my technical and collaborative skills.</p>
+                            <br>
+                            <p>I'm proficient in Python, Java, C#, Django, and .NET Core, with a strong foundation in analytical and problem-solving abilities. My customer service experience has enhanced my interpersonal skills and adaptability, essential for understanding and meeting user requirements in technology projects.</p>
+                            <br>
+                            <p>I'm eager to apply this blend of technical expertise and soft skills in a challenging role, where I can continue to grow and contribute to innovative solutions. I'm particularly interested in opportunities that leverage my full-stack development skills to create a meaningful impact.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
                 <div class="row"> <!-- 4 PILLARS SUMMARY-->
                     <div class="section" id="oop-section">
                         <h2 onclick="toggleSection('oop-content')">Object Oriented Programming (OOP)</h2>
@@ -280,7 +295,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="row"> <!-- SQL Syntax -->
                     <div class="section" id="sql-section">
                         <h2 onclick="toggleSection('sql-content')">Structured Query Language (SQL) Syntax</h2>
@@ -375,7 +392,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="row"> <!-- Data Structures -->
                     <div class="section" id="data-structure-section">
                         <h2 onclick="toggleSection('data-structure-content')">Data Structures</h2>
@@ -386,6 +405,7 @@
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-lists-content')">Lists</span>
                                     <div class="content" id="ds-lists-content" style="display:none">
                                         <p>A lists is a linear data structure that stores elements sequentially. Lists allow for dynamic resizing and typically support operations such as insertion, deletion and traversal. Common type of lists include:</p>
+                                        <br>
                                         <ul>
                                             <li><u>Arrays</u>: provide constant-time access to elements by index but have a fixed size.</li>
                                             <li><u>Linked Lists</u>: offer efficient insertion and deletion operations but slower access time.</li>
@@ -400,6 +420,7 @@
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-queues-content')">Queues</span>: 
                                     <div class="content" id="ds-queues-content" style="display:none">
                                         <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where elements are added to the rear and removed from the front. Queues supports operations such as enqueue (addition) and dequeue (removal). They are commonly used in scenarios like task scheduling, job processing, and breadth-first search algorithms.</p>
+                                        <br>
                                         <ul>
                                             <li><u>Simple Queue</u>: follows the FIFO principle.</li>
                                             <li><u>Circular Queue</u>: a variation of simple queue with a circular structure.</li>
@@ -414,6 +435,7 @@
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-maps-content')">Maps</span>: 
                                     <div class="content" id="ds-maps-content" style="display:none">
                                         <p>A map (aka dictionary or associative array) is a collection of key-value pairs where each key is associated with a value. Maps allow for efficient lookup and retrieval of values based on keys.</p>
+                                        <br>
                                         <ul>
                                             <li><u>HashMap</u>: provides constant-time performance for basic operations with no ordering guarantees.</li>
                                             <li><u>TreeMap</u>: maintains elements in sorted order based on their keys.</li>
@@ -427,6 +449,7 @@
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-sets-content')">Sets</span>: 
                                     <div class="content" id="ds-sets-content" style="display:none">
                                         <p>A set is a collection of unique elemetns with no duplicates. Sets support operations such as addition, removal, and intersection. They are useful for tasks like removing duplicates from a list, testing membership, and performing set operations like union and intersection.</p>
+                                        <br>
                                         <ul>
                                             <li><u>HashSet</u>: provides constant-time performance for basic operations with no ordering guarantees.</li>
                                             <li><u>TreeSet</u>: maintains elements in sorted order using a red-black tree.</li>
@@ -462,7 +485,9 @@
                         </div>
                     </div>
                 </div>
+
                 <br>
+
                 <div class="row"> <!-- Define -->
                     <div class="section" id="define-section">
                         <h2 onclick="toggleSection('define-content')">Define</h2>
@@ -571,6 +596,74 @@
                                         </ul>
                                     </div>
                                 </li>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="section" id="framework-section">
+                        <h2 onclick="toggleSection('framework-content')">Frameworks on Resume</h2>
+                        <div class="content" id="framework-content" style="display:none;">
+                            <ul>
+                                <li><span class="btn btn-secondary" onclick="toggleSection('f-django-content')">Django</span>
+                                    <div class="content" id="f-django-content" style="display:none;">
+                                        <p>Django is a high-level Python web framework renowned for its rapid development capabilities and pragmatic design philosophy. It's crafted to facilitate the creation of web applications swiftly and efficiently, prioritizing simplicity, reusability, and scalability. At its core, Django adheres to the Model-View-Template (MVT) architectural pattern, streamlining the development process by abstracting away common tasks. Here are some key components and features:</p>
+                                        <br>
+                                        <ul>
+                                            <li><b>ORM (Object-Relational Mapping)</b>: Django's ORM simplifies database interactions by allowing developers to work with Python objects instead of raw SQL queries.</li>
+                                            <br>
+                                            <li><b>Admin Interface</b>: It offers a built-in admin interface for effortless content management and administrative tasks without extra coding.</li>
+                                            <br>
+                                            <li><b>URL Routing</b>: Django's URL dispatcher maps URL patterns to views, facilitating the handling of incoming requests.</li>
+                                            <br>
+                                            <li><b>Template Engine</b>: Developers can use Django's powerful template engine to create HTML templates with Python-like syntax, enabling dynamic content and template inheritance.</li>
+                                            <br>
+                                            <li><b>Form Handling</b>: Django's form handling library simplifies the creation and validation of HTML forms, including support for custom form classes.</li>
+                                            <br>
+                                            <li><b>Security</b>: Django comes with built-in protections against common security threats, along with tools for user authentication and authorization.</li>
+                                            <br>
+                                            <li><b>Internationalization and Localization</b>: It supports internationalization and localization out of the box, allowing applications to support multiple languages and regions.</li>
+                                            <br>
+                                            <li><b>Middleware</b>: Django enables the creation of middleware components for processing requests and responses, facilitating tasks such as authentication and logging.</li>
+                                            <br>
+                                            <li><b>Testing Framework</b>: Django provides a testing framework for writing and running tests, ensuring the reliability and correctness of applications.</li>
+                                            <br>
+                                            <li><b>Scalability and Performance</b>: With features like caching and database connection pooling, Django scales seamlessly from small projects to large, high-traffic websites.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <br>
+                                <li><span class="btn btn-secondary" onclick="toggleSection('f-dotnet-content')">.NET Core</span>
+                                    <div class="content" id="f-dotnet-content" style="display:none;">
+                                        <p>.NET Core is a cross-platform, open-source framework for building various types of applications, including web, desktop and cloud-based solutions. It's renowned for its flexibility, performance, and broad compatibility across different operating systems and development environments.</p>
+                                        <br>
+                                        <ul>
+                                            <li><b>Cross-Platform Development</b>: .NET Core allows developers to build applications that can run on Windows, macOS, and Linux, offering flexibility in deployment and reducing platform-specific dependencies.</li>
+                                            <br>
+                                            <li><b>High Performance</b>: .NET Core is optimized for performance, with features like Just-In-Time (JIT) compilation, asynchronous programming, and efficient memory management, making it suitable for high-performance scenarios</li>
+                                            <br>
+                                            <li><b>Modular Architecture</b>: .NET Core adopts a modular approach, allowing developers to include only the necessary components in their applications, reducing the overall footprint and improving scalability.</li>
+                                            <br>
+                                            <li><b>ASP.NET Core</b>: ASP.NET Core is a cross-platform, high-performance framework for building web applications and APIs using .NET Core. It provides features like middleware, dependency injection, and robust security mechanisms.</li>
+                                            <br>
+                                            <li><b>Entity Framework Core</b>: EFC is an object-relational mapping (ORM) framework that simplifies database access and manipulation, enabling developers to work with database using object-oriented principles.</li>
+                                            <br>
+                                            <li><b>Unified Development Experience</b>: .NET Core offers a unified development experience across different application types, with consistent APIs, tooling, and languages like C# and F#.</li>
+                                            <br>
+                                            <li><b>Open Source and Communinty-Driven</b>: .NET Core is open-source and developed in collaboration with the community, allowing developers to contribute to its development and leverage a rich ecosystem of libraries and tools. </li>
+                                            <br>
+                                            <li><b>Containerization Support</b>: .NET Core applications can be easily containerized using technologies like Docker, enabling seamless deployment and scalability in containerized environments.</li>
+                                            <br>
+                                            <li><b>Cross-Language Interoperability</b>: .NET Core supports interoperability with other langauges through the Common Language Runtime (CLR), allowing developers to integrate components written in different languages within the same application.</li>
+                                            <br>
+                                            <li><b>Tooling and Ecosystem</b>: .NET Core provides a rich set of tools, including Visual Studio IDE, Visual Studio Code, and command-line interfaces, along with a vibrant ecosystem of libraries, frameworks, and extensions.</li>
+                                            <br>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
