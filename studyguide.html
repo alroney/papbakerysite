@@ -387,10 +387,10 @@
                                     <div class="content" id="ds-lists-content" style="display:none">
                                         <p>A lists is a linear data structure that stores elements sequentially. Lists allow for dynamic resizing and typically support operations such as insertion, deletion and traversal. Common type of lists include:</p>
                                         <ul>
-                                            <li>- Arrays</li>
-                                            <li>- Linked Lists</li>
-                                            <li>- Dynamic Arrays</li>
-                                            <li>- Vectors</li>
+                                            <li><u>Arrays</u>: provide constant-time access to elements by index but have a fixed size.</li>
+                                            <li><u>Linked Lists</u>: offer efficient insertion and deletion operations but slower access time.</li>
+                                            <li><u>Dynamic Arrays</u>: dynamically adjust their size to accommodate elements efficiently.</li>
+                                            <li><u>Vectors</u>: is a synchronized implementation of the List interface, suitable for thread-safe operations but may have performance overhead compared to ArrayList.</li>
                                         </ul>
                                     </div>
                                 </li>
@@ -401,10 +401,10 @@
                                     <div class="content" id="ds-queues-content" style="display:none">
                                         <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where elements are added to the rear and removed from the front. Queues supports operations such as enqueue (addition) and dequeue (removal). They are commonly used in scenarios like task scheduling, job processing, and breadth-first search algorithms.</p>
                                         <ul>
-                                            <li>- Simple Queue</li>
-                                            <li>- Circular Queue</li>
-                                            <li>- Priority Queue</li>
-                                            <li>- Double Ended Queue</li>
+                                            <li><u>Simple Queue</u>: follows the FIFO principle.</li>
+                                            <li><u>Circular Queue</u>: a variation of simple queue with a circular structure.</li>
+                                            <li><u>Priority Queue</u>: orders elements based on their priority.</li>
+                                            <li><u>Double Ended Queue</u>: supports insertion and deletion at both ends.</li>
                                         </ul>
                                     </div>
                                 </li>
@@ -415,9 +415,9 @@
                                     <div class="content" id="ds-maps-content" style="display:none">
                                         <p>A map (aka dictionary or associative array) is a collection of key-value pairs where each key is associated with a value. Maps allow for efficient lookup and retrieval of values based on keys.</p>
                                         <ul>
-                                            <li>- HashMap</li>
-                                            <li>- TreeMap</li>
-                                            <li>- LinkedHashMap</li>
+                                            <li><u>HashMap</u>: provides constant-time performance for basic operations with no ordering guarantees.</li>
+                                            <li><u>TreeMap</u>: maintains elements in sorted order based on their keys.</li>
+                                            <li><u>LinkedHashMap</u>: maintains insertion order while still offering constant-time performance for basic operations.</li>
                                         </ul>
                                     </div>
                                 </li>
@@ -428,9 +428,9 @@
                                     <div class="content" id="ds-sets-content" style="display:none">
                                         <p>A set is a collection of unique elemetns with no duplicates. Sets support operations such as addition, removal, and intersection. They are useful for tasks like removing duplicates from a list, testing membership, and performing set operations like union and intersection.</p>
                                         <ul>
-                                            <li>- HashSet</li>
-                                            <li>- TreeSet</li>
-                                            <li>- LinkedHashSet</li>
+                                            <li><u>HashSet</u>: provides constant-time performance for basic operations with no ordering guarantees.</li>
+                                            <li><u>TreeSet</u>: maintains elements in sorted order using a red-black tree.</li>
+                                            <li><u>LinkedHashSet</u>: maintains insertion order while still offering constant-time performance for basic operations.</li>
                                         </ul>
                                     </div>
                                 </li>
@@ -526,7 +526,7 @@
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-increment-ops-content')">Increment Operators</span>
                                     <div class="content" id="d-increment-ops-content" style="display:none">
-                                        <p>Increment operators are used to increment the value of a variable by a specified amount. Common increment operators include ++ (increment by 1) and += (increment by a specified value).</p>
+                                        <p>Increment operators are used to increment the value of a variable by a specified amount. Common increment operators include ++ (increment by 1) and += (increment by a specified value). Common Big-O complexities include: </p>
                                     </div>
                                 </li>
                                 
@@ -534,7 +534,17 @@
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-big-o-content')">Big-O Notation</span>
                                     <div class="content" id="d-big-o-content" style="display:none">
-                                        <p>Big-O Notation is a mathematical notation used to describe asymptotic behavior (performance or complexity) of an algorithm as the input size approaches infinity. It provides an upper bound on the worst-case time or space complexity of an algorithm.</p>
+                                        <p>Big-O Notation is a mathematical notation used to describe asymptotic behavior (performance or complexity) of an algorithm as the input size approaches infinity. It provides an upper bound on the worst-case runtime or space requirements of an algorithm.</p>
+                                        <br>
+                                        <ul>
+                                            <li><b>O(1)</b> - <u>Constant time complexity</u>. The algorithm's runtime or space requirements remain constant regardless of the input size.</li>
+                                            <li><b>O(log n)</b> - <u>Logarithmic time complexity</u>. The algorithm's runtime or space requirements grow logarithmically with the input size.</li>
+                                            <li><b>O(n)</b> - <u>Linear time complexity</u>. The algorithm's runtime or space requirements grow linearly with the input size.</li>
+                                            <li><b>O(n log n)</b> - <u>Linearithmic time complexity</u>. Common in many efficient sorting and searching algorithms.</li>
+                                            <li><b>O(n^2)</b> - <u>Quadratic time complexity</u>. The algorithm's runtime or space requirements grow quadratically with the input size.</li>
+                                            <li><b>O(2^n)</b> - <u>Exponential time complexity</u>. The algorithm's runtime or space requirements grow exponentially with the input size.</li>
+                                            <li><b>O(n!)</b> - <u>Factorial time complexity</u>. The algorithm's runtime or space requirements grow factorially with the input size.</li>
+                                        </ul>
                                     </div>
                                 </li>
                                 
@@ -543,9 +553,9 @@
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-perf-vs-scal-content')">Performance vs Scalability</span>
                                     <div class="content" id="d-perf-vs-scal-content" style="display:none">
                                         <ul>
-                                            <li>- Performance refers to the speed or efficiency with which a system or program executes a task under specific conditions. It focuses on optimizing resource usage to achieve faster execution times.</li>
+                                            <li>- Performance is about the speed or efficiency with which a system or program executes a task under specific conditions. It aims at using resources effectively to speed up the execution of tasks.</li>
                                             <br>
-                                            <li>- Scalability refers to the ability of a system or program to handle increasing amounts of work or users without sacrificing performance. It focuses on designing systems that can grow and adapt to handle larger workloads or user demands.</li>
+                                            <li>- Scalability is the capability of a system, application, or network to maintain proper functioninality and efficiency, even as the workload or number of users significantly increases. It involves designing systems that are capable of expanding and adapting to accommodate greater demands from work or users.</li>
                                         </ul>
                                     </div>
                                 </li>
@@ -555,9 +565,9 @@
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-agile-vs-waterfall-content')">Agile vs Waterfall Methodologies</span>
                                     <div class="content" id="d-agile-vs-waterfall-content" style="display:none">
                                         <ul>
-                                            <li>- Agile methodology is an iterative and incremental approach to software development, which enhances the continuous view of changing requirements to give flexibility and open ways for customer involvement and interaction. It represents the best priority of delivering working software frequently and adapting to the changing requirements constantly.</li>
+                                            <li>- Agile is an iterative and incremental approach to software development that focuses on continuously adapting to changing requirements. This method emphasizes flexiblity and encourages customer involvement and interaction. It prioritizes delivering working software frequently while constantly adapting to new requirements.</li>
                                             <br>
-                                            <li>- Waterfall methodology is a tradition linear-sequential approach to software development, composed of distinct phases including requirements analysis, design, implementation, testing and maintenance among others. It is a plan-driven, rigid process where once the development is started, flexibility in accommodating changes is minimum.</li>
+                                            <li>- Waterfall is a traditional method of software development that follows a linear and sequential approach. It involves distinct phases such as requirements analysis, design, implementation, testing and maintenance. This plan-driven process allows for very little flexibility once development has begun, making it challenging to accommodate changes.</li>
                                         </ul>
                                     </div>
                                 </li>
