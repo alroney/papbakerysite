@@ -106,7 +106,6 @@ img {
 
 .navbar .navbar-nav .nav-link {
   padding: 10px 15px;
-  border: 2px blue solid;
   color: var(--light);
   outline: none;
 }
