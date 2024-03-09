@@ -103,7 +103,6 @@ img {
 
 
 /*** Navbar ***/
-
 .navbar .navbar-nav .nav-link {
   padding: 10px 15px;
   color: var(--light);
@@ -127,6 +126,10 @@ img {
     right: 0;
     top: 50%;
     transform: translateY(-50%) translateX(120%);
+  }
+  
+  .navbar {
+    padding-top: 15px !important; /* Ensure if the hamburger menu isn't up that their will be padding for sure */
   }
 }
 
