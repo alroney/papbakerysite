@@ -144,105 +144,381 @@
                 </ul>
 
                 <div class="tab-content ">
-                    <!-- PETS MENU CARDS-->
-                    <div id="pets" class="tab-pane active fadeIn">
-                        <div class="container-fluid dog-biscuit-disclaimer mb-5 justify-content-center">
-                            <span id="biscuit-disclaimer" style="display: none">
-                                <h5 class="disclaimer-word">Dog Biscuits Disclaimer</h5>
-                                <ul class="dog-biscuit-disclaimer-list mb-5">
-                                    <li>Due to the ratio between the whole wheat flour and other ingredients in the biscuits, they all look very similar coming out of the oven.</li>
-                                    <br>
-                                    <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
-                                    <br>
-                                    <li>All of our biscuits are made with human grade ingredients, but they are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
-                                    <br>
-                                    <li>Upon ordering please specify the level of softness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness.</li>
-                                </ul>
-                            </span>
-                            <button class="btn mx-auto d-block btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
-                        </div>
-                        <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
-                        <div class="pet-menu mb-4">
-                            <h3 class="pet-menu-img-caption">Dog Biscuits</h3>
-                            <img class="pet-menu-img" src="StaticFiles/img/product/dog/biscuits/peanut_butter_biscuit.png" style="transform: rotate(-90deg);" alt="Dog Biscuit">
-                        </div>
-                        <div class="row"> <!-- Apple, Peanut, Pumpkin-->
-                            <!-- Applesauce Biscuit Card -->
-                            <div class="col mb-3">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Applesauce Biscuits</h5></div>
-                                    <div class="card-body">
-                                        <p>Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_biscuit"  aria-controls="offcanvas_applesauce_biscuit">More Info</a>
-                                    </div>
-                                </div>
+                    <!-- PETS MENU-->
+                        <div id="pets" class="tab-pane active fadeIn">
+                            <!-- Disclaimer -->
+                            <div class="container-fluid dog-biscuit-disclaimer mb-5 justify-content-center">
+                                <span id="biscuit-disclaimer" style="display: none">
+                                    <h5 class="disclaimer-word">Dog Biscuits Disclaimer</h5>
+                                    <ul class="dog-biscuit-disclaimer-list mb-5">
+                                        <li>Due to the ratio between the whole wheat flour and other ingredients in the biscuits, they all look very similar coming out of the oven.</li>
+                                        <br>
+                                        <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
+                                        <br>
+                                        <li>All of our biscuits are made with human grade ingredients, but they are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
+                                        <br>
+                                        <li>Upon ordering please specify the level of softness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness.</li>
+                                        <br>
+                                        <li>The softer the treat, the sooner they expire. This is caused by the moisture still in the treat.</li>
+                                    </ul>
+                                </span>
+                                <button class="btn mx-auto d-block btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
                             </div>
-                            <!-- Peanut-butter Biscuit Card -->
-                            <div class="col mb-3">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Peanut-Butter Biscuits</h5></div>
-                                    <div class="card-body">
-                                        <p class="card-text">Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. A canine delight!</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_biscuit"  aria-controls="offcanvas_peanut_butter_biscuit">More Info</a>
-                                    </div>
-                                </div>
+                            <!-- End Disclaimer -->
+                            <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
+                            <div class="pet-menu mb-4">
+                                <h3 class="pet-menu-img-caption">Dog Biscuits</h3>
+                                <img class="pet-menu-img" src="StaticFiles/img/product/dog/biscuits/peanut_butter_biscuit.png" style="transform: rotate(-90deg);" alt="Dog Biscuit">
                             </div>
-                            <!-- Pumpkin Biscuit Card -->
-                            <div class="col mb-3">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Pumpkin Biscuits</h5></div>
-                                    <div class="card-body">
-                                        <p class="card-text">Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!</p>
-                                    </div>
-                                    <div class="card-footer">
+                            <!-- BISCUIT CARDS -->
+                                <div class="container">
+                                    <div class="row">
+                                        <!-- Applesauce Biscuit Card -->
+                                        <div class="col mb-3">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Applesauce Biscuit</h5></div>
+                                                <div class="card-body">
+                                                    <p>Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_biscuit"  aria-controls="offcanvas_applesauce_biscuit">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_biscuit"  aria-controls="offcanvas_pumpkin_biscuit">More Info</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- End of Row -->
-                        
-                        <div class="col mb-3 d-none"> <!--Bannana, Sweet Potato, Mango-->
-                            <!-- Bannana Biscuit Card -->
-                            <div class="col mb-3">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Bannana Biscuits</h5></div>
-                                    <div class="card-body">
-                                        <p>
-                                            Introducing our delicious whole wheat dog biscuit infused with pure bannana. A nutritious canine delight!
-                                        </p>
-                                    </div>
-                                    <div class="card-footer">
-                                        
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_applesauce_biscuit"  aria-controls="offcanvas_applesauce_biscuit">More Info</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        <!-- Peanut-butter Biscuit Card -->
+                                        <div class="col mb-3">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Peanut-Butter Biscuit</h5></div>
+                                                <div class="card-body">
+                                                    <p class="card-text">Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_biscuit"  aria-controls="offcanvas_peanut_butter_biscuit">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <!-- Pumpkin Biscuit Card -->
+                                        <div class="col mb-3">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Pumpkin Biscuit</h5></div>
+                                                <div class="card-body">
+                                                    <p class="card-text">Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_biscuit"  aria-controls="offcanvas_pumpkin_biscuit">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Bannana Biscuit Card -->
+                                        <div class="col mb-3 d-none">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Bannana Biscuit</h5></div>
+                                                <div class="card-body">
+                                                    <p>
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_bannana_biscuit"  aria-controls="offcanvas_bannana_biscuit">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <!-- Sweet Potato Biscuit Card -->
+                                        <div class="col mb-3 d-none">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Sweet Potato Biscuit</h5></div>
+                                                <div class="card-body">
+                                                    <p>
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_sweet_potato_biscuit"  aria-controls="offcanvas_sweet_potato_biscuit">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mango Biscuit Card -->
+                                        <div class="col mb-3 d-none">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Mango Biscuit</h5></div>
+                                                <div class="card-body">
+                                                    <p>
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_mango_biscuit"  aria-controls="offcanvas_mango_biscuit">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- End of Row -->
+                                </div>
+                            <!-- END BISCUIT CARDS-->
+
+                            <!-- BISCUITS CAROUSEL -->
+                                <div class="container">
+                                    <div class="carousel slide" id="biscuit-size-carousel" data-bs-ride="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block mx-auto" src="StaticFiles/img/product/dog/biscuits/biscuit_sm.png" alt="Small Biscuit">
+                                                <div class="carousel-caption d-block">
+                                                    <h5>Small Biscuit</h5>
+                                                    <p class="text-dark">Only $0.35 Each!</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <img class="d-block mx-auto" src="StaticFiles/img/product/dog/biscuits/biscuit_sm_long.png" alt="Small Long Biscuit">
+                                                <div class="carousel-caption d-block">
+                                                    <h5>Small Long Biscuit</h5>
+                                                    <p class="text-dark">Only $0.37 Each!</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <img class="d-block mx-auto mb-5" src="StaticFiles/img/product/dog/biscuits/biscuit_lg.png" alt="Large Biscuit">
+                                                <div class="carousel-caption d-block">
+                                                    <h5>Large Biscuit</h5>
+                                                    <p class="text-dark">Only $0.45 Each!</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <img class="d-block mx-auto mb-5" src="StaticFiles/img/product/dog/biscuits/biscuit_lg_long.png" alt="Large Long Biscuit">
+                                                <div class="carousel-caption d-block">
+                                                    <h5>Large Long Biscuit</h5>
+                                                    <p class="text-dark">Only $0.50 Each!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            <!-- END BISCUITS CAROUSEL -->
+                            
+                            <div class="pet-menu mb-4">
+                                <h3 class="pet-menu-img-caption">Training Treats</h3>
+                                <img class="pet-menu-img" src="StaticFiles/img/product/dog/trainingTreats/training_treat_paw.png" alt="Training Treat"/>
+                            </div>
+                            <!-- TRAINING TREAT CARDS-->
+                                <div class="container">
+                                    <div class="row">
+                                        <!-- Training Treat Paw Card-->
+                                        <div class="col mb-3">
+                                            <div class="card h-100" style="width: 18rem;">
+                                                <div class="card-header"><h5>Training Treat Paw</h5></div>
+                                                <div class="card-body">
+                                                    <p>Light little treat perfect for usage in training sessions</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    
+                                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_training_treat"  aria-controls="offcanvas_training_treat">More Info</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- END TRAINING TREAT CARDS-->
+
+                        </div>
+                    <!-- END PETS MENU-->
+
+                    
 
                         <!-- PETS OFFCANVASES -->
-                            <!-- Applesauce Biscuits Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_biscuit" aria-labelledby="offcanvas_applesauce_biscuit_label">
-                                    <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_applesauce_biscuit_label">Applesauce Biscuits</h5>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <!-- BISCUITS OFFCANVAS -->
+                                <!-- Applesauce Biscuits Offcanvas -->
+                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_biscuit" aria-labelledby="offcanvas_applesauce_biscuit_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvas_applesauce_biscuit_label">Applesauce Biscuits</h5>
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <div class="container-fluid">
+                                                <!-- Nutritional Facts -->
+    <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                                    <header class="performance-facts__header">
+                                                    <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                                    <p>Serving Size 1 biscuit (6g)</p>
+                                                        <p>Serving Per Container: Varies</p>
+                                                    </header>
+                                                    <table class="performance-facts__table">
+                                                        <thead>
+                                                            <tr>
+                                                            <th colspan="3" class="small-info">
+                                                                Amount Per Serving
+                                                            </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th colspan="2">
+                                                                    <b>Calories</b>
+                                                                    3.14
+                                                                </th>
+                                                                <td>
+                                                                    Calories from Fat
+                                                                    0.54
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="thick-row">
+                                                                <td colspan="3" class="small-info">
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th colspan="2">
+                                                                    <b>Total Fat</b>
+                                                                    0.06g
+                                                                </th>
+                                                                <td>
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="blank-cell">
+                                                                </td>
+                                                                <th>
+                                                                    Saturated Fat
+                                                                    0.01g
+                                                                </th>
+                                                                <td>
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="blank-cell">
+                                                                </td>
+                                                                <th>
+                                                                    Trans Fat
+                                                                    0g
+                                                                </th>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th colspan="2">
+                                                                    <b>Cholesterol</b>
+                                                                    0mg
+                                                                </th>
+                                                                <td>
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th colspan="2">
+                                                                    <b>Sodium</b>
+                                                                    0.92mg
+                                                                </th>
+                                                                <td>
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th colspan="2">
+                                                                    <b>Total Carbohydrate</b>
+                                                                    0.84g
+                                                                </th>
+                                                                <td>
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="blank-cell">
+                                                                </td>
+                                                                <th>
+                                                                    Dietary Fiber
+                                                                    0.12g
+                                                                </th>
+                                                                <td>
+                                                                    <b></b>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="blank-cell">
+                                                                </td>
+                                                                <th>
+                                                                    Sugars
+                                                                    0.57g
+                                                                </th>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="thick-end">
+                                                                <th colspan="2">
+                                                                    <b>Protein</b>
+                                                                    0.03g
+                                                                </th>
+                                                                <td>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                
+                                                    <table class="performance-facts__table--grid">
+                                                        <tbody>
+                                                            <tr class="thin-end">
+                                                            <td colspan="2">
+                                                                Calcium
+                                                                1.15mg
+                                                            </td>
+                                                            <td>
+                                                                Potassium
+                                                                2.22mg
+                                                            </td>
+                                                            <td>
+                                                                Iron
+                                                                0.02mg
+                                                            </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </section>
+                                                <!-- End Nutritional Facts-->
+                                                <section class="ingredients">
+                                                    <h2>Ingredients</h2>
+                                                    <ul>
+                                                        <li>Whole Wheat Flour</li>
+                                                        <li>Unsweetened Applesauce</li>
+                                                        <li>Water</li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="offcanvas-body">
-                                        <div class="container-fluid">
+                                <!-- Peanut Butter Biscuits Offcanvas -->
+                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_biscuit" aria-labelledby="offcanvas_peanut_butter_biscuit_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvas_peanut_butter_biscuit_label">Peanut Butter Biscuits</h5>
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
                                             <!-- Nutritional Facts -->
-<!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+    <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
                                                 <header class="performance-facts__header">
-                                                  <h1 class="performance-facts__title">Nutrition Facts</h1>
-                                                  <p>Serving Size 1 biscuit (6g)</p>
+                                                <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                                <p>Serving Size 1 biscuit (6g)</p>
                                                     <p>Serving Per Container: Varies</p>
                                                 </header>
                                                 <table class="performance-facts__table">
@@ -257,11 +533,11 @@
                                                         <tr>
                                                             <th colspan="2">
                                                                 <b>Calories</b>
-                                                                3.14
+                                                                14.92
                                                             </th>
                                                             <td>
                                                                 Calories from Fat
-                                                                0.54
+                                                                9.81
                                                             </td>
                                                         </tr>
                                                         <tr class="thick-row">
@@ -272,7 +548,165 @@
                                                         <tr>
                                                             <th colspan="2">
                                                                 <b>Total Fat</b>
-                                                                0.06g
+                                                                1.09g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Saturated Fat
+                                                                0.183g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Trans Fat
+                                                                0g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Cholesterol</b>
+                                                                4.20mg
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Sodium</b>
+                                                                22.24mg
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Carbohydrate</b>
+                                                                1.10g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Dietary Fiber
+                                                                0.09g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Sugars
+                                                                0.01g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-end">
+                                                            <th colspan="2">
+                                                                <b>Protein</b>
+                                                                0.13g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            
+                                                <table class="performance-facts__table--grid">
+                                                    <tbody>
+                                                        <tr class="thin-end">
+                                                        <td colspan="2">
+                                                            Calcium
+                                                            0.34mg
+                                                        </td>
+                                                        <td>
+                                                            Potassium
+                                                            1.34mg
+                                                        </td>
+                                                        <td>
+                                                            Iron
+                                                            0.02mg
+                                                        </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </section>
+                                            <!-- End Nutritional Facts-->
+                                            <section class="ingredients">
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>Whole Wheat Flour</li>
+                                                    <li>Organic Peanut Butter</li>
+                                                    <li>Egg</li>
+                                                    <li>Water</li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </div>
+                                <!-- Pumpkin Biscuits Offcanvas -->
+                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_biscuit" aria-labelledby="offcanvas_pumpkin_biscuit_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvas_pumpkin_biscuit_label">Pumpkin Biscuits</h5>
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <!-- Nutritional Facts -->
+    <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                                <header class="performance-facts__header">
+                                                <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                                <p>Serving Size 1 biscuit (6g)</p>
+                                                    <p>Serving Per Container: Varies</p>
+                                                </header>
+                                                <table class="performance-facts__table">
+                                                    <thead>
+                                                        <tr>
+                                                        <th colspan="3" class="small-info">
+                                                            Amount Per Serving
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Calories</b>
+                                                                4.06
+                                                            </th>
+                                                            <td>
+                                                                Calories from Fat
+                                                                1.08
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-row">
+                                                            <td colspan="3" class="small-info">
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Fat</b>
+                                                                0.12g
                                                             </th>
                                                             <td>
                                                                 <b></b>
@@ -311,7 +745,7 @@
                                                         <tr>
                                                             <th colspan="2">
                                                                 <b>Sodium</b>
-                                                                0.92mg
+                                                                0.22mg
                                                             </th>
                                                             <td>
                                                                 <b></b>
@@ -320,7 +754,7 @@
                                                         <tr>
                                                             <th colspan="2">
                                                                 <b>Total Carbohydrate</b>
-                                                                0.84g
+                                                                1.11g
                                                             </th>
                                                             <td>
                                                                 <b></b>
@@ -331,7 +765,7 @@
                                                             </td>
                                                             <th>
                                                                 Dietary Fiber
-                                                                0.12g
+                                                                0.16g
                                                             </th>
                                                             <td>
                                                                 <b></b>
@@ -342,7 +776,7 @@
                                                             </td>
                                                             <th>
                                                                 Sugars
-                                                                0.57g
+                                                                0.06g
                                                             </th>
                                                             <td>
                                                             </td>
@@ -350,28 +784,404 @@
                                                         <tr class="thick-end">
                                                             <th colspan="2">
                                                                 <b>Protein</b>
-                                                                0.03g
+                                                                0.15g
                                                             </th>
                                                             <td>
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                              
+                                            
                                                 <table class="performance-facts__table--grid">
                                                     <tbody>
                                                         <tr class="thin-end">
                                                         <td colspan="2">
                                                             Calcium
-                                                            1.15mg
+                                                            0.54mg
                                                         </td>
                                                         <td>
                                                             Potassium
-                                                            2.22mg
+                                                            4.08mg
                                                         </td>
                                                         <td>
                                                             Iron
-                                                            0.02mg
+                                                            0.04mg
+                                                        </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            <!-- This will be useful for the people menu
+                                                <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+                                            
+                                                <table class="performance-facts__table--small small-info">
+                                                    <thead>
+                                                        <tr>
+                                                            <td colspan="2"></td>
+                                                            <th>Calories:</th>
+                                                            <th>2,000</th>
+                                                            <th>2,500</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">Total Fat</th>
+                                                            <td>Less than</td>
+                                                            <td>65g</td>
+                                                            <td>80g</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell"></td>
+                                                            <th>Saturated Fat</th>
+                                                            <td>Less than</td>
+                                                            <td>20g</td>
+                                                            <td>25g</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">Cholesterol</th>
+                                                            <td>Less than</td>
+                                                            <td>300mg</td>
+                                                            <td>300 mg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">Sodium</th>
+                                                            <td>Less than</td>
+                                                            <td>2,400mg</td>
+                                                            <td>2,400mg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="3">Total Carbohydrate</th>
+                                                            <td>300g</td>
+                                                            <td>375g</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell"></td>
+                                                            <th colspan="2">Dietary Fiber</th>
+                                                            <td>25g</td>
+                                                            <td>30g</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            
+                                                <p class="small-info">
+                                                    Calories per gram:
+                                                </p>
+                                                <p class="small-info text-center">
+                                                    Fat 9
+                                                    &bull;
+                                                    Carbohydrate 4
+                                                    &bull;
+                                                    Protein 4
+                                                </p>
+                                                -->
+                                            </section>
+                                            <!-- End Nutritional Facts-->
+                                            <section class="ingredients">
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>Whole Wheat Flour</li>
+                                                    <li>Pure Pumpkin</li>
+                                                    <li>Water</li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </div>
+                                <!-- Bannana Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_bannana_biscuit" aria-labelledby="offcanvas_bannana_biscuit_label">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvas_bannana_biscuit_label">Bannana Biscuits</h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <!-- Nutritional Facts -->
+    <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                            <header class="performance-facts__header">
+                                            <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                            <p>Serving Size 1 biscuit (6g)</p>
+                                                <p>Serving Per Container: Varies</p>
+                                            </header>
+                                            <table class="performance-facts__table">
+                                                <thead>
+                                                    <tr>
+                                                    <th colspan="3" class="small-info">
+                                                        Amount Per Serving
+                                                    </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Calories</b>
+                                                            0.0
+                                                        </th>
+                                                        <td>
+                                                            Calories from Fat
+                                                            0.0
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thick-row">
+                                                        <td colspan="3" class="small-info">
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Total Fat</b>
+                                                            0.0g
+                                                        </th>
+                                                        <td>
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Saturated Fat
+                                                            0.0g
+                                                        </th>
+                                                        <td>
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Trans Fat
+                                                            0g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Cholesterol</b>
+                                                            0.0mg
+                                                        </th>
+                                                        <td>
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Sodium</b>
+                                                            0.0g
+                                                        </th>
+                                                        <td>
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">
+                                                            <b>Total Carbohydrate</b>
+                                                            0.0g
+                                                        </th>
+                                                        <td>
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Dietary Fiber
+                                                            0.0g
+                                                        </th>
+                                                        <td>
+                                                            <b></b>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell">
+                                                        </td>
+                                                        <th>
+                                                            Sugars
+                                                            0.01g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="thick-end">
+                                                        <th colspan="2">
+                                                            <b>Protein</b>
+                                                            0.0g
+                                                        </th>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        
+                                            <table class="performance-facts__table--grid">
+                                                <tbody>
+                                                    <tr class="thin-end">
+                                                    <td colspan="2">
+                                                        Calcium
+                                                        0.0mg
+                                                    </td>
+                                                    <td>
+                                                        Potassium
+                                                        0.0mg
+                                                    </td>
+                                                    <td>
+                                                        Iron
+                                                        0.0mg
+                                                    </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                        <!-- End Nutritional Facts-->
+                                        <section class="ingredients">
+                                            <h2>Ingredients</h2>
+                                            <ul>
+                                                <li>Whole Wheat Flour</li>
+                                                <li>Bannana</li>
+                                            </ul>
+                                        </section>
+                                    </div>
+                                </div>
+                                <!-- Sweet Potato Biscuits Offcanvas -->
+                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_sweet_potato_biscuit" aria-labelledby="offcanvas_sweet_potato_biscuit">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvas_sweet_potato_biscuit_label">Sweet Potato Biscuits</h5>
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <!-- Nutritional Facts -->
+        <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                                <header class="performance-facts__header">
+                                                <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                                <p>Serving Size 1 biscuit (6g)</p>
+                                                    <p>Serving Per Container: Varies</p>
+                                                </header>
+                                                <table class="performance-facts__table">
+                                                    <thead>
+                                                        <tr>
+                                                        <th colspan="3" class="small-info">
+                                                            Amount Per Serving
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Calories</b>
+                                                                0.0
+                                                            </th>
+                                                            <td>
+                                                                Calories from Fat
+                                                                0.0
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-row">
+                                                            <td colspan="3" class="small-info">
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Fat</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Saturated Fat
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Trans Fat
+                                                                0g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Cholesterol</b>
+                                                                0.0mg
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Sodium</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Carbohydrate</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Dietary Fiber
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Sugars
+                                                                0.01g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-end">
+                                                            <th colspan="2">
+                                                                <b>Protein</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            
+                                                <table class="performance-facts__table--grid">
+                                                    <tbody>
+                                                        <tr class="thin-end">
+                                                        <td colspan="2">
+                                                            Calcium
+                                                            0.0mg
+                                                        </td>
+                                                        <td>
+                                                            Potassium
+                                                            0.0mg
+                                                        </td>
+                                                        <td>
+                                                            Iron
+                                                            0.0mg
                                                         </td>
                                                         </tr>
                                                     </tbody>
@@ -382,391 +1192,328 @@
                                                 <h2>Ingredients</h2>
                                                 <ul>
                                                     <li>Whole Wheat Flour</li>
-                                                    <li>Unsweetened Applesauce</li>
+                                                    <li>Puree</li>
                                                     <li>Water</li>
                                                 </ul>
                                             </section>
                                         </div>
                                     </div>
-                                </div>
-                            <!-- Peanut Butter Biscuits Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_biscuit" aria-labelledby="offcanvas_peanut_butter_biscuit_label">
-                                    <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_peanut_butter_biscuit_label">Peanut Butter Biscuits</h5>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                <!-- Mango Biscuits Offcanvas -->
+                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_mango_biscuit" aria-labelledby="offcanvas_mango_biscuit_label">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvas_mango_biscuit_label">Mango Biscuits</h5>
+                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <!-- Nutritional Facts -->
+        <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
+                                                <header class="performance-facts__header">
+                                                <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                                <p>Serving Size 1 biscuit (6g)</p>
+                                                    <p>Serving Per Container: Varies</p>
+                                                </header>
+                                                <table class="performance-facts__table">
+                                                    <thead>
+                                                        <tr>
+                                                        <th colspan="3" class="small-info">
+                                                            Amount Per Serving
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Calories</b>
+                                                                0.0
+                                                            </th>
+                                                            <td>
+                                                                Calories from Fat
+                                                                0.0
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-row">
+                                                            <td colspan="3" class="small-info">
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Fat</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Saturated Fat
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Trans Fat
+                                                                0g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Cholesterol</b>
+                                                                0.0mg
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Sodium</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th colspan="2">
+                                                                <b>Total Carbohydrate</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Dietary Fiber
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="blank-cell">
+                                                            </td>
+                                                            <th>
+                                                                Sugars
+                                                                0.01g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="thick-end">
+                                                            <th colspan="2">
+                                                                <b>Protein</b>
+                                                                0.0g
+                                                            </th>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            
+                                                <table class="performance-facts__table--grid">
+                                                    <tbody>
+                                                        <tr class="thin-end">
+                                                        <td colspan="2">
+                                                            Calcium
+                                                            0.0mg
+                                                        </td>
+                                                        <td>
+                                                            Potassium
+                                                            0.0mg
+                                                        </td>
+                                                        <td>
+                                                            Iron
+                                                            0.0mg
+                                                        </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </section>
+                                            <!-- End Nutritional Facts-->
+                                            <section class="ingredients">
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>Whole Wheat Flour</li>
+                                                    <li>Puree</li>
+                                                    <li>Water</li>
+                                                </ul>
+                                            </section>
+                                        </div>
                                     </div>
-                                    <div class="offcanvas-body">
-                                        <!-- Nutritional Facts -->
+                            <!-- END BISUCITS OFFCANVAS -->
+
+                            <!-- TRAINING TREAT OFFCANVAS -->
+                            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_training_treat_paw" aria-labelledby="offcanvas_training_treat_paw_label">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvas_training_treat_label">Training Treat Paw</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <!-- Nutritional Facts -->
 <!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
-                                            <header class="performance-facts__header">
-                                              <h1 class="performance-facts__title">Nutrition Facts</h1>
-                                              <p>Serving Size 1 biscuit (6g)</p>
-                                                <p>Serving Per Container: Varies</p>
-                                            </header>
-                                            <table class="performance-facts__table">
-                                                <thead>
-                                                    <tr>
-                                                    <th colspan="3" class="small-info">
-                                                        Amount Per Serving
+                                        <header class="performance-facts__header">
+                                        <h1 class="performance-facts__title">Nutrition Facts</h1>
+                                        <p>Serving Size 1 biscuit (6g)</p>
+                                            <p>Serving Per Container: Varies</p>
+                                        </header>
+                                        <table class="performance-facts__table">
+                                            <thead>
+                                                <tr>
+                                                <th colspan="3" class="small-info">
+                                                    Amount Per Serving
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        <b>Calories</b>
+                                                        0.0
                                                     </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Calories</b>
-                                                            14.92
-                                                        </th>
-                                                        <td>
-                                                            Calories from Fat
-                                                            9.81
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="thick-row">
-                                                        <td colspan="3" class="small-info">
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Total Fat</b>
-                                                            1.09g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Saturated Fat
-                                                            0.183g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Trans Fat
-                                                            0g
-                                                        </th>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Cholesterol</b>
-                                                            4.20mg
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Sodium</b>
-                                                            22.24mg
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Total Carbohydrate</b>
-                                                            1.10g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Dietary Fiber
-                                                            0.09g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Sugars
-                                                            0.01g
-                                                        </th>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="thick-end">
-                                                        <th colspan="2">
-                                                            <b>Protein</b>
-                                                            0.13g
-                                                        </th>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                          
-                                            <table class="performance-facts__table--grid">
-                                                <tbody>
-                                                    <tr class="thin-end">
-                                                    <td colspan="2">
-                                                        Calcium
-                                                        0.34mg
-                                                    </td>
                                                     <td>
-                                                        Potassium
-                                                        1.34mg
+                                                        Calories from Fat
+                                                        0.0
                                                     </td>
-                                                    <td>
-                                                        Iron
-                                                        0.02mg
+                                                </tr>
+                                                <tr class="thick-row">
+                                                    <td colspan="3" class="small-info">
+                                                        <b></b>
                                                     </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                          </section>
-                                        <!-- End Nutritional Facts-->
-                                        <section class="ingredients">
-                                            <h2>Ingredients</h2>
-                                            <ul>
-                                                <li>Whole Wheat Flour</li>
-                                                <li>Organic Peanut Butter</li>
-                                                <li>Egg</li>
-                                                <li>Water</li>
-                                            </ul>
-                                        </section>
-                                    </div>
-                                </div>
-                            <!-- Pumpkin Biscuits Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_biscuit" aria-labelledby="offcanvas_pumpkin_biscuit_label">
-                                    <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_pumpkin_biscuit_label">Pumpkin Biscuits</h5>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                    </div>
-                                    <div class="offcanvas-body">
-                                        <!-- Nutritional Facts -->
-<!--NUTRITIONAL FACTS-->                    <section class="performance-facts">
-                                            <header class="performance-facts__header">
-                                              <h1 class="performance-facts__title">Nutrition Facts</h1>
-                                              <p>Serving Size 1 biscuit (6g)</p>
-                                                <p>Serving Per Container: Varies</p>
-                                            </header>
-                                            <table class="performance-facts__table">
-                                                <thead>
-                                                    <tr>
-                                                    <th colspan="3" class="small-info">
-                                                        Amount Per Serving
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        <b>Total Fat</b>
+                                                        0.0g
                                                     </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Calories</b>
-                                                            4.06
-                                                        </th>
-                                                        <td>
-                                                            Calories from Fat
-                                                            1.08
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="thick-row">
-                                                        <td colspan="3" class="small-info">
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Total Fat</b>
-                                                            0.12g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Saturated Fat
-                                                            0.01g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Trans Fat
-                                                            0g
-                                                        </th>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Cholesterol</b>
-                                                            0mg
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Sodium</b>
-                                                            0.22mg
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">
-                                                            <b>Total Carbohydrate</b>
-                                                            1.11g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Dietary Fiber
-                                                            0.16g
-                                                        </th>
-                                                        <td>
-                                                            <b></b>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell">
-                                                        </td>
-                                                        <th>
-                                                            Sugars
-                                                            0.06g
-                                                        </th>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="thick-end">
-                                                        <th colspan="2">
-                                                            <b>Protein</b>
-                                                            0.15g
-                                                        </th>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                          
-                                            <table class="performance-facts__table--grid">
-                                                <tbody>
-                                                    <tr class="thin-end">
-                                                    <td colspan="2">
-                                                        Calcium
-                                                        0.54mg
-                                                    </td>
                                                     <td>
-                                                        Potassium
-                                                        4.08mg
+                                                        <b></b>
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="blank-cell">
+                                                    </td>
+                                                    <th>
+                                                        Saturated Fat
+                                                        0.0g
+                                                    </th>
                                                     <td>
-                                                        Iron
-                                                        0.04mg
+                                                        <b></b>
                                                     </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                          <!-- This will be useful for the people menu
-                                            <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
-                                          
-                                            <table class="performance-facts__table--small small-info">
-                                                <thead>
-                                                    <tr>
-                                                        <td colspan="2"></td>
-                                                        <th>Calories:</th>
-                                                        <th>2,000</th>
-                                                        <th>2,500</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th colspan="2">Total Fat</th>
-                                                        <td>Less than</td>
-                                                        <td>65g</td>
-                                                        <td>80g</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell"></td>
-                                                        <th>Saturated Fat</th>
-                                                        <td>Less than</td>
-                                                        <td>20g</td>
-                                                        <td>25g</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">Cholesterol</th>
-                                                        <td>Less than</td>
-                                                        <td>300mg</td>
-                                                        <td>300 mg</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="2">Sodium</th>
-                                                        <td>Less than</td>
-                                                        <td>2,400mg</td>
-                                                        <td>2,400mg</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th colspan="3">Total Carbohydrate</th>
-                                                        <td>300g</td>
-                                                        <td>375g</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="blank-cell"></td>
-                                                        <th colspan="2">Dietary Fiber</th>
-                                                        <td>25g</td>
-                                                        <td>30g</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                          
-                                            <p class="small-info">
-                                                Calories per gram:
-                                            </p>
-                                            <p class="small-info text-center">
-                                                Fat 9
-                                                &bull;
-                                                Carbohydrate 4
-                                                &bull;
-                                                Protein 4
-                                            </p>
-                                            -->
-                                          </section>
-                                        <!-- End Nutritional Facts-->
-                                        <section class="ingredients">
-                                            <h2>Ingredients</h2>
-                                            <ul>
-                                                <li>Whole Wheat Flour</li>
-                                                <li>Pure Pumpkin</li>
-                                                <li>Water</li>
-                                            </ul>
-                                        </section>
-                                    </div>
+                                                </tr>
+                                                <tr>
+                                                    <td class="blank-cell">
+                                                    </td>
+                                                    <th>
+                                                        Trans Fat
+                                                        0g
+                                                    </th>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        <b>Cholesterol</b>
+                                                        0.0mg
+                                                    </th>
+                                                    <td>
+                                                        <b></b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        <b>Sodium</b>
+                                                        0.0g
+                                                    </th>
+                                                    <td>
+                                                        <b></b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th colspan="2">
+                                                        <b>Total Carbohydrate</b>
+                                                        0.0g
+                                                    </th>
+                                                    <td>
+                                                        <b></b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="blank-cell">
+                                                    </td>
+                                                    <th>
+                                                        Dietary Fiber
+                                                        0.0g
+                                                    </th>
+                                                    <td>
+                                                        <b></b>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="blank-cell">
+                                                    </td>
+                                                    <th>
+                                                        Sugars
+                                                        0.01g
+                                                    </th>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr class="thick-end">
+                                                    <th colspan="2">
+                                                        <b>Protein</b>
+                                                        0.0g
+                                                    </th>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    
+                                        <table class="performance-facts__table--grid">
+                                            <tbody>
+                                                <tr class="thin-end">
+                                                <td colspan="2">
+                                                    Calcium
+                                                    0.0mg
+                                                </td>
+                                                <td>
+                                                    Potassium
+                                                    0.0mg
+                                                </td>
+                                                <td>
+                                                    Iron
+                                                    0.0mg
+                                                </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </section>
+                                    <!-- End Nutritional Facts-->
+                                    <section class="ingredients">
+                                        <h2>Ingredients</h2>
+                                        <ul>
+                                            <li>Whole Wheat Flour</li>
+                                            <li>Puree</li>
+                                            <li>Water</li>
+                                        </ul>
+                                    </section>
                                 </div>
+                            </div>
                         <!-- END PETS OFFCANVASES -->
 
 <!--====================================================================================================================-->
@@ -827,57 +1574,7 @@
 
 <!--====================================================================================================================-->
 
-        <div class="container">
-            <div class="carousel slide" id="biscuit-size-carousel" data-bs-ride="false">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block mx-auto" src="StaticFiles/img/product/dog/biscuits/biscuit_sm.png" alt="Small Biscuit">
-                        <div class="carousel-caption d-block">
-                            <h5>Small Biscuit</h5>
-                            <p class="text-dark">Only $0.30 Each!</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block mx-auto" src="StaticFiles/img/product/dog/biscuits/biscuit_sm_long.png" alt="Small Long Biscuit">
-                        <div class="carousel-caption d-block">
-                            <h5>Small Long Biscuit</h5>
-                            <p class="text-dark">Only $0.32 Each!</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block mx-auto mb-5" src="StaticFiles/img/product/dog/biscuits/biscuit_lg.png" alt="Large Biscuit">
-                        <div class="carousel-caption d-block">
-                            <h5>Large Biscuit</h5>
-                            <p class="text-dark">Only $0.40 Each!</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="d-block mx-auto mb-5" src="StaticFiles/img/product/dog/biscuits/biscuit_lg_long.png" alt="Large Long Biscuit">
-                        <div class="carousel-caption d-block">
-                            <h5>Large Long Biscuit</h5>
-                            <p class="text-dark">Only $0.45 Each!</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-            </div>
-        </div>
+        
 
 <!--====================================================================================================================-->
 
