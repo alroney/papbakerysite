@@ -18,4 +18,15 @@ p {
   border-bottom: 5px solid var(--primary);
 }
 
+.titleLogo {
+  position: relative;
+  display: flex;
+  height: 20rem;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -15rem
+  
+}
+
 
