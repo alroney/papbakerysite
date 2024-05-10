@@ -50,6 +50,18 @@ img {
   transform: scaleX(-1);
 }
 
+.logo-img {
+  height: auto;
+  width: 3rem;
+}
+
+.logo-text-img {
+  height: auto;
+  width: 10rem;
+}
+
+
+
 
 /*** Spinner ***/
 #spinner {
@@ -116,6 +128,11 @@ img {
 
 .navbar.fixed-top {
   transition: .5s;
+}
+
+.navbar-brand-img img {
+  width: 3rem;
+  height: auto;
 }
 
 @media (min-width: 501.00px) {
