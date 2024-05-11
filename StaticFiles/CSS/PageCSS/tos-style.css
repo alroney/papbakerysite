@@ -5,7 +5,7 @@ section {
 section p {
     font-size: calc(18px + 1 * ((100vw - 300px) / (250)));
     line-height: 2;
-    font-family: 'amiri', serif, sans-serif;
+    font-family: 'alice';
 
 }
 

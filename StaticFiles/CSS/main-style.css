@@ -9,7 +9,12 @@
 body {
   
   background: rgba(100, 255, 255, 0.2);
-  /* font-family: 'alice'; */
+}
+
+p {
+  font-size: calc(18px + 1 * ((100vw - 300px) / (250)));
+  font-family: 'alice';
+  line-height: 2;
 }
 
 h1,
