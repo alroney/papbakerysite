@@ -167,6 +167,8 @@ form.addEventListener("submit", handleSubmit)
         const complimentPermsLabel = document.getElementById("postComplimentPermissionLabel");//Get the compliment permission input label element
         const textPerms = document.getElementById("txtMsgPermission");//Get the text message permission input element
         const textPermsLabel = document.getElementById("txtMsgPermissionLabel");//Get the text message permission input label element
+        const callPerms = document.getElementById("callPermission");
+        const callPermsLabel = document.getElementById("callPermissionLabel");
 
         subjectInput.addEventListener("input", function() {
             setTimeout(() => {
@@ -189,12 +191,15 @@ form.addEventListener("submit", handleSubmit)
                 }
 
                 // Show or hide the phone number input depending on the subject
-                if(this.value == "Support" || this.value == "Complaint") {
+                if(this.value == "Support") {
                     phoneInputLabel.style.display = "block";
                     phoneInput.style.display = "block";
                     phoneInput.required = true;//Make the phone number input required
                     textPermsLabel.style.display = "inline-block";
                     textPerms.style.display = "inline-block";
+                    callPermsLabel.style.display = "inline-block";
+                    callPerms.style.display = "inline-block";
+                    
 
                     phoneInput.addEventListener("input", function() {
                         setTimeout(() => {
@@ -227,6 +232,8 @@ form.addEventListener("submit", handleSubmit)
                     phoneInput.value = "";
                     textPermsLabel.style.display = "none";
                     textPerms.style.display = "none";
+                    callPermsLabel.style.display = "none";
+                    callPerms.style.display = "none";
 
                 }
 

@@ -115,7 +115,7 @@
         </div>
 </div>
 
-<!-- ORDER FORM START -->
+<!-- FORM START -->
 <div class="container">
     <div class="row contact-form">
         <h1>Contact Us</h1>
@@ -128,7 +128,7 @@
             <input type="email" id="emailInput" name="Email" placeholder="email@mail.com" required/>
             <br>
             <label for="phone" id="phoneInputLabel" style="display: none">Phone:</label>
-            <input type="text" id="phoneInput" name="Phone" style="display: none" placeholder="###-###-####"/>
+            <input type="text" id="phoneInput" name="Phone" style="display: none" placeholder="##########"/>
             <br>
             <label for="subject">Subject:</label>
             <select id="subjectInput" name="Subject" required>
@@ -149,10 +149,13 @@
                 <div class="checkboxes-options">
                     <input type="checkbox" id="txtMsgPermission" name="Allow to Text Message" value="Yes" style="display: none;">
                     <label for="txtMsgPermission" id="txtMsgPermissionLabel" style="display: none;">Allow us to text message you?</label>
+                    <br>
+                    <input type="checkbox" id="callPermission" name="Allow to Call" value="Yes" style="display: none;">
+                    <label for="callPermission" id="callPermissionLabel" style="display: none;">Allow us to call you?</label>
                 </div>
             </div>
             <br>
-            <label for="message">Message:</label>
+            <label for="message">*Message:</label>
             <textarea type="text" id="messageInput" name="Message" placeholder="Write something.." required></textarea>
 
             <input id="submitBtn" type="submit" value="Submit">
@@ -162,7 +165,7 @@
         </form>
     </div>
 </div>
-<!-- ORDER FORM END -->
+<!-- FORM END -->
 
 <!--====================================================================================================================-->
 

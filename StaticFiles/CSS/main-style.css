@@ -12,7 +12,6 @@ body {
 }
 
 p {
-  font-size: calc(18px + 1 * ((100vw - 300px) / (250)));
   font-family: 'alice';
   line-height: 2;
 }
