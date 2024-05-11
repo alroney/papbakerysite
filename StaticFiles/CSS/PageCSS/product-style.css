@@ -238,6 +238,7 @@
 }
 
 .carousel-caption {
+    transform: translateY(20px);
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
