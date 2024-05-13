@@ -1,40 +1,57 @@
-,Whole Wheat Flour,Egg,Peanut Butter,Pure Pumpkin,Unsweetened Applesauce,,,,,Biscuit Flavor Nutritional Facts,,
-,,,,,,,,,,applesauce,peanut_butter,pumpkin
-Serving Size (g),30.00g,50.00g,32.00g,120.00g,122.00g,,,,Serving Size (g),6.00,6.00,6.00
-Calories Per Serving (kCal),100,70,180,40,50,,,,Calories Per Serving (kCal),,,
-Total Fat (g),0.50g,5.00g,15.00g,0.00g,0.00g,,,,Total Fat (g),,,
-Saturated Fat (g),0.00g,1.50g,3.00g,0.00g,0.00g,,,,Saturated Fat (g),,,
-Polyunsaturated Fat (g),0.00g,0.00g,3.00g,0.00g,0.00g,,,,Polyunsaturated Fat (g),,,
-Monounsaturated Fat (g),0.00g,0.00g,8.00g,0.00g,0.00g,,,,Monounsaturated Fat (g),,,
-Trans Fat (g),0.00g,0.00g,0.00g,0.00g,0.00g,,,,Trans Fat (g),,,
-Cholesterol (mg),0.00mg,185.00mg,0.00mg,0.00mg,0.00mg,,,,Cholesterol (mg),,,
-Sodium (mg),0.00mg,70.00mg,115.00mg,5.00mg,10.00mg,,,,Sodium (mg),,,
-Total Carbohydrates (g),21.00g,0.00g,8.00g,10.00g,13.00g,,,,Total Carbohydrates (g),,,
-Dietary Fiber (g),3.00g,0.00g,2.00g,3.00g,2.00g,,,,Dietary Fiber (g),,,
-Sugar (g),0.00g,0.00g,3.00g,4.00g,11.00g,,,,Sugar (g),,,
-Added Sugar (g),0.00g,0.00g,2.00g,0.00g,0.00g,,,,Added Sugar (g),,,
-Protein (g),4.00g,6.00g,7.00g,1.00g,0.00g,,,,Protein (g),,,
-,,,,,,,,,Calcium (mg),,,
-Vitamins,,,,,,,,,Potassium (mg),,,
-A,,,,,,,,,Iron (mg),,,
+WHEN MAKING CHANGES BE SURE TO SYNC TO GITHUB THROUGH VISUAL STUDIO CODE,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+NF of Ingredient from Container,Whole Wheat Flour,Egg,Peanut Butter,Pure Pumpkin,Unsweetened Applesauce,,,,,Biscuit Flavor Nutritional Facts,,
+,,,,,,,,,,peanut_butter,pumpkin,applesauce
+Serving Size (g),30.00,50.00,32.00,120.00,122.00,,,,Serving Size (g),6.00,6.00,6.00
+Calories Per Serving (kCal),100.00,70.00,180.00,40.00,50.00,,,,Calories Per Serving (kCal),20.63,13.95,14.10
+Total Fat (g),0.50,5.00,15.00,0.00,0.00,,,,Total Fat (g),0.64,0.07,0.07
+Saturated Fat (g),0.00,1.50,3.00,0.00,0.00,,,,Saturated Fat (g),0.12,0.00,0.00
+Polyunsaturated Fat (g),0.00,0.00,3.00,0.00,0.00,,,,Polyunsaturated Fat (g),0.10,0.00,0.00
+Monounsaturated Fat (g),0.00,0.00,8.00,0.00,0.00,,,,Monounsaturated Fat (g),0.26,0.00,0.00
+Trans Fat (g),0.00,0.00,0.00,0.00,0.00,,,,Trans Fat (g),0.00,0.00,0.00
+Cholesterol (mg),0.00,212.00,0.00,0.00,0.00,,,,Cholesterol (mg),3.80,0.00,0.00
+Sodium (mg),0.00,70.00,115.00,5.00,10.00,,,,Sodium (mg),4.96,0.08,0.17
+Total Carbohydrates (g),21.00,0.38,8.00,10.00,13.00,,,,Total Carbohydrates (g),3.11,2.96,3.00
+Dietary Fiber (g),3.00,0.00,2.00,3.00,2.00,,,,Dietary Fiber (g),0.47,0.45,0.43
+Sugar (g),0.00,0.00,3.00,4.00,11.00,,,,Sugar (g),0.10,0.07,0.18
+Added Sugar (g),0.00,0.00,2.00,0.00,0.00,,,,Added Sugar (g),0.06,0.00,0.00
+Protein (g),4.00,6.29,7.00,1.00,0.00,,,,Protein (g),0.88,0.55,0.53
+,,,,,,,,,Calcium (mg),0.55,0.52,0.08
+Vitamins,,,,,,,,,Potassium (mg),5.90,4.15,1.82
+A (mcg),,70,,,,,,,Iron (mg),1.27,0.03,0.00
 B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+C,,0,,,,,,,,,,
 D,,,,,,,,,,,,
 E,,,,,,,,,,,,
 K,,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
 Minerals,,,,,,,,,,,,
-Calcium,0.00mg,28.00mg,17.00mg,31.00mg,5.00mg,,,,,,,
-Potassium,0.00mg,69.00mg,183.00mg,247.00mg,110.00mg,,,,,,,
-Iron,0.00mg,1.00mg,0.50mg,2.00mg,0.00mg,,,,,,,
+Calcium (mg),0.00,26.00,17.00,31.00,5.00,,,,,,,
+Potassium (mg),0.00,67.00,183.00,247.00,110.00,,,,,,,
+Iron (mg),0.00,0.92,0.50,2.00,0.00,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,Whole Wheat Flour,Egg (1g),Peanut Butter (1g), Pure Pumkin (1g), Unsweetened Applesauce (1g),,,,,,,
+Serving Size,1,1,1,1,1,,,,,,,
+Calories Per Serving (kCal),3.33,1.40,5.63,0.33,0.41,,,,,,,
+Total Fat (g),0.02,0.10,0.47,0.00,0.00,,,,,,,
+Saturated Fat (g),0.00,0.03,0.09,0.00,0.00,,,,,,,
+Polyunsaturated Fat (g),0.00,0.00,0.09,0.00,0.00,,,,,,,
+Monounsaturated Fat (g),0.00,0.00,0.25,0.00,0.00,,,,,,,
+Trans Fat (g),0.00,0.00,0.00,0.00,0.00,,,,,,,
+Cholesterol (mg),0.00,4.24,0.00,0.00,0.00,,,,,,,
+Sodium (mg),0.00,1.40,3.59,0.04,0.08,,,,,,,
+Total Carbohydrates (g),0.70,0.01,0.25,0.08,0.11,,,,,,,
+Dietary Fiber (g),0.10,0.00,0.06,0.03,0.02,,,,,,,
+Sugar (g),0.00,0.00,0.09,0.03,0.09,,,,,,,
+Added Sugar (g),0.00,0.00,0.06,0.00,0.00,,,,,,,
+Protein (g),0.13,0.13,0.22,0.01,0.00,,,,,,,
+Calcium (mg),0.00,0.52,0.53,0.26,0.04,,,,,,,
+Potassium (mg),0.00,1.34,5.72,2.06,0.90,,,,,,,
+Iron (mg),0.00,0.02,0.02,0.02,0.00,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-Applesauce Biscuits,,,,,,,,,,,,
-Ingredient,Amount per Batch,,,,,,,,,,,
-,,,,,,,,,,,,
-Whole Wheat Flour,227,,,,,,,,,,,
-Unsweetened Applesauce,115,,,,,,,,,,,
+endOfSheet,,,,,,,,,,,,

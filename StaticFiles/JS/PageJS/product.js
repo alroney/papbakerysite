@@ -5,6 +5,7 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
 //#region - Flavor & Ingredient CSV - read csv files and coordinate the data from them.
     //Function to parse CSV data into an object
     function parseCSV(csv, numLinesToHdr) {
+        const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
         const rows = csv.split('\n'); //Create an array of rows from the spreadsheet
         const headers = rows[numLinesToHdr].split(','); //Create an array of headers
         const dataByHeader = {}; //Create an array to later store objects
@@ -16,6 +17,10 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
 
         //Iterate over each line of the CSV (starting from numLinesToHdr)
         for (let i = numLinesToHdr + 1; i < rows.length; i++) {
+            if (rows[i].trim() === endMarker) { //If the string 'endOfSheet' is reached in the current sheet for the .csv file, then stop looking
+                break;
+            }
+
             const currentRow = rows[i].split(',');
             if (currentRow.length !== headers.length) {
                 continue;
@@ -63,7 +68,7 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
 
     function fetch_BFNF_Data() {
         const data = fetchCSV('StaticFiles/CSV/nutritional_facts.csv');
-        const numLinesToHdr = 1; //Manually set the line at which the headers start on 1 = 2 on the spreadsheet
+        const numLinesToHdr = 4; //Manually set the line at which the headers start on 4 = 5 on the spreadsheet
         const dataByHeader = parseCSV(data, numLinesToHdr);
 
         //Filter out header to only include flavors in flavorList
