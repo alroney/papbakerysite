@@ -68,7 +68,7 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
 
     function fetch_BFNF_Data() {
         const data = fetchCSV('StaticFiles/CSV/nutritional_facts.csv');
-        const numLinesToHdr = 4; //Manually set the line at which the headers start on 4 = 5 on the spreadsheet
+        const numLinesToHdr = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
         const dataByHeader = parseCSV(data, numLinesToHdr);
 
         //Filter out header to only include flavors in flavorList
@@ -98,9 +98,15 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
                 totalSugar: parseFloat(facts[11][flavor]),
                 addedSugar: parseFloat(facts[12][flavor]),
                 protein: parseFloat(facts[13][flavor]),
-                calcium: parseFloat(facts[14][flavor]),
-                potassium: parseFloat(facts[15][flavor]),
-                iron: parseFloat(facts[16][flavor])
+                vA: parseFloat(facts[14][flavor]),
+                vB: parseFloat(facts[15][flavor]),
+                vC: parseFloat(facts[16][flavor]),
+                vD: parseFloat(facts[17][flavor]),
+                vE: parseFloat(facts[18][flavor]),
+                vK: parseFloat(facts[19][flavor]),
+                calcium: parseFloat(facts[20][flavor]),
+                potassium: parseFloat(facts[20][flavor]),
+                iron: parseFloat(facts[20][flavor])
             }
 
             //Filter out empty values
@@ -125,7 +131,7 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     //Function: This will generate the nutrional facts table and the values that are based on the product assigned.
-    function generateNutritionalFacts(servingSize, servingPerContainer, calories, totalFat, satFat, polyUnSatFat, monoUnSatFat, transFat, cholesterol, sodium, totalCarbs, dietaryFiber, totalSugar, addedSugar, protein, calcium, potassium, iron) {
+    function generateNutritionalFacts(servingSize, servingPerContainer, calories, totalFat, satFat, polyUnSatFat, monoUnSatFat, transFat, cholesterol, sodium, totalCarbs, dietaryFiber, totalSugar, addedSugar, protein, vA, vB, vC, vD, vE, vK, calcium, potassium, iron) {
         return `
             <section class="performance-facts">
                 <header class="performance-facts__header">
@@ -299,6 +305,12 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
             facts.totalSugar,
             facts.addedSugar,
             facts.protein,
+            facts.vA,
+            facts.vB,
+            facts.vC,
+            facts.vD,
+            facts.vE,
+            facts.vK,
             facts.calcium,
             facts.potassium,
             facts.iron
