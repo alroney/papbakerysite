@@ -62,7 +62,7 @@
         
 <!--====================================================================================================================-->
 
-        <!-- Navbar Start -->
+        <!-- #region - NAVBAR -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light py-lg-2 px-lg-5 wow fadeIn" data-wow-delay="0.1s" >
             <div class="navbar-brand ms-4 ms-lg-0 position-relative">
                 <a href="index.html" class="">
@@ -105,7 +105,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Navbar End -->
+        <!-- #endregion -->
 
 <!--====================================================================================================================-->
 
@@ -147,10 +147,10 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
                     <li class="nav-item"><a class="nav-link disabled" href="#people"></a></li>
                 </ul>
-
+                
                 <div class="tab-content ">
-                    <!-- PETS MENU-->
-                        <div id="pets" class="tab-pane active fadeIn">
+                    <!-- PETS TAB-->
+                        <div id="pets" class="pet-tab tab-pane active fadeIn">
                             <!-- Disclaimer -->
                             <div class="container-fluid dog-biscuit-disclaimer mb-5 justify-content-center">
                                 <span id="biscuit-disclaimer" style="display: none">
@@ -171,16 +171,13 @@
                             </div>
                             <!-- End Disclaimer -->
                             <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
-                            <div class="pet-menu mb-4">
-                                <h3 class="pet-menu-img-caption">Dog Biscuits</h3>
-                                <img class="pet-menu-img" src="StaticFiles/img/product/dog/biscuits/peanut_butter_biscuit.png" style="transform: rotate(-90deg);" alt="Dog Biscuit">
-                            </div>
+                            
                             <!-- BISCUIT CARDS -->
-                                <div class="container">
+                                <div class="container-fluid">
                                     <div class="row">
                                         <!-- Applesauce Biscuit Card -->
-                                        <div class="col mb-3">
-                                            <div class="card h-100" style="width: 18rem;">
+                                        <div class="col mb-4">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Applesauce Biscuit</h5></div>
                                                 <div class="card-body">
                                                     <p>Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.</p>
@@ -194,7 +191,7 @@
                                         
                                         <!-- Peanut-butter Biscuit Card -->
                                         <div class="col mb-3">
-                                            <div class="card h-100" style="width: 18rem;">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Peanut-Butter Biscuit</h5></div>
                                                 <div class="card-body">
                                                     <p class="card-text">Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines</p>
@@ -208,7 +205,7 @@
 
                                         <!-- Pumpkin Biscuit Card -->
                                         <div class="col mb-3">
-                                            <div class="card h-100" style="width: 18rem;">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Pumpkin Biscuit</h5></div>
                                                 <div class="card-body">
                                                     <p class="card-text">Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!</p>
@@ -222,7 +219,7 @@
                                     
                                         <!-- Bannana Biscuit Card -->
                                         <div class="col mb-3 d-none">
-                                            <div class="card h-100" style="width: 18rem;">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Bannana Biscuit</h5></div>
                                                 <div class="card-body">
                                                     <p>
@@ -237,7 +234,7 @@
 
                                         <!-- Sweet Potato Biscuit Card -->
                                         <div class="col mb-3 d-none">
-                                            <div class="card h-100" style="width: 18rem;">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Sweet Potato Biscuit</h5></div>
                                                 <div class="card-body">
                                                     <p>
@@ -252,7 +249,7 @@
 
                                         <!-- Mango Biscuit Card -->
                                         <div class="col mb-3 d-none">
-                                            <div class="card h-100" style="width: 18rem;">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Mango Biscuit</h5></div>
                                                 <div class="card-body">
                                                     <p>
@@ -277,7 +274,9 @@
                                             <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                             <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                         </div>
+                                        
                                         <div class="carousel-inner" id="carouselInner"></div>
+
                                         <button class="carousel-control-prev" type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
@@ -290,10 +289,7 @@
                                 </div>
                             <!-- END BISCUITS CAROUSEL -->
                             
-                            <div class="pet-menu mb-4">
-                                <h3 class="pet-menu-img-caption">Training Treats</h3>
-                                <img class="pet-menu-img" src="StaticFiles/img/product/dog/trainingTreats/training_treat_paw.png" alt="Training Treat" style="border-radius: 100%;"/>
-                            </div>
+                            
                             <!-- TRAINING TREAT CARDS-->
                                 <div class="container">
                                     <div class="row">

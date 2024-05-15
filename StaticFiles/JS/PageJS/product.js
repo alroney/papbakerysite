@@ -343,8 +343,8 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
         const active = index === 0 ? 'active' : '';
         carouselInner.innerHTML += `
             <div class="carousel-item ${active}">
-                <img class="d-block mx-auto mb-5" src="${imagePath}${item.src}" alt="${item.alt}">
-                <div class="carousel-caption d-block">
+                <img class="" src="${imagePath}${item.src}" alt="${item.alt}">
+                <div class="carousel-caption">
                     <h5>${item.name}</h5>
                     <p class="text-dark">Only ${item.price}!</p>
                 </div>

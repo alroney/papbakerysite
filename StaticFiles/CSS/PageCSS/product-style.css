@@ -11,249 +11,237 @@
     /* margin-top: 1.4rem; */
     width: 100%;
     padding: 3rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: block;
     background: rgba(255, 255, 255, 0.75);
     border-left: 1px solid #dee2e6;
     border-right: 1px solid #dee2e6;
     border-bottom: 1px solid #dee2e6;
 }
 
+/*#region - PET TAB
+    .pet-tab {
+        display: block;
+        width: 100%;
 
-.pet-menu {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction:column;
-}
+    }
 
- .pet-menu-img-caption{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    color: #000000;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-decoration: underline;
-    transition: 0.5s;
-}
+    .dog-treat-disclaimer-list{
+        list-style: disc inside;
+        line-height: 1.5rem;
+    }
 
-.pet-menu-img {
-    height: 250px;
-    width: auto;
-    border: 1px solid #000000;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+    .pet-tab-img {
+        height: 250px;
+        width: auto;
+        border: 1px solid #000000;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: auto;
+        display: inherit;
+    }
 
+    .pet-tab-img-caption{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        color: #000000;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-decoration: underline;
+        transition: 0.5s;
+    }
+/*#endregion*/
 
-.dog-treat-disclaimer-list{
-    list-style: disc inside;
-    line-height: 1.5rem;
-}
+/*#region - PRODUCT CARDS */
+    .card {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: auto;
+    }
 
+    .card-header {
+        background-color: var(--primary);
+    }
 
-/*
-* ==========================================
-* CARD GENERAL
-* ==========================================
-*/
+    .card-img-top {
+        border-radius: 0;
+        border: #000000 1px solid;
+        width: 15.5em;
+        height: 15.5em;
+        margin: 1rem auto auto auto;
+        object-fit: contain;
+    }
 
-.card {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: auto;
-}
+    .card-body {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
 
-.card-header {
-    background-color: var(--primary);
-}
+    .card-footer {
+        position: relative;
+    }
 
-.card-img-top {
-    border-radius: 0;
-    border: #000000 1px solid;
-    width: 15.5em;
-    height: 15.5em;
-    margin: 1rem auto auto auto;
-    object-fit: contain;
-}
+    .card-button {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+/*#endregion*/
 
-.card-body {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-}
-
-.card-footer {
-    position: relative;
-}
-
-.card-button {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-/*
-* ==========================================
-* OFFCANVAS GENERAL
-* ==========================================
-*/
-.offcanvas-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    border-bottom: 1px solid #000000;
-}
+/*#region - OFFCANVAS */
+    .offcanvas-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        border-bottom: 1px solid #000000;
+    }
 
 
-/*
-* ==========================================
-* OFFCANVAS NUTRITIONAL FACTS
-* ==========================================
-*/
-.performance-facts {
-	border: 1px solid black;
-	width: 18em;
-    margin: auto;
-	padding: 0.5rem;
-}
-.performance-facts table {
-	border-collapse: collapse;
-}
-.performance-facts__title {
-	font-weight: bold;
-	font-size: 2rem;
-	margin: 0 0 0.25rem 0;
-}
-.performance-facts__header {
-	border-bottom: 10px solid black;
-	padding: 0 0 0.25rem 0;
-	margin: 0 0 0.5rem 0;
-}
-.performance-facts__header p {
-	margin: 0;
-}
-.performance-facts__table, .performance-facts__table--grid, .performance-facts__table--small {
-	width: 100%;
-}
-.performance-facts__table thead tr th, .performance-facts__table--grid thead tr th, .performance-facts__table--small thead tr th, .performance-facts__table thead tr td, .performance-facts__table--grid thead tr td, .performance-facts__table--small thead tr td {
-	border: 0;
-}
-.performance-facts__table th, .performance-facts__table--grid th, .performance-facts__table--small th, .performance-facts__table td, .performance-facts__table--grid td, .performance-facts__table--small td {
-	font-weight: normal;
-	text-align: left;
-	padding: 0.25rem 0;
-	border-top: 1px solid black;
-	white-space: normal;
-}
-.performance-facts__table td:last-child, .performance-facts__table--grid td:last-child, .performance-facts__table--small td:last-child {
-	text-align: right;
-}
-.performance-facts__table .blank-cell, .performance-facts__table--grid .blank-cell, .performance-facts__table--small .blank-cell {
-	width: 1rem;
-	border-top: 0;
-}
-.performance-facts__table .thick-row th, .performance-facts__table--grid .thick-row th, .performance-facts__table--small .thick-row th, .performance-facts__table .thick-row td, .performance-facts__table--grid .thick-row td, .performance-facts__table--small .thick-row td {
-	border-top-width: 5px;
-}
-.small-info {
-	font-size: 0.7rem;
-}
-.performance-facts__table--small {
-	border-bottom: 1px solid #999;
-	margin: 0 0 0.5rem 0;
-}
-.performance-facts__table--small thead tr {
-	border-bottom: 1px solid black;
-}
-.performance-facts__table--small td:last-child {
-	text-align: left;
-}
-.performance-facts__table--small th, .performance-facts__table--small td {
-	border: 0;
-	padding: 0;
-}
-.performance-facts__table--grid {
-	margin: 0 0 0.5rem 0;
-}
-.performance-facts__table--grid td:last-child {
-	text-align: left;
-}
-.performance-facts__table--grid td:last-child::before {
-	content: "•";
-	font-weight: bold;
-	margin: 0 0.25rem 0 0;
-}
-.text-center {
-	text-align: center;
-}
-.thick-end {
-	border-bottom: 10px solid black;
-}
-.thin-end {
-	border-bottom: 1px solid black;
-}
+    /*#region - OFFCANVAS NUTRITION FACTS */
+        .performance-facts {
+            border: 1px solid black;
+            width: 18em;
+            margin: auto;
+            padding: 0.5rem;
+        }
+        .performance-facts table {
+            border-collapse: collapse;
+        }
+        .performance-facts__title {
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 0 0 0.25rem 0;
+        }
+        .performance-facts__header {
+            border-bottom: 10px solid black;
+            padding: 0 0 0.25rem 0;
+            margin: 0 0 0.5rem 0;
+        }
+        .performance-facts__header p {
+            margin: 0;
+        }
+        .performance-facts__table, .performance-facts__table--grid, .performance-facts__table--small {
+            width: 100%;
+        }
+        .performance-facts__table thead tr th, .performance-facts__table--grid thead tr th, .performance-facts__table--small thead tr th, .performance-facts__table thead tr td, .performance-facts__table--grid thead tr td, .performance-facts__table--small thead tr td {
+            border: 0;
+        }
+        .performance-facts__table th, .performance-facts__table--grid th, .performance-facts__table--small th, .performance-facts__table td, .performance-facts__table--grid td, .performance-facts__table--small td {
+            font-weight: normal;
+            text-align: left;
+            padding: 0.25rem 0;
+            border-top: 1px solid black;
+            white-space: normal;
+        }
+        .performance-facts__table td:last-child, .performance-facts__table--grid td:last-child, .performance-facts__table--small td:last-child {
+            text-align: right;
+        }
+        .performance-facts__table .blank-cell, .performance-facts__table--grid .blank-cell, .performance-facts__table--small .blank-cell {
+            width: 1rem;
+            border-top: 0;
+        }
+        .performance-facts__table .thick-row th, .performance-facts__table--grid .thick-row th, .performance-facts__table--small .thick-row th, .performance-facts__table .thick-row td, .performance-facts__table--grid .thick-row td, .performance-facts__table--small .thick-row td {
+            border-top-width: 5px;
+        }
+        .small-info {
+            font-size: 0.7rem;
+        }
+        .performance-facts__table--small {
+            border-bottom: 1px solid #999;
+            margin: 0 0 0.5rem 0;
+        }
+        .performance-facts__table--small thead tr {
+            border-bottom: 1px solid black;
+        }
+        .performance-facts__table--small td:last-child {
+            text-align: left;
+        }
+        .performance-facts__table--small th, .performance-facts__table--small td {
+            border: 0;
+            padding: 0;
+        }
+        .performance-facts__table--grid {
+            margin: 0 0 0.5rem 0;
+        }
+        .performance-facts__table--grid td:last-child {
+            text-align: left;
+        }
+        .performance-facts__table--grid td:last-child::before {
+            content: "•";
+            font-weight: bold;
+            margin: 0 0.25rem 0 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .thick-end {
+            border-bottom: 10px solid black;
+        }
+        .thin-end {
+            border-bottom: 1px solid black;
+        }
+    /*#endregion*/
 
-/*
-* ==========================================
-* OFFCANVAS INGREDIENTS
-* ==========================================
-*/
+    /*#region - OFFCANVAS INGREDIENTS */
+        .ingredients {
+            display: block;
+            color: #000000;
+            width: fit-content;
+            margin: 1em auto auto auto;
+        }
 
-.ingredients {
-    display: block;
-    color: #000000;
-    width: fit-content;
-    margin: 1em auto auto auto;
-}
+        .ingredients h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            border-bottom: 1px solid #000000;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
 
-.ingredients h2 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    border-bottom: 1px solid #000000;
-    text-align: center;
-    margin-bottom: 1rem;
-}
+        .ingredients ul {
+            list-style: disc inside;
+            line-height: 1.5rem;
+        }
+    /*#endregion*/
+/*#endregion*/
 
-.ingredients ul {
-    list-style: disc inside;
-    line-height: 1.5rem;
-}
+/*#region - BISCUIT CAROUSEL */
+    .carousel-item.active, .carousel-inner{
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+
+    .carousel-item.active img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .carousel-caption {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: var(--primary);
+        border: 1px solid black;
+        height: 3vh;
+        width: 3vh;
+        border-radius: 100%;
+    }
 
 
-/*
-* ==========================================
-* Biscuit Size Carousel
-* ==========================================
-*/
-
-
-
-.carousel-item {
-    height: 25em;
-    width: 100%;
-    object-fit:fill;
-}
-
-.carousel-item img {
-}
-
-.carousel-caption {
-    transform: translateY(20px);
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: var(--primary);
-    height: 3em;
-    width: 3em;
-    border-radius: 100%;
-}
-
-.carousel-indicators {
-    background-color: rgba(0, 0, 0, 0.05);
-    width: fit-content;
-    margin: 0 auto;
-}
+    .carousel-indicators {
+        background-color: rgba(0, 0, 0, 0.05);
+        width: 100%;
+        margin: 0 auto;
+    }
+/*#endregion*/
 
