@@ -1,12 +1,12 @@
 
 
-.disclaimer-word {
+.disclaimer-hdr {
     font-weight: bold;
     color: #ff0000;
 }
 
 
-/*#region - TABS */
+/*#region - TABS GENERAL*/
 .tab-content {
     /* margin-top: 1.4rem; */
     width: 100%;
@@ -240,8 +240,6 @@
     .carousel-control-prev-icon, .carousel-control-next-icon {
         background-color: var(--primary);
         border: 1px solid black;
-        height: 3vh;
-        width: 3vh;
         border-radius: 100%;
     }
 
@@ -253,4 +251,3 @@
         margin: 0 auto;
     }
 /*#endregion*/
-

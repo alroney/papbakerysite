@@ -358,21 +358,16 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
         return `
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${flvr}_${productCat}" aria-labelledby="offcanvas_${flvr}_${productCat}_label">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">Applesauce Biscuits</h5>
+                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">${flvr} ${productCat}</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div class="container-fluid">
                         <!-- Nutritional Facts -->
-                        <div id="applesauce_${productCat}_nfacts"></div>
+                        <div id="${flvr}_${productCat}_nfacts"></div>
                         <!-- End Nutritional Facts-->
                         <section class="ingredients">
                             <h2>Ingredients</h2>
-                            <ul>
-                                <li>Whole Wheat Flour</li>
-                                <li>Unsweetened Applesauce</li>
-                                <li>Water</li>
-                            </ul>
                         </section>
                     </div>
                 </div>

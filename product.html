@@ -120,28 +120,29 @@
             <div class="container">
                 <div class="row g-4">
                     <div class="col-lg-12">
-                        <p>
-                            <span class="disclaimer-word">Allergy Disclaimer:</span>
-                            <br>
-                            All of our products are made in a kitchen that uses <b>NUTS</b>, <b>WHEAT</b>, <b>DAIRY</b> and other allergens. Our products are not suitable for people/pets with allergies.
-                            <br>
-                            <br>
-                            I will be happy to work with you to create a custom order for your pet. Please contact me for more information.
-                            <hr>
-                            <span class="disclaimer-word">Ordering Disclaimer:</span>
-                            <br>
-                            All orders are made to order upon call. Please allow 2-3 business days for your order to be processed. If you need your order sooner, please contact me and I will do my best to accommodate you.
-                            <br>
-                            Online ordering is not available at this stage of my business. Please call or email to place your order.
-
-                        </p>
+                        <div>
+                            <h5 class="disclaimer-hdr">Allergy Disclaimer:</h5>
+                            <ul>
+                                <li>All of our products are made in a kitchen that uses <b>NUTS</b>, <b>WHEAT</b>, <b>DAIRY</b> and other allergens. Our products may not be suitable for people/pets with allergies.</li>
+                                <br>
+                                <li>I will be happy to work with you to create a custom order for your pet. Please contact me for more information.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="disclaimer-hdr">Ordering Disclaimer:</h5>
+                            <ul>
+                                <li>All orders are made to order upon call. Please allow 2-3 business days for your order to be processed. If you need your order sooner, please contact me and I will do my best to accommodate you.</li>
+                                <br>
+                                <li>Online ordering is not available at this stage of my business. Please call or email to place your order.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         <!-- END DISCLAIMER SECTION-->
 
         <!-- Product Display Area Start -->
-        <div id="product_display_tab" class="container">
+        <div class="container" id="product_display_tab">
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
                 <li class="nav-item"><a class="nav-link disabled" href="#people"></a></li>
@@ -166,13 +167,13 @@
                                     <li>The softer the treat, the sooner they expire. This is caused by the moisture still in the treat. Softer treats can last about a week in a container outside of the fridge. Hard treats can last a month outside of the fridge.</li>
                                 </ul>
                             </span>
-                            <button class="btn mx-auto d-block btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
+                            <button class="btn mx-auto d-block btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showBiscuitDisclaimer()">Read Biscuit Disclaimer</button>
                         </div>
                         <!-- End Disclaimer -->
                         <h3 class="mb-4 mt-0 px-2 text-center">Available Options for your Pets.</h3>
                         
 
-                        <section id="biscuits_sec">
+                        <section class="product_section" id="biscuits_sec">
                             <!-- BISCUIT CARDS -->
                                 <div class="container-fluid">
                                     <div class="row">
@@ -291,13 +292,13 @@
                             <!-- END BISCUITS CAROUSEL -->
                         </section>
                         
-                        <section id="traing-treat_sec">
+                        <section class="product_section mt-4" id="traing-treat_sec">
                             <!-- TRAINING TREAT CARDS-->
                                 <div class="container">
                                     <div class="row">
                                         <!-- Training Treat Paw Card-->
                                         <div class="col mb-3">
-                                            <div class="card h-100" style="width: 18rem;">
+                                            <div class="card h-100">
                                                 <div class="card-header"><h5>Training Treat Paw</h5></div>
                                                 <div class="card-body">
                                                     <p>
@@ -317,7 +318,7 @@
                             <!-- END TRAINING TREAT CARDS-->
                         </section>
                     </div>
-                <!-- END PETS MENU-->
+                <!-- END PETS TAB-->
 
                 
 
@@ -657,17 +658,21 @@
 
     <!-- Tab Script -->
     <script>
-        function showDisclaimer() {
+        function showBiscuitDisclaimer() {
             var contents = $("#biscuit-disclaimer");
             var btnText = $("#biscuits-disclaimer-btn");
+
             if(contents.css("display") == "none") {
                 contents.css("display", "block");
                 btnText.html("Hide Disclaimer");
-            } else {
+            } 
+            else {
                 contents.css("display", "none");
-                btnText.html("Read Disclaimer");
+                btnText.html("Read Biscuit Disclaimer");
             }
         }
+        
+        
         
     </script>
     </body>
