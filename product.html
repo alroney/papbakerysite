@@ -141,37 +141,38 @@
         <!-- END DISCLAIMER SECTION-->
 
         <!-- Product Display Area Start -->
-        <div class="container-fluid my-2 py-2 pt-0">
-            <div class="container product-display">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
-                    <li class="nav-item"><a class="nav-link disabled" href="#people"></a></li>
-                </ul>
-                
-                <div class="tab-content ">
-                    <!-- PETS TAB-->
-                        <div id="pets" class="pet-tab tab-pane active fadeIn">
-                            <!-- Disclaimer -->
-                            <div class="container-fluid dog-biscuit-disclaimer mb-5 justify-content-center">
-                                <span id="biscuit-disclaimer" style="display: none">
-                                    <h5 class="disclaimer-word">Dog Biscuits Disclaimer</h5>
-                                    <ul class="dog-biscuit-disclaimer-list mb-5">
-                                        <li>Due to the ratio between the whole wheat flour and other ingredient(s) in the biscuits, they all look very similar coming out of the oven.</li>
-                                        <br>
-                                        <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
-                                        <br>
-                                        <li>All of our dog biscuits are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
-                                        <br>
-                                        <li>Upon ordering please specify the level of softness/hardness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness/hardness.</li>
-                                        <br>
-                                        <li>The softer the treat, the sooner they expire. This is caused by the moisture still in the treat. Softer treats can last about a week in a container outside of the fridge. Hard treats can last a month outside of the fridge.</li>
-                                    </ul>
-                                </span>
-                                <button class="btn mx-auto d-block btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
-                            </div>
-                            <!-- End Disclaimer -->
-                            <h3 class="mb-4 mt-0 pt-0 text-center">Available Options for your Pets.</h3>
-                            
+        <div id="product_display_tab" class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
+                <li class="nav-item"><a class="nav-link disabled" href="#people"></a></li>
+            </ul>
+            
+            <div class="tab-content ">
+                <!-- PETS TAB-->
+                    <div id="pets-tab" class="pet-tab active fadeIn">
+                        <!-- Disclaimer -->
+                        <div class="container-fluid dog-biscuit-disclaimer mb-5 pt-3 justify-content-center">
+                            <span id="biscuit-disclaimer" style="display: none">
+                                <h5 class="disclaimer-word">Dog Biscuits/Training-Treat Disclaimer</h5>
+                                <ul class="dog-biscuit-disclaimer-list mb-5">
+                                    <li>Due to the ratio between the whole wheat flour and other ingredient(s) in the biscuits, they all look very similar coming out of the oven.</li>
+                                    <br>
+                                    <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
+                                    <br>
+                                    <li>All of our dog biscuits are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
+                                    <br>
+                                    <li>Upon ordering please specify the level of softness/hardness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness/hardness.</li>
+                                    <br>
+                                    <li>The softer the treat, the sooner they expire. This is caused by the moisture still in the treat. Softer treats can last about a week in a container outside of the fridge. Hard treats can last a month outside of the fridge.</li>
+                                </ul>
+                            </span>
+                            <button class="btn mx-auto d-block btn-primary btn-sm" id="biscuits-disclaimer-btn" onclick="showDisclaimer()">Read Disclaimer</button>
+                        </div>
+                        <!-- End Disclaimer -->
+                        <h3 class="mb-4 mt-0 px-2 text-center">Available Options for your Pets.</h3>
+                        
+
+                        <section id="biscuits_sec">
                             <!-- BISCUIT CARDS -->
                                 <div class="container-fluid">
                                     <div class="row">
@@ -288,8 +289,9 @@
                                     </div>
                                 </div>
                             <!-- END BISCUITS CAROUSEL -->
-                            
-                            
+                        </section>
+                        
+                        <section id="traing-treat_sec">
                             <!-- TRAINING TREAT CARDS-->
                                 <div class="container">
                                     <div class="row">
@@ -313,276 +315,274 @@
                                     </div>
                                 </div>
                             <!-- END TRAINING TREAT CARDS-->
+                        </section>
+                    </div>
+                <!-- END PETS MENU-->
 
-                        </div>
-                    <!-- END PETS MENU-->
+                
 
-                    
-
-                        <!-- PETS OFFCANVASES -->
-                            <!-- BISCUITS OFFCANVAS -->
-                                <!-- Applesauce Biscuits Offcanvas -->
-                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_biscuit" aria-labelledby="offcanvas_applesauce_biscuit_label">
-                                        <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title" id="offcanvas_applesauce_biscuit_label">Applesauce Biscuits</h5>
-                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <div class="container-fluid">
-                                                <!-- Nutritional Facts -->
-                                                <div id="applesauce_biscuit_nfacts"></div>
-                                                <!-- End Nutritional Facts-->
-                                                <section class="ingredients">
-                                                    <h2>Ingredients</h2>
-                                                    <ul>
-                                                        <li>Whole Wheat Flour</li>
-                                                        <li>Unsweetened Applesauce</li>
-                                                        <li>Water</li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <!-- Peanut Butter Biscuits Offcanvas -->
-                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_biscuit" aria-labelledby="offcanvas_peanut_butter_biscuit_label">
-                                        <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title" id="offcanvas_peanut_butter_biscuit_label">Peanut Butter Biscuits</h5>
-                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <!-- Nutritional Facts -->
-                                                <div id="peanut_butter_biscuit_nfacts"></div>
-                                            <!-- End Nutritional Facts-->
-                                            <section class="ingredients">
-                                                <h2>Ingredients</h2>
-                                                <ul>
-                                                    <li>Whole Wheat Flour</li>
-                                                    <li>Organic Peanut Butter</li>
-                                                    <li>Egg</li>
-                                                    <li>Water</li>
-                                                </ul>
-                                            </section>
-                                        </div>
-                                    </div>
-                                <!-- Pumpkin Biscuits Offcanvas -->
-                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_biscuit" aria-labelledby="offcanvas_pumpkin_biscuit_label">
-                                        <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title" id="offcanvas_pumpkin_biscuit_label">Pumpkin Biscuits</h5>
-                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <!-- Nutritional Facts -->
-                                                <div id="pumpkin_biscuit_nfacts"></div>
-                                            <!-- End Nutritional Facts-->
-                                            <section class="ingredients">
-                                                <h2>Ingredients</h2>
-                                                <ul>
-                                                    <li>Whole Wheat Flour</li>
-                                                    <li>Pure Pumpkin</li>
-                                                    <li>Water</li>
-                                                </ul>
-                                            </section>
-                                        </div>
-                                    </div>
-                                <!-- Bannana Biscuits Offcanvas -->
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_bannana_biscuit" aria-labelledby="offcanvas_bannana_biscuit_label">
+                    <!-- PETS OFFCANVASES -->
+                        <!-- BISCUITS OFFCANVAS -->
+                            <!-- Applesauce Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_applesauce_biscuit" aria-labelledby="offcanvas_applesauce_biscuit_label">
                                     <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvas_bannana_biscuit_label">Bannana Biscuits</h5>
+                                        <h5 class="offcanvas-title" id="offcanvas_applesauce_biscuit_label">Applesauce Biscuits</h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <div class="container-fluid">
+                                            <!-- Nutritional Facts -->
+                                            <div id="applesauce_biscuit_nfacts"></div>
+                                            <!-- End Nutritional Facts-->
+                                            <section class="ingredients">
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>Whole Wheat Flour</li>
+                                                    <li>Unsweetened Applesauce</li>
+                                                    <li>Water</li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- Peanut Butter Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_peanut_butter_biscuit" aria-labelledby="offcanvas_peanut_butter_biscuit_label">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvas_peanut_butter_biscuit_label">Peanut Butter Biscuits</h5>
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
                                         <!-- Nutritional Facts -->
-                                            <div id="bannana_biscuit_nfacts"></div>
+                                            <div id="peanut_butter_biscuit_nfacts"></div>
                                         <!-- End Nutritional Facts-->
                                         <section class="ingredients">
                                             <h2>Ingredients</h2>
                                             <ul>
                                                 <li>Whole Wheat Flour</li>
-                                                <li>Bannana</li>
+                                                <li>Organic Peanut Butter</li>
+                                                <li>Egg</li>
+                                                <li>Water</li>
                                             </ul>
                                         </section>
                                     </div>
                                 </div>
-
-                                <!-- Sweet Potato Biscuits Offcanvas -->
-                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_sweet_potato_biscuit" aria-labelledby="offcanvas_sweet_potato_biscuit">
-                                        <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title" id="offcanvas_sweet_potato_biscuit_label">Sweet Potato Biscuits</h5>
-                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <!-- Nutritional Facts -->
-                                                <div id="sweet_potato_nfacts"></div>
-                                            <!-- End Nutritional Facts-->
-                                            <section class="ingredients">
-                                                <h2>Ingredients</h2>
-                                                <ul>
-                                                    <li>Whole Wheat Flour</li>
-                                                    <li>Puree</li>
-                                                    <li>Water</li>
-                                                </ul>
-                                            </section>
-                                        </div>
+                            <!-- Pumpkin Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_pumpkin_biscuit" aria-labelledby="offcanvas_pumpkin_biscuit_label">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvas_pumpkin_biscuit_label">Pumpkin Biscuits</h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-                                <!-- Mango Biscuits Offcanvas -->
-                                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_mango_biscuit" aria-labelledby="offcanvas_mango_biscuit_label">
-                                        <div class="offcanvas-header">
-                                            <h5 class="offcanvas-title" id="offcanvas_mango_biscuit_label">Mango Biscuits</h5>
-                                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                        </div>
-                                        <div class="offcanvas-body">
-                                            <!-- Nutritional Facts -->
-                                                <div id="mango_biscuit_nfacts"></div>
-                                            <!-- End Nutritional Facts-->
-                                            <section class="ingredients">
-                                                <h2>Ingredients</h2>
-                                                <ul>
-                                                    <li>Whole Wheat Flour</li>
-                                                    <li>Puree</li>
-                                                    <li>Water</li>
-                                                </ul>
-                                            </section>
-                                        </div>
+                                    <div class="offcanvas-body">
+                                        <!-- Nutritional Facts -->
+                                            <div id="pumpkin_biscuit_nfacts"></div>
+                                        <!-- End Nutritional Facts-->
+                                        <section class="ingredients">
+                                            <h2>Ingredients</h2>
+                                            <ul>
+                                                <li>Whole Wheat Flour</li>
+                                                <li>Pure Pumpkin</li>
+                                                <li>Water</li>
+                                            </ul>
+                                        </section>
                                     </div>
-                            <!-- END BISUCITS OFFCANVAS -->
-
-                            <!-- TRAINING TREAT OFFCANVAS -->
-                            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_training_treat_paw" aria-labelledby="offcanvas_training_treat_paw_label">
+                                </div>
+                            <!-- Bannana Biscuits Offcanvas -->
+                            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_bannana_biscuit" aria-labelledby="offcanvas_bannana_biscuit_label">
                                 <div class="offcanvas-header">
-                                    <h5 class="offcanvas-title" id="offcanvas_training_treat_label">Training Treat Paw</h5>
+                                    <h5 class="offcanvas-title" id="offcanvas_bannana_biscuit_label">Bannana Biscuits</h5>
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
                                     <!-- Nutritional Facts -->
-                                    
+                                        <div id="bannana_biscuit_nfacts"></div>
                                     <!-- End Nutritional Facts-->
                                     <section class="ingredients">
                                         <h2>Ingredients</h2>
                                         <ul>
                                             <li>Whole Wheat Flour</li>
-                                            <li>Puree</li>
-                                            <li>Water</li>
+                                            <li>Bannana</li>
                                         </ul>
                                     </section>
                                 </div>
                             </div>
-                        <!-- END PETS OFFCANVASES -->
 
-<!--====================================================================================================================-->
-
-                    
-                    <!-- PEOPLE MENU -->
-                    <div id="people" class="tab-pane fade">
-                        <!-- This will be useful for the people menu
-                                                <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
-                                            
-                                                <table class="performance-facts__table--small small-info">
-                                                    <thead>
-                                                        <tr>
-                                                            <td colspan="2"></td>
-                                                            <th>Calories:</th>
-                                                            <th>2,000</th>
-                                                            <th>2,500</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th colspan="2">Total Fat</th>
-                                                            <td>Less than</td>
-                                                            <td>65g</td>
-                                                            <td>80g</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="blank-cell"></td>
-                                                            <th>Saturated Fat</th>
-                                                            <td>Less than</td>
-                                                            <td>20g</td>
-                                                            <td>25g</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th colspan="2">Cholesterol</th>
-                                                            <td>Less than</td>
-                                                            <td>300mg</td>
-                                                            <td>300 mg</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th colspan="2">Sodium</th>
-                                                            <td>Less than</td>
-                                                            <td>2,400mg</td>
-                                                            <td>2,400mg</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th colspan="3">Total Carbohydrate</th>
-                                                            <td>300g</td>
-                                                            <td>375g</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="blank-cell"></td>
-                                                            <th colspan="2">Dietary Fiber</th>
-                                                            <td>25g</td>
-                                                            <td>30g</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            
-                                                <p class="small-info">
-                                                    Calories per gram:
-                                                </p>
-                                                <p class="small-info text-center">
-                                                    Fat 9
-                                                    &bull;
-                                                    Carbohydrate 4
-                                                    &bull;
-                                                    Protein 4
-                                                </p>
-                                                -->
-                        <h3 class="mb-4"></h3>
-                        <div class="row">
-                            <!-- Peanut-butter Chocolate Chip Card -->
-                            <div class="col">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Peanut-Butter Chocolate Chip Bread</h5></div>
-                                    <img class="card-img-top" src="StaticFiles/img/product/human/breads/peanut_butter_cc_bread.png" alt="Img of Product">
-                                    <div class="card-body">
-                                        <p class="card-text">Introducing our delectable 8" loaf of peanut butter bread, generously studded with chocolate chips. A blissful indulgence!</p>
+                            <!-- Sweet Potato Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_sweet_potato_biscuit" aria-labelledby="offcanvas_sweet_potato_biscuit">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvas_sweet_potato_biscuit_label">Sweet Potato Biscuits</h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-                                    <div class="card-footer">
-                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_cc_bread"  aria-controls="offcanvas_peanut_butter_cc_bread">More Info</a>
+                                    <div class="offcanvas-body">
+                                        <!-- Nutritional Facts -->
+                                            <div id="sweet_potato_nfacts"></div>
+                                        <!-- End Nutritional Facts-->
+                                        <section class="ingredients">
+                                            <h2>Ingredients</h2>
+                                            <ul>
+                                                <li>Whole Wheat Flour</li>
+                                                <li>Puree</li>
+                                                <li>Water</li>
+                                            </ul>
+                                        </section>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Sandwhich Bread Card -->
-                            <div class="col">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Sandwhich Bread</h5></div>
-                                    <img class="card-img-top" src="StaticFiles/img/product/human/breads/sandwhich_bread.png" alt="Img of Product">
-                                    <div class="card-body">
-                                        <p class="card-text">Introducing our sensational 13" Pelman sandwich-style bread. Elevate your sandwich game!</p>
+                            <!-- Mango Biscuits Offcanvas -->
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_mango_biscuit" aria-labelledby="offcanvas_mango_biscuit_label">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvas_mango_biscuit_label">Mango Biscuits</h5>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-                                    <div class="card-footer">
-                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_sandwhich_bread"  aria-controls="offcanvas_sandwhich_bread">More Info</a>
+                                    <div class="offcanvas-body">
+                                        <!-- Nutritional Facts -->
+                                            <div id="mango_biscuit_nfacts"></div>
+                                        <!-- End Nutritional Facts-->
+                                        <section class="ingredients">
+                                            <h2>Ingredients</h2>
+                                            <ul>
+                                                <li>Whole Wheat Flour</li>
+                                                <li>Puree</li>
+                                                <li>Water</li>
+                                            </ul>
+                                        </section>
                                     </div>
                                 </div>
+                        <!-- END BISUCITS OFFCANVAS -->
+
+                        <!-- TRAINING TREAT OFFCANVAS -->
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_training_treat_paw" aria-labelledby="offcanvas_training_treat_paw_label">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvas_training_treat_label">Training Treat Paw</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
-                            <!-- Pumpkin Chocolate Chip Muffin Card -->
-                            <div class="col">
-                                <div class="card h-100" style="width: 18rem;">
-                                    <div class="card-header"><h5>Pumpkin Chocolate Chip Muffin</h5></div>
-                                    <img class="card-img-top" src="StaticFiles/img/product/human/sweets/pumpkin_cc_muffin.png" alt="Img of Product">
-                                    <div class="card-body">
-                                        <p class="card-text">Indulge in the perfect harmony of pumpkin flavor and chocolate chips with our medium-sized muffin. Pure delight!</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
-                                        <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_cc_muffin"  aria-controls="offcanvas_pumpkin_cc_muffin">More Info</a>
-                                    </div>
+                            <div class="offcanvas-body">
+                                <!-- Nutritional Facts -->
+                                
+                                <!-- End Nutritional Facts-->
+                                <section class="ingredients">
+                                    <h2>Ingredients</h2>
+                                    <ul>
+                                        <li>Whole Wheat Flour</li>
+                                        <li>Puree</li>
+                                        <li>Water</li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    <!-- END PETS OFFCANVASES -->
+
+                
+                <!-- #region - PEOPLE TAB -->
+                <div id="people" class="tab-pane fade">
+                    <!-- This will be useful for the people menu
+                                            <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+                                        
+                                            <table class="performance-facts__table--small small-info">
+                                                <thead>
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                        <th>Calories:</th>
+                                                        <th>2,000</th>
+                                                        <th>2,500</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th colspan="2">Total Fat</th>
+                                                        <td>Less than</td>
+                                                        <td>65g</td>
+                                                        <td>80g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell"></td>
+                                                        <th>Saturated Fat</th>
+                                                        <td>Less than</td>
+                                                        <td>20g</td>
+                                                        <td>25g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">Cholesterol</th>
+                                                        <td>Less than</td>
+                                                        <td>300mg</td>
+                                                        <td>300 mg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="2">Sodium</th>
+                                                        <td>Less than</td>
+                                                        <td>2,400mg</td>
+                                                        <td>2,400mg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th colspan="3">Total Carbohydrate</th>
+                                                        <td>300g</td>
+                                                        <td>375g</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="blank-cell"></td>
+                                                        <th colspan="2">Dietary Fiber</th>
+                                                        <td>25g</td>
+                                                        <td>30g</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        
+                                            <p class="small-info">
+                                                Calories per gram:
+                                            </p>
+                                            <p class="small-info text-center">
+                                                Fat 9
+                                                &bull;
+                                                Carbohydrate 4
+                                                &bull;
+                                                Protein 4
+                                            </p>
+                                            -->
+                    <h3 class="mb-4"></h3>
+                    <div class="row">
+                        <!-- Peanut-butter Chocolate Chip Card -->
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <div class="card-header"><h5>Peanut-Butter Chocolate Chip Bread</h5></div>
+                                <img class="card-img-top" src="StaticFiles/img/product/human/breads/peanut_butter_cc_bread.png" alt="Img of Product">
+                                <div class="card-body">
+                                    <p class="card-text">Introducing our delectable 8" loaf of peanut butter bread, generously studded with chocolate chips. A blissful indulgence!</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_peanut_butter_cc_bread"  aria-controls="offcanvas_peanut_butter_cc_bread">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sandwhich Bread Card -->
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <div class="card-header"><h5>Sandwhich Bread</h5></div>
+                                <img class="card-img-top" src="StaticFiles/img/product/human/breads/sandwhich_bread.png" alt="Img of Product">
+                                <div class="card-body">
+                                    <p class="card-text">Introducing our sensational 13" Pelman sandwich-style bread. Elevate your sandwich game!</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_sandwhich_bread"  aria-controls="offcanvas_sandwhich_bread">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pumpkin Chocolate Chip Muffin Card -->
+                        <div class="col">
+                            <div class="card h-100" style="width: 18rem;">
+                                <div class="card-header"><h5>Pumpkin Chocolate Chip Muffin</h5></div>
+                                <img class="card-img-top" src="StaticFiles/img/product/human/sweets/pumpkin_cc_muffin.png" alt="Img of Product">
+                                <div class="card-body">
+                                    <p class="card-text">Indulge in the perfect harmony of pumpkin flavor and chocolate chips with our medium-sized muffin. Pure delight!</p>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="card-price position-absolute top-50 end-0 translate-middle">Price</p>
+                                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pumpkin_cc_muffin"  aria-controls="offcanvas_pumpkin_cc_muffin">More Info</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- #endregion -->
             </div>
         </div>
 
