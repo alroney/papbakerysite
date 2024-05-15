@@ -129,6 +129,52 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
 //#endregion
 
 
+//#region - OFFCANVAS - Create the offcanvases for the products
+    //Function: This will create the offcanvas section for the type of product (productCat) and its flavor (flvr) that is given
+    function offCanvas(flvr, productCat) {
+        return `
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${flvr}_${productCat}" aria-labelledby="offcanvas_${flvr}_${productCat}_label">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">${flvr} ${productCat}</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="container-fluid">
+                        <!-- Nutritional Facts -->
+                        <div id="${flvr}_${productCat}_nfacts"></div>
+                        <!-- End Nutritional Facts-->
+                        <section class="ingredients">
+                            <h2>Ingredients</h2>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        `
+    }
+
+    //Assign values to the OffCanvas function for each flavor, and product category
+    for (let i = 0; i < productCategories.length; i++) {
+        const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
+        console.log(`\ncProductCat: ${cProductCat}`);
+        if (cProductCat == 'trainingTreat') { //Training treat does not have flvrs right now, so just continue on
+            continue;
+        }
+        for (let j = 0; j < flavorList.length; j++) {
+            const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
+            const cOffCanvas = offCanvas(cFlav, cProductCat);
+
+            const element = document.getElementById('pet_offCanvas');
+            if(element) {
+                element.innerHTML += cOffCanvas;
+            } 
+            else {
+                console.error(`Element with ID 'pet_offCanvas' not found!`);
+            }
+        }
+    }
+    
+//#endregion
+
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     //Function: This will generate the nutrition facts table and the values that are based on the product assigned.
@@ -324,7 +370,7 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
             element.innerHTML = cFlavBiscuitFacts;
         }
         else {
-            console.error(`Element with ID ${cFlav}_biscuit_nfacts not found.`);
+            console.error(`Element with ID ${cFlav}_biscuit_nfacts not found!`);
         }
     }
 //#endregion
@@ -352,29 +398,5 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
     });
 //#endregion
 
-//#region - OFFCANVAS - Create the offcanvases for the products
-    //Function: This will create the offcanvas section for the type of product (productCat) and its flavor (flvr) that is given
-    function offCanvas(flvr, productCat) {
-        return `
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${flvr}_${productCat}" aria-labelledby="offcanvas_${flvr}_${productCat}_label">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">${flvr} ${productCat}</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="container-fluid">
-                        <!-- Nutritional Facts -->
-                        <div id="${flvr}_${productCat}_nfacts"></div>
-                        <!-- End Nutritional Facts-->
-                        <section class="ingredients">
-                            <h2>Ingredients</h2>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        `
-    }
 
-    
-//#endregion
 
