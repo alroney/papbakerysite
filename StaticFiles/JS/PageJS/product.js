@@ -1,6 +1,7 @@
 let flavorList = []; //Declare flavorList outside the fetchCSV block
 let ingredientList = []; //Declare ingredientList outside the fetchCSV block
 let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts list outside the fetchCSV block
+let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of product categories for global usage
 
 //#region - Flavor & Ingredient CSV - read csv files and coordinate the data from them.
     //Function to parse CSV data into an object
@@ -130,8 +131,8 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
 
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
-    //Function: This will generate the nutrional facts table and the values that are based on the product assigned.
-    function generateNutritionalFacts(servingSize, servingPerContainer, calories, totalFat, satFat, polyUnSatFat, monoUnSatFat, transFat, cholesterol, sodium, totalCarbs, dietaryFiber, totalSugar, addedSugar, protein, vA, vB, vC, vD, vE, vK, calcium, potassium, iron) {
+    //Function: This will generate the nutrition facts table and the values that are based on the product assigned.
+    function generateNutritionFacts(servingSize, servingPerContainer, calories, totalFat, satFat, polyUnSatFat, monoUnSatFat, transFat, cholesterol, sodium, totalCarbs, dietaryFiber, totalSugar, addedSugar, protein, vA, vB, vC, vD, vE, vK, calcium, potassium, iron) {
         return `
             <section class="performance-facts">
                 <header class="performance-facts__header">
@@ -289,7 +290,7 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
         const cFlav = flavorList[i]; //Set the current flavor
         const facts = nutritionalFactsByFlavor[cFlav] //Get all the nutritional facts for the current flavor 
 
-        const cFlavBiscuitFacts = generateNutritionalFacts( //Assign the current flavor's nutritional facts to the function generateNutritionalFacts' parameters to then be properly handled
+        const cFlavBiscuitFacts = generateNutritionFacts( //Assign the current flavor's nutritional facts to the function generateNutritionalFacts' parameters to then be properly handled
             facts.servingSize,
             facts.servingPerContainer,
             facts.calories,
@@ -351,5 +352,34 @@ let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts li
     });
 //#endregion
 
+//#region - OFFCANVAS - Create the offcanvases for the products
+    //Function: This will create the offcanvas section for the type of product (productCat) and its flavor (flvr) that is given
+    function offCanvas(flvr, productCat) {
+        return `
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${flvr}_${productCat}" aria-labelledby="offcanvas_${flvr}_${productCat}_label">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">Applesauce Biscuits</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="container-fluid">
+                        <!-- Nutritional Facts -->
+                        <div id="applesauce_${productCat}_nfacts"></div>
+                        <!-- End Nutritional Facts-->
+                        <section class="ingredients">
+                            <h2>Ingredients</h2>
+                            <ul>
+                                <li>Whole Wheat Flour</li>
+                                <li>Unsweetened Applesauce</li>
+                                <li>Water</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        `
+    }
 
+    
+//#endregion
 
