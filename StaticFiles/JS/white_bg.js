@@ -1,13 +1,13 @@
-(function ($) {
+function initializeWhiteBgNavbar() {
     "use strict";
     const mediaQuery = window.matchMedia('(max-width: 991px)');
 
-    // // Navbar collapse this will prevent the mobile version changes from happening if the viewport is greater than 768px
+    //Navbar collapse this will prevent the mobile version changes from happening if the viewport is greater than 768px
     if (mediaQuery.matches) {
         $('.collapse .navbar-nav').addClass('border-dark border-bottom bg-white');
     }
 
-    // // Fixed Navbar
+    //Fixed Navbar
     $('.fixed-top').css('top', $('.top-bar').height());
 
     $('.navbar-toggler').addClass('border-1 border-dark bg-white');
@@ -62,4 +62,4 @@
         }
     });
 
-})(jQuery);
+}
