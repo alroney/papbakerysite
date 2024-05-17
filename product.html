@@ -119,7 +119,8 @@
         <!-- DISCLAIMER SECTION -->
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-lg-12">
+                    <button class="btn mx-auto d-block btn-primary btn-sm" id="general-disclaimer-btn" onclick="showGeneralDisclaimer()">Read General Disclaimer</button>
+                    <div class="col-lg-12" id="general-disclaimer" style="display: none;">
                         <div>
                             <h5 class="disclaimer-hdr">Allergy Disclaimer:</h5>
                             <ul>
@@ -154,7 +155,7 @@
                         <!-- Disclaimer -->
                         <div class="container-fluid dog-biscuit-disclaimer mb-5 pt-3 justify-content-center">
                             <span id="biscuit-disclaimer" style="display: none">
-                                <h5 class="disclaimer-word">Dog Biscuits/Training-Treat Disclaimer</h5>
+                                <h5 class="disclaimer-hdr">Dog Biscuits/Training-Treat Disclaimer</h5>
                                 <ul class="dog-biscuit-disclaimer-list mb-5">
                                     <li>Due to the ratio between the whole wheat flour and other ingredient(s) in the biscuits, they all look very similar coming out of the oven.</li>
                                     <br>
@@ -172,13 +173,19 @@
                         <!-- End Disclaimer -->
                         <h3 class="mb-4 mt-0 px-2 text-center">Available Options for your Pets.</h3>
                         
+                        
 
                         <section class="product_section" id="biscuits_sec">
+
                             <!-- BISCUIT CARDS -->
                                 <div class="container-fluid">
                                     <div class="row">
+
+                                        <div id="biscuit_cards"></div>
+
+
                                         <!-- Applesauce Biscuit Card -->
-                                        <div class="col mb-4">
+                                        <div class="col mb-3">
                                             <div class="card h-100">
                                                 <div class="card-header"><h5>Applesauce Biscuit</h5></div>
                                                 <div class="card-body">
@@ -292,10 +299,15 @@
                             <!-- END BISCUITS CAROUSEL -->
                         </section>
                         
-                        <section class="product_section mt-4" id="traing-treat_sec">
+                        <section class="product_section mt-4" id="training-treat_sec">
                             <!-- TRAINING TREAT CARDS-->
                                 <div class="container">
                                     <div class="row">
+
+                                        
+                                        <div id="trainingTreat_cards"></div>
+
+
                                         <!-- Training Treat Paw Card-->
                                         <div class="col mb-3">
                                             <div class="card h-100">
@@ -630,6 +642,20 @@
             else {
                 contents.css("display", "none");
                 btnText.html("Read Biscuit Disclaimer");
+            }
+        }
+
+        function showGeneralDisclaimer() {
+            var contents = $("#general-disclaimer");
+            var btnText = $("#general-disclaimer-btn");
+
+            if(contents.css("display") == "none") {
+                contents.css("display", "block");
+                btnText.html("Hide Disclaimer");
+            } 
+            else {
+                contents.css("display", "none");
+                btnText.html("Read General Disclaimer");
             }
         }
         

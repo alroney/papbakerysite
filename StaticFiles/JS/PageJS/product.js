@@ -2,75 +2,91 @@ let flavorList = []; //Declare flavorList outside the fetchCSV block
 let ingredientList = []; //Declare ingredientList outside the fetchCSV block
 let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts list outside the fetchCSV block
 let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of product categories for global usage
+let productDescription = []; //Decare the array which will hold the description of each individual product. This will be a 2-dimensional array. Ex. ['applesauce biscuit': 'Its description'] , ['applesauce trainingTreat' : 'Its description']
 
-//#region - Flavor & Ingredient CSV - read csv files and coordinate the data from them.
-    //Function to parse CSV data into an object
-    function parseCSV(csv, numLinesToHdr) {
-        const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
-        const rows = csv.split('\n'); //Create an array of rows from the spreadsheet
-        const headers = rows[numLinesToHdr].split(','); //Create an array of headers
-        const dataByHeader = {}; //Create an array to later store objects
+//#region - FLAVOR & INGREDIENT CSV - read csv files and coordinate the data from them.
+    //#region - GRAB AND READ - Get the csv file and read it
+        //Function to parse CSV data into an object
+        function parseCSV(csv, numLinesToHdr, productColumn = null, descriptionColumn = null) {
+            const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
+            const rows = csv.split('\n'); //Create an array of rows from the spreadsheet
+            const headers = rows[numLinesToHdr].split(','); //Create an array of headers
+            const dataByHeader = {}; //Create an array to later store objects
+            const productToDescriptionMap = {}; //Create object to map products to descriptions
 
-        //Initialize empty arrays for each header
-        headers.forEach(header => {
-            dataByHeader[header.trim()] = [];
-        });
-
-        //Iterate over each line of the CSV (starting from numLinesToHdr)
-        for (let i = numLinesToHdr + 1; i < rows.length; i++) {
-            if (rows[i].trim() === endMarker) { //If the string 'endOfSheet' is reached in the current sheet for the .csv file, then stop looking
-                break;
-            }
-
-            const currentRow = rows[i].split(',');
-            if (currentRow.length !== headers.length) {
-                continue;
-            }
-
-            //Add each value to the corresponding header array
-            headers.forEach((header, index) => {
-                const obj = { [header.trim()]: currentRow[index].trim() };
-                dataByHeader[header.trim()].push(obj);
+            //Initialize empty arrays for each header
+            headers.forEach(header => {
+                dataByHeader[header.trim()] = [];
             });
+
+            // Get the index of the product and description columns if provided
+            const productIndex = productColumn ? headers.indexOf(productColumn) : null; //If productColumn contains data, then assign the data at to the productIndex. Otherwise, set productIndex to null 
+            const descriptionIndex = descriptionColumn ? headers.indexOf(descriptionColumn) : null;
+
+            //Iterate over each line of the CSV (starting from numLinesToHdr)
+            for (let i = numLinesToHdr + 1; i < rows.length; i++) {
+                if (rows[i].trim() === endMarker) { //If the string 'endOfSheet' is reached in the current sheet for the .csv file, then stop looking
+                    break;
+                }
+
+                const currentRow = rows[i].split(',');
+                if (currentRow.length !== headers.length) {
+                    continue; //Skip rows that do not match header length
+                }
+
+                //Add each value to the corresponding header array
+                headers.forEach((header, index) => {
+                    const value = currentRow[index].trim();
+                    dataByHeader[header.trim()].push(value);
+
+                    //Map products to description if columns are provided
+                    if (productIndex !== null && descriptionIndex !== null && index === productIndex) {
+                        productToDescriptionMap[value] = currentRow[descriptionIndex].trim();
+                    }
+                });
+            }
+
+            return {
+                dataByHeader, productToDescriptionMap
+            };
         }
 
-        return dataByHeader;
-    }
+        //Function to fetch CSV data synchronously using XMLHttpRequest
+        function fetchCSV(path) {
+            const request = new XMLHttpRequest();
+            request.open('GET', path, false); //Make the request synchronous
+            request.send();
 
-    //Function to fetch CSV data synchronously using XMLHttpRequest
-    function fetchCSV(path) {
-        const request = new XMLHttpRequest();
-        request.open('GET', path, false); //Make the request synchronous
-        request.send();
+            if (request.status !== 200) {
+                console.error('Error fetching CSV: ', request.status);
+                return '';
+            }
 
-        if (request.status !== 200) {
-            console.error('Error fetching CSV: ', request.status);
-            return '';
+            return request.responseText;
         }
-
-        return request.responseText;
-    }
+    //#endregion
 
     //Function to fetch and process CSV data
     function fetch_FlavorsIngredients_Data() {
         const data = fetchCSV('StaticFiles/CSV/flavor&ingredients.csv');
         const numLinesToHdr = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
-        const dataByHeader = parseCSV(data, numLinesToHdr); //Create an Array of Objects of the headers
+        const {dataByHeader} = parseCSV(data, numLinesToHdr); //Create an Array of Objects of the headers
         const ingredients = dataByHeader['Ingredients']; //Create an array of the ingredients
         const flavors = dataByHeader['Flavors']; //Create an array of hte flavors
-
+        
         //Update the global arrays with the parsed data
-        flavorList = flavors.map(flavorObj => flavorObj['Flavors']).filter(f=> f !== '');
-        ingredientList = ingredients.map(ingObj => ingObj['Ingredients']).filter(f => f !== '');
+        flavorList = flavors.filter(f=> f !== '');
+        ingredientList = ingredients.filter(f => f !== '');
     }
-
+    
     //Call fetchData to fetch and process the data
     fetch_FlavorsIngredients_Data();
 
+    //Function: fetch the nutritional facts from the .csv file and assign to values for later use
     function fetch_BFNF_Data() {
         const data = fetchCSV('StaticFiles/CSV/nutritional_facts.csv');
         const numLinesToHdr = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
-        const dataByHeader = parseCSV(data, numLinesToHdr);
+        const {dataByHeader} = parseCSV(data, numLinesToHdr);
 
         //Filter out header to only include flavors in flavorList
         const filteredData = {}; 
@@ -82,60 +98,62 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
         });
 
         Object.keys(filteredData).forEach(flavor => {
-            const facts = dataByHeader[flavor]; //Get the nutritional facts for the current flavor
+            const facts = filteredData[flavor]; //Get the nutritional facts for the current flavor
             const nutritionalFacts = {
-                servingSize: parseInt(facts[0][flavor]),
+                servingSize: parseInt(facts[0]),
                 servingPerContainer: 'Varies',
-                calories: parseFloat(facts[1][flavor]),
-                totalFat: parseFloat(facts[2][flavor]),
-                satFat: parseFloat(facts[3][flavor]),
-                polyUnSatFat: parseFloat(facts[4][flavor]),
-                monoUnSatFat: parseFloat(facts[5][flavor]),
-                transFat: parseFloat(facts[6][flavor]),
-                cholesterol: parseFloat(facts[7][flavor]),
-                sodium: parseFloat(facts[8][flavor]),
-                totalCarbs: parseFloat(facts[9][flavor]),
-                dietartyFiber: parseFloat(facts[10][flavor]),
-                totalSugar: parseFloat(facts[11][flavor]),
-                addedSugar: parseFloat(facts[12][flavor]),
-                protein: parseFloat(facts[13][flavor]),
-                vA: parseFloat(facts[14][flavor]),
-                vB: parseFloat(facts[15][flavor]),
-                vC: parseFloat(facts[16][flavor]),
-                vD: parseFloat(facts[17][flavor]),
-                vE: parseFloat(facts[18][flavor]),
-                vK: parseFloat(facts[19][flavor]),
-                calcium: parseFloat(facts[20][flavor]),
-                potassium: parseFloat(facts[20][flavor]),
-                iron: parseFloat(facts[20][flavor])
+                calories: parseFloat(facts[1]),
+                totalFat: parseFloat(facts[2]),
+                satFat: parseFloat(facts[3]),
+                polyUnSatFat: parseFloat(facts[4]),
+                monoUnSatFat: parseFloat(facts[5]),
+                transFat: parseFloat(facts[6]),
+                cholesterol: parseFloat(facts[7]),
+                sodium: parseFloat(facts[8]),
+                totalCarbs: parseFloat(facts[9]),
+                dietartyFiber: parseFloat(facts[10]),
+                totalSugar: parseFloat(facts[11]),
+                addedSugar: parseFloat(facts[12]),
+                protein: parseFloat(facts[13]),
+                vA: parseFloat(facts[14]),
+                vB: parseFloat(facts[15]),
+                vC: parseFloat(facts[16]),
+                vD: parseFloat(facts[17]),
+                vE: parseFloat(facts[18]),
+                vK: parseFloat(facts[19]),
+                calcium: parseFloat(facts[20]),
+                potassium: parseFloat(facts[21]),
+                iron: parseFloat(facts[22])
             }
 
             //Filter out empty values
             for (let key in nutritionalFacts) {
-                if (nutritionalFacts[key] === '') {
-                    delete nutritionalFacts[key];
+                if (nutritionalFacts[key] === '') { //If the value is empty
+                    delete nutritionalFacts[key]; //Remove the empty value
                 }
             }
-
             nutritionalFactsByFlavor[flavor] = nutritionalFacts;
         });
     }
 
     fetch_BFNF_Data();
 
-    // console.log(nutritionalFactsByFlavor['applesauce']); //Debugging for values
-
-
+    //Function: fetch the product description .csv file and assign it
+    function fetch_pDesc_Data() {
+        const data = fetchCSV('StaticFiles/CSV/productDescription');
+        const numLinesToHdr = 0;
+        const productColumn = 'Product';
+        const descriptionColumn = 'Description';
+    }
 //#endregion
-
 
 //#region - OFFCANVAS - Create the offcanvases for the products
     //Function: This will create the offcanvas section for the type of product (productCat) and its flavor (flvr) that is given
-    function offCanvas(flvr, productCat) {
+    function generateOffCanvas(flvr, productCat) {
         return `
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${flvr}_${productCat}" aria-labelledby="offcanvas_${flvr}_${productCat}_label">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">${flvr} ${productCat}</h5>
+                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${productCat}_label">${cleanStr(flvr)} ${cleanStr(productCat)}</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -155,15 +173,15 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
     //Assign values to the OffCanvas function for each flavor, and product category
     for (let i = 0; i < productCategories.length; i++) {
         const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
-        console.log(`\ncProductCat: ${cProductCat}`);
         if (cProductCat == 'trainingTreat') { //Training treat does not have flvrs right now, so just continue on
             continue;
         }
         for (let j = 0; j < flavorList.length; j++) {
             const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
-            const cOffCanvas = offCanvas(cFlav, cProductCat);
+            const cOffCanvas = generateOffCanvas(cFlav, cProductCat);
 
             const element = document.getElementById('pet_offCanvas');
+            
             if(element) {
                 element.innerHTML += cOffCanvas;
             } 
@@ -174,7 +192,6 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
     }
     
 //#endregion
-
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     //Function: This will generate the nutrition facts table and the values that are based on the product assigned.
@@ -335,7 +352,7 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
     for (let i = 0; i < flavorList.length; i++){
         const cFlav = flavorList[i]; //Set the current flavor
         const facts = nutritionalFactsByFlavor[cFlav] //Get all the nutritional facts for the current flavor 
-
+        
         const cFlavBiscuitFacts = generateNutritionFacts( //Assign the current flavor's nutritional facts to the function generateNutritionalFacts' parameters to then be properly handled
             facts.servingSize,
             facts.servingPerContainer,
@@ -375,6 +392,44 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
     }
 //#endregion
 
+//#region - PRODUCT CARDS - Creat the cards where for the products
+    //Function: Create the layout of the card
+    function generateProductCards(flvr, pCat, desc) {
+        return `
+        <div class="col mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5>${cleanStr(flvr)} ${cleanStr(pCat)}</h5></div>
+                <div class="card-body">
+                    <p>${desc}</p>
+                </div>
+                <div class="card-footer">
+                    
+                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_${flvr}_${pCat}"  aria-controls="offcanvas_${flvr}_${pCat}">More Info</a>
+                </div>
+            </div>
+        </div>
+        `
+    }
+
+    //Assign values to the generateProductCards function for each flavor, and product category
+    for (let i = 0; i < productCategories.length; i++) {
+        const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
+        for (let j = 0; j < flavorList.length; j++) {
+            const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
+            // const cPDesc = productDescription[0][`${cFlav} ${cProductCat}`];
+            const cPCard = generateProductCards(cFlav, cProductCat, 'TEST');
+
+            const element = document.getElementById(`${cProductCat}_cards`);
+            if(element) {
+                element.innerHTML += cPCard;
+            } 
+            else {
+                console.error(`Element with ID '${cProductCat}_cards' not found!`);
+            }
+        }
+    }
+//#endregion
+
 //#region - INNER BISCUIT CAROUSEL - Create the images and the captions for each item in the carousel
     const imagePath = "StaticFiles/img/product/dog/biscuits/";
     const carouselItems = [
@@ -398,5 +453,31 @@ let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of pro
     });
 //#endregion
 
+//#region - HELPER FUNCTIONS - Functions made to help with general stuff
+    //Function: This will replace underscores with a space
+    function replaceUnderscores(string) {
+        return string.replace(/_/g, ' ');
+    }
 
+    //Function: This will capitalize individual words in a given string (phrase)
+    function capEachWord(phrase) {
+        return phrase
+            .split(' ') //Split the phrase into an array of words
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) //Capitalize each word
+            .join(' '); //Join the words back into a single string
+    }
+
+    //Function: This will separate words from camel case string
+    function separateCamelCase(string) {
+        return string.replace(/([a-z])([A-Z])/g, '$1 $2');
+    }
+
+    //Function: Combine all the string cleaning functions into one.
+    function cleanStr(string) {
+        let str = '';
+        str = separateCamelCase(string);
+        str = replaceUnderscores(str);
+        return capEachWord(str);
+    }
+//#endregion
 

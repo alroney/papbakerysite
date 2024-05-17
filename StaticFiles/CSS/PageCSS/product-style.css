@@ -5,6 +5,10 @@
     color: #ff0000;
 }
 
+#general-disclaimer-btn {
+    width: fit-content;
+}
+
 
 /*#region - TABS GENERAL*/
 .tab-content {
@@ -62,7 +66,7 @@
 
 /*#region - PRODUCT CARDS */
     .card {
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
         margin: auto;
         min-width: 15em;
         max-width: 20em;
