@@ -9,39 +9,55 @@ let productDescription = []; //Decare the array which will hold the description 
         //Function to parse CSV data into an object
         function parseCSV(csv, numLinesToHdr, productColumn = null, descriptionColumn = null) {
             const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
-            const rows = csv.split('\n'); //Create an array of rows from the spreadsheet
+            const rows = csv.replace(/\r/g, '').split('\n'); //Remove \r characters and split into rows
             const headers = rows[numLinesToHdr].split(','); //Create an array of headers
             const dataByHeader = {}; //Create an array to later store objects
             const productToDescriptionMap = {}; //Create object to map products to descriptions
+            let endReached = false; //Flag to indicate if endMarker has been reached
 
             //Initialize empty arrays for each header
             headers.forEach(header => {
                 dataByHeader[header.trim()] = [];
             });
 
-            // Get the index of the product and description columns if provided
-            const productIndex = productColumn ? headers.indexOf(productColumn) : null; //If productColumn contains data, then assign the data at to the productIndex. Otherwise, set productIndex to null 
+            //Check if the productColumn/descriptionColumn parameter is provided
+            const productIndex = productColumn ? headers.indexOf(productColumn) : null; //If it is, find the index of the productColumn in the headers array, else set productIndex to null
             const descriptionIndex = descriptionColumn ? headers.indexOf(descriptionColumn) : null;
 
             //Iterate over each line of the CSV (starting from numLinesToHdr)
             for (let i = numLinesToHdr + 1; i < rows.length; i++) {
-                if (rows[i].trim() === endMarker) { //If the string 'endOfSheet' is reached in the current sheet for the .csv file, then stop looking
+                //Stop processing completely if the endMarker was previously reached
+                if (endReached) { 
                     break;
+                }
+
+                //Skip empty rows
+                if (rows[i].trim === '') {
+                    continue;
                 }
 
                 const currentRow = rows[i].split(',');
                 if (currentRow.length !== headers.length) {
                     continue; //Skip rows that do not match header length
                 }
-
                 //Add each value to the corresponding header array
                 headers.forEach((header, index) => {
+
+                    if (currentRow[index] === endMarker) { //Stop further processing for this row
+                        endReached = true;
+                        return;
+                    }
+                    if (!currentRow[index]) { //Skip if currentRow[index] is undefined or empty OR if currentRow[index] is equal to 'endOfSheet'
+                        return;
+                    }
+
                     const value = currentRow[index].trim();
                     dataByHeader[header.trim()].push(value);
 
                     //Map products to description if columns are provided
-                    if (productIndex !== null && descriptionIndex !== null && index === productIndex) {
-                        productToDescriptionMap[value] = currentRow[descriptionIndex].trim();
+                    if (productIndex !== null && descriptionIndex !== null && index === productIndex) {  
+                        const descriptionValue = currentRow[descriptionIndex] ? currentRow[descriptionIndex].trim() : ''; //Check if the current row has a value at the dscriptionIndex
+                        productToDescriptionMap[value] = descriptionValue;
                     }
                 });
             }
@@ -66,7 +82,7 @@ let productDescription = []; //Decare the array which will hold the description 
         }
     //#endregion
 
-    //Function to fetch and process CSV data
+    //Function: fetch and process the flavors and ingredients used from the .csv file
     function fetch_FlavorsIngredients_Data() {
         const data = fetchCSV('StaticFiles/CSV/flavor&ingredients.csv');
         const numLinesToHdr = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
@@ -78,8 +94,6 @@ let productDescription = []; //Decare the array which will hold the description 
         flavorList = flavors.filter(f=> f !== '');
         ingredientList = ingredients.filter(f => f !== '');
     }
-    
-    //Call fetchData to fetch and process the data
     fetch_FlavorsIngredients_Data();
 
     //Function: fetch the nutritional facts from the .csv file and assign to values for later use
@@ -135,16 +149,25 @@ let productDescription = []; //Decare the array which will hold the description 
             nutritionalFactsByFlavor[flavor] = nutritionalFacts;
         });
     }
-
     fetch_BFNF_Data();
 
     //Function: fetch the product description .csv file and assign it
     function fetch_pDesc_Data() {
-        const data = fetchCSV('StaticFiles/CSV/productDescription');
-        const numLinesToHdr = 0;
-        const productColumn = 'Product';
-        const descriptionColumn = 'Description';
+        const data = fetchCSV('StaticFiles/CSV/product_desc.csv');
+        const numLinesToHdr = 0; //Set the header line index
+        const productColumn = 'Product'; //Define the product column header
+        const descriptionColumn = 'Short Description'; //Define the description column header
+        //Parse the CSV data with the specified header line and column headers for product and description
+        const {productToDescriptionMap} = parseCSV(data, numLinesToHdr, productColumn, descriptionColumn);
+        
+        //Update the global productDescription array with the parsed data
+        productDescription = Object.entries(productToDescriptionMap).map(([product, description]) => {
+            // console.log(`${product}: ${description}`);
+            return {product: product.trim(), description: description.trim()};
+        });
     }
+    fetch_pDesc_Data();
+
 //#endregion
 
 //#region - OFFCANVAS - Create the offcanvases for the products
@@ -411,13 +434,20 @@ let productDescription = []; //Decare the array which will hold the description 
         `
     }
 
+    //Function: get the description for a specific product
+    function getProductDescription(pName) {
+        const pDesc = productDescription.find(item => item.product === pName); //Match the product name to given pName then assign its corresponding description
+        return pDesc ? pDesc.description : console.warn(`pDesc is ${pDesc} for the product ${pName}! Check spelling of product name OR description may not be there.`); //If pDesc is not undefined then return its value's description, else warn issue in console
+    }
+
     //Assign values to the generateProductCards function for each flavor, and product category
     for (let i = 0; i < productCategories.length; i++) {
         const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
         for (let j = 0; j < flavorList.length; j++) {
             const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
-            // const cPDesc = productDescription[0][`${cFlav} ${cProductCat}`];
-            const cPCard = generateProductCards(cFlav, cProductCat, 'TEST');
+            const cPDesc = getProductDescription(`${cFlav} ${cProductCat}`);
+            // console.log(cPDesc)
+            const cPCard = generateProductCards(cFlav, cProductCat, cPDesc);
 
             const element = document.getElementById(`${cProductCat}_cards`);
             if(element) {
