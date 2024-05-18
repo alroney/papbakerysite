@@ -7,7 +7,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
 
 
 
-//#region - FLAVOR & INGREDIENT CSV - read csv files and coordinate the data from them.
+//#region - CSV - read csv files and coordinate the data from them.
     //#region - GRAB AND READ - Get the csv file and read it
         //Function to parse CSV data into an object
         function parseCSV(csv, numLinesToHdr, productColumn = null, descriptionColumn = null, ingredientColumn = null) {
@@ -123,7 +123,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                     cholesterol: parseFloat(facts[7]),
                     sodium: parseFloat(facts[8]),
                     totalCarbs: parseFloat(facts[9]),
-                    dietartyFiber: parseFloat(facts[10]),
+                    dietaryFiber: parseFloat(facts[10]),
                     totalSugar: parseFloat(facts[11]),
                     addedSugar: parseFloat(facts[12]),
                     protein: parseFloat(facts[13]),
@@ -192,6 +192,9 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                 </div>
                 <div class="offcanvas-body">
                     <div class="container-fluid">
+                    <div class="dropdown" id="${productCat}-dropdown-container">
+                
+                    </div>
                         <!-- Nutritional Facts -->
                         <div id="${flvr}_${productCat}_nfacts"></div>
                         <!-- End Nutritional Facts-->
@@ -218,9 +221,6 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
     function renderOffCanvases() {
         for (let i = 0; i < productCategories.length; i++) {
             const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
-            if (cProductCat == 'trainingTreat') { //Training treat does not have flvrs right now, so just continue on
-                continue;
-            }
             
             for (let j = 0; j < flavorList.length; j++) {
                 const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
@@ -240,17 +240,75 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
     }
 //#endregion
 
+
+
+
+//Function: this will generate the biscuit selection dropdown. It will allow the user to select a biscuit size, then the serving size will update accordingly to the average weight of 1 of those biscuits selected; thus updating the rest of the nutritional facts
+function generateSizeSelector(pCat) {
+        
+    if (pCat === 'biscuit') {
+        return `
+            <label for="${pCat}Dropdown">${cleanStr(pCat)} Size: </label>
+            <select id="${pCat}Dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForCategory('${pCat}')">
+                <option value="6">Small</option>
+                <option value="6" active>Small Long</option>
+                <option value="12">Large</option>
+                <option value="10">Large Long</option>
+            </select>
+        `;
+    }
+
+    else if (pCat === 'trainingTreat') {
+        return `
+            <label for="${pCat}Dropdown">${cleanStr(pCat)} Shape: </label>
+            <select id="${pCat}Dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForCategory('${pCat}')">
+                <option value="1">Paw</option>
+                <option value="1">Dot</option>
+                <option value="1">Star</option>
+            </select>
+        `;
+    }
+
+    else {
+        return ``; //Return empty if no dropdown is need for the category
+    }
+}
+
+function createDropdownForCategory(pCat) {
+    const container = document.getElementById(`${pCat}-dropdown-container`);
+    if (container) {
+        const dropdownHTML = generateSizeSelector(pCat);
+        container.innerHTML = dropdownHTML;
+    }
+    else {
+        console.error(`No container found for the ${pCat}-dropdown-container.`);
+    }
+}
+
+//Function: initializes the nutrition facts upon load. This gets called after the dropdowns are populated
+function updateInitialNutritionFacts() {
+    productCategories.forEach(cat => {
+        updateNutritionFactsForCategory(cat); //Update each category with initial dropdown value
+    })
+}
+
+
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
-    //Function: This will generate the nutrition facts table and the values that are based on the product assigned.
-    function generateNutritionFacts(servingSize, servingPerContainer, calories, totalFat, satFat, polyUnSatFat, monoUnSatFat, transFat, cholesterol, sodium, totalCarbs, dietaryFiber, totalSugar, addedSugar, protein, vA, vB, vC, vD, vE, vK, calcium, potassium, iron) {
+    
+
+    //Function: this will generate the nutrition facts table and the values that are based on the product assigned
+    function generateNutritionFactsHTML(nf) {
+        
         return `
             <section class="performance-facts">
+                
                 <header class="performance-facts__header">
                     <h1 class="performance-facts__title">Nutrition Facts</h1>
-                    <p>Serving Size ${servingSize}g</p>
-                    <p>Serving Per Container: ${servingPerContainer}</p>
+                    <p>Serving Size ${nf.servingSize}g</p>
+                    <p>Serving Per Container: ${nf.servingPerContainer}</p>
                 </header>
                 <table class="performance-facts__table">
+                    
                     <thead>
                         <tr>
                         <th colspan="2" class="small-info">
@@ -263,7 +321,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             <th>
                                 <b>Calories</b>
                             </th>
-                            <td>${calories}</td>
+                            <td>${nf.calories}</td>
                         </tr>
                         <tr class="thick-row">
                             <td colspan="3" class="small-info">
@@ -273,7 +331,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                         <tr>
                             <th colspan="2">
                                 <b>Total Fat</b>
-                                ${totalFat}g
+                                ${nf.totalFat}g
                             </th>
                             <td></td>
                         </tr>
@@ -281,7 +339,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             <td></td>
                             <th>
                                 Saturated Fat
-                                ${satFat}g
+                                ${nf.satFat}g
                             </th>
                             <td>
                                 <b></b>
@@ -291,7 +349,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             <td></td>
                             <th>
                                 Poly-unsaturated Fat
-                                ${polyUnSatFat}g
+                                ${nf.polyUnSatFat}g
                             </th>
                             <td>
                             </td>
@@ -300,7 +358,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             <td></td>
                             <th>
                                 Mono-unstaturated Fat
-                                ${monoUnSatFat}g
+                                ${nf.monoUnSatFat}g
                             </th>
                             <td>
                             </td>
@@ -310,7 +368,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             </td>
                             <th>
                                 Trans Fat
-                                ${transFat}g
+                                ${nf.transFat}g
                             </th>
                             <td>
                             </td>
@@ -318,21 +376,21 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                         <tr>
                             <th colspan="2">
                                 <b>Cholesterol</b>
-                                ${cholesterol}mg
+                                ${nf.cholesterol}mg
                             </th>
                             <td></td>
                         </tr>
                         <tr>
                             <th colspan="2">
                                 <b>Sodium</b>
-                                ${sodium}g
+                                ${nf.sodium}g
                             </th>
                             <td></td>
                         </tr>
                         <tr>
                             <th colspan="3">
                                 <b>Total Carbohydrates</b>
-                                ${totalCarbs}g
+                                ${nf.totalCarbs}g
                             </th>
                             <td></td>
                             <td></td>
@@ -342,7 +400,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             </td>
                             <th colspan="2">
                                 Dietary Fiber
-                                ${dietaryFiber}g
+                                ${nf.dietaryFiber}g
                             </th>
                             <td></td>
                         </tr>
@@ -350,14 +408,14 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                             <td class="blank-cell"></td>
                             <th colspan="2">
                                 Total Sugars
-                                ${totalSugar}g
+                                ${nf.totalSugar}g
                             </th>
                             <td></td>
                         </tr>
                         <tr>
                             <td class="blank-cell"></td>
                             <th colspan="2">
-                                Includes ${addedSugar}g Added Sugars
+                                Includes ${nf.addedSugar}g Added Sugars
                             </th>
                             <td></td>
                             <td></td>
@@ -366,7 +424,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                         <tr class="thick-end">
                             <th colspan="2">
                                 <b>Protein</b>
-                                ${protein}g
+                                ${nf.protein}g
                             </th>
                             <td></td>
                         </tr>
@@ -378,15 +436,15 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                         <tr class="thin-end">
                         <td colspan="2">
                             Calcium
-                            ${calcium}mg
+                            ${nf.calcium}mg
                         </td>
                         <td>
                             Potassium
-                            ${potassium}mg
+                            ${nf.potassium}mg
                         </td>
                         <td>
                             Iron
-                            ${iron}mg
+                            ${nf.iron}mg
                         </td>
                         </tr>
                     </tbody>
@@ -396,47 +454,75 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
         `
     }
 
-    function renderNutritionFacts() {
-        for (let i = 0; i < flavorList.length; i++){
-            const cFlav = flavorList[i]; //Set the current flavor
-            const facts = nutritionalFactsByFlavor[cFlav] //Get all the nutritional facts for the current flavor 
-            
-            const cFlavBiscuitFacts = generateNutritionFacts( //Assign the current flavor's nutritional facts to the function generateNutritionalFacts' parameters to then be properly handled
-                facts.servingSize,
-                facts.servingPerContainer,
-                facts.calories,
-                facts.totalFat,
-                facts.satFat,
-                facts.polyUnSatFat,
-                facts.monoUnSatFat,
-                facts.transFat,
-                facts.cholesterol,
-                facts.sodium,
-                facts.totalCarbs,
-                facts.dietartyFiber,
-                facts.totalSugar,
-                facts.addedSugar,
-                facts.protein,
-                facts.vA,
-                facts.vB,
-                facts.vC,
-                facts.vD,
-                facts.vE,
-                facts.vK,
-                facts.calcium,
-                facts.potassium,
-                facts.iron
-            );
+    //Function: update the nutritional facts from getting the value of the size selector and passing it through the nf rendering function
+    function updateNutritionFactsForCategory(pCat) {
+        const sizeSelector = document.getElementById(`${pCat}Dropdown`);
+        console.log(`pCat = ${pCat}, sizeSelector = ${sizeSelector}`);
+        if (sizeSelector) {
+            const rawMultiplier = sizeSelector.value;
+            const sizeMultiplier = parseFloat(rawMultiplier);
 
-
-
-            const element = document.getElementById(`${cFlav}_biscuit_nfacts`);
-            if (element) {
-                element.innerHTML = cFlavBiscuitFacts;
-            }
+            if (!isNaN(sizeMultiplier)) {
+                renderNutritionFacts(sizeMultiplier, pCat);
+            } 
             else {
-                console.error(`Element with ID ${cFlav}_biscuit_nfacts not found!`);
+                console.error("Size Multiplier is not a number:", sizeMultiplier);
             }
+        }
+        else {
+
+            console.error(`Dropdown for size selection ${pCat}Dropdown is not found`);
+        }
+    }
+
+    //Function: get and assign the data for the nutrition facts
+    function renderNutritionFacts(sizeMultiplier, pCat) {
+        if (!pCat) {
+            console.error("Undefined product category provided.");
+            return; //Exit if pCat is not defined
+        }
+
+        flavorList.forEach(flavor => {
+            const facts = nutritionalFactsByFlavor[flavor];
+            if (!facts) {
+                console.error(`No nutritional facts found for flavor: ${flavor} in category: ${pCat}`);
+                return;
+            }
+    
+            let recalcFacts = {};
+            let initSS = facts.servingSize; //Set initial serving size to the value of the ss from the csv file
+            //Use a general function to determine the factor based on the category and possibly other criteria
+            const factor = getFactorForCategory(pCat, sizeMultiplier, initSS);
+    
+            //Iterate over each nutritional fact and apply the calculation
+            Object.keys(facts).forEach(key => {
+                let originalValue = facts[key];
+                
+                if (typeof originalValue === 'number') {
+                    recalcFacts[key] = parseFloat((originalValue * factor).toFixed(2));
+                } else {
+                    recalcFacts[key] = originalValue; // Keep non-numeric values unchanged
+                }
+            });
+    
+            //Generate the HTML using the recalculated facts
+            const elementId = `${flavor}_${pCat}_nfacts`;
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerHTML = generateNutritionFactsHTML(recalcFacts);
+            } else {
+                console.error(`Element with ID ${elementId} not found!`);
+            }
+        });
+    }
+    
+    function getFactorForCategory(pCat, sizeMultiplier, initSS) {
+        //Define custom logic based on category
+        switch (pCat) {
+            case 'biscuit':
+                return sizeMultiplier / initSS; //Take sizeMultiplier value from dropdown, then divided it by the initial serving size from the csv file
+            default:
+                return 1; //Default factor for categories without specific calculations
         }
     }
 //#endregion
@@ -539,14 +625,28 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
     }
 //#endregion
 
-async function initializeData() {
-    await fetch_FlavorsIngredients_Data();
-    await fetchNutritionalFactsData();
-    await fetchProductInfo();
-    //Call functions after all data functions
-    renderProductCards();
-    renderOffCanvases();
-    renderNutritionFacts();
-}
+//#region - START UP INITIATION - functions that are very necessary to load the page up properly
+    //Function: loads data and sets up User Interface
+    async function initializeData() {
+        console.log("Initializing with categories:", productCategories)
+        await fetch_FlavorsIngredients_Data();
+        await fetchNutritionalFactsData();
+        await fetchProductInfo();
+        //Call functions after all data fetching functions. The function call order is very important. Go from most outer element to most inner
+        renderProductCards();
+        renderOffCanvases();
+        productCategories.forEach(cat => {
+            createDropdownForCategory(cat);
+            if (cat) {
+                updateInitialNutritionFacts(cat);
+            }
+        });
+    }
 
-document.addEventListener('DOMContentLoaded', initializeData);
+    document.addEventListener('DOMContentLoaded', async function () {
+        await initializeData(); //Load data and render UI components
+        
+    });
+//#endregion
+
+
