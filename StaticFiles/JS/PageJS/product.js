@@ -237,55 +237,57 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
             }
         }
     }
+
+    //#region - PRODUCT DROPDOWN - Create the dropdowns for each product with an offcanvas. It is used to select what size, shape, etc of the product
+        //Function: this will generate the biscuit selection dropdown. It will allow the user to select a biscuit size, then the serving size will update accordingly to the average weight of 1 of those biscuits selected; thus updating the rest of the nutritional facts
+        function generateSizeSelector(pCat, flvr) {
+                
+            if (pCat === 'biscuit') {
+                return `
+                    <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
+                    <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
+                        <option value="6">Small</option>
+                        <option value="6" active>Small Long</option>
+                        <option value="12">Large</option>
+                        <option value="10">Large Long</option>
+                    </select>
+                `;
+            }
+
+            else if (pCat === 'trainingTreat') {
+                return `
+                    <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Shape: </label>
+                    <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
+                        <option value="1">Paw</option>
+                        <option value="2">Dot</option>
+                        <option value="3">Star</option>
+                    </select>
+                `;
+            }
+
+            else {
+                return ``; //Return empty if no dropdown is need for the category
+            }
+        }
+
+        //Function: create the dropdown container for each of the products
+        function createDropdownForProduct(pCat) {
+            flavorList.forEach(flvr => {
+                const container = document.getElementById(`${flvr}_${pCat}_dropdown_container`);
+            if (container) {
+                const dropdownHTML = generateSizeSelector(pCat, flvr);
+                container.innerHTML = dropdownHTML;
+            }
+            else {
+                console.error(`No container found for the ${flvr}_${pCat}_dropdown_container.`);
+            }
+            });
+            
+        }
+    //#endregion
 //#endregion
 
 
-
-
-//Function: this will generate the biscuit selection dropdown. It will allow the user to select a biscuit size, then the serving size will update accordingly to the average weight of 1 of those biscuits selected; thus updating the rest of the nutritional facts
-function generateSizeSelector(pCat, flvr) {
-        
-    if (pCat === 'biscuit') {
-        return `
-            <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
-            <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
-                <option value="6">Small</option>
-                <option value="6" active>Small Long</option>
-                <option value="12">Large</option>
-                <option value="10">Large Long</option>
-            </select>
-        `;
-    }
-
-    else if (pCat === 'trainingTreat') {
-        return `
-            <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Shape: </label>
-            <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
-                <option value="1">Paw</option>
-                <option value="2">Dot</option>
-                <option value="3">Star</option>
-            </select>
-        `;
-    }
-
-    else {
-        return ``; //Return empty if no dropdown is need for the category
-    }
-}
-
-function createDropdownForCategory(pCat) {
-    flavorList.forEach(flvr => {
-        const container = document.getElementById(`${flvr}_${pCat}_dropdown_container`);
-    if (container) {
-        const dropdownHTML = generateSizeSelector(pCat, flvr);
-        container.innerHTML = dropdownHTML;
-    }
-    else {
-        console.error(`No container found for the ${flvr}_${pCat}_dropdown_container.`);
-    }
-    });
-    
-}
 
 
 
@@ -476,7 +478,7 @@ function createDropdownForCategory(pCat) {
             }
         }
         catch (error) {
-            
+
         }
     }
 
@@ -520,6 +522,7 @@ function createDropdownForCategory(pCat) {
         }
     }
     
+    //Function: calculate the formula for certain categories (or default) and return the result
     function getFactorForCategory(pCat, sizeMultiplier, initSS) {
         //Define custom logic based on category
         switch (pCat) {
@@ -535,7 +538,7 @@ function createDropdownForCategory(pCat) {
     //Function: Create the layout of the card
     function generateProductCards(flvr, pCat, desc) {
         return `
-        <div class="col mb-3">
+        <div class="col mb-3 mt-3">
             <div class="card h-100">
                 <div class="card-header"><h5>${cleanStr(flvr)} ${cleanStr(pCat)}</h5></div>
                 <div class="card-body">
@@ -578,26 +581,30 @@ function createDropdownForCategory(pCat) {
 //#endregion
 
 //#region - INNER BISCUIT CAROUSEL - Create the images and the captions for each item in the carousel
-    const imagePath = "StaticFiles/img/product/dog/biscuits/";
-    const carouselItems = [
-        { src: "biscuit_sm.png", alt: "Small Biscuit", name: "Small Biscuit", price: "$0.35 Each" },
-        { src: "biscuit_sm_long.png", alt: "Small Long Biscuit", name: "Small Long Biscuit", price: "$0.37 Each" },
-        { src: "biscuit_lg.png", alt: "Large Biscuit", name: "Large Biscuit", price: "$0.45 Each" },
-        { src: "biscuit_lg_long.png", alt: "Large Long Biscuit", name: "Large Long Biscuit", price: "$0.50 Each" }
-    ];
-
-    const carouselInner = document.getElementById('carouselInner');
-    carouselItems.forEach((item, index) => {
-        const active = index === 0 ? 'active' : '';
-        carouselInner.innerHTML += `
-            <div class="carousel-item ${active}">
-                <img class="" src="${imagePath}${item.src}" alt="${item.alt}">
-                <div class="carousel-caption">
-                    <h5>${item.name}</h5>
-                    <p class="text-dark">Only ${item.price}!</p>
-                </div>
-            </div>`;
-    });
+    //Function: create the carousel display
+    function generateCarousel() {
+        const imagePath = "StaticFiles/img/product/dog/biscuits/";
+        const carouselItems = [
+            { src: "biscuit_sm.png", alt: "Small Biscuit", name: "Small Biscuit", price: "$0.35 Each" },
+            { src: "biscuit_sm_long.png", alt: "Small Long Biscuit", name: "Small Long Biscuit", price: "$0.37 Each" },
+            { src: "biscuit_lg.png", alt: "Large Biscuit", name: "Large Biscuit", price: "$0.45 Each" },
+            { src: "biscuit_lg_long.png", alt: "Large Long Biscuit", name: "Large Long Biscuit", price: "$0.50 Each" }
+        ];
+    
+        const carouselInner = document.getElementById('carouselInner');
+        carouselItems.forEach((item, index) => {
+            const active = index === 0 ? 'active' : '';
+            carouselInner.innerHTML += `
+                <div class="carousel-item ${active}">
+                    <img class="" src="${imagePath}${item.src}" alt="${item.alt}">
+                    <div class="carousel-caption">
+                        <h5>${item.name}</h5>
+                        <p class="text-dark">Only ${item.price}!</p>
+                    </div>
+                </div>`;
+        });
+    }
+    
 //#endregion
 
 //#region - HELPER FUNCTIONS - Functions made to help with general stuff
@@ -638,13 +645,15 @@ function createDropdownForCategory(pCat) {
         renderProductCards();
         renderOffCanvases();
         productCategories.forEach(cat => {
-            createDropdownForCategory(cat);
+            createDropdownForProduct(cat);
             if (cat) {
                 updateInitialNutritionFacts(cat);
             }
         });
+        generateCarousel();
     }
 
+    //This is the line that loads the whole page essentially
     document.addEventListener('DOMContentLoaded', async function () {
         await initializeData(); //Load data and render UI components
         
