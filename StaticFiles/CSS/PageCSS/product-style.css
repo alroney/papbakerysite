@@ -114,6 +114,11 @@
         border-bottom: 1px solid #000000;
     }
 
+    /*#region - OFFCANVAS PRODUCT SUBTYPE DROPDOWN */
+        .productSubtypeDropdown {
+            width: fit-content;
+        }
+    /*#endregion*/
 
     /*#region - OFFCANVAS NUTRITION FACTS */
         .performance-facts {

@@ -2,21 +2,23 @@ let flavorList = []; //Declare flavorList outside the fetchCSV block
 let allIngredientsList = []; //Declare ingredientList outside the fetchCSV block
 let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts list outside the fetchCSV block
 let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of product categories for global usage
-let productDescription = []; //Declare the array which will hold the description of each individual product. 
+let productDescription = []; //Declare the array which will hold the description of each individual product
 let productIngredients = []; //Declare the array which holds the list of ingredients used for each product
+let productPricesPerGram = []; //Declare the array which holds the list of prices per gram of a recipe for each product
 
 
 
 //#region - CSV - read csv files and coordinate the data from them.
     //#region - GRAB AND READ - Get the csv file and read it
         //Function to parse CSV data into an object
-        function parseCSV(csv, numLinesToHdr, productColumn = null, descriptionColumn = null, ingredientColumn = null) {
+        function parseCSV(csv, numLinesToHdr, productColumn = null, descriptionColumn = null, ingredientColumn = null, pricePerGramColumn = null) {
             const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
             const rows = csv.replace(/\r/g, '').split('\n'); //Remove \r characters and split into rows
             const headers = rows[numLinesToHdr].split(','); //Create an array of headers
             const dataByHeader = {}; //Create an object to store arrays for headers
             const productToDescriptionMap = {}; //Create object to map products to descriptions
             const productToIngredientMap = {}; //Create object to map products to ingredients
+            const productToPricePGMap = {}; //Create object to map products to their price per gram
             let endReached = false; //Flag to indicate if endMarker has been reached
 
             //Initialize empty arrays for each header
@@ -25,7 +27,8 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
             const indices = {
                 productIndex: headers.indexOf(productColumn),
                 descriptionIndex: headers.indexOf(descriptionColumn),
-                ingredientIndex: headers.indexOf(ingredientColumn)
+                ingredientIndex: headers.indexOf(ingredientColumn),
+                pricePGIndex: headers.indexOf(pricePerGramColumn)
             };
 
 
@@ -45,16 +48,16 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
 
                     dataByHeader[header].push(value);
 
-                    //Map products to description if columns are provided
+                    //Map products to their different entities
                     if (index === indices.productIndex) {
-                        productToDescriptionMap[value] = currentRow[indices.descriptionIndex]?.trim() || '';//The '?' is the optional chain operator. It allows for safe access to deep nested properties of an object without having to check if each refrence in the chain is null or undefined
-                        productToIngredientMap[value] = currentRow[indices.ingredientIndex]?.trim() || '';
-
+                        productToDescriptionMap[value] = currentRow[indices.descriptionIndex]?.trim() || ''; //The '?' is the optional chain operator. It allows for safe access to deep nested properties of an object without having to check if each refrence in the chain is null or undefined
+                        productToIngredientMap[value] = currentRow[indices.ingredientIndex]?.trim() || ''; //Map products to ingredient
+                        productToPricePGMap[value] = currentRow[indices.pricePGIndex]?.trim() || ''; //Map products price per gram
                     }
                 });
             }
 
-            return { dataByHeader, productToDescriptionMap, productToIngredientMap };
+            return { dataByHeader, productToDescriptionMap, productToIngredientMap, productToPricePGMap };
         }
 
         //Function to fetch CSV data synchronously using XMLHttpRequest
@@ -159,14 +162,20 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
         const numLinesToHdr = 0; //Set the header line index
         
         //Parse the CSV data with the specified header line and column headers for product and description
-        const {productToDescriptionMap, productToIngredientMap} = parseCSV(data, numLinesToHdr, 'Product', 'Short Description', 'Ingredients');
+        const {productToDescriptionMap, productToIngredientMap, productToPricePGMap} = parseCSV(data, numLinesToHdr, 'Product', 'Short Description', 'Ingredients', 'Price Per Gram');
         //Update the global productDescription array with the parsed data
+        
         productDescription = Object.entries(productToDescriptionMap).map(([product, description]) => ({
             product: product.trim(), description: description.trim()
         }));
 
         productIngredients = Object.entries(productToIngredientMap).map(([product, ingredient]) => ({
             product: product.trim(), ingredient: ingredient.trim()
+        }));
+
+
+        productPricesPerGram = Object.entries(productToPricePGMap).map(([product, pricePerGram]) => ({
+            product: product.trim(), pricePerGram: pricePerGram.trim()
         }));
     }
 //#endregion
@@ -193,7 +202,7 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                 <div class="offcanvas-body">
                     <div class="container-fluid">
 
-                        <div class="dropdown" id="${flvr}_${pCat}_dropdown_container"></div>
+                        <div class="productSubtypeDropdown mb-4 mx-auto d-block" id="${flvr}_${pCat}_dropdown_container"></div>
                         <!-- Nutritional Facts -->
                         <div id="${flvr}_${pCat}_nfacts"></div>
                         <!-- End Nutritional Facts-->
@@ -241,6 +250,27 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
     //#region - PRODUCT DROPDOWN - Create the dropdowns for each product with an offcanvas. It is used to select what size, shape, etc of the product
         //Function: this will generate the biscuit selection dropdown. It will allow the user to select a biscuit size, then the serving size will update accordingly to the average weight of 1 of those biscuits selected; thus updating the rest of the nutritional facts
         function generateSizeSelector(pCat, flvr) {
+
+            /*
+                *This might be used later on to efficiently create the dropdowns without needing to repeat code*
+
+                pCat.forEach(cat =>{
+                    flvr.forEach(fr => fr {
+                        `
+                        <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
+                        <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
+                            ${
+                                options.forEach(opts => {
+                                    `<options value="${sizeInfo.Weight[]}">${sizeInfo.SizeName[]}</option>`
+                                });
+                            }
+                        </select>
+
+                        `
+                    });
+                });
+
+            */
                 
             if (pCat === 'biscuit') {
                 return `
@@ -289,7 +319,6 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     
-
     //Function: this will generate the nutrition facts table and the values that are based on the product assigned
     function generateNutritionFactsHTML(nf) {
         
@@ -464,7 +493,6 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
             
             const rawMultiplier = sizeSelector.value;
             const sizeMultiplier = parseFloat(rawMultiplier);
-            console.log(`Current set: ${flvr} ${pCat} with value = ${sizeMultiplier}`);
             if (!isNaN(sizeMultiplier)) {
                 renderNutritionFacts(sizeMultiplier, pCat, flvr);
             } 
@@ -569,16 +597,28 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
     //Function: create the carousel display
     function generateCarousel() {
         const imagePath = "StaticFiles/img/product/dog/biscuits/";
-        const carouselItems = [
-            { src: "biscuit_sm.png", alt: "Small Biscuit", name: "Small Biscuit", price: "$0.35 Each" },
-            { src: "biscuit_sm_long.png", alt: "Small Long Biscuit", name: "Small Long Biscuit", price: "$0.37 Each" },
-            { src: "biscuit_lg.png", alt: "Large Biscuit", name: "Large Biscuit", price: "$0.45 Each" },
-            { src: "biscuit_lg_long.png", alt: "Large Long Biscuit", name: "Large Long Biscuit", price: "$0.50 Each" }
+        const carouselItems = [ //This is a multi-dimensional array to call a specific item you would use, carouselItems[#].variableName Ex. carouselItems[1].src will give me 'biscuit_sm_long.png'
+            { src: "biscuit_sm.png", alt: "Small Biscuit", name: "Small Biscuit", price: "" },
+            { src: "biscuit_sm_long.png", alt: "Small Long Biscuit", name: "Small Long Biscuit", price: "" },
+            { src: "biscuit_lg.png", alt: "Large Biscuit", name: "Large Biscuit", price: "" },
+            { src: "biscuit_lg_long.png", alt: "Large Long Biscuit", name: "Large Long Biscuit", price: "" }
         ];
-    
+
+
+        const carInd_btns = document.getElementById('carInd_btns');
         const carouselInner = document.getElementById('carouselInner');
         carouselItems.forEach((item, index) => {
             const active = index === 0 ? 'active' : '';
+            let whenActive = 'active'
+            let whenTrue = 'aria-current="true"';
+
+            if(index !== 0) whenActive = '';
+            if(active !== 'active') whenTrue ='';
+
+            carInd_btns.innerHTML += `
+                <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="${index}" class="${whenActive}" aria-current="${whenTrue}" aria-label="Slide ${index + 1}"></button>
+                `;
+                
             carouselInner.innerHTML += `
                 <div class="carousel-item ${active}">
                     <img class="" src="${imagePath}${item.src}" alt="${item.alt}">
@@ -586,7 +626,8 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
                         <h5>${item.name}</h5>
                         <p class="text-dark">Only ${item.price}!</p>
                     </div>
-                </div>`;
+                </div>
+                `;
         });
     }
     
