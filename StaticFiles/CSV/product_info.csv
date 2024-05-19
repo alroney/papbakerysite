@@ -1,9 +1,9 @@
-Product,Short Description,Ingredients
-applesauce biscuit,Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.,Whole Wheat Flour + Unsweetened Applesauce + Water
-peanut_butter biscuit,Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines,Whole Wheat Flour + Natural Peanut Butter + Egg + Water
-pumpkin biscuit,Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!,Whole Wheat Flour + Pure Pumpkin + Water
-applesauce trainingTreat,A light little treat with a touch of applesauce. Perfect for those training sessions!,Whole Wheat Flour + Unsweetened Applesauce + Water
-peanut_butter trainingTreat,A light little treat with a touch of peanut butter. Perfect for those training sessions!,Whole Wheat Flour + Natural Peanut Butter + Egg + Water
-pumpkin trainingTreat,A light little treat with a touch of pumpkin. Perfect for those training sessions!,Whole Wheat Flour + Pure Pumpkin + Water
-,,
-endOfSheet,,
+Product,Short Description,Ingredients,Price Per Gram
+applesauce biscuit,Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.0018
+peanut_butter biscuit,Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.0031
+pumpkin biscuit,Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!,Whole Wheat Flour + Pure Pumpkin + Water,$0.0022
+applesauce trainingTreat,A light little treat with a touch of applesauce. Perfect for those training sessions!,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.0020
+peanut_butter trainingTreat,A light little treat with a touch of peanut butter. Perfect for those training sessions!,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.0035
+pumpkin trainingTreat,A light little treat with a touch of pumpkin. Perfect for those training sessions!,Whole Wheat Flour + Pure Pumpkin + Water,$0.0025
+,,,
+endOfSheet,,,

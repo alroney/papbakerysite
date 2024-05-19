@@ -287,11 +287,6 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
     //#endregion
 //#endregion
 
-
-
-
-
-
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     
 
@@ -499,14 +494,14 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
         let recalcFacts = {};
         let initSS = facts.servingSize; //Set initial serving size to the value of the ss from the csv file
         //Use a general function to determine the factor based on the category and possibly other criteria
-        const factor = getFactorForCategory(pCat, sizeMultiplier, initSS);
+        
 
         //Iterate over each nutritional fact and apply the calculation
         Object.keys(facts).forEach(key => {
             let originalValue = facts[key];
             
             if (typeof originalValue === 'number') {
-                recalcFacts[key] = parseFloat((originalValue * factor).toFixed(2));
+                recalcFacts[key] = parseFloat((originalValue * sizeMultiplier).toFixed(2));
             } else {
                 recalcFacts[key] = originalValue; //Keep non-numeric values unchanged
             }
@@ -522,16 +517,6 @@ let productIngredients = []; //Declare the array which holds the list of ingredi
         }
     }
     
-    //Function: calculate the formula for certain categories (or default) and return the result
-    function getFactorForCategory(pCat, sizeMultiplier, initSS) {
-        //Define custom logic based on category
-        switch (pCat) {
-            case 'biscuit':
-                return sizeMultiplier / initSS; //Take sizeMultiplier value from dropdown, then divided it by the initial serving size from the csv file
-            default:
-                return sizeMultiplier; //Default factor for categories without specific calculations
-        }
-    }
 //#endregion
 
 //#region - PRODUCT CARDS - Creat the cards where for the products

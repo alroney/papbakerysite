@@ -1,27 +1,27 @@
 nf_item,peanut_butter,pumpkin,applesauce
-Serving Size (g),6,6,6
-Calories Per Serving (kCal),22.55,13.95,14.10
-Total Fat (g),0.96,0.07,0.07
-Saturated Fat (g),0.19,0.00,0.00
-Polyunsaturated Fat (g),0.18,0.00,0.00
-Monounsaturated Fat (g),0.47,0.00,0.00
-Trans Fat (g),0.00,0.00,0.00
-Cholesterol (mg),3.24,0.00,0.00
-Sodium (mg),7.40,0.08,0.17
-Total Carbohydrates (g),2.88,2.96,3.00
-Dietary Fiber (g),0.46,0.45,0.43
-Sugar (g),0.17,0.07,0.18
-Added Sugar (g),0.11,0.00,0.00
-Protein (g),0.94,0.55,0.53
-Vitamin A (mcg),1.07,0.00,0.00
-Vitamin B (mcg),0.00,0.00,0.00
-Vitamin C (mcg),0.00,0.00,0.00
-Vitamin D (mcg),0.00,0.00,0.00
-Vitamin E (mcg),0.00,0.00,0.00
-Vitamin K (mcg),0.00,0.00,0.00
-Calcium (mg),1.33,0.52,0.08
-Potassium (mg),11.09,4.15,1.82
-Iron (mg),0.04,0.03,0.00
+Serving Size (g),1,1,1
+Calories Per Serving (kCal),3.7590,2.3246,2.3503
+Total Fat (g),0.1598,0.0111,0.0111
+Saturated Fat (g),0.0315,0.0000,0.0000
+Polyunsaturated Fat (g),0.0292,0.0000,0.0000
+Monounsaturated Fat (g),0.0782,0.0000,0.0000
+Trans Fat (g),0.0000,0.0000,0.0000
+Cholesterol (mg),0.5408,0.0000,0.0000
+Sodium (mg),1.2329,0.0140,0.0276
+Total Carbohydrates (g),0.4797,0.4926,0.5005
+Dietary Fiber (g),0.0762,0.0748,0.0719
+Sugar (g),0.0285,0.0112,0.0303
+Added Sugar (g),0.0183,0.0000,0.0000
+Protein (g),0.1574,0.0913,0.0885
+Vitamin A (mcg),0.1786,0.0000,0.0000
+Vitamin B (mcg),0.0000,0.0000,0.0000
+Vitamin C (mcg),0.0000,0.0000,0.0000
+Vitamin D (mcg),0.0000,0.0000,0.0000
+Vitamin E (mcg),0.0000,0.0000,0.0000
+Vitamin K (mcg),0.0000,0.0000,0.0000
+Calcium (mg),0.2222,0.0869,0.0138
+Potassium (mg),1.8486,0.6921,0.3032
+Iron (mg),0.0069,0.0056,0.0000
 ,,,
 endOfSheet,,,
 REMEMBER TO SYNC TO GITHUB THROUGH VISUAL STUDIO: save this portion to a .csv file in the StaticFiles/CSV folder in the website files,,,
