@@ -1,5 +1,4 @@
 let flavorList = []; //Declare flavorList outside the fetchCSV block
-let allIngredientsList = []; //Declare ingredientList outside the fetchCSV block
 let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts list outside the fetchCSV block
 let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of product categories for global usage
 let productDescription = []; //Declare the array which will hold the description of each individual product
@@ -11,10 +10,10 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
 //#region - CSV - read csv files and coordinate the data from them.
     //#region - GRAB AND READ - Get the csv file and read it
         //Function to parse CSV data into an object
-        function parseCSV(csv, numLinesToHdr, productColumn = null, descriptionColumn = null, ingredientColumn = null, pricePerGramColumn = null) {
+        function parseCSV(csv, hdrRow, productColumn = null, descriptionColumn = null, ingredientColumn = null, pricePerGramColumn = null) {
             const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
             const rows = csv.replace(/\r/g, '').split('\n'); //Remove \r characters and split into rows
-            const headers = rows[numLinesToHdr].split(','); //Create an array of headers
+            const headers = rows[hdrRow].split(','); //Create an array of headers
             const dataByHeader = {}; //Create an object to store arrays for headers
             const productToDescriptionMap = {}; //Create object to map products to descriptions
             const productToIngredientMap = {}; //Create object to map products to ingredients
@@ -32,8 +31,8 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
             };
 
 
-            //Iterate over each line of the CSV (starting from numLinesToHdr)
-            for (let i = numLinesToHdr + 1; i < rows.length; i++) {
+            //Iterate over each line of the CSV (starting from hdrRow + 1)
+            for (let i = hdrRow + 1; i < rows.length; i++) {
                 if (endReached || rows[i].trim() === '') continue;
 
                 const currentRow = rows[i].split(',');
@@ -79,17 +78,15 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
     //#endregion
 
     //Function: fetch and process the flavors and ingredients used from the .csv file
-    async function fetch_FlavorsIngredients_Data() {
+    async function fetch_Flavors_Data() {
         try {
-            const data = await fetchCSV('/StaticFiles/CSV/flavor&ingredients.csv');
-            const numLinesToHdr = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
-            const {dataByHeader} = parseCSV(data, numLinesToHdr); //Create an Array of Objects of the headers
-            const ingredients = dataByHeader['Ingredients']; //Create an array of the ingredients
+            const data = await fetchCSV('/StaticFiles/CSV/flavors.csv');
+            const hdrRow = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
+            const {dataByHeader} = parseCSV(data, hdrRow); //Create an Array of Objects of the headers
             const flavors = dataByHeader['Flavors']; //Create an array of hte flavors
             
             //Update the global arrays with the parsed data
             flavorList = flavors.filter(f => f !== '');
-            allIngredientsList = ingredients.filter(f => f !== '');
         }
         catch (error) {
             console.error('', error);
@@ -100,8 +97,8 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
     async function fetchNutritionalFactsData() {
         try {
             const data = await fetchCSV('/StaticFiles/CSV/nutritional_facts.csv');
-            const numLinesToHdr = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
-            const {dataByHeader} = parseCSV(data, numLinesToHdr);
+            const hdrRow = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
+            const {dataByHeader} = parseCSV(data, hdrRow);
 
             //Filter out header to only include flavors in flavorList
             const filteredData = {}; 
@@ -159,10 +156,10 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
     async function fetchProductInfo() {
         const data = await fetchCSV('/StaticFiles/CSV/product_info.csv');
        
-        const numLinesToHdr = 0; //Set the header line index
+        const hdrRow = 0; //Set the header line index
         
         //Parse the CSV data with the specified header line and column headers for product and description
-        const {productToDescriptionMap, productToIngredientMap, productToPricePGMap} = parseCSV(data, numLinesToHdr, 'Product', 'Short Description', 'Ingredients', 'Price Per Gram');
+        const {productToDescriptionMap, productToIngredientMap, productToPricePGMap} = parseCSV(data, hdrRow, 'Product', 'Short Description', 'Ingredients', 'Price Per Gram');
         //Update the global productDescription array with the parsed data
         
         productDescription = Object.entries(productToDescriptionMap).map(([product, description]) => ({
@@ -664,7 +661,7 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
 //#region - START UP INITIATION - functions that are very necessary to load the page up properly
     //Function: loads data and sets up User Interface
     async function initializeData() {
-        await fetch_FlavorsIngredients_Data();
+        await fetch_Flavors_Data();
         await fetchNutritionalFactsData();
         await fetchProductInfo();
         //Call functions after all data fetching functions. The function call order is very important. Go from most outer element to most inner
