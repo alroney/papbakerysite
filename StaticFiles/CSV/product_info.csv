@@ -1,9 +1,11 @@
-Product,Short Description,Ingredients,Price Per Gram
-applesauce biscuit,Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.0018
-peanut_butter biscuit,Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.0031
-pumpkin biscuit,Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!,Whole Wheat Flour + Pure Pumpkin + Water,$0.0022
-applesauce trainingTreat,A light little treat with a touch of applesauce. Perfect for those training sessions!,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.0020
-peanut_butter trainingTreat,A light little treat with a touch of peanut butter. Perfect for those training sessions!,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.0035
-pumpkin trainingTreat,A light little treat with a touch of pumpkin. Perfect for those training sessions!,Whole Wheat Flour + Pure Pumpkin + Water,$0.0025
-,,,
-endOfSheet,,,
+Product Id,Flavor,Category,Short Description,Ingredients,Price Per Gram,Subtypes,Subtype Values
+1,Applesauce,Biscuit,Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.0018,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
+2,Peanut Butter,Biscuit,Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.0029,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
+3,Pumpkin,Biscuit,Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!,Whole Wheat Flour + Pure Pumpkin + Water,$0.0022,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
+4,Applesauce,Training Treat,A light little treat with a touch of applesauce. Perfect for those training sessions!,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.0020,Paw,1
+5,Peanut Butter,Training Treat,A light little treat with a touch of peanut butter. Perfect for those training sessions!,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.0032,Paw,1
+6,Pumpkin,Training Treat,A light little treat with a touch of pumpkin. Perfect for those training sessions!,Whole Wheat Flour + Pure Pumpkin + Water,$0.0025,Paw,1
+,,,,,,,
+endOfSheet,,,,,,,
+REMEMBER TO SYNC TO GITHUB THROUGH VISUAL STUDIO: save this portion to a .csv file in the StaticFiles/CSV folder in the website files,,,,,,,
+Product name = Flavor + Category,,,,,,,

@@ -1,33 +1,33 @@
 let flavorList = []; //Declare flavorList outside the fetchCSV block
 let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts list outside the fetchCSV block
-let productCategories = ['biscuit', 'trainingTreat']; //Declare the array of product categories for global usage
-let productDescription = []; //Declare the array which will hold the description of each individual product
-let productIngredients = []; //Declare the array which holds the list of ingredients used for each product
-let productPricesPerGram = []; //Declare the array which holds the list of prices per gram of a recipe for each product
+let productCategories = ['biscuit', 'training treat']; //Declare the array of product categories for global usage
+let productInfo = [];
 
 
 
 //#region - CSV - read csv files and coordinate the data from them.
     //#region - GRAB AND READ - Get the csv file and read it
         //Function to parse CSV data into an object
-        function parseCSV(csv, hdrRow, productColumn = null, descriptionColumn = null, ingredientColumn = null, pricePerGramColumn = null) {
+        function parseCSV(csv, hdrRow, productIdColumn, flavorColumn, categoryColumn, descriptionColumn, ingredientColumn, pricePerGramColumn, subtypeColumn, subtypeValColumn) {
             const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
             const rows = csv.replace(/\r/g, '').split('\n'); //Remove \r characters and split into rows
             const headers = rows[hdrRow].split(','); //Create an array of headers
             const dataByHeader = {}; //Create an object to store arrays for headers
-            const productToDescriptionMap = {}; //Create object to map products to descriptions
-            const productToIngredientMap = {}; //Create object to map products to ingredients
-            const productToPricePGMap = {}; //Create object to map products to their price per gram
+            const productInfoMap = {};
             let endReached = false; //Flag to indicate if endMarker has been reached
 
             //Initialize empty arrays for each header
             headers.forEach(header => { dataByHeader[header.trim()] = [] });
 
             const indices = {
-                productIndex: headers.indexOf(productColumn),
+                productIdIndex: headers.indexOf(productIdColumn),
+                flavorIndex: headers.indexOf(flavorColumn),
+                categoryIndex: headers.indexOf(categoryColumn),
                 descriptionIndex: headers.indexOf(descriptionColumn),
                 ingredientIndex: headers.indexOf(ingredientColumn),
-                pricePGIndex: headers.indexOf(pricePerGramColumn)
+                pricePGIndex: headers.indexOf(pricePerGramColumn),
+                subtypeIndex: headers.indexOf(subtypeColumn),
+                subtypeValIndex: headers.indexOf(subtypeValColumn)
             };
 
 
@@ -40,23 +40,34 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
 
                 headers.forEach((header, index) => {
                     let value = currentRow[index].trim();
-                    if ( value === 'endOfSheet') {
+
+                    if (value === '') return; //Skip empty lines
+                    if( value === endMarker) { //Skip an set endMarker signal to true
                         endReached = true;
                         return;
                     }
 
+                    
                     dataByHeader[header].push(value);
+                    
 
-                    //Map products to their different entities
-                    if (index === indices.productIndex) {
-                        productToDescriptionMap[value] = currentRow[indices.descriptionIndex]?.trim() || ''; //The '?' is the optional chain operator. It allows for safe access to deep nested properties of an object without having to check if each refrence in the chain is null or undefined
-                        productToIngredientMap[value] = currentRow[indices.ingredientIndex]?.trim() || ''; //Map products to ingredient
-                        productToPricePGMap[value] = currentRow[indices.pricePGIndex]?.trim() || ''; //Map products price per gram
+                    if (index === indices.productIdIndex) {
+                        let productId = value;
+                        //Create an object with all relevant data for each product
+                        productInfoMap[productId] = {
+                            flavor: currentRow[indices.flavorIndex]?.trim() || '',
+                            category: currentRow[indices.categoryIndex]?.trim() || '',
+                            description: currentRow[indices.descriptionIndex]?.trim() || '',
+                            ingredients: currentRow[indices.ingredientIndex]?.trim() || '',
+                            pricePerGram: currentRow[indices.pricePGIndex]?.trim() || '',
+                            subtypes: currentRow[indices.subtypeIndex]?.trim() || '',
+                            subtypeValues: currentRow[indices.subtypeValIndex]?.trim() || ''
+                        };
                     }
                 });
-            }
 
-            return { dataByHeader, productToDescriptionMap, productToIngredientMap, productToPricePGMap };
+            }
+            return { dataByHeader, productInfoMap};
         }
 
         //Function to fetch CSV data synchronously using XMLHttpRequest
@@ -111,6 +122,7 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
 
             Object.keys(filteredData).forEach(flavor => {
                 const facts = filteredData[flavor]; //Get the nutritional facts for the current flavor
+                
                 const nutritionalFacts = {
                     servingSize: parseInt(facts[0]),
                     servingPerContainer: 'Varies',
@@ -144,6 +156,7 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
                         delete nutritionalFacts[key]; //Remove the empty value
                     }
                 }
+
                 nutritionalFactsByFlavor[flavor] = nutritionalFacts;
             });
         }
@@ -159,20 +172,20 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
         const hdrRow = 0; //Set the header line index
         
         //Parse the CSV data with the specified header line and column headers for product and description
-        const {productToDescriptionMap, productToIngredientMap, productToPricePGMap} = parseCSV(data, hdrRow, 'Product', 'Short Description', 'Ingredients', 'Price Per Gram');
-        //Update the global productDescription array with the parsed data
-        
-        productDescription = Object.entries(productToDescriptionMap).map(([product, description]) => ({
-            product: product.trim(), description: description.trim()
-        }));
+        const {productInfoMap} = parseCSV(data, hdrRow, 'Product Id', 'Flavor', 'Category', 'Short Description', 'Ingredients', 'Price Per Gram', 'Subtypes', 'Subtype Values');
 
-        productIngredients = Object.entries(productToIngredientMap).map(([product, ingredient]) => ({
-            product: product.trim(), ingredient: ingredient.trim()
-        }));
-
-
-        productPricesPerGram = Object.entries(productToPricePGMap).map(([product, pricePerGram]) => ({
-            product: product.trim(), pricePerGram: pricePerGram.trim()
+        //Put objects into productInfo and assign each objects values from productInfoMap
+        productInfo = Object.entries(productInfoMap).map(([productId, details]) => ({
+            //'details' holds the properties of each product mapped by productId
+            //structure => productInfo_VariableName: (details.[productInfoMap_VariableName] || '').trim(),
+            id: productId.trim(),
+            flavor: details.flavor.trim(),
+            category: details.category.trim(),
+            shortDescription: (details.description || '').trim(),
+            ingredients: (details.ingredients || '').trim(),
+            pricePG: (details.pricePerGram || '').trim(),
+            subtypes: (details.subtypes || '').trim(),
+            subtypeValues: (details.subtypeValues || '').trim()
         }));
     }
 //#endregion
@@ -181,27 +194,29 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
 
 //#region - OFFCANVAS - Create the offcanvases for the products
     //Function: this will create the offcanvas section for the type of product (productCat) and its flavor (flvr) that is given
-    function generateOffCanvas(flvr, pCat, ingredients) {
+    function generateOffCanvas(pName, ingredients) {
+        let pN = toHTMLFormat(pName);
         let ingr = '';
         let ingredientsList = ingredients.split(' + '); //Create an array by spliting the string of the ingredients from the ' + ' 
+        let dropdown = displayProductSubtypeDropdown(pName);
         
         //Create a list item(<li>) element for each ingredient in the array
-        for (let i = 0; i < ingredientsList.length; i++) {
-            ingr += `<li>${cleanStr(ingredientsList[i])}</li>`; //Clean the string as it's being added to the element
-        }
+        ingredientsList.forEach(iL => {
+            ingr += `<li>${cleanStr(iL)}</li>`; //Put each array item in a separate list item (li) element 
+        })
 
         return `
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${flvr}_${pCat}" aria-labelledby="offcanvas_${flvr}_${pCat}_label">
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas_${pN}" aria-labelledby="offcanvas_${pN}_label">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvas_${flvr}_${pCat}_label">${cleanStr(flvr)} ${cleanStr(pCat)}</h5>
+                    <h5 class="offcanvas-title" id="offcanvas_${pN}_label">${pName}</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div class="container-fluid">
 
-                        <div class="productSubtypeDropdown mb-4 mx-auto d-block" id="${flvr}_${pCat}_dropdown_container"></div>
+                        <div class="productSubtypeDropdown mb-4 mx-auto d-block" id="${pN}_dropdown_container">${dropdown}</div>
                         <!-- Nutritional Facts -->
-                        <div id="${flvr}_${pCat}_nfacts"></div>
+                        <div id="${pN}_nfacts"></div>
                         <!-- End Nutritional Facts-->
                         <section class="ingredients">
                             <h2>Ingredients</h2>
@@ -215,104 +230,64 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
         `
     }
 
-    //Function: grab and assign the ingredient string to the given product name
-    function getProductIngredients(pName) {
-        const pIngr = productIngredients.find(item => item.product === pName); //Match the product name to given pName then assign its corresponding description
-        
-        return pIngr ? pIngr.ingredient : console.warn(`pIngr is ${pIngr} for the product ${pName}! Check spelling of product name OR description may not be there.`); //If pDesc is not undefined then return its value's description, else warn issue in console
-    }
 
-    //Function: assign values to the OffCanvas function for each flavor, and product category
+    //Function: assign values to the OffCanvas function for each product 
     function renderOffCanvases() {
-        for (let i = 0; i < productCategories.length; i++) {
-            const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
-            
-            for (let j = 0; j < flavorList.length; j++) {
-                const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
-                const ingrForCFlav = getProductIngredients(`${cFlav} ${cProductCat}`); //Create the array of ingredients that are used for the current flavor
-                const cOffCanvas = generateOffCanvas(cFlav, cProductCat, ingrForCFlav);
+        productInfo.forEach(p => {
+            const pName = `${p.flavor} ${p.category}`;
+            const cPIngr = getProduct(pName).ingredients; //Validate the current product and assign the array of ingredients to ingrForCFlav
+            const cOffCanvas = generateOffCanvas(pName, cPIngr); //Give the current offCanvas element the name and ingredients
 
-                const element = document.getElementById('pet_offCanvas');
-                
-                if(element) {
-                    element.innerHTML += cOffCanvas;
-                } 
-                else {
-                    console.error(`Element with ID 'pet_offCanvas' not found!`);
-                }
+            const element = document.getElementById('pet_offCanvas');            
+            if(element) {
+                element.innerHTML += cOffCanvas;
+            } 
+            else {
+                console.error(`Element with ID 'pet_offCanvas' not found!`);
             }
-        }
+        })
     }
+
+
 
     //#region - PRODUCT DROPDOWN - Create the dropdowns for each product with an offcanvas. It is used to select what size, shape, etc of the product
-        //Function: this will generate the biscuit selection dropdown. It will allow the user to select a biscuit size, then the serving size will update accordingly to the average weight of 1 of those biscuits selected; thus updating the rest of the nutritional facts
-        function generateSizeSelector(pCat, flvr) {
 
-            /*
-                *This might be used later on to efficiently create the dropdowns without needing to repeat code*
-
-                pCat.forEach(cat =>{
-                    flvr.forEach(fr => fr {
-                        `
-                        <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
-                        <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
-                            ${
-                                options.forEach(opts => {
-                                    `<options value="${sizeInfo.Weight[]}">${sizeInfo.SizeName[]}</option>`
-                                });
-                            }
-                        </select>
-
-                        `
-                    });
-                });
-
-            */
-                
-            if (pCat === 'biscuit') {
-                return `
-                    <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
-                    <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
-                        <option value="6">Small</option>
-                        <option value="6" active>Small Long</option>
-                        <option value="12">Large</option>
-                        <option value="10">Large Long</option>
-                    </select>
-                `;
-            }
-
-            else if (pCat === 'trainingTreat') {
-                return `
-                    <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Shape: </label>
-                    <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
-                        <option value="1">Paw</option>
-                        <option value="2">Dot</option>
-                        <option value="3">Star</option>
-                    </select>
-                `;
-            }
-
-            else {
-                return ``; //Return empty if no dropdown is need for the category
-            }
-        }
-
-        //Function: create the dropdown container for each of the products
-        function createDropdownForProduct(pCat) {
-            flavorList.forEach(flvr => {
-                const container = document.getElementById(`${flvr}_${pCat}_dropdown_container`);
-            if (container) {
-                const dropdownHTML = generateSizeSelector(pCat, flvr);
-                container.innerHTML = dropdownHTML;
-            }
-            else {
-                console.error(`No container found for the ${flvr}_${pCat}_dropdown_container.`);
-            }
-            });
+        function displayProductSubtypeDropdown(pName) {
+            const pN = toHTMLFormat(pName);
+            let cP = getProduct(pName); //Current product
             
+            let subtypes = cP.subtypes.split(' + ');
+            let subtypeValues = cP.subtypeValues.split(' + ');
+            let label = '';
+            
+            if(cP.category === 'Training Treat') label = 'Shape';
+            if(cP.category === 'Biscuit') label = 'Biscuit Size';
+
+            let options = subtypes.map((subtype, index) => {
+                let subtypeValue = subtypeValues[index];
+                return `<option value="${subtypeValue}">${subtype}</option>`;
+            }).join(''); //Join all options into a single string
+            
+            return `
+                <label for="${pN}_dropdown">${label}</label>
+                <select id="${pN}_dropdown" name="${pN}Dropdown" onchange="updateNutritionFactsForProduct('${pName}')">
+                    ${options}
+                </select>
+            ` 
         }
     //#endregion
 //#endregion
+
+
+// <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
+//                     <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
+//                         <option value="6">Small</option>
+//                         <option value="6" active>Small Long</option>
+//                         <option value="12">Large</option>
+//                         <option value="10">Large Long</option>
+//                     </select>
+
+
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     
@@ -476,50 +451,48 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
 
     //Function: initializes the nutrition facts upon load. This gets called after the dropdowns are populated
     function updateInitialNutritionFacts() {
-        productCategories.forEach(cat => {
-            flavorList.forEach(flvr => {
-                updateNutritionFactsForProduct(cat, flvr); //Update each category with initial dropdown value
-            });
-        });
+        productInfo.forEach(p => {
+            const pName = `${p.flavor} ${p.category}`;
+            updateNutritionFactsForProduct(pName);
+        })
     }
 
     //Function: update the nutritional facts from getting the value of the size selector and passing it through the nf rendering function
-    function updateNutritionFactsForProduct(pCat, flvr) {
+    function updateNutritionFactsForProduct(pName) {
         try{
-            const sizeSelector = document.getElementById(`${flvr}_${pCat}_dropdown`);
-            
+            const pN = toHTMLFormat(pName); //Convert product name to be html naming friendly
+            const sizeSelector = document.getElementById(`${pN}_dropdown`);
             const rawMultiplier = sizeSelector.value;
             const sizeMultiplier = parseFloat(rawMultiplier);
             if (!isNaN(sizeMultiplier)) {
-                renderNutritionFacts(sizeMultiplier, pCat, flvr);
+                renderNutritionFacts(sizeMultiplier, pName);
             } 
             else {
                 console.error("Size Multiplier is not a number:", sizeMultiplier);
             }
         }
         catch (error) {
-
+            console.error(`Failed to update Nutrition Facts for product ${pName}: \n ${error}`);
         }
     }
 
     //Function: get and assign the data for the nutrition facts
-    function renderNutritionFacts(sizeMultiplier, pCat, flvr) {
-        if (!pCat || !flvr) {
-            console.error("Undefined product category or flavor provided.");
-            return; //Exit if pCat is not defined
+    function renderNutritionFacts(sizeMultiplier, pName) {
+        if (!pName) {
+            console.error("Undefined product provided.");
+            return; //Exit if product is not defined
         }
 
-        
+        let flvr = getProduct(pName).flavor;
+
         const facts = nutritionalFactsByFlavor[flvr];
+
         if (!facts) {
-            console.error(`No nutritional facts found for flavor: ${flvr} in category: ${pCat}`);
+            console.error(`No nutritional facts found for ${flvr} `);
             return;
         }
 
-        let recalcFacts = {};
-        let initSS = facts.servingSize; //Set initial serving size to the value of the ss from the csv file
-        //Use a general function to determine the factor based on the category and possibly other criteria
-        
+        let recalcFacts = {}; //Set up the array of objects for the recalculated nutrition facts
 
         //Iterate over each nutritional fact and apply the calculation
         Object.keys(facts).forEach(key => {
@@ -533,7 +506,8 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
         });
 
         //Generate the HTML using the recalculated facts
-        const elementId = `${flvr}_${pCat}_nfacts`;
+        const pN = toHTMLFormat(pName);
+        const elementId = `${pN}_nfacts`;
         const element = document.getElementById(elementId);
         if (element) {
             element.innerHTML = generateNutritionFactsHTML(recalcFacts);
@@ -544,51 +518,54 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
     
 //#endregion
 
+
+
+
+
+
 //#region - PRODUCT CARDS - Creat the cards where for the products
     //Function: Create the layout of the card
-    function generateProductCards(flvr, pCat, desc) {
+    function generateProductCards(pName, desc) {
+        const pN = toHTMLFormat(pName);
         return `
         <div class="col mb-3 mt-3">
             <div class="card h-100">
-                <div class="card-header"><h5>${cleanStr(flvr)} ${cleanStr(pCat)}</h5></div>
+                <div class="card-header"><h5>${cleanStr(pName)}</h5></div>
                 <div class="card-body">
                     <p>${desc}</p>
                 </div>
                 <div class="card-footer">
                     
-                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_${flvr}_${pCat}"  aria-controls="offcanvas_${flvr}_${pCat}">More Info</a>
+                    <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_${pN}"  aria-controls="offcanvas_${pN}">More Info</a>
                 </div>
             </div>
         </div>
         `
     }
 
-    //Function: get the description for a specific product
-    function getProductDescription(pName) {
-        const pDesc = productDescription.find(item => item.product === pName); //Match the product name to given pName then assign its corresponding description
-        return pDesc ? pDesc.description : console.warn(`pDesc is ${pDesc} for the product ${pName}! Check spelling of product name OR description may not be there.`); //If pDesc is not undefined then return its value's description, else warn issue in console
-    }
 
-    //Function: assign values to the generateProductCards function for each flavor, and product category
+    //Function: assign values to the generateProductCards function for each product
     function renderProductCards() {
-        for (let i = 0; i < productCategories.length; i++) {
-            const cProductCat = productCategories[i]; //Set the current product category to the value of productCat at the location of i
-            for (let j = 0; j < flavorList.length; j++) {
-                const cFlav = flavorList[j]; //Set the current flavor for the product category to the name value of flavorList at location j
-                const cPDesc = getProductDescription(`${cFlav} ${cProductCat}`);
-                const cPCard = generateProductCards(cFlav, cProductCat, cPDesc);
+        productInfo.forEach( p => {
+            const pName = `${p.flavor} ${p.category}`; //Create the product name by combining the flavor and the category of the current product
+            const cPDesc = getProduct(pName).shortDescription;
+            const cPCard = generateProductCards(pName, cPDesc);
 
-                const element = document.getElementById(`${cProductCat}_cards`);
-                if(element) {
-                    element.innerHTML += cPCard; //Add a product card element each time (+=)
-                } 
-                else {
-                    console.error(`Element with ID '${cProductCat}_cards' not found!`);
-                }
+            const element = document.getElementById(`${toHTMLFormat(p.category)}_cards`);
+            if(element) {
+                element.innerHTML += cPCard; //Add a product card element each time (+=)
+            } 
+            else {
+                console.error(`Element with ID '${toHTMLFormat(p.category)}_cards' not found!`);
             }
-        }
+        });
     }
 //#endregion
+
+
+
+
+
 
 //#region - INNER BISCUIT CAROUSEL - Create the images and the captions for each item in the carousel
     //Function: create the carousel display
@@ -630,7 +607,34 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
     
 //#endregion
 
+
+
+
+
+
 //#region - HELPER FUNCTIONS - Functions made to help with general stuff
+    //Separate pName into flavor and category
+    function separatePName(pName) {
+        let pN = cleanStr(pName);
+        let flvr = '';
+        let pCat = '';
+
+        productInfo.forEach(p => {
+            if (`${p.flavor} ${p.category}` === pN) {
+                flvr = p.flavor;
+                pCat = p.category;
+                
+                return {flvr, pCat};
+            }
+        });
+
+        return {flvr, pCat};
+    }
+
+    function putUnderscores(phrase) {
+        return phrase.replace(/\s/g, '_');
+    }
+
     //Function: This will replace underscores with a space
     function replaceUnderscores(string) {
         return string.replace(/_/g, ' ');
@@ -649,6 +653,35 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
         return string.replace(/([a-z])([A-Z])/g, '$1 $2');
     }
 
+    //Function: This will put the string into a format usable to create id names for HTML elements
+    function toHTMLFormat(string) {
+        let str = '';
+        str = cleanStr(string);
+        str = str.toLowerCase();
+        str = putUnderscores(str);
+        return str;
+    }
+
+    //Function: This will turn any phrase into camel case notation
+    function toCamelCase(phrase) {
+        //Split the phrase into words using space as the delimiter
+        const words = phrase.split(' ');
+    
+        //Transform each word: the first word is all lowercase, and each subsequent word is capitalized at the first letter
+        const camelCaseWords = words.map((word, index) => {
+            //Lowercase the first word entirely, capitalize the first letter of subsequent words
+            if (index === 0) {
+                return word.toLowerCase();
+            } 
+            else {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }
+        });
+    
+        //Join all the transformed words to form the camelCase string
+        return camelCaseWords.join('');
+    }
+
     //Function: Combine all the string cleaning functions into one.
     function cleanStr(string) {
         let str = '';
@@ -656,7 +689,33 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
         str = replaceUnderscores(str);
         return capEachWord(str);
     }
+
+    function putToArray(string) {
+        return string.split(' + ');
+    }
+
+    //Function: Return the current product based of the name of the product given in the parameter
+    function getProduct(pName) {
+        let cProduct= {};
+        const {flvr, pCat} = separatePName(pName);
+        
+        productInfo.forEach(p => {
+            if (p.flavor === flvr && p.category === pCat) {
+                cProduct = p;
+                return cProduct;
+            }
+        });
+        
+        return cProduct;
+    }
+
+    
 //#endregion
+
+
+
+
+
 
 //#region - START UP INITIATION - functions that are very necessary to load the page up properly
     //Function: loads data and sets up User Interface
@@ -667,12 +726,7 @@ let productPricesPerGram = []; //Declare the array which holds the list of price
         //Call functions after all data fetching functions. The function call order is very important. Go from most outer element to most inner
         renderProductCards();
         renderOffCanvases();
-        productCategories.forEach(cat => {
-            createDropdownForProduct(cat);
-            if (cat) {
-                updateInitialNutritionFacts(cat);
-            }
-        });
+        updateInitialNutritionFacts();
         generateCarousel();
     }
 
