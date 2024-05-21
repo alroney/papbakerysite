@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'alice';
-  src:  url('/StaticFiles/Fonts/alice-regular-webfont.woff2') format('woff2'),
-        url('/StaticFiles/Fonts/alice-regular-webfont.woff') format('woff'),
-        url('/StaticFiles/Fonts/alice-regular.ttf') format('truetype');
+  src:  url('../Fonts/alice-regular-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
