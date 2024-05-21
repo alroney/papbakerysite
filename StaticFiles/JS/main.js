@@ -62,12 +62,9 @@ function renderNavbar() {
                     </div>
                 </div>
                 <div class=" d-none d-lg-flex">
-                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
-                        <i class="bi bi-telephone"></i>
-                    </div>
-                    <div class="ps-3">
-                        <small class="text-primary mb-0">Call Us</small>
-                        <p class="text-light fs-5 mb-0">(443) 431 - 0587</p>
+                        
+                    <div class="">
+                        <p class="fs-4 mb-0 text-primary"><i class="bi bi-telephone p-2 rounded-circle border border-primary"></i> (443) 431 - 0587</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +110,7 @@ function renderCopyright(){
                         &copy; <a href="https://papbakery.com">papbakery.com</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Designed and Created by Andrew Roney using <a class="" href="https://getbootstrap.com" target="_blank">Bootstrap 5</a>
+                        Designed and Created From Scratch by Andrew Roney with <a class="" href="https://getbootstrap.com" target="_blank">Bootstrap</a>
                     </div>
                 </div>
             </div>

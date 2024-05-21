@@ -132,8 +132,6 @@ section p {
 
 
 
-.employee-info-card
-
 .employee-header {
     position: relative;
     justify-content: space-around;
@@ -172,8 +170,6 @@ section p {
     background-repeat: no-repeat;
 }
 
-.employee-description {
-}
 
 /*
 * ==========================================
