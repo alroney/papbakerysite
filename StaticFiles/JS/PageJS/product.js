@@ -8,7 +8,7 @@ let productInfo = [];
 //#region - CSV - read csv files and coordinate the data from them.
     //#region - GRAB AND READ - Get the csv file and read it
         //Function to parse CSV data into an object
-        function parseCSV(csv, hdrRow, productIdColumn, flavorColumn, categoryColumn, descriptionColumn, ingredientColumn, pricePerGramColumn, subtypeColumn, subtypeValColumn) {
+        function parseCSV(csv, hdrRow, productIdColumn, flavorColumn, categoryColumn, descriptionColumn, ingredientColumn, pricePerBatchColumn, subtypeColumn, subtypeValColumn) {
             const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
             const rows = csv.replace(/\r/g, '').split('\n'); //Remove \r characters and split into rows
             const headers = rows[hdrRow].split(','); //Create an array of headers
@@ -25,10 +25,11 @@ let productInfo = [];
                 categoryIndex: headers.indexOf(categoryColumn),
                 descriptionIndex: headers.indexOf(descriptionColumn),
                 ingredientIndex: headers.indexOf(ingredientColumn),
-                pricePGIndex: headers.indexOf(pricePerGramColumn),
+                pricePerBatchIndex: headers.indexOf(pricePerBatchColumn),
                 subtypeIndex: headers.indexOf(subtypeColumn),
                 subtypeValIndex: headers.indexOf(subtypeValColumn)
             };
+
 
 
             //Iterate over each line of the CSV (starting from hdrRow + 1)
@@ -49,8 +50,6 @@ let productInfo = [];
 
                     
                     dataByHeader[header].push(value);
-                    
-
                     if (index === indices.productIdIndex) {
                         let productId = value;
                         //Create an object with all relevant data for each product
@@ -59,7 +58,7 @@ let productInfo = [];
                             category: currentRow[indices.categoryIndex]?.trim() || '',
                             description: currentRow[indices.descriptionIndex]?.trim() || '',
                             ingredients: currentRow[indices.ingredientIndex]?.trim() || '',
-                            pricePerGram: currentRow[indices.pricePGIndex]?.trim() || '',
+                            pricePerBatch: currentRow[indices.pricePerBatchIndex]?.trim() || '',
                             subtypes: currentRow[indices.subtypeIndex]?.trim() || '',
                             subtypeValues: currentRow[indices.subtypeValIndex]?.trim() || ''
                         };
@@ -94,8 +93,7 @@ let productInfo = [];
             const data = await fetchCSV('/StaticFiles/CSV/flavors.csv');
             const hdrRow = 0; //Manually set the line at which the headers start on 0 = 1 on the spreadsheet
             const {dataByHeader} = parseCSV(data, hdrRow); //Create an Array of Objects of the headers
-            const flavors = dataByHeader['Flavors']; //Create an array of hte flavors
-            
+            const flavors = dataByHeader['Flavors']; //Create an array of the flavors
             //Update the global arrays with the parsed data
             flavorList = flavors.filter(f => f !== '');
         }
@@ -168,11 +166,9 @@ let productInfo = [];
     //Function: fetch the product description .csv file and assign it
     async function fetchProductInfo() {
         const data = await fetchCSV('/StaticFiles/CSV/product_info.csv');
-       
         const hdrRow = 0; //Set the header line index
-        
         //Parse the CSV data with the specified header line and column headers for product and description
-        const {productInfoMap} = parseCSV(data, hdrRow, 'Product Id', 'Flavor', 'Category', 'Short Description', 'Ingredients', 'Price Per Gram', 'Subtypes', 'Subtype Values');
+        const {productInfoMap} = parseCSV(data, hdrRow, 'Product Id', 'Flavor', 'Category', 'Short Description', 'Ingredients', 'Price Per Batch', 'Subtypes', 'Subtype Values');
 
         //Put objects into productInfo and assign each objects values from productInfoMap
         productInfo = Object.entries(productInfoMap).map(([productId, details]) => ({
@@ -183,10 +179,11 @@ let productInfo = [];
             category: details.category.trim(),
             shortDescription: (details.description || '').trim(),
             ingredients: (details.ingredients || '').trim(),
-            pricePG: (details.pricePerGram || '').trim(),
+            pricePerBatch: (details.pricePerBatch || '').trim(),
             subtypes: (details.subtypes || '').trim(),
             subtypeValues: (details.subtypeValues || '').trim()
         }));
+
     }
 //#endregion
 
@@ -299,7 +296,7 @@ let productInfo = [];
                 
                 <header class="performance-facts__header">
                     <h1 class="performance-facts__title">Nutrition Facts</h1>
-                    <p>Serving Size ${nf.servingSize}g</p>
+                    <p>Serving Size ${nf.servingSize}<small>g</small> <small style="float: right">(about 1 treat)</small></p>
                     <p>Serving Per Container: ${nf.servingPerContainer}</p>
                 </header>
                 <table class="performance-facts__table">
@@ -527,6 +524,7 @@ let productInfo = [];
     //Function: Create the layout of the card
     function generateProductCards(pName, desc) {
         const pN = toHTMLFormat(pName);
+        
         return `
         <div class="col mb-3 mt-3">
             <div class="card h-100">
