@@ -2,13 +2,11 @@ Product Id,Flavor,Category,Short Description,Ingredients,Price Per Batch,Subtype
 1,Applesauce,Biscuit,Wholesome whole wheat dog biscuit with the irresistible twist of unsweetened applesauce.,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.62,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
 2,Peanut Butter,Biscuit,Introducing our mouthwatering whole wheat dog biscuit infused with natural peanut butter. Loved by most canines,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$1.07,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
 3,Pumpkin,Biscuit,Introducing our delectable whole wheat dog biscuit infused with pure pumpkin. A nutritious canine delight!,Whole Wheat Flour + Pure Pumpkin + Water,$0.74,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
-4,Banana,Biscuit,"Introducing our wholesome whole wheat dog biscuit, blended with ripe bananas. A nutritious delight for your dog!",Whole Wheat Flour + Banana + Water,$0.49,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
-5,Applesauce,Training Treat,A light little treat with a touch of applesauce. Perfect for those training sessions!,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.25,Paw + Bone + Dot,0.4 + 0.4 + 0.4
-6,Peanut Butter,Training Treat,A light little treat with a touch of peanut butter. Perfect for those training sessions!,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.46,Paw + Bone + Dot,0.4 + 0.4 + 0.4
-7,Pumpkin,Training Treat,A light little treat with a touch of pumpkin. Perfect for those training sessions!,Whole Wheat Flour + Pure Pumpkin + Water,$0.32,Paw + Bone + Dot,0.4 + 0.4 + 0.4
-8,Banana,Training Treat,A light little treat with a touch of banana. Perfect for those training sessions!,Whole Wheat Flour + Banana + Water,0,Paw + Bone + Dot,0.4 + 0.4 + 0.4
-,,,,,,,
-,,,,,,,
+4,Applesauce,Training Treat,A light little treat with a touch of applesauce. Perfect for those training sessions!,Whole Wheat Flour + Unsweetened Applesauce + Water,$0.25,Paw + Bone + Dot,0.4 + 0.4 + 0.4
+5,Peanut Butter,Training Treat,A light little treat with a touch of peanut butter. Perfect for those training sessions!,Whole Wheat Flour + Natural Peanut Butter + Egg + Water,$0.46,Paw + Bone + Dot,0.4 + 0.4 + 0.4
+6,Pumpkin,Training Treat,A light little treat with a touch of pumpkin. Perfect for those training sessions!,Whole Wheat Flour + Pure Pumpkin + Water,$0.32,Paw + Bone + Dot,0.4 + 0.4 + 0.4
+7,Banana,Biscuit,Introducing our delectable whole wheat dog biscuit infused with banana. A nutritious canine delight!,Whole Wheat Flour + Banana + Water,$0.49,Small + Small Long + Large + Large Long,7 + 6 + 12 + 10
+8,Banana,Training Treat,A light little treat with a touch of banana. Perfect for those training sessions!,Whole Wheat Flour + Banana + Water,$0.18,Paw + Bone + Dot,0.4 + 0.4 + 0.4
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
@@ -17,3 +15,4 @@ REMEMBER TO SYNC TO GITHUB THROUGH VISUAL STUDIO: save this portion to a .csv fi
 Product name = Flavor + Category,,,,,,,
 ,,,,,,,
 This sheet is mainly used for the website for referencing,,,,,,,
+NOTE: Copy/Paste outside sources causes communication issues with the JavaScript code,,,,,,,
