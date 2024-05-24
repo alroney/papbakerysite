@@ -3,14 +3,14 @@
 //Function: renders the topbar section
 function renderTopbar() {
     return `
-        <div class="container-fluid top-bar bg-dark text-light px-0 py-1 wow fadeIn" data-wow-delay="0.1s">
+        <div class="top-bar bg-dark text-light px-0 py-1 wow fadeIn" data-wow-delay="0.1s">
             <div class="row gx-0 align-items-center d-none d-lg-flex">
                 <div class="col-lg-6 px-5 text-start">
                     <ol class="breadcrumb mb-2 mt-2">
-                        <li class="breadcrumb-item"><a class="small text-light" href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a class="small text-light" href="tos.html#cookiepolicy">Cookie Policy</a></li>
-                        <li class="breadcrumb-item"><a class="small text-light" href="tos.html#terms">Terms</a></li>
-                        <li class="breadcrumb-item"><a class="small text-light" href="tos.html#privacy">Privacy</a></li>
+                        <li class="breadcrumb-item"><a class="small text-light" href="/index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a class="small text-light" href="/tos.html#cookiepolicy">Cookie Policy</a></li>
+                        <li class="breadcrumb-item"><a class="small text-light" href="/tos.html#terms">Terms</a></li>
+                        <li class="breadcrumb-item"><a class="small text-light" href="/tos.html#privacy">Privacy</a></li>
                     </ol>
                 </div>
                 <!-- <div class="col-lg-6 px-5 text-end">
@@ -32,7 +32,7 @@ function renderNavbar() {
     return `
         <nav class="navbar navbar-expand-lg fixed-top navbar-light py-lg-2 px-lg-5 wow fadeIn" data-wow-delay="0.1s" >
             <div class="navbar-brand ms-4 ms-lg-0 position-relative">
-                <a href="index.html" class="">
+                <a href="/index.html" class="">
                     <h4 class="text-primary m-0">Paws & Palms Bakery</h4>
                 </a>
                 <a href="index.html" class="navbar-brand-img">
@@ -44,20 +44,20 @@ function renderNavbar() {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="/index.html" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link" data-bs-toggle="dropdown">About<i class="bi bi-caret-down-fill"></i></a>
                         <div class="dropdown-menu m-0">
-                            <a href="about.html" class="dropdown-item">About Us</a>
-                            <a href="papstory.html" class="dropdown-item">Our Story</a>
+                            <a href="/about.html" class="dropdown-item">About Us</a>
+                            <a href="/papstory.html" class="dropdown-item">Our Story</a>
                         </div>
                     </div>
                     <a href="product.html" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link" data-bs-toggle="dropdown">Support<i class="bi bi-caret-down-fill"></i></a>
                         <div class="dropdown-menu m-0">
-                            <a href="faq.html" class="dropdown-item">FAQ</a>
-                            <a href="contact-us.html" class="dropdown-item">Contact Us</a>
+                            <a href="/faq.html" class="dropdown-item">FAQ</a>
+                            <a href="/contact-us.html" class="dropdown-item">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -75,24 +75,28 @@ function renderNavbar() {
 //Function: renders the footer section
 function renderFooter() {
     return `
-        <div class="container-fluid footer my-6 mb-0 py-5 border-top wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <img src="StaticFiles/img/logo/papbakery_logo_dark.png" alt="logo" class="mb-1 logo-img">
-                        <img src="StaticFiles/img/logo/papbakery_textLogo_dark.png" alt="logo" class="mb-1 logo-text-img">
+        <div class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container" id="footer_container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6" id="ftr_logo">
+                        <img src="/StaticFiles/img/logo/papbakery_logo_dark.png" alt="logo" class="ftr-logo-img">
+                        <img src="/StaticFiles/img/logo/papbakery_textLogo_dark.png" alt="logo" class="ftr-logo-text-img">
                         <blockquote>Paws, Palms, Pure Honesty</blockquote>
                     </div> 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <h5 class="border-bottom">Information</h5>
-                        <p class="mb-2"><a class="" href="papstory.html">The Full Story</a></p>
-                        <p class="mb-2"><a class="" href="https://akc.org">American Kennel Club</a></p>
-                        <p class="mb-2"><a class="" href="tos.html">Legal</a></p>
+                        <ul>
+                            <li><a href="/papstory.html">The Full Story</a></li>
+                            <li><a href="https://akc.org">American Kennel Club</a></li>
+                            <li><a href="/tos.html">Legal</a></li>
+                        </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <h5 class="border-bottom">Contact Us</h5>
-                        <p class="mb-2">Phone: (443) 431 - 0587</p>
-                        <p class="mb-2">Email: andrew.papbakery@gmail.com</p>
+                        <ul>
+                            <li>Phone: <a href="tel:+14434310587">(443) 431 - 0587</a></li>
+                            <li>Email: <a href="mailto:andrew.papbakery@gmail.com">andrew.papbakery@gmail.com</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

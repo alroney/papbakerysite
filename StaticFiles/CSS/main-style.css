@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'alice';
-  src:  url('../Fonts/alice-regular-webfont.woff2') format('woff2');
+  src:  url('/StaticFiles/Fonts/alice-regular-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -75,15 +75,7 @@ img {
   transform: scaleX(-1);
 }
 
-.logo-img {
-  height: auto;
-  width: 3rem;
-}
 
-.logo-text-img {
-  height: auto;
-  width: 10rem;
-}
 
 
 
@@ -237,6 +229,30 @@ img {
 
 
 /*** Footer ***/
+.footer {
+  padding: 20px;
+  border-top: 3px solid black;
+  /* background: linear-gradient(var(--light) 80%, var(--dark)); */
+}
+
+
+#ftr_logo {
+  height: auto;
+  width: auto;
+  margin: auto auto auto 0px;
+}
+
+  .ftr-logo-img {
+    height: auto;
+    width: 10dvh;
+  }
+
+  .ftr-logo-text-img {
+    height: auto;
+    width: 20dvh;
+  }
+
+
 .footer .btn.btn-link {
   display: block;
   margin-bottom: 5px;
@@ -262,6 +278,12 @@ img {
   letter-spacing: 1px;
   box-shadow: none;
 }
+
+
+
+
+
+
 
 .copyright {
   background: #111111;

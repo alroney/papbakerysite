@@ -130,13 +130,25 @@ section p {
 * ==========================================
 */
 
+@media (max-width: 500.00px) {
+    
 
+    .employee-header {
+        display: block;
+        position: relative;
+        float: none;
+    }
+
+    .employee-image {
+        margin: auto;
+        border-radius: 100%;
+    }
+}
 
 .employee-header {
+    display: block;
     position: relative;
-    justify-content: space-around;
     margin: 10px;
-    width: 6rem;
     
 }
 
@@ -148,6 +160,7 @@ section p {
 .employee-image {
     width: 100px;
     height: 150px;
+    margin: auto;
     border: black 1px solid;
 }
 
@@ -158,12 +171,12 @@ section p {
 }
 
 #zoeyroneyImg {
-    background-image: url("../../img/employee/zoeyroney.png");
-    background-size:cover;
+    background-image: url("/StaticFiles/img/employee/zoeyroney.png");
+    background-size: cover;
 }
 
 #andrewroneyImg {
-    background-image: url("../../img/employee/andrewroney.png");
+    background-image: url("/StaticFiles/img/employee/andrewroney.png");
     background-size: cover;
     background-position-y: bottom;
     background-position-x: center;

@@ -17,9 +17,9 @@ function initializeWhiteBgNavbar() {
     $('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
     $('.bi-telephone').removeClass('text-primary').addClass('text-dark');
     if (window.location.pathname == 'papstory.html') {
-        $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png')
+        $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png')
     } else {
-        $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png')
+        $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png')
     }
 
     $(window).scroll(function () {
@@ -32,9 +32,9 @@ function initializeWhiteBgNavbar() {
             $('.fixed-top .text-dark').removeClass('text-dark').addClass('text-light');
             $('.bi-telephone').removeClass('text-dark').addClass('text-primary');
             if (window.location.pathname == '/papstory.html') {
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_light.png')
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_light.png')
             } else {
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_light.png')
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_light.png')
             }
 
         } else {
@@ -46,9 +46,9 @@ function initializeWhiteBgNavbar() {
             $('.fixed-top .text-light').removeClass('text-light').addClass('text-dark');
             $('.bi-telephone').removeClass('text-primary').addClass('text-dark');
             if (window.location.pathname == '/papstory.html') {
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png')
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png')
             } else {
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png')
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png')
             }
         }
 
