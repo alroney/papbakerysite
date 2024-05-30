@@ -276,15 +276,6 @@ let productInfo = [];
 //#endregion
 
 
-// <label for="${flvr}_${pCat}_dropdown">${cleanStr(pCat)} Size: </label>
-//                     <select id="${flvr}_${pCat}_dropdown" name="${pCat}Dropdown" onchange="updateNutritionFactsForProduct('${pCat}', '${flvr}')">
-//                         <option value="6">Small</option>
-//                         <option value="6" active>Small Long</option>
-//                         <option value="12">Large</option>
-//                         <option value="10">Large Long</option>
-//                     </select>
-
-
 
 //#region - NUTRITIONAL FACTS - Create the NF table and fill in the values based on each item.
     
