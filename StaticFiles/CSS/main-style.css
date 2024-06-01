@@ -20,8 +20,21 @@ body {
 
 p {
   font-family: 'alice';
-  line-height: 2.5;
+  line-height: 2.0;
   color: #333;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  p {
+    font-size: 1.3rem;
+  }
 }
 
 h1, h2, h3,
