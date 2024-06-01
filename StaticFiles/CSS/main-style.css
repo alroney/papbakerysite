@@ -21,26 +21,17 @@ body {
 p {
   font-family: 'alice';
   line-height: 2.5;
-  font-size: 1pt;
   color: #333;
 }
 
-h1,
-h2,
-h3,
-.h1,
-.h2,
-.h3 {
+h1, h2, h3,
+.h1, .h2, .h3 {
   font-family: 'alice';
 }
 
 
-h4,
-h5,
-h6,
-.h4,
-.h5,
-.h6 {
+h4, h5, h6,
+.h4, .h5, .h6 {
   font-weight: 600 !important;
   font-family: 'alice';
 }
