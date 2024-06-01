@@ -48,63 +48,59 @@
 
 <!--====================================================================================================================-->
 
-<div class="container my-6">
-        <div class="row">
+        <div class="main-content">
+            <!-- FORM START -->
+            <div class="container">
+                <div class="row contact-form">
+                    <h1>Contact Us</h1>
+                    <form id="contactForm" action="https://formspree.io/f/xleydaey" method="POST">
+                        
+                        <label for="nameInput">Name:</label>
+                        <input type="text" id="nameInput" name="Name" placeholder="Your name.." required/>
+                        <br>
+                        <label for="emailInput">Email:</label>
+                        <input type="email" id="emailInput" name="Email" placeholder="email@mail.com" required/>
+                        <br>
+                        <label for="phoneInput" id="phoneInputLabel" style="display: none">Phone:</label>
+                        <input type="text" id="phoneInput" name="Phone" style="display: none" placeholder="##########"/>
+                        <br>
+                        <label for="subjectInput">Subject:</label>
+                        <select id="subjectInput" name="Subject" required>
+                            <option value="" selected>Select a subject</option>
+                            <option value="Complaint">Complaint</option>
+                            <option value="Compliment">Compliment</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Support">Support</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <br>
+                        <div class="checkboxes">
+                            <div class="checkboxes-options" id="complimentbox">
+                                <input type="checkbox" id="postComplimentPermission" name="Allow to Post Compliment" value="Yes" style="display: none;">
+                                <label for="postComplimentPermission" id="postComplimentPermissionLabel" style="display: none;">Allow us to post your compliment on our website?</label>
+                            </div>
+                            <br>
+                            <div class="checkboxes-options">
+                                <input type="checkbox" id="txtMsgPermission" name="Allow to Text Message" value="Yes" style="display: none;">
+                                <label for="txtMsgPermission" id="txtMsgPermissionLabel" style="display: none;">Allow us to text message you?</label>
+                                <br>
+                                <input type="checkbox" id="callPermission" name="Allow to Call" value="Yes" style="display: none;">
+                                <label for="callPermission" id="callPermissionLabel" style="display: none;">Allow us to call you?</label>
+                            </div>
+                        </div>
+                        <br>
+                        <label for="message">*Message:</label>
+                        <textarea type="text" id="messageInput" name="Message" placeholder="Write something.." required></textarea>
 
-        </div>
-</div>
+                        <input id="submitBtn" type="submit" value="Submit">
+                        <p id="status"></p>
 
-<!-- FORM START -->
-<div class="container">
-    <div class="row contact-form">
-        <h1>Contact Us</h1>
-        <form id="contactForm" action="https://formspree.io/f/xleydaey" method="POST">
-            
-            <label for="nameInput">Name:</label>
-            <input type="text" id="nameInput" name="Name" placeholder="Your name.." required/>
-            <br>
-            <label for="emailInput">Email:</label>
-            <input type="email" id="emailInput" name="Email" placeholder="email@mail.com" required/>
-            <br>
-            <label for="phoneInput" id="phoneInputLabel" style="display: none">Phone:</label>
-            <input type="text" id="phoneInput" name="Phone" style="display: none" placeholder="##########"/>
-            <br>
-            <label for="subjectInput">Subject:</label>
-            <select id="subjectInput" name="Subject" required>
-                <option value="" selected>Select a subject</option>
-                <option value="Complaint">Complaint</option>
-                <option value="Compliment">Compliment</option>
-                <option value="Suggestion">Suggestion</option>
-                <option value="Support">Support</option>
-                <option value="Other">Other</option>
-            </select>
-            <br>
-            <div class="checkboxes">
-                <div class="checkboxes-options" id="complimentbox">
-                    <input type="checkbox" id="postComplimentPermission" name="Allow to Post Compliment" value="Yes" style="display: none;">
-                    <label for="postComplimentPermission" id="postComplimentPermissionLabel" style="display: none;">Allow us to post your compliment on our website?</label>
-                </div>
-                <br>
-                <div class="checkboxes-options">
-                    <input type="checkbox" id="txtMsgPermission" name="Allow to Text Message" value="Yes" style="display: none;">
-                    <label for="txtMsgPermission" id="txtMsgPermissionLabel" style="display: none;">Allow us to text message you?</label>
-                    <br>
-                    <input type="checkbox" id="callPermission" name="Allow to Call" value="Yes" style="display: none;">
-                    <label for="callPermission" id="callPermissionLabel" style="display: none;">Allow us to call you?</label>
+                        <p id="formCredit">processed by <span><a href="https://formspree.com">FormSpree</a>.</span></p>
+                    </form>
                 </div>
             </div>
-            <br>
-            <label for="message">*Message:</label>
-            <textarea type="text" id="messageInput" name="Message" placeholder="Write something.." required></textarea>
-
-            <input id="submitBtn" type="submit" value="Submit">
-            <p id="status"></p>
-
-            <p id="formCredit">processed by <span><a href="https://formspree.com">FormSpree</a>.</span></p>
-        </form>
-    </div>
-</div>
-<!-- FORM END -->
+            <!-- FORM END -->
+        </div>
 
 <!--====================================================================================================================-->
 

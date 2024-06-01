@@ -9,14 +9,6 @@
   color: var(--light);
 }
 
-
-
-#homeCarousel {
-  border-bottom: 5px solid var(--primary);
-  overflow-y: hidden;
-  height: 30vw;
-}
-
 .title-logo {
   display: block;
   width: 50%;

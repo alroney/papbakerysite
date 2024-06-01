@@ -26,7 +26,7 @@ section p {
 */
 
 section {
-    padding-top: 7em;
+    padding-bottom: 6em;
 }
 
 .section-titles h2 {
@@ -61,7 +61,3 @@ section {
 * SECTION SPECIFIC START
 * ==========================================
 */
-
-#section1 {
-    margin-top: 8em;
-}

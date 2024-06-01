@@ -559,7 +559,7 @@ let productInfo = [];
 //#region - INNER BISCUIT CAROUSEL - Create the images and the captions for each item in the carousel
     //Function: create the carousel display
     function generateCarousel() {
-        const imagePath = "StaticFiles/img/product/dog/biscuits/";
+        const imagePath = "/StaticFiles/img/product/dog/biscuits/";
         const carouselItems = [ //This is a multi-dimensional array to call a specific item you would use, carouselItems[#].variableName Ex. carouselItems[1].src will give me 'biscuit_sm_long.png'
             { src: "biscuit_sm.png", alt: "Small Biscuit", name: "Small Biscuit", price: "" },
             { src: "biscuit_sm_long.png", alt: "Small Long Biscuit", name: "Small Long Biscuit", price: "" },
@@ -579,7 +579,7 @@ let productInfo = [];
             if(active !== 'active') whenTrue ='';
 
             carInd_btns.innerHTML += `
-                <button type="button" data-bs-target="#biscuit-size-carousel" data-bs-slide-to="${index}" class="${whenActive}" aria-current="${whenTrue}" aria-label="Slide ${index + 1}"></button>
+                <button type="button" data-bs-target="#biscuit_size_carousel" data-bs-slide-to="${index}" class="${whenActive}" aria-current="${whenTrue}" aria-label="Slide ${index + 1}"></button>
                 `;
                 
             carouselInner.innerHTML += `
