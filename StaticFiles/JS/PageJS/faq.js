@@ -1,21 +1,14 @@
-//Control the accordian for the FAQ page
-$(document).ready(function () {
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    var accLength = acc.length;
-    for (i = 0; i < accLength; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-                panel.style.padding = "0px 18px";
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-                panel.style.padding = "18px 18px";
-            }
-        });
-    }
-}
-);
+$(document).ready(function(){
+    $('.accordion-button').click(function(){
+      // Toggle 'selected' class for the clicked accordion button
+      $(this).toggleClass('selected');
+      
+      // Toggle 'selected' class for the corresponding accordion body
+      $(this).next('.accordion-collapse').toggleClass('selected');
+      
+      // Remove 'selected' class from other accordion buttons and bodies
+      $('.accordion-button').not(this).removeClass('selected');
+      $('.accordion-collapse').not($(this).next('.accordion-collapse')).removeClass('selected');
+    });
+  });
+  

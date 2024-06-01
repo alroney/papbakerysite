@@ -1,0 +1,41 @@
+/* Style for the accordion */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #aaa !important;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0,0,0,.2);
+}
+
+/* Style for the accordion headers */
+.accordion-button {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 12px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Style for the active accordion header */
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button.selected {
+    background-color: var(--primary);
+    color: black;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+/* Style for the collapsed accordion body */
+.accordion-body {
+    padding: 10px;
+}
+
+/* Style for the active accordion body */
+.accordion-collapse.show {
+    border-top: 1px solid #ddd;
+}

@@ -60,9 +60,9 @@
         <div class="container-fluid my-6 mb-0 py-5 wow fadeIn">
             <div class="container py-5">
                 <div class="row">
-                    <div class="section" id="elevator-pitch-section">
+                    <div class="section" id="elevator_pitch_section">
                         <h2 onclick="toggleSection('epitch-content')">Elevator Pitch</h2>
-                        <div class="content" id="epitch-content" style="display:none;">
+                        <div class="content" id="epitch_content" style="display:none;">
                             <p>Hi, I'm Andrew Roney, a Computer Science and Web Development graduate from the University of Maryland Global Campus and Capital Technology University, where I excelled in full-stack development projects. My hands-on experience includes leading group projects and contributing to a gaming community website, sharpening my technical and collaborative skills.</p>
                             <br>
                             <p>I'm proficient in Python, Java, C#, Django, and .NET Core, with a strong foundation in analytical and problem-solving abilities. My customer service experience has enhanced my interpersonal skills and adaptability, essential for understanding and meeting user requirements in technology projects.</p>
@@ -75,15 +75,15 @@
                 <br>
 
                 <div class="row"> <!-- 4 PILLARS SUMMARY-->
-                    <div class="section" id="oop-section">
+                    <div class="section" id="oop_section">
                         <h2 onclick="toggleSection('oop-content')">Object Oriented Programming (OOP)</h2>
-                        <div class="content" id="oop-content" style="display:none;">
+                        <div class="content" id="oop_content" style="display:none;">
                             <p><strong>Definition:</strong> OOP is a programming paradigm that revolves around the concept of objects which are instances of classes. It organizes code into objects each containing both attributes and methods.</p>
                             <p><strong>Key Principles: 4 Pillars of OOP</strong></p>
                             <br>
                             <ul>
                                 <li><span class="btn btn-secondary" onclick="toggleSection('encapsulation-content')">Encapsulation</span>
-                                    <div class="content" id="encapsulation-content" style="display:none;">
+                                    <div class="content" id="encapsulation_content" style="display:none;">
                                         <p>Encapsulation is the bundling of attributes and methods or functions into a single unit or object.</p>
                                         <ul>
                                             <li class="content"><b>Getters/Setters</b>: also known as accessor and mutator methods, Getters are methods used to retrieve the values of private attributes, while setters are methods used to modify or set the values of private attributes. By using getters and setters, we can control how the data is accessed and modified, enforcing constaints or validation rules if necessary.</li>
@@ -91,27 +91,27 @@
                                             <li class="content"><b>Access Control and Access Modifiers</b>: are mechanisms used in to specify the accessibility of classes, methods, and attributes. Common access modifiers include: 
                                                 <ol>
                                                     <li><span class="btn btn-secondary" onclick="toggleSection('ec-public-content')">Public</span>
-                                                        <div class="content" id="ec-public-content" style="display: none;">
+                                                        <div class="content" id="ec_public_content" style="display: none;">
                                                             <p>Public members are accessible from any part of the program, both within the class and outside of it. <span onclick="toggleSection('bttu-public')" style="font-weight: bold; border: 1px solid #ddd; background-color: #fafafa">Best time to Use</span></p>
-                                                            <ol class="content" id="bttu-public" style="display: none;">
+                                                            <ol class="content" id="bttu_public" style="display: none;">
                                                                 <li>I would use public encapsulation when I want attributes and methods to be freely accessible from anywhere in the program, providing a clear interface for external use. For example, in a utility class that provides commonly used functions or constants.</li>
                                                             </ol>
                                                         </div>
                                                     </li>
                                                     <br>
                                                     <li><span class="btn btn-secondary" onclick="toggleSection('ec-private-content')">Private</span>
-                                                        <div class="content" id="ec-private-content" style="display: none;">
+                                                        <div class="content" id="ec_private_content" style="display: none;">
                                                             <p>Private members are accessible only within the class where they are declared. They cannot be accessed or modified from outside the class. <span onclick="toggleSection('bttu-private')" style="font-weight: bold; border: 1px solid #ddd; background-color: #fafafa">Best time to Use</span></p>
-                                                            <ol class="content" id="bttu-private" style="display: none;">
+                                                            <ol class="content" id="bttu_private" style="display: none;">
                                                                 <li>I would use private encapsulation when I want to hide implementation details and control access to sensitive data within a class. For instance, in a banking application, I would use private encapsulation to protect attributes like account balances and passwords.</li>
                                                             </ol>
                                                         </div>
                                                     </li>
                                                     <br>
                                                     <li><span class="btn btn-secondary" onclick="toggleSection('ec-protected-content')">Protected</span>
-                                                        <div class="content" id="ec-protected-content" style="display: none;">
+                                                        <div class="content" id="ec_protected_content" style="display: none;">
                                                             <p>Protected members are accessible within the class where they are declared and in subclasses, but not outside of the class hierarchy. <span onclick="toggleSection('bttu-protected')" style="font-weight: bold; border: 1px solid #ddd; background-color: #fafafa">Best time to Use</span></p>
-                                                            <ol class="content" id="bttu-protected" style="display: none;">
+                                                            <ol class="content" id="bttu_protected" style="display: none;">
                                                                 <li>I would use protected encapsulation when I want to share attributes or methods among related classes within a class hierarchy while still restricting access from outside the hierarchy. For instance, in a software framework where I have a base class with certain attributes or methods that should be accessible to subclasses but not to external classes. This allows for code reuse and specialization within the hierarchy while maintaining encapsulation and ensuring that details are hidden from unrelated classes.</li>
                                                             </ol>
                                                         </div>
@@ -129,7 +129,7 @@
                                 <br>
 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('inheritance-content')">Inheritance</span>
-                                    <div class="content" id="inheritance-content" style="display:none;">
+                                    <div class="content" id="inheritance_content" style="display:none;">
                                         <p>Inheritance refers to the mechanism where a class (aka subclass) can inherit attributes and methods from another class (aka superclass).</p>
                                         <ul>
                                             <li class="content"><b>Hierarchical Inheritance</b>: occurs when multiple subclasses inherit from the same superclass. This forms a hierarchy, where each subclass inherits the attributes and methods of the superclass while also having the ability to define its own additional attributes and methods.</li>
@@ -162,7 +162,7 @@
                                 <br>
 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('abstraction-content')">Abstraction</span>
-                                    <div class="content" id="abstraction-content" style="display:none;">
+                                    <div class="content" id="abstraction_content" style="display:none;">
                                         <p>Abstraction is a principle simplifying complex systems by modeling classes based on real-world entities and focusing on essential attributes and behaviors while hiding unnecessary details.</p>
                                         <ul>
                                             <li class="content"><b>Interface</b>: is a collection of abstract methods that define a contract for classes that implement them. Interfaces specify what methods a class must implement, but they do not provide the implementation details. Classes that implement an interface must provide concrete implementations for all the methods declared in the interface.</li>
@@ -183,33 +183,33 @@
                                 <br>
 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('polymorphism-content')">Polymorphism</span>
-                                    <div class="content" id="polymorphism-content" style="display:none;">
+                                    <div class="content" id="polymorphism_content" style="display:none;">
                                         <p>Polymorphism is the concept which allows object to be treated as instances of their superclass or as instances of their subclasses. This means a single interface can represent multiple forms.</p>
                                         <ul>
                                             <li class="content"><b class="btn btn-secondary" onclick="toggleSection('p-mride-content')">Method Overriding</b>
-                                                <p id="p-mride-content" style="display:none;">occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. The subclass method has the same signature (name and parameters) as the superclass method, but provides a different implementation. Method overriding allows for runtime polymorphism.</p>
+                                                <p id="p_mride_content" style="display:none;">occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. The subclass method has the same signature (name and parameters) as the superclass method, but provides a different implementation. Method overriding allows for runtime polymorphism.</p>
                                             </li>
                                             <br>
                                             <li class="content"><b class="btn btn-secondary" onclick="toggleSection('p-mload-content')">Method Overloading</b>
-                                                <p id="p-mload-content" style="display:none;">occurs when multiple methods in the same class have the same name but different parameter lists. Each overloaded method provides a different behavior based on the parameters it accepts. Method overloading allows for compile-time polymorphism.</p>
+                                                <p id="p_mload_content" style="display:none;">occurs when multiple methods in the same class have the same name but different parameter lists. Each overloaded method provides a different behavior based on the parameters it accepts. Method overloading allows for compile-time polymorphism.</p>
                                             </li>
                                             <br>
                                             <li class="content"><b class="btn btn-secondary" onclick="toggleSection('p-rt-vs-ct-content')">Runtime VS Comile-time</b>: 
-                                                <ul id="p-rt-vs-ct-content" style="display:none;">
+                                                <ul id="p_rt_vs_ct_content" style="display:none;">
                                                     <li class="content"><u>Runtime</u>: is achieved through method overriding. This allows the specific method to be executed to be determined dynamically at runtime based on the actual type of the object.</li>
                                                     <li class="content"><u>Compile-time</u>: is achieved through mehtod overloading. This allows the appropriate method to be called to be determined statically at compile time based on the method's signature.</li>
                                                 </ul>
                                             </li>
                                             <br>
                                             <li class="content"><b class="btn btn-secondary" onclick="toggleSection('p-c-vs-c-content')">Covariance VS Contra-Variance</b>:
-                                                <ul id="p-c-vs-c-content" style="display:none;">
+                                                <ul id="p_c_vs_c_content" style="display:none;">
                                                     <li class="content"><u >Covariance</u>: refers to the principle in type systems where a function or method is allowed to return a more derived (specific) type than originally specified, or where a type can be replaced by its subtype. This concept enables the substitution of more specific types in place of less derived types, particularly in return types of functions and output types of objects.</li>
                                                     <li class="content"><u >Contra-Variance</u>: refers to the principle in type systems where a function can accept arguments of a less derived (more general) type than originally specified. It allows for the substitution of general types in place of more specific types in certain contexts, particularly in function parameteres. </li>
                                                 </ul>
                                             </li>
                                             <br>
                                             <li class="content"><b class="btn btn-secondary" onclick="toggleSection('p-cpp-content')">Classes, Properties, and Parameters</b>: 
-                                                <ul id="p-cpp-content" style="display:none;">
+                                                <ul id="p_cpp_content" style="display:none;">
                                                     <li class="content"><u>Classes</u>: are blueprints for creating object in OOP. They define attributes and methods that characterize object of the class.</li>
                                                     <li class="content"><u>Properties</u>: are attributes of a class that define the state of objects. They encapsulate data and provide a way to access and modify the state of objects.</li>
                                                     <li class="content"><u>Parameters</u>: are variables that are passed to methods or constructors. They provide a way to pass data to methods or constructors for processing.</li>
@@ -217,7 +217,7 @@
                                             </li>
                                             <br>
                                             <li class="content"><b class="btn btn-secondary" onclick="toggleSection('p-summary-content')">Summary</b>
-                                                <p id="p-summary-content" style="display:none;">Polymorphism allows for flexibility and reuse in OOP through method overriding and method overloading. Runtime polymorphism is achieved through method overriding, while compile-time polymorphism is achieved through method overloading. Covariance and contra-variance allow for substitution of types in certain contexts. Classes define the structure and behavior of objects, properties encapsulate data, and parameters provide a way to pass data to methods or constructors.</p>
+                                                <p id="p_summary_content" style="display:none;">Polymorphism allows for flexibility and reuse in OOP through method overriding and method overloading. Runtime polymorphism is achieved through method overriding, while compile-time polymorphism is achieved through method overloading. Covariance and contra-variance allow for substitution of types in certain contexts. Classes define the structure and behavior of objects, properties encapsulate data, and parameters provide a way to pass data to methods or constructors.</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -230,14 +230,14 @@
                 <br>
 
                 <div class="row"> <!-- SQL Syntax -->
-                    <div class="section" id="sql-section">
+                    <div class="section" id="sql_section">
                         <h2 onclick="toggleSection('sql-content')">Structured Query Language (SQL) Syntax</h2>
-                        <div class="content" id="sql-content" style="display:none;">
+                        <div class="content" id="sql_content" style="display:none;">
                             <p><strong>Definition:</strong> Structured Query Language (SQL) is used for managing and manipulating relational databases. It provides a set of commands for performing various operations such as querying data, updating data, creating and modifying database schematics, and managing database transactions.</p>
                             <p><strong>Key Principles:</strong></p>
                             <ul>
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-basic-content')">Basic Queries</span>: 
-                                    <div class="content" id="sql-basic-content" style="display:none">
+                                    <div class="content" id="sql_basic_content" style="display:none">
                                         <p>Basic SQL queries are used to retrieve data from a database.</p>
                                         <ul>
                                             <li><b>SELECT (FROM)</b>: </li>
@@ -253,7 +253,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-dml-content')">Data Manipulation Language (DML)</span>: 
-                                    <div class="content" id="sql-dml-content" style="display:none">
+                                    <div class="content" id="sql_dml_content" style="display:none">
                                         <p>Data Manipulation Language statements are SQL commands used to manipulate data in a database.</p>
                                         <ul>
                                             <li><b>INSERT</b>: to add new rows.</li>
@@ -267,7 +267,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-keys-content')">Primary/Foreign Keys</span>: 
-                                    <div class="content" id="sql-keys-content" style="display:none">
+                                    <div class="content" id="sql_keys_content" style="display:none">
                                         <ul>
                                             <li><b>Primary Key</b>: is a column or combination of columns that uniquely identifies each row in a table. It ensures that each row in a table is unique and serves as the primary means of identifying records.</li>
                                             <li><b>Foreign Key</b>: is a column or combination of columns that establishes a link between data in two tables. It enforces referential integrity by ensuring that values in the foreign key column(s) match values in the primary key column(s) of another table.</li>
@@ -278,7 +278,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-normalization-content')">Normalization</span>: 
-                                    <div class="content" id="sql-normalization-content" style="display:none">
+                                    <div class="content" id="sql_normalization_content" style="display:none">
                                         <p>Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It involves breaking down large tables into smaller, related tables and dfining relationships between them. Normalization helps eliminate data anomalies such as insertion, update and deletion anomolies, and ensures that data is stored efficiently.</p>
                                     </div>
                                 </li>
@@ -286,7 +286,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-ddl-content')">Data Definition Langauge (DDL)</span>: 
-                                    <div class="content" id="sql-ddl-content" style="display:none">
+                                    <div class="content" id="sql_ddl_content" style="display:none">
                                         <p>Data Definition Language statements are SQL commands used to define and manage the structure of database objects such as tables, indexes, views, and constraints.</p>
                                         <ul>
                                             <li><b>CREATE TABLE</b>: to create objects.</li>
@@ -299,7 +299,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-joins-content')">Joins</span>: 
-                                    <div class="content" id="sql-joins-content" style="display:none">
+                                    <div class="content" id="sql_joins_content" style="display:none">
                                         <p>Joins are SQL operations used to combine data from multiple tables based on related columns between them.</p>
                                         <ul>
                                             <li><b>INNER JOIN</b>: returns rows when there is a match in both tables.</li>
@@ -313,7 +313,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('sql-summary-content')">SQL Summary</span>: 
-                                    <div class="content" id="sql-summary-content" style="display:none">
+                                    <div class="content" id="sql_summary_content" style="display:none">
                                         <ul>
                                             <li>SQL is used for managing and manipulating relational databases. It provides syntax for querying data, manipulating data, defining database structure, and manging transactions. All of which is done through basic queries, data manipulatinon language statements, primary and foreign keys, normalization, data definition language statements, and joins.</li>
                                         </ul>
@@ -327,14 +327,14 @@
                 <br>
 
                 <div class="row"> <!-- Data Structures -->
-                    <div class="section" id="data-structure-section">
+                    <div class="section" id="data_structure_section">
                         <h2 onclick="toggleSection('data-structure-content')">Data Structures</h2>
-                        <div class="content" id="data-structure-content" style="display:none;">
+                        <div class="content" id="data_structure_content" style="display:none;">
                             <p><strong>Definition:</strong> Data Structures are specialized formats for organizing, storing, and manipulating data efficiently. They provide different ways of organizing data to suit various applications and requirements.</p>
                             <p><strong>Key Principles:</strong></p>
                             <ul>
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-lists-content')">Lists</span>
-                                    <div class="content" id="ds-lists-content" style="display:none">
+                                    <div class="content" id="ds_lists_content" style="display:none">
                                         <p>A lists is a linear data structure that stores elements sequentially. Lists allow for dynamic resizing and typically support operations such as insertion, deletion and traversal. Common type of lists include:</p>
                                         <br>
                                         <ul>
@@ -349,7 +349,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-queues-content')">Queues</span>: 
-                                    <div class="content" id="ds-queues-content" style="display:none">
+                                    <div class="content" id="ds_queues_content" style="display:none">
                                         <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where elements are added to the rear and removed from the front. Queues supports operations such as enqueue (addition) and dequeue (removal). They are commonly used in scenarios like task scheduling, job processing, and breadth-first search algorithms.</p>
                                         <br>
                                         <ul>
@@ -364,7 +364,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-maps-content')">Maps</span>: 
-                                    <div class="content" id="ds-maps-content" style="display:none">
+                                    <div class="content" id="ds_maps_content" style="display:none">
                                         <p>A map (aka dictionary or associative array) is a collection of key-value pairs where each key is associated with a value. Maps allow for efficient lookup and retrieval of values based on keys.</p>
                                         <br>
                                         <ul>
@@ -378,7 +378,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-sets-content')">Sets</span>: 
-                                    <div class="content" id="ds-sets-content" style="display:none">
+                                    <div class="content" id="ds_sets_content" style="display:none">
                                         <p>A set is a collection of unique elemetns with no duplicates. Sets support operations such as addition, removal, and intersection. They are useful for tasks like removing duplicates from a list, testing membership, and performing set operations like union and intersection.</p>
                                         <br>
                                         <ul>
@@ -392,7 +392,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-equals-content')">Equals Method</span>: 
-                                    <div class="content" id="ds-equals-content" style="display:none">
+                                    <div class="content" id="ds_equals_content" style="display:none">
                                         <p>The equals() method is a method that is used to compare the equality of objects. It is typically overriden in user-defined classes to provide custom comparison logic based on the object's attributes. The equals() method is commonly used to compare objects for equality in scenarios like searching, sorting, and hashing.</p>
                                     </div>
                                 </li>
@@ -400,7 +400,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-hashcode-content')">HashCode</span>: 
-                                    <div class="content" id="ds-hashcode-content" style="display:none">
+                                    <div class="content" id="ds_hashcode_content" style="display:none">
                                         <p>The hashCode() method is a method that is used to generate a unique integer value (hash code) for an object. Hash codes are used in data structures like hash tables and hash sets to efficiently store and retrieve objects. The hashCode() method is often overridden in conjunction with the equals() method to ensure consistent behavior when objects are used as keys in hash-based collections.</p>
                                     </div>
                                 </li>
@@ -408,7 +408,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  class="btn btn-secondary" onclick="toggleSection('ds-summary-content')">Summary</span>: 
-                                    <div class="content" id="ds-summary-content" style="display:none">
+                                    <div class="content" id="ds_summary_content" style="display:none">
                                         <p>Data Structures are essential tools for organizing and manipulating data efficiently. Lists, queues, maps, and sets are common types of data structures used in various applications.</p>
                                     </div>
                                 </li>
@@ -420,12 +420,12 @@
                 <br>
 
                 <div class="row"> <!-- Define -->
-                    <div class="section" id="define-section">
+                    <div class="section" id="define_section">
                         <h2 onclick="toggleSection('define-content')">Define</h2>
-                        <div class="content" id="define-content" style="display:none;">
+                        <div class="content" id="define_content" style="display:none;">
                             <ul>
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-if-content')">if</span>
-                                    <div class="content" id="d-if-content" style="display:none">
+                                    <div class="content" id="d_if_content" style="display:none">
                                         <p>The "if" statement is a control flow statement used to execute a block of code only if a specified condition is true.</p>
                                     </div>
                                 </li>
@@ -433,7 +433,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-else-content')">else</span>
-                                    <div class="content" id="d-else-content" style="display:none">
+                                    <div class="content" id="d_else_content" style="display:none">
                                         <p>The "else" statement is used in conjunction with the "if" statement to specify an alternative block of code to execute if the condition specified in the "if" is false.</p>
                                     </div>
                                 </li>
@@ -441,7 +441,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-for-loop-content')">For Loop</span>
-                                    <div class="content" id="d-for-loop-content" style="display:none">
+                                    <div class="content" id="d_for_loop_content" style="display:none">
                                         <p>A "for" loop is a control flow statement used to repeatedly execute a block of code a specified number of time. It typically consists of an initialization, a condition, and an increment or decrement operation.</p>
                                     </div>
                                 </li>
@@ -449,7 +449,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-while-loop-content')">While Loop</span>
-                                    <div class="content" id="d-while-loop-content" style="display:none">
+                                    <div class="content" id="d_while_loop_content" style="display:none">
                                         <p>A "while" loop is a control flow statement used to repeatedly execute a block of code as long as a specified condition is true.</p>
                                     </div>
                                 </li>
@@ -457,7 +457,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-math-ops-content')">Mathematical Operations</span>
-                                    <div class="content" id="d-math-ops-content" style="display:none">
+                                    <div class="content" id="d_math_ops_content" style="display:none">
                                         <p>Mathematical operations refer to arithmetic operations performed on numeric data types. Common mathematical operations include addition (+), subtraction (-), multiplication (*), division (/), modulus (%) and exponentitation (^ or **).</p>
                                     </div>
                                 </li>
@@ -465,7 +465,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-comp-ops-content')">Comparison Operations</span>
-                                    <div class="content" id="d-comp-ops-content" style="display:none">
+                                    <div class="content" id="d_comp_ops_content" style="display:none">
                                         <p>Comparison operations are used to compare two values and determine their relationship. Common comparison operations include equality (==), inequality (!=), greater than (>), lessthan (<), greater than or equal to (>=) and less than or equal to (<=).</p>
                                     </div>
                                 </li>
@@ -473,7 +473,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-exceptions-content')">Exception Handling</span>
-                                    <div class="content" id="d-exceptions-content" style="display:none">
+                                    <div class="content" id="d_exceptions_content" style="display:none">
                                         <p>Exception handling is a programming construct used to handle runtime errors or exceptional conditions that may occur during program execution. It involves catching, handling, and possibly recovering from errors to prevent program termination or data corruption.</p>
                                     </div>
                                 </li>
@@ -481,7 +481,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-increment-ops-content')">Increment Operators</span>
-                                    <div class="content" id="d-increment-ops-content" style="display:none">
+                                    <div class="content" id="d_increment_ops_content" style="display:none">
                                         <p>Increment operators are used to increment the value of a variable by a specified amount. Common increment operators include ++ (increment by 1) and += (increment by a specified value). Common Big-O complexities include: </p>
                                     </div>
                                 </li>
@@ -489,7 +489,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-big-o-content')">Big-O Notation</span>
-                                    <div class="content" id="d-big-o-content" style="display:none">
+                                    <div class="content" id="d_big_o_content" style="display:none">
                                         <p>Big-O Notation is a mathematical notation used to describe asymptotic behavior (performance or complexity) of an algorithm as the input size approaches infinity. It provides an upper bound on the worst-case runtime or space requirements of an algorithm.</p>
                                         <br>
                                         <ul>
@@ -507,7 +507,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-perf-vs-scal-content')">Performance vs Scalability</span>
-                                    <div class="content" id="d-perf-vs-scal-content" style="display:none">
+                                    <div class="content" id="d_perf_vs_scal_content" style="display:none">
                                         <ul>
                                             <li>- Performance is about the speed or efficiency with which a system or program executes a task under specific conditions. It aims at using resources effectively to speed up the execution of tasks.</li>
                                             <br>
@@ -519,7 +519,7 @@
                                 <br>
                                 
                                 <li><span class="btn btn-secondary"  onclick="toggleSection('d-agile-vs-waterfall-content')">Agile vs Waterfall Methodologies</span>
-                                    <div class="content" id="d-agile-vs-waterfall-content" style="display:none">
+                                    <div class="content" id="d_agile_vs_waterfall_content" style="display:none">
                                         <ul>
                                             <li>- Agile is an iterative and incremental approach to software development that focuses on continuously adapting to changing requirements. This method emphasizes flexiblity and encourages customer involvement and interaction. It prioritizes delivering working software frequently while constantly adapting to new requirements.</li>
                                             <br>
@@ -534,12 +534,12 @@
                 <br>
 
                 <div class="row">
-                    <div class="section" id="framework-section">
+                    <div class="section" id="framework_section">
                         <h2 onclick="toggleSection('framework-content')">Frameworks on Resume</h2>
-                        <div class="content" id="framework-content" style="display:none;">
+                        <div class="content" id="framework_content" style="display:none;">
                             <ul>
                                 <li><span class="btn btn-secondary" onclick="toggleSection('f-django-content')">Django</span>
-                                    <div class="content" id="f-django-content" style="display:none;">
+                                    <div class="content" id="f_django_content" style="display:none;">
                                         <p>Django is a high-level Python web framework renowned for its rapid development capabilities and pragmatic design philosophy. It's crafted to facilitate the creation of web applications swiftly and efficiently, prioritizing simplicity, reusability, and scalability. At its core, Django adheres to the Model-View-Template (MVT) architectural pattern, streamlining the development process by abstracting away common tasks. Here are some key components and features:</p>
                                         <br>
                                         <ul>
@@ -567,7 +567,7 @@
                                 </li>
                                 <br>
                                 <li><span class="btn btn-secondary" onclick="toggleSection('f-dotnet-content')">.NET Core</span>
-                                    <div class="content" id="f-dotnet-content" style="display:none;">
+                                    <div class="content" id="f_dotnet_content" style="display:none;">
                                         <p>.NET Core is a cross-platform, open-source framework for building various types of applications, including web, desktop and cloud-based solutions. It's renowned for its flexibility, performance, and broad compatibility across different operating systems and development environments.</p>
                                         <br>
                                         <ul>
