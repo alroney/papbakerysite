@@ -1,10 +1,5 @@
 
-section p {
-    font-size: calc(18px + 1 * ((100vw - 300px) / (250)));
-    line-height: 2;
-    font-family: 'amiri', serif, sans-serif;
 
-}
 
 .left {
     float: left;
@@ -17,47 +12,36 @@ section p {
 
 
 
+/* #region - SECTION GENERAL */
+    section {
+        padding-bottom: 6em;
+    }
 
+    section p {
+        font-size: calc(18px + 1 * ((100vw - 300px) / (250)));
+        line-height: 2;
+        font-family: 'amiri', serif, sans-serif;
+    
+    }
+    
+    .section-titles h2 {
+        font-size: calc(25px + 2 * ((100vw - 100px) / (100)));
+        font-family: 'amiri', serif, sans-serif;
+        color: rgb(68, 68, 68);
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 15px;
+        text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.9px;
+    }
 
-/*
-* ==========================================
-* SECTION GENERAL START
-* ==========================================
-*/
-
-section {
-    padding-bottom: 6em;
-}
-
-.section-titles h2 {
-    font-size: calc(25px + 2 * ((100vw - 100px) / (100)));
-    font-family: 'amiri', serif, sans-serif;
-    color: rgb(68, 68, 68);
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 15px;
-    text-shadow:rgba(68, 68, 68, 0.5) 0px 2px 1.9px;
-}
-
-.section-titles h3 {
-    font-size: calc(20px + 1 * ((100vw - 1000px) / (200)));
-    font-family: 'amiri', serif, sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    color: rgb(248, 176, 0);
-    margin-bottom: 20px;
-    text-shadow: rgba(248, 176, 0, 0.8) 0px 1px 1px;
-}
-/*
-* ==========================================
-* SECTION GENERAL END
-* ==========================================
-*/
-
-
-/*
-* ==========================================
-* SECTION SPECIFIC START
-* ==========================================
-*/
+    .section-titles h3 {
+        font-size: calc(20px + 1 * ((100vw - 1000px) / (200)));
+        font-family: 'amiri', serif, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(248, 176, 0);
+        margin-bottom: 20px;
+        text-shadow: rgba(248, 176, 0, 0.8) 0px 1px 1px;
+    }
+/* #endregion */
