@@ -22,9 +22,9 @@ function initializeWhiteBgNavbar() {
 
     //Check the current page to determine logo image
     if (window.location.pathname == 'papstory.html') {
-        $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png')
+        $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png')
     } else {
-        $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png')
+        $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png')
     }
 
    //When the user scrolls, execute the following code
@@ -44,7 +44,7 @@ function initializeWhiteBgNavbar() {
             if (window.location.pathname == '/papstory.html') { 
                 $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_light.png');
             } else { 
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_light.png');
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_light.png');
             }
         } 
         //Else not scrolled down
@@ -61,9 +61,9 @@ function initializeWhiteBgNavbar() {
 
             //Set the dark logo version again
             if (window.location.pathname == '/papstory.html') {   
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png');
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png');
             } else { 
-                $('.navbar-brand img').attr('src', 'StaticFiles/img/logo/papbakery_logo_dark.png');    }
+                $('.navbar-brand img').attr('src', '/StaticFiles/img/logo/papbakery_logo_dark.png');    }
         }
 
         //If the viewport is still mobile, adjust the navbar collapse menu based on scroll position
