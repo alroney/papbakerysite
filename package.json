@@ -1,8 +1,8 @@
 {
   "name": "website_files",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Welcome to Andrew's Paws and Palms Bakery! We are a unique, home-kitcken bakery nestled in the city of Eldersurg, MD, crafting carefully homemade treats from scratch for your pets.",
+  "main": "main.js",
   "scripts": {
     "sass": "node-sass StaticFiles/scss/bootstrap.scss -o StaticFiles/CSS"
   },
