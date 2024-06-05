@@ -1,6 +1,6 @@
 
 
-//Function: renders the topbar section
+//Function: render the topbar section
 function renderTopbar() {
     return `
         <div class="top-bar bg-dark text-light px-0 py-1 wow fadeIn" data-wow-delay="0.1s">
@@ -27,7 +27,7 @@ function renderTopbar() {
     `
 }
 
-//Function: renders the navbar section
+//Function: render the navbar section
 function renderNavbar() {
     return `
         <nav class="navbar navbar-expand-lg fixed-top navbar-light py-lg-2 px-lg-5 wow fadeIn" data-wow-delay="0.1s" >
@@ -72,7 +72,7 @@ function renderNavbar() {
     `
 }
 
-//Function: renders the footer section
+//Function: render the footer section
 function renderFooter() {
     return `
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
+//Function: initialize the navbap scripts
 function initNavbarScripts() {
     //Spinner removal
     setTimeout(() => {
@@ -215,6 +215,42 @@ function initNavbarScripts() {
 }
 
 
-
-
-
+//Function: create a button to allow the user to quickly return to the top
+function backToTop() {
+    // Create the button
+    const backToTopBtn = document.createElement("button");
+    backToTopBtn.classList.add("back-to-top");
+    // Set button properties
+    backToTopBtn.innerHTML = "&#8593;";
+    backToTopBtn.style.fontSize = "12px";
+    backToTopBtn.style.padding = "0";
+    backToTopBtn.style.width = "30px";
+    backToTopBtn.style.height = "30px";  backToTopBtn.style.borderRadius = "0";
+    backToTopBtn.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    backToTopBtn.style.color = "#fff";
+    backToTopBtn.style.cursor = "pointer";
+    backToTopBtn.style.position = "fixed";
+    backToTopBtn.style.bottom = "20px";
+    backToTopBtn.style.right = "20px";
+    backToTopBtn.style.display = "none";
+    backToTopBtn.style.border = "1px solid var(--primary)"
+    
+    // Attach button to the DOM
+    document.body.appendChild(backToTopBtn);
+   
+    // Show/hide button based on scroll position
+    window.addEventListener("scroll", () => {
+     if (window.pageYOffset > 500) {
+      backToTopBtn.style.display = "block";
+     } else {
+      backToTopBtn.style.display = "none";
+     }
+    });  backToTopBtn.addEventListener("click", () => { 
+    // Scroll back to top smoothly
+    window.scrollTo({
+     top: 0,
+     behavior: "smooth",
+    });
+    }); 
+  }
+  backToTop(); 

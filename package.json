@@ -6,7 +6,7 @@
   "scripts": {
     "sass": "node-sass StaticFiles/scss/bootstrap.scss -o StaticFiles/CSS"
   },
-  "keywords": ["paws", "pets", "palms", "bakery", "paws and palms", "paws and palms bakery", "papbakery", "pap bakery", "p&pbakery", "dogs", "canine", "k9", "furry friend", "dog treats", "treats", "delicious", "yummy", "tastey"],
+  "keywords": ["papb", "paws", "pets", "palms", "bakery", "paws and palms", "paws and palms bakery", "papbakery", "pap bakery", "p&pbakery", "dogs", "canine", "k9", "furry friend", "dog treats", "treats", "delicious", "yummy", "tastey", "eldersburg", "sykesville", "in eldersburg", "in sykesville", "fresh", "dog treats in eldersburg", "dog treats in sykesville"],
   "author": "Andrew Lawrence Roney",
   "license": "ISC",
   "devDependencies": {
