@@ -587,7 +587,6 @@ let productInfo = [];
                     <img class="" src="${imagePath}${item.src}" alt="${item.alt}">
                     <div class="carousel-caption">
                         <h5>${item.name}</h5>
-                        <p class="text-dark">Only ${item.price}!</p>
                     </div>
                 </div>
                 `;

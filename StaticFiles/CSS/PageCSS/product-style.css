@@ -1,31 +1,35 @@
 
+/*#region - DISCLAIMERS*/
+    .disclaimer-btn {
+        text-shadow: 1.5px 0px 2px #ff0000; /* L/R U/D Spread Color */
+    }
+    .disclaimer-hdr {
+        font-weight: bold;
+        color: #ff0000;
+    }
 
-.disclaimer-hdr {
-    font-weight: bold;
-    color: #ff0000;
-}
-
-#general_disclaimer_btn {
-    width: fit-content;
-}
+    #general_disclaimer_btn {
+        width: fit-content;
+    }
+/*#endregion*/
 
 
 /*#region - TABS GENERAL*/
-.tab-content {
-    /* margin-top: 1.4rem; */
-    width: 100%;
-    display: block;
-    background: rgba(255, 255, 255, 0.75);
-    border-left: 1px solid #dee2e6;
-    border-right: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
-}
-
-@media (max-width: 500px) {
-    #product_display_tab{
-        padding: 0;
+    .tab-content {
+        /* margin-top: 1.4rem; */
+        width: 100%;
+        display: block;
+        background: rgba(255, 255, 255, 0.75);
+        border-left: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
     }
-}
+
+    @media (max-width: 500px) {
+        #product_display_tab{
+            padding: 0;
+        }
+    }
 /*#endregion*/
 
 /*#region - PET TAB */
@@ -65,8 +69,6 @@
 /*#endregion*/
 
 /*#region - PRODUCT CARDS */
-
-
     .card {
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
         margin: auto;
@@ -235,6 +237,7 @@
         margin: auto;
     }
 
+    /* Current image being shown in the carousel */
     .carousel-item.active img {
         display: block;
         margin: auto;
@@ -242,6 +245,7 @@
         height: auto;
     }
 
+    /* The caption under the image */
     .carousel-caption {
         display: block;
         position: relative;
@@ -251,17 +255,22 @@
         text-align: center;
     }
 
+    /* The buttons seen on the left and right of the image  */
     .carousel-control-prev-icon, .carousel-control-next-icon {
         background-color: var(--primary);
         border: 1px solid black;
         border-radius: 100%;
     }
 
-
+    /* The entire block with the indication buttons inside */
     .carousel-indicators {
-        background-color: rgba(0, 0, 0, 0.05);
         width: 50%;
         max-width: 100%;
         margin: 0 auto;
+    }
+
+    /* Each individual button that are in the carousel indicators block */
+    #carInd_btns button {
+        background-color: black;
     }
 /*#endregion*/
