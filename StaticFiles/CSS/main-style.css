@@ -139,6 +139,7 @@ img {
 .navbar {
   padding: 15px 0px;
   font-family: 'alice';
+  font-size: 16pt;
 }
 .navbar .navbar-nav .nav-link {
   padding: 10px 15px;
@@ -158,6 +159,15 @@ img {
 .navbar-brand-img img {
   width: 3rem;
   height: auto;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  transition: 0.3s ease;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: .5s;
 }
 
 @media (min-width: 501.00px) {
@@ -184,15 +194,15 @@ img {
 
 .icon {
   position: absolute;
-  border: 1px solid var(--primary);
-  transform:  translateY(25%);
+  transform: rotate(45deg) translateY(10%);
+  transition: transform 0.35s ease;
 }
 
-.nav-link:hover > .icon {
-  transform: rotate(45deg) translateY(50%);
-  transition: .5s;
+.nav-item.dropdown:hover .icon {
+  transform: rotate(0deg);
   color: var(--primary);
 }
+
 
 
 
@@ -226,7 +236,6 @@ img {
       opacity: 1;
   }
 }
-
 
 
 .main-content {

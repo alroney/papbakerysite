@@ -34,7 +34,7 @@ function initializeWhiteBgNavbar() {
             //Apply dark background and styling changes to the navbar, links, logo, etc.
             $('.fixed-top').addClass('bg-dark').css('top', 0);
             $('.fixed-top a').css('color', 'white');
-            $('.dropdown-menu').css('background-color', '#343a40');
+            $('.dropdown-menu').css('background-color', 'var(--secondary)');
             $('.navbar').removeClass('border-bottom');
             $('.rounded-circle').removeClass('border-dark').addClass('border-primary');
             $('.fixed-top .text-dark').removeClass('text-dark').addClass('text-light');

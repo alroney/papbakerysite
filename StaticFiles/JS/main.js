@@ -46,7 +46,9 @@ function renderNavbar() {
                 <div class="navbar-nav mx-auto p-4 p-lg-0">
                     <a href="/index.html" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link" data-bs-toggle="dropdown">About<i class="bi bi-caret-down-fill"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            About <i class="bi bi-caret-down-fill icon"></i>
+                        </a>
                         <div class="dropdown-menu m-0">
                             <a href="/about.html" class="dropdown-item">About Us</a>
                             <a href="/papstory.html" class="dropdown-item">Our Story</a>
@@ -54,7 +56,9 @@ function renderNavbar() {
                     </div>
                     <a href="product.html" class="nav-item nav-link">Products</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link" data-bs-toggle="dropdown">Support<i class="bi bi-caret-down-fill"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="dropdown">
+                            Support <i class="bi bi-caret-down-fill icon"></i>
+                        </a>
                         <div class="dropdown-menu m-0">
                             <a href="/faq.html" class="dropdown-item">FAQ</a>
                             <a href="/contact-us.html" class="dropdown-item">Contact Us</a>
@@ -211,7 +215,16 @@ function initNavbarScripts() {
         $('.navbar-collapse').removeClass('show');
     });
 
-    
+    $('.nav-item.dropdown').hover(
+        function() {
+            $(this).find('.icon').css('transform', 'rotate(0deg)');
+            $(this).find('.icon').css('color', 'var(--primary)');
+        },
+        function() {
+            $(this).find('.icon').css('transform', 'rotate(45deg)');
+        }
+    );
+
 }
 
 
