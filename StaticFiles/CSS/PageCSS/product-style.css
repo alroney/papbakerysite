@@ -1,7 +1,7 @@
 
 /*#region - DISCLAIMERS*/
     .disclaimer-btn {
-        text-shadow: 1.5px 0px 2px #ff0000; /* L/R U/D Spread Color */
+        text-shadow: 0px 0px 3px #ff0000; /* L/R U/D Spread Color */
     }
     .disclaimer-hdr {
         font-weight: bold;
@@ -23,12 +23,6 @@
         border-left: 1px solid #dee2e6;
         border-right: 1px solid #dee2e6;
         border-bottom: 1px solid #dee2e6;
-    }
-
-    @media (max-width: 500px) {
-        #product_display_tab{
-            padding: 0;
-        }
     }
 /*#endregion*/
 

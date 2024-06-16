@@ -35,6 +35,11 @@
     padding: 10px;
 }
 
+/* Style for the whole accordian collapse class */
+.accordion-collapse {
+    transition: 0.3s ease;
+}
+
 /* Style for the active accordion body */
 .accordion-collapse.show {
     border-top: 1px solid #ddd;

@@ -524,7 +524,6 @@ let productInfo = [];
                     <p>${desc}</p>
                 </div>
                 <div class="card-footer">
-                    
                     <a class="btn btn-primary card-button" href=""  data-bs-toggle="offcanvas" data-bs-target="#offcanvas_${pN}"  aria-controls="offcanvas_${pN}">More Info</a>
                 </div>
             </div>
@@ -561,10 +560,10 @@ let productInfo = [];
     function generateCarousel() {
         const imagePath = "/StaticFiles/img/product/dog/biscuits/";
         const carouselItems = [ //This is a multi-dimensional array to call a specific item you would use, carouselItems[#].variableName Ex. carouselItems[1].src will give me 'biscuit_sm_long.png'
-            { src: "biscuit_sm.png", alt: "Small Biscuit", name: "Small Biscuit", price: "" },
-            { src: "biscuit_sm_long.png", alt: "Small Long Biscuit", name: "Small Long Biscuit", price: "" },
-            { src: "biscuit_lg.png", alt: "Large Biscuit", name: "Large Biscuit", price: "" },
-            { src: "biscuit_lg_long.png", alt: "Large Long Biscuit", name: "Large Long Biscuit", price: "" }
+            { src:"biscuit_sm.png", alt:"Small Biscuit", name: "Small Biscuit"},
+            { src:"biscuit_sm_long.png", alt:"Small Long Biscuit", name:"Small Long Biscuit"},
+            { src:"biscuit_lg.png", alt:"Large Biscuit", name:"Large Biscuit"},
+            { src:"biscuit_lg_long.png", alt:"Large Long Biscuit", name:"Large Long Biscuit"}
         ];
 
 
