@@ -18,14 +18,19 @@
         <link rel="icon" type="image/png" href="/StaticFiles/biscuit-favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="/StaticFiles/biscuit-favicon-16x16.png" sizes="16x16" />
         <link rel="stylesheet" href="/StaticFiles/CSS/bootstrap.min.css">
-        <link rel="stylesheet" href="/StaticFiles/CSS/owl.carousel.min.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/font-awesome.min.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/main-style.css">
-        <link rel="stylesheet" href="/StaticFiles/CSS/PageCSS/contact-us-style.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/responsive.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/bootstrap-icons.min.css">
         <script src="/StaticFiles/JS/vendor/modernizr-2.8.3.min.js"></script>
     </head>
+
+    <style>
+        .img-fluid {
+            height: 400px;
+            width: auto;
+        }
+    </style>
 
     <body>
 		<!-- Spinner Start -->
@@ -91,57 +96,9 @@
 <section id="section3">
     <div class="container">
         <div class="row">
-            <div class="card h-100 mb-2" id="highSchoolProject">
-                <div class="card-header">
-                    <h3>High School Project</h3>
-                </div>
-                <div class="card-body">
-                    <div class="img-slide">
-                        <img class="img-fluid" id="highSchoolProjectImg" src="" alt="High School Project Slideshow">
-                        <button onclick="hsp_prevSlide()" class="btn btn-primary" id="hsp_prevSlideBtn">Previous</button>
-                        <button onclick="hsp_nextSlide()" class="btn btn-primary" id="hsp_nextSlideBtn">Next</button>
-                    </div>
-
-                </div>
-                <div class="card-footer">
-                    
-                </div>
-            </div>
-
-            <div class="card h-100 mb-2" id="snowdogEmporium">
-                <div class="card-header">
-                    <h3>Snowdog Emporium</h3>
-                </div>
-                <div class="card-body">
-                    <div class="img-slide">
-                        <img class="img-fluid" id="snowdogEmporiumImg" src="" alt="Snowdog Emporium Slideshow">
-                        <button onclick="sde_prevSlide()" class="btn btn-primary" id="sde_prevSlideBtn">Previous</button>
-                        <button onclick="sde_nextSlide()" class="btn btn-primary" id="sde_nextSlideBtn">Next</button>
-                    </div>
-
-                </div>
-                <div class="card-footer">
-                    
-                </div>
-
-            </div>
-
-            <div class="card h-100 mb-2" id="flaskProject">
-                <div class="card-header">
-                    <h3>Flask Project</h3>
-                </div>
-                <div class="card-body">
-                    <div class="img-slide">
-                        <img class="img-fluid" id="flaskProjectImg" src="" alt="Flask Project Slideshow">
-                        <button onclick="fp_prevSlide()" class="btn btn-primary" id="fp_prevSlideBtn">Previous</button>
-                        <button onclick="fp_nextSlide()" class="btn btn-primary" id="fp_nextSlideBtn">Next</button>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    
-                </div>
-
-            </div>
+            <div id="hsp_card"></div>
+            <div id="sde_card"></div>
+            <div id="fp_card"></div>
         </div>
     </div>
 </section>

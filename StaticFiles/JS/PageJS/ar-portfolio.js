@@ -1,85 +1,99 @@
+const projects = ["Snow Dog Emporium", "High School Project", "Flask Project"]
 
-/* HIGH SCHOOL PROJECT SLIDE SHOW */
-    let hsp_slideIndex = 0;
-    const hsp_imgCount = 3;
-    const hsp_imgPrefix = "hspImg_";
+const sde_iFP = "/StaticFiles/img/portfolio/sdeProject/"; //SnowDogEmporium_imageFolderPath
+const hsp_iFP = "/StaticFiles/img/portfolio/hsProject/";
 
-    function hsp_showSlides() {
-        const hsp_imgElement = document.getElementById("highSchoolProjectImg");
-        const hsp_imgName = hsp_imgPrefix + pad(hsp_slideIndex, 3) + ".jpg";
-        hsp_imgElement.src = "/StaticFiles/img/portfolio/hsProject/" + hsp_imgName;
+
+
+/**
+ * CURRENTLY BROKEN
+ */
+function renderSlideShows() {
+    let slideIndex = 0; //Set current image
+    let imgCount = 0;
+    projects.forEach(p => {
+        const prjAbbr = abbreviate(p);
+        function showSlides() {
+            const imgElement = document.getElementById(`${prjAbbr}Img`);
+            const imgName = prjAbbr + '_' + pad(slideIndex, 3) + ".jpg"; //abbr_###.jpg
+            console.log(`imgName = ${imgName}`);
+            imgElement.src = `${prjAbbr}_iFP` + imgName;
+        }
+        
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % imgCount;
+            showSlides();
+        }
+    
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + imgCount) % imgCount;
+            showSlides();
+        }
+    
+        function pad(num, size) {
+            return ('000' + num).slice(-size);
+        }
+    })
+    
+}
+
+
+
+
+//#region - CARDS - Cards for the project slide shows
+    function generateProjectCards(prjName, prjAbbr) {
+        return `
+            <div class="card h-100 mb-2">
+                <div class="card-header">
+                    <h3>${prjName}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="img-slide">
+                        <img class="img-fluid" id="${prjAbbr}Img" src="" alt="${prjName} Slideshow">
+                    </div>
+                    <button onclick="${prjAbbr}_prevSlide()" class="btn btn-primary" id="${prjAbbr}_prevSlideBtn">Previous</button>
+                    <button onclick="${prjAbbr}_nextSlide()" class="btn btn-primary" id="${prjAbbr}_nextSlideBtn">Next</button>
+
+                </div>
+                <div class="card-footer">
+                    
+                </div>
+            </div>
+        `
     }
 
-    function hsp_nextSlide() {
-        hsp_slideIndex = (hsp_slideIndex + 1) % hsp_imgCount;
-        hsp_showSlides();
+    function renderProjectCards() {
+        projects.forEach(p => {
+            const prjName = p;
+            const prjAbbr = abbreviate(p);
+            const cPrjCard = generateProjectCards(prjName, prjAbbr); //Current Project card
+
+            const element = document.getElementById(`${prjAbbr}_card`)
+            if(element) { element.innerHTML += cPrjCard; }//Add a product card element each time (+=)
+            else {console.error(`Element with ID '${prjAbbr}_card' not found!`); }
+        })
+    }
+//#endregion
+
+function abbreviate(str) {
+    const words = str.split(' ');
+
+    let abbr = '';
+
+    for (let i = 0; i < words.length; i++) {
+        abbr += words[i].charAt(0).toLowerCase();
     }
 
-    function hsp_prevSlide() {
-        hsp_slideIndex = (hsp_slideIndex - 1 + hsp_imgCount) % hsp_imgCount;
-        hsp_showSlides();
-    }
-
-    function pad(num, size) {
-        return ('000' + num).slice(-size);
-    }
-
-/* HIGH SCHOOL PROJECT SLIDE SHOW END */
+    return abbr;
+}
 
 
-
-/* SNOWDOG EMPORIUM SLIDE SHOW */
-    let sde_slideIndex = 0;
-    const sde_imgCount = 3;
-    const sde_imgPrefix = "sdeImg_";
-
-    function sde_showSlides() {
-        const sde_imgElement = document.getElementById("snowdogEmporiumImg");
-        const sde_imgName = sde_imgPrefix + pad(sde_slideIndex, 3) + ".jpg";
-        sde_imgElement.src = "/StaticFiles/img/portfolio/snowdogEmporium/" + sde_imgName;
-    }
-
-    function sde_nextSlide() {
-        sde_slideIndex = (sde_slideIndex + 1) % sde_imgCount;
-        sde_showSlides();
-    }
-
-    function sde_prevSlide() {
-        sde_slideIndex = (sde_slideIndex - 1 + sde_imgCount) % sde_imgCount;
-        sde_showSlides();
-    }
-
-    function pad(num, size) {
-        return ('000' + num).slice(-size);
-    }
-
-/* SNOWDOG EMPORIUM SLIDE SHOW END */
+async function initializeData() {
+    renderProjectCards();
+}
 
 
-
-/* FLASK PROJECT SLIDE SHOW */
-    let fp_slideIndex = 0;
-    const fp_imgCount = 3;
-    const fp_imgPrefix = "fpImg_";
-
-    function fp_showSlides() {
-        const fp_imgElement = document.getElementById("flaskProjectImg");
-        const fp_imgName = fp_imgPrefix + pad(fp_slideIndex, 3) + ".jpg";
-        fp_imgElement.src = "/StaticFiles/img/portfolio/flaskProject/" + fp_imgName;
-    }
-
-    function fp_nextSlide() {
-        fp_slideIndex = (fp_slideIndex + 1) % fp_imgCount;
-        fp_showSlides();
-    }
-
-    function fp_prevSlide() {
-        fp_slideIndex = (fp_slideIndex - 1 + fp_imgCount) % fp_imgCount;
-        fp_showSlides();
-    }
-
-    function pad(num, size) {
-        return ('000' + num).slice(-size);
-    }
-
-/* FLASK PROJECT SLIDE SHOW END */
+//Load content upon page load
+document.addEventListener("DOMContentLoaded", function() {
+    initializeData()
+})

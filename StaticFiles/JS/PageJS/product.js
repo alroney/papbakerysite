@@ -1,8 +1,9 @@
+//#region - DECLARATION - Initial declaration for lists
 let flavorList = []; //Declare flavorList outside the fetchCSV block
 let nutritionalFactsByFlavor = []; //Declare biscuit flavor nutritional facts list outside the fetchCSV block
 let productCategories = ['biscuit', 'training treat']; //Declare the array of product categories for global usage
 let productInfo = [];
-
+//#endregion
 
 
 //#region - CSV - read csv files and coordinate the data from them.
@@ -189,6 +190,9 @@ let productInfo = [];
 
 
 
+
+
+
 //#region - OFFCANVAS - Create the offcanvases for the products
     //Function: this will create the offcanvas section for the type of product (productCat) and its flavor (flvr) that is given
     function generateOffCanvas(pName, ingredients) {
@@ -274,6 +278,9 @@ let productInfo = [];
         }
     //#endregion
 //#endregion
+
+
+
 
 
 
@@ -540,12 +547,8 @@ let productInfo = [];
             const cPCard = generateProductCards(pName, cPDesc);
 
             const element = document.getElementById(`${toHTMLFormat(p.category)}_cards`);
-            if(element) {
-                element.innerHTML += cPCard; //Add a product card element each time (+=)
-            } 
-            else {
-                console.error(`Element with ID '${toHTMLFormat(p.category)}_cards' not found!`);
-            }
+            if(element) { element.innerHTML += cPCard; }//Add a product card element each time (+=)
+            else {console.error(`Element with ID '${toHTMLFormat(p.category)}_cards' not found!`); }
         });
     }
 //#endregion
@@ -651,8 +654,7 @@ let productInfo = [];
 
     //Function: This will turn any phrase into camel case notation
     function toCamelCase(phrase) {
-        //Split the phrase into words using space as the delimiter
-        const words = phrase.split(' ');
+        const words = phrase.split(' '); //Split the phrase into words using space as the delimiter
     
         //Transform each word: the first word is all lowercase, and each subsequent word is capitalized at the first letter
         const camelCaseWords = words.map((word, index) => {
@@ -665,8 +667,8 @@ let productInfo = [];
             }
         });
     
-        //Join all the transformed words to form the camelCase string
-        return camelCaseWords.join('');
+        
+        return camelCaseWords.join(''); //Join all the transformed words to form the camelCase string
     }
 
     //Function: Combine all the string cleaning functions into one.
