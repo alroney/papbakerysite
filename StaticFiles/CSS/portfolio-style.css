@@ -1,0 +1,79 @@
+/* Prevent scrolling when the modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Allow images to be clicked on */
+.img-fluid {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+
+/*#region - IMAGE MODAL */
+    /* The Modal (background) */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 10000; 
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.9);
+
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        touch-action: manipulation;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {    
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+/*#endregion*/

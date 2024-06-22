@@ -20,16 +20,17 @@
         <link rel="stylesheet" href="/StaticFiles/CSS/bootstrap.min.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/font-awesome.min.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/main-style.css">
+        <link rel="stylesheet" href="/StaticFiles/CSS/portfolio-style.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/responsive.css">
         <link rel="stylesheet" href="/StaticFiles/CSS/bootstrap-icons.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
         <script src="/StaticFiles/JS/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
     <style>
-        .img-fluid {
-            height: 400px;
-            width: auto;
-        }
+
+
     </style>
 
     <body>
@@ -105,6 +106,15 @@
 <!-- PORTFOLIO PREVIEW SECTION END -->
 
 
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+</div>
+
+
+
+
 <!--====================================================================================================================-->
 
         <!-- FOOTER START -->
@@ -113,6 +123,11 @@
         <!-- Copyright Start -->
         <div id="site_copyright"></div>
         <!-- Copyright End -->
+
+        <script>
+            var cardCats = ["Snow Dog Emporium", "High School Project", "Flask Project"];
+        </script>
+
         <script src="/StaticFiles/JS/vendor/jquery-1.12.0.min.js"></script>
         <script src="/StaticFiles/JS/jquery-easing/jquery.easing.min.js"></script>
         <script src="/StaticFiles/JS/bootstrap.min.js"></script>

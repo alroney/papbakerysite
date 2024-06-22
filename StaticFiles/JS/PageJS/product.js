@@ -547,8 +547,12 @@ let productInfo = [];
             const cPCard = generateProductCards(pName, cPDesc);
 
             const element = document.getElementById(`${toHTMLFormat(p.category)}_cards`);
-            if(element) { element.innerHTML += cPCard; }//Add a product card element each time (+=)
-            else {console.error(`Element with ID '${toHTMLFormat(p.category)}_cards' not found!`); }
+            if(element) { //Add a product card element each time (+=)
+                element.innerHTML += cPCard;
+            }
+            else {
+                console.error(`Element with ID '${toHTMLFormat(p.category)}_cards' not found!`); 
+            }
         });
     }
 //#endregion
