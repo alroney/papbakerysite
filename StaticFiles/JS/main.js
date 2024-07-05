@@ -32,10 +32,10 @@ function renderNavbar() {
     return `
         <nav class="navbar navbar-expand-lg fixed-top navbar-light py-lg-2 px-lg-5 wow fadeIn" data-wow-delay="0.1s" >
             <div class="navbar-brand ms-4 ms-lg-0 position-relative">
-                <a href="" class="">
+                <a href="/" class="">
                     <h4 class="text-primary m-0">Paws & Palms Bakery</h4>
                 </a>
-                <a href="" class="navbar-brand-img">
+                <a href="/" class="navbar-brand-img">
                     <img src="">
                 </a>
             </div>
@@ -44,7 +44,7 @@ function renderNavbar() {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto p-4 p-lg-0">
-                    <a href="" class="nav-item nav-link active">Home</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link" data-bs-toggle="dropdown">
                             About <i class="bi bi-caret-down-fill icon"></i>
