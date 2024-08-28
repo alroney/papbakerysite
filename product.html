@@ -49,14 +49,14 @@
 <!--====================================================================================================================-->
 
         <div class="main-content">
-            <!-- PAGE INTRO SECTION -->
+            <!-- #region PAGE INTRO SECTION -->
                 <div class="container">
                     <h2>Products</h2>
                     <p>Below are our products that we currently produce. Upon request, we can use different types of flour for your order.</p>
                 </div>
-            <!-- END PAGE INTRO SECTION -->
+            <!-- #endregion END PAGE INTRO SECTION -->
 
-            <!-- DISCLAIMER SECTION -->
+            <!-- #region DISCLAIMER SECTION -->
                 <div class="container">
                     <div class="row g-4">
                         <button class="btn mb-5 d-block btn-primary btn-sm disclaimer-btn" id="general_disclaimer_btn" onclick="showGeneralDisclaimer()">Read General Disclaimer</button>
@@ -80,90 +80,101 @@
                         </div>
                     </div>
                 </div>
-            <!-- END DISCLAIMER SECTION-->
+            <!-- #endregion END DISCLAIMER SECTION-->
 
-            <!-- Product Display Area Start -->
+            <!-- #region PRODUCT DISPLAY AREA -->
             <div class="container" id="product_display_tab">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#pets">Pets Menu</a></li>
-                </ul>
                 
-                <div class="tab-content ">
-                    <!-- PETS TAB-->
-                        <div id="pets_tab" class="pet-tab active fadeIn">
-                            <!-- #region Disclaimer -->
-                            <div class="container-fluid dog-biscuit-disclaimer mb-5 pt-3 justify-content-center">
-                                <span id="biscuit_disclaimer" style="display: none">
-                                    <h5 class="disclaimer-hdr">Dog Biscuits/Training-Treat Disclaimer</h5>
-                                    <ul class="dog-biscuit-disclaimer-list mb-5">
-                                        <li>Due to the ratio between the whole wheat flour and other ingredient(s) in the biscuits, they make look similar to different flavors when coming out of the oven.</li>
-                                        <br>
-                                        <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
-                                        <br>
-                                        <li>All of our dog biscuits are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
-                                        <br>
-                                        <li>Upon ordering please specify the level of softness/hardness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness/hardness.</li>
-                                        <br>
-                                        <li>The softer the treat, the sooner they expire. This is caused by the moisture still in the treat. Softer treats can last about a week in a container outside of the fridge. Hard treats can last a month outside of the fridge.</li>
-                                    </ul>
-                                </span>
-                                <button class="btn mx-auto d-block btn-primary btn-sm disclaimer-btn" id="biscuits_disclaimer_btn" onclick="showBiscuitDisclaimer()">Read Biscuit Disclaimer</button>
-                            </div>
-                            <!-- #endregion End Disclaimer -->
-                            
-                            <section class="product-section" id="biscuits_sec">
-                                <!-- BISCUIT CARDS -->
-                                    <div class="container">
-                                        <h2 class="my-3 text-center">Biscuits</h2>
-                                        <div class="row" id="biscuit_cards"></div>
-                                    </div>
-                                <!-- END BISCUIT CARDS-->
-
-                                <!-- BISCUITS CAROUSEL -->
-                                    <div class="container">
-                                        <div class="carousel slide" id="biscuit_size_carousel" data-bs-ride="false">
-                                            <div class="carousel-indicators">
-                                                <div id="carInd_btns"></div>
-                                            </div>
-                                            
-                                            <div class="carousel-inner" id="carouselInner"></div>
-
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#biscuit_size_carousel" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Previous</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#biscuit_size_carousel" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Next</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                <!-- END BISCUITS CAROUSEL -->
-                            </section>
-                            
-                            <section class="product-section mt-4" id="training_treat_sec">
-                                <!-- TRAINING TREAT CARDS-->
-                                    <div class="cards-container">
-                                        <h2 class="my-3 text-center">Training Treats</h2>
-                                        <div class="row" id="training_treat_cards"></div>
-                                    </div>
-                                <!-- END TRAINING TREAT CARDS-->
-                            </section>
+                
+                        <!-- #region DISCLAIMER -->
+                        <div class="container-fluid dog-biscuit-disclaimer mb-5 pt-3 justify-content-center">
+                            <span id="biscuit_disclaimer" style="display: none">
+                                <h5 class="disclaimer-hdr">Dog Biscuits/Training-Treat Disclaimer</h5>
+                                <ul class="dog-biscuit-disclaimer-list mb-5">
+                                    <li>Due to the ratio between the whole wheat flour and other ingredient(s) in the biscuits, they make look similar to different flavors when coming out of the oven.</li>
+                                    <br>
+                                    <li>We can not guarantee that the biscuits will look exactly like the pictures.</li>
+                                    <br>
+                                    <li>All of our dog biscuits are not intended for human consumption. Trust me you won't taste anything, but your dog definitely will due to their enhanced senses.</li>
+                                    <br>
+                                    <li>Upon ordering please specify the level of softness/hardness you would like your biscuits to be. If you do not specify, they will be made to the standard level of softness/hardness.</li>
+                                    <br>
+                                    <li>The softer the treat, the sooner they expire. This is caused by the moisture still in the treat. Softer treats can last about a week in a container outside of the fridge. Hard treats can last a month outside of the fridge.</li>
+                                </ul>
+                            </span>
+                            <button class="btn mx-auto d-block btn-primary btn-sm disclaimer-btn" id="biscuits_disclaimer_btn" onclick="showBiscuitDisclaimer()">Read Biscuit Disclaimer</button>
                         </div>
-                    <!-- END PETS TAB-->
+                        <!-- #endregion End Disclaimer -->
+                        
+                    <section class="product-section" id="biscuits_sec">
+                        <!-- #region BISCUIT CARDS -->
+                        <div class="container">
+                            <h2 class="my-3 text-center">Biscuits</h2>
+                            <div class="row" id="biscuit_cards"></div>
+                        </div>
+                        <!-- #endregion END BISCUIT CARDS-->
+
+                        <!-- #region BISCUITS CAROUSEL -->
+                        <div class="container">
+                            <div class="carousel slide" id="biscuit_size_carousel" data-bs-ride="false">
+                                <div class="carousel-indicators">
+                                    <div id="carInd_btns"></div>
+                                </div>
+                                
+                                <div class="carousel-inner" id="carouselInner"></div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#biscuit_size_carousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#biscuit_size_carousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- #endregion END BISCUITS CAROUSEL -->
+                    </section>
+                    
+                    <section class="product-section mt-4" id="training_treat_sec">
+                        <!-- #region TT CARDS -->
+                        <div class="cards-container">
+                            <h2 class="my-3 text-center">Training Treats</h2>
+                            <div class="row" id="training_treat_cards"></div>
+                        </div>
+                        <!-- #endregion END TT CARDS -->
+
+                        <!-- #region TT CAROUSEL -->
+                        <div class="container">
+                            <div class="carousel slide" id="training_treat_size_carousel" data-bs-ride="false">
+                                <div class="carousel-indicators">
+                                    <div id="carInd_btns"></div>
+                                </div>
+                                
+                                <div class="carousel-inner" id="carouselInner"></div>
+
+                                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#training_treat_size_carousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#training_treat_size_carousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button> -->
+                            </div>
+                        </div>
+                        <!-- #endregion END TT CAROUSEL -->
+                    </section>
 
                     
-                    <div id="pet_offCanvas"></div>
-
+                <div id="pet_offCanvas"></div>
+            </div> 
+            <!-- #endregion END PRODUCT DISPLAY AREA-->
+        </div>
 <!--====================================================================================================================-->
 
-    <!-- FOOTER START -->
         <div id="site_footer"></div>
-    <!-- Footer End -->
-
-    <!-- Copyright Start -->
         <div id="site_copyright"></div>
-    <!-- Copyright End -->
 
 <!--====================================================================================================================-->
 

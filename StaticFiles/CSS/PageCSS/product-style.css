@@ -2,7 +2,6 @@
 /*#region - DISCLAIMERS*/
     .disclaimer-btn {
         background-color: #dd0000;
-        float: left;
     }
     .disclaimer-btn:hover {
         background-color: #bb0000;
@@ -32,7 +31,7 @@
 
 /*#region - PET TAB */
     .pet-tab {
-        display: block;
+        display: inherit;
         width: 100%;
 
     }
