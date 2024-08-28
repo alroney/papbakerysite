@@ -9,7 +9,7 @@ let productInfo = [];
 //#region - CSV - read csv files and coordinate the data from them.
     //#region - GRAB AND READ - Get the csv file and read it
         //Function to parse CSV data into an object
-        function parseCSV(csv, hdrRow, productIdColumn, flavorColumn, categoryColumn, descriptionColumn, ingredientColumn, pricePerBatchColumn, subtypeColumn, subtypeValColumn) {
+        function parseCSV(csv, hdrRow, productIdColumn, flavorColumn, categoryColumn, descriptionColumn, ingredientColumn, pricePerBatchColumn, subtypeColumn, subtypeValColumn, pricePerEachColumn) {
             const endMarker = 'endOfSheet'; //This is used to prevent the attempt to continue on to another sheet in the same .csv file. This is the string value I manually set that would be compared with later on
             const rows = csv.replace(/\r/g, '').split('\n'); //Remove \r characters and split into rows
             const headers = rows[hdrRow].split(','); //Create an array of headers
@@ -28,7 +28,8 @@ let productInfo = [];
                 ingredientIndex: headers.indexOf(ingredientColumn),
                 pricePerBatchIndex: headers.indexOf(pricePerBatchColumn),
                 subtypeIndex: headers.indexOf(subtypeColumn),
-                subtypeValIndex: headers.indexOf(subtypeValColumn)
+                subtypeValIndex: headers.indexOf(subtypeValColumn),
+                pricePerEachIndex: headers.indexOf(pricePerEachColumn)
             };
 
 
@@ -61,7 +62,8 @@ let productInfo = [];
                             ingredients: currentRow[indices.ingredientIndex]?.trim() || '',
                             pricePerBatch: currentRow[indices.pricePerBatchIndex]?.trim() || '',
                             subtypes: currentRow[indices.subtypeIndex]?.trim() || '',
-                            subtypeValues: currentRow[indices.subtypeValIndex]?.trim() || ''
+                            subtypeValues: currentRow[indices.subtypeValIndex]?.trim() || '',
+                            pricePerEach: currentRow[indices.pricePerEachIndex]?.trim() || ''
                         };
                     }
                 });
@@ -169,7 +171,7 @@ let productInfo = [];
         const data = await fetchCSV('/StaticFiles/CSV/product_info.csv');
         const hdrRow = 0; //Set the header line index
         //Parse the CSV data with the specified header line and column headers for product and description
-        const {productInfoMap} = parseCSV(data, hdrRow, 'Product Id', 'Flavor', 'Category', 'Short Description', 'Ingredients', 'Price Per Batch', 'Subtypes', 'Subtype Values');
+        const {productInfoMap} = parseCSV(data, hdrRow, 'Product Id', 'Flavor', 'Category', 'Short Description', 'Ingredients', 'Price Per Batch', 'Subtypes', 'Subtype Values', 'Price Per Each');
 
         //Put objects into productInfo and assign each objects values from productInfoMap
         productInfo = Object.entries(productInfoMap).map(([productId, details]) => ({
@@ -182,7 +184,8 @@ let productInfo = [];
             ingredients: (details.ingredients || '').trim(),
             pricePerBatch: (details.pricePerBatch || '').trim(),
             subtypes: (details.subtypes || '').trim(),
-            subtypeValues: (details.subtypeValues || '').trim()
+            subtypeValues: (details.subtypeValues || '').trim(),
+            pricePerEach: (details.pricePerEach || '').trim()
         }));
 
     }
@@ -567,10 +570,10 @@ let productInfo = [];
     function generateCarousel() {
         const imagePath = "/StaticFiles/img/product/dog/biscuits/";
         const carouselItems = [ //This is a multi-dimensional array to call a specific item you would use, carouselItems[#].variableName Ex. carouselItems[1].src will give me 'biscuit_sm_long.png'
-            { src:"biscuit_sm.png", alt:"Small Biscuit", name: "Small Biscuit"},
-            { src:"biscuit_sm_long.png", alt:"Small Long Biscuit", name:"Small Long Biscuit"},
-            { src:"biscuit_lg.png", alt:"Large Biscuit", name:"Large Biscuit"},
-            { src:"biscuit_lg_long.png", alt:"Large Long Biscuit", name:"Large Long Biscuit"}
+            { src:"biscuit_sm.png", alt:"Small Biscuit", name: "Small Biscuit", price: "$0.40"},
+            { src:"biscuit_sm_long.png", alt:"Small Long Biscuit", name:"Small Long Biscuit", price: "$0.44"},
+            { src:"biscuit_lg.png", alt:"Large Biscuit", name:"Large Biscuit", price: "$0.73"},
+            { src:"biscuit_lg_long.png", alt:"Large Long Biscuit", name:"Large Long Biscuit", price: "$0.88"}
         ];
 
 
@@ -593,6 +596,7 @@ let productInfo = [];
                     <img class="" src="${imagePath}${item.src}" alt="${item.alt}">
                     <div class="carousel-caption">
                         <h5>${item.name}</h5>
+                        <p>Starting at ${item.price} each!</p>
                     </div>
                 </div>
                 `;

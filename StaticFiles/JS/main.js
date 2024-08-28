@@ -115,7 +115,7 @@ function renderCopyright(){
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="https://"></a>, All Right Reserved.
+                        &copy; <a href="https://papbakery.com">papbakery.com</a>, All Rights Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         Designed and Created From Scratch by Andrew Roney with <a class="" href="https://getbootstrap.com" target="_blank">Bootstrap</a>
